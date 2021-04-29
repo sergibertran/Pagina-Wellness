@@ -23,24 +23,30 @@
   
     <ul class="nav">
 
-        <li>
-        <div class="dropdown">
-            <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-                <i class="material-icons">kitchen</i>
-                <p>Regular</p>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-            </ul>
-        </div>
-
-    </li>
+      
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} ">
             <a class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>
             </a>
         </li>
+
+        <li>
+          <div class="dropdown">
+              <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
+                  <i class="material-icons">kitchen</i>
+                  <p>Ingredientes</p>
+              </a>
+              <ul class="dropdown-menu">
+                  <li>
+                    <a class="nav-link" routerLink="/typography" routerLinkActive="active"> Listado Ingredientes </a>
+            </li>
+            <li>
+              <a class="nav-link" routerLink="/upgrade" routerLinkActive="active"> Listado Tipo Ingredientes </a>
+      </li>
+              </ul>
+          </div>
+  
+      </li>
     </ul>
 </div>

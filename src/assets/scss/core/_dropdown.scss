@@ -12,6 +12,7 @@
   transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default,
               opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+ 
 
   &.showing {
     animation-name: bmd-dropdown-animation;
@@ -24,7 +25,7 @@
   &.show {
     display: block;
     opacity: 1;
-    transform: scale(1);
+    transform:  scale(1);
   }
 
   &.hiding {

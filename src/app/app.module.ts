@@ -18,7 +18,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { NuevoIngredienteComponent } from './nuevo-ingrediente/nuevo-ingrediente.component';
+
 
 @NgModule({
   imports: [
@@ -36,7 +36,7 @@ import { NuevoIngredienteComponent } from './nuevo-ingrediente/nuevo-ingrediente
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    NuevoIngredienteComponent,
+
 
   ],
   providers: [],
