@@ -1,0 +1,46 @@
+<div class="logo">
+    <a href="https://www.creative-tim.com" class="simple-text">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        Admin
+    </a>
+</div>
+<div class="sidebar-wrapper">
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+  </div>
+  
+    <ul class="nav">
+
+        <li>
+        <div class="dropdown">
+            <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
+                <i class="material-icons">kitchen</i>
+                <p>Regular</p>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+            </ul>
+        </div>
+
+    </li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} ">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
