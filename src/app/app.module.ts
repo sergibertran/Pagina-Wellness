@@ -18,6 +18,13 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TipoIngredientesComponent } from './tipo-ingredientes/tipo-ingredientes.component';
+import { NuevoTipoingredienteComponent } from './tipo-ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
+import { PlatosComponent } from './platos/platos.component';
+import { NuevoPlatoComponent } from './platos/nuevo-plato/nuevo-plato.component';
+import { TipoPlatoComponent } from './platos/tipo-plato/tipo-plato.component';
+import { NuevoTipoPlatoComponent } from './platos/tipo-plato/nuevo-tipo-plato/nuevo-tipo-plato.component';
+
 
 
 @NgModule({
@@ -36,6 +43,13 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    TipoIngredientesComponent,
+    
+    
+    
+    
+
+
 
 
   ],

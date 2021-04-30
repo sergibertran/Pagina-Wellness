@@ -1,3 +1,8 @@
+import { NuevoTipoPlatoComponent } from './../../platos/tipo-plato/nuevo-tipo-plato/nuevo-tipo-plato.component';
+import { TipoPlatoComponent } from './../../platos/tipo-plato/tipo-plato.component';
+import { NuevoPlatoComponent } from './../../platos/nuevo-plato/nuevo-plato.component';
+import { PlatosComponent } from './../../platos/platos.component';
+import { NuevoTipoingredienteComponent } from './../../tipo-ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -43,6 +48,12 @@ import { NuevoIngredienteComponent } from '../../nuevo-ingrediente/nuevo-ingredi
     NotificationsComponent,
     UpgradeComponent,
     NuevoIngredienteComponent,
+    NuevoTipoingredienteComponent,
+    PlatosComponent,
+    NuevoPlatoComponent,
+    NuevoPlatoComponent,
+    TipoPlatoComponent,
+    NuevoTipoPlatoComponent
 
   ]
 })

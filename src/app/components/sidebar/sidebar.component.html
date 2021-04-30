@@ -1,7 +1,7 @@
 <div class="logo">
     <a href="https://www.creative-tim.com" class="simple-text">
         <div class="logo-img">
-            <img src="/assets/img/angular2-logo-red.png"/>
+            <img src="../../../assets/img/WELLNESS.png"/>
         </div>
         Admin
     </a>
@@ -24,13 +24,19 @@
     <ul class="nav">
 
       
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} ">
+        <!-- <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} ">
             <a class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>
             </a>
+        </li> -->
+       
+        <li>
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"> 
+            <i class="material-icons">home</i>
+            <p>Menu Princial</p>
+          </a>
         </li>
-
         <li>
           <div class="dropdown">
               <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
@@ -38,15 +44,25 @@
                   <p>Ingredientes</p>
               </a>
               <ul class="dropdown-menu">
-                  <li>
-                    <a class="nav-link" routerLink="/typography" routerLinkActive="active"> Listado Ingredientes </a>
-            </li>
-            <li>
-              <a class="nav-link" routerLink="/upgrade" routerLinkActive="active"> Listado Tipo Ingredientes </a>
-      </li>
+                  <li><a class="nav-link" routerLink="/typography" routerLinkActive="active"> Listado Ingredientes </a></li>
+            <li><a class="nav-link" routerLink="/TipoIngrediente" routerLinkActive="active"> Listado Tipo Ingredientes </a></li>
               </ul>
           </div>
-  
       </li>
+
+      <li>
+        <div class="dropdown">
+            <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
+                <i class="material-icons">dinner_dining</i>
+                <p>Platos</p>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="nav-link" routerLink="/Platos" routerLinkActive="active"> Listado Platos </a></li>
+          <li><a class="nav-link" routerLink="/TipoPlato" routerLinkActive="active"> Listado Tipo Platos </a></li>
+            </ul>
+        </div>
+    </li>
+
+      
     </ul>
 </div>

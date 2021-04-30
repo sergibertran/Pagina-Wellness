@@ -16,6 +16,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
     { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: '/TipoIngrediente', title: 'Tipo Ingrediente',  icon:'unarchive', class: 'active-pro' },
+    { path: '/NuevoTipoIngediente', title: 'Nuevo Tipo Ingrediente',  icon:'unarchive', class: 'active-pro' },
     { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 
 ];
