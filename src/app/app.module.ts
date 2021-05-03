@@ -24,6 +24,11 @@ import { PlatosComponent } from './platos/platos.component';
 import { NuevoPlatoComponent } from './platos/nuevo-plato/nuevo-plato.component';
 import { TipoPlatoComponent } from './platos/tipo-plato/tipo-plato.component';
 import { NuevoTipoPlatoComponent } from './platos/tipo-plato/nuevo-tipo-plato/nuevo-tipo-plato.component';
+import { DietaComponent } from './dieta/dieta.component';
+import { EjerciciosComponent } from './ejercicios/ejercicios.component';
+import { RutinaComponent } from './rutina/rutina.component';
+import { TipoDietaComponent } from './dieta/tipo-dieta/tipo-dieta.component';
+import { TipoEjercicioComponent } from './ejercicios/tipo-ejercicio/tipo-ejercicio.component';
 
 
 
@@ -43,8 +48,7 @@ import { NuevoTipoPlatoComponent } from './platos/tipo-plato/nuevo-tipo-plato/nu
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    TipoIngredientesComponent,
-    
+    TipoIngredientesComponent
     
     
     

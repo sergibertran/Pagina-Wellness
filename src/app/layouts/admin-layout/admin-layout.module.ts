@@ -24,6 +24,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { NuevoIngredienteComponent } from '../../nuevo-ingrediente/nuevo-ingrediente.component';
+import { DietaComponent } from 'app/dieta/dieta.component';
+import { TipoDietaComponent } from 'app/dieta/tipo-dieta/tipo-dieta.component';
+import { EjerciciosComponent } from 'app/ejercicios/ejercicios.component';
+import { TipoEjercicioComponent } from 'app/ejercicios/tipo-ejercicio/tipo-ejercicio.component';
+import { RutinaComponent } from 'app/rutina/rutina.component';
 
 @NgModule({
   imports: [
@@ -53,7 +58,12 @@ import { NuevoIngredienteComponent } from '../../nuevo-ingrediente/nuevo-ingredi
     NuevoPlatoComponent,
     NuevoPlatoComponent,
     TipoPlatoComponent,
-    NuevoTipoPlatoComponent
+    NuevoTipoPlatoComponent,
+    DietaComponent,
+    TipoDietaComponent,
+    EjerciciosComponent,
+    TipoEjercicioComponent,
+    RutinaComponent
 
   ]
 })
