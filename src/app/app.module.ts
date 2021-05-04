@@ -24,6 +24,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { CalendarioComponent } from './calendario/calendario.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {MatSelectModule} from '@angular/material/select';
     AppComponent,
     AdminLayoutComponent,
     TipoIngredientesComponent,
-    HomeComponent
+    HomeComponent,
+    CalendarioComponent
     
     
     
