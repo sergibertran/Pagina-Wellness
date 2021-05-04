@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NuevoIngredienteComponent } from './nuevo-ingrediente/nuevo-ingrediente.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
@@ -7,9 +8,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes =[
+  { path: 'home', component: HomeComponent},
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'home',
     pathMatch: 'full',
   }, {
     path: '',
@@ -19,6 +21,7 @@ const routes: Routes =[
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
   },
+  { path: '**', redirectTo: 'home' }
 
 ];
 

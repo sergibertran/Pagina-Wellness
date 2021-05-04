@@ -29,6 +29,11 @@ import { TipoDietaComponent } from 'app/dieta/tipo-dieta/tipo-dieta.component';
 import { EjerciciosComponent } from 'app/ejercicios/ejercicios.component';
 import { TipoEjercicioComponent } from 'app/ejercicios/tipo-ejercicio/tipo-ejercicio.component';
 import { RutinaComponent } from 'app/rutina/rutina.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatIconModule} from '@angular/material/icon';  
+
 
 @NgModule({
   imports: [
@@ -42,6 +47,11 @@ import { RutinaComponent } from 'app/rutina/rutina.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatCardModule,
+    MatTabsModule,
+    MatCheckboxModule,
+    MatIconModule
+    
   ],
   declarations: [
     DashboardComponent,
