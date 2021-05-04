@@ -10,14 +10,13 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-<<<<<<< HEAD
-import { TipoIngredientesComponent } from './tipo-ingredientes/tipo-ingredientes.component';
+
 import { FullCalendarModule } from '@fullcalendar/angular'; 
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
-=======
 
->>>>>>> 68a861796ccfb5a3d64b5e2769e31cecfd0cf034
+
+
 import { HomeComponent } from './home/home.component';
 
 import {MatCardModule} from '@angular/material/card';
