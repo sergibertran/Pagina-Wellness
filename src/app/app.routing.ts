@@ -1,5 +1,5 @@
 import { HomeComponent } from './home/home.component';
-import { NuevoIngredienteComponent } from './nuevo-ingrediente/nuevo-ingrediente.component';
+import { NuevoIngredienteComponent } from './ingredientes/nuevo-ingrediente/nuevo-ingrediente.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
