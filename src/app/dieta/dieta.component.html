@@ -1,54 +1,72 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Añadir dieta</h4>
-                        <p class="card-category">Complete your profile</p>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                          
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre dieta" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Tipo Dieta" type="text">
-                                  </mat-form-field>
-                                </div>
-                            </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-rosa">
+        <h4 class="card-title">Listado de las Dietas</h4>
+        <p class="card-category">Todos los registros</p>
+      </div>
+      <div class="card-body">
+        <div id="typography">
+          <div class="card-title">
+            <div class="row">
+              <div class="col">
+                <h2>Dietas</h2>
+              </div>
+              <div class="col-7">
 
-                            <label for="exampleFormControlSelect2">Tipo de usuario</label>
-                            <select multiple class="form-control" id="premium">
-                            <option>Premium</option>
-                            <option>NO premium</option>
-                            </select>
-                        
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>Imagen</label>
-                                  <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Escoge una foto</label>
-                                  </div>
-                         
-                                </div>
-                            </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Crear dieta</button>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-                </div>
+              </div>
+              <div class="col">
+                <a routerLink="/NuevoDieta" routerLinkActive="active" class="btn btn-danger btn-round">Añadir</a>
+              </div>
             </div>
-       
+          </div>
+
+          <div class="row">
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    ID
+                  </th>
+                  <th>
+                    Nombre de Dieta
+                  </th>
+                  <th>
+                    Tipo de Dieta
+                  </th>
+                  <th>
+                    Tipo de Usuario
+                  </th>
+                  <th>
+                    Imagen
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      1
+                    </td>
+                    <td>
+                      Dakota Rice
+                    </td>
+                    <td>
+                      Niger
+                    </td>
+                    <td>
+                      No Premium
+                    </td>
+                    <td>
+                      Oud-Turnhout
+                    </td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
-  

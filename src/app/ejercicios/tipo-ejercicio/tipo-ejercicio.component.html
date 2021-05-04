@@ -1,43 +1,65 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Añadir tipo ejercicio</h4>
-                        <p class="card-category">Complete your profile</p>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                          
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre tipo ejercicio" type="text">
-                                  </mat-form-field>
-                            </div>
+      <div class="card">
+          <div class="card-header card-header-danger">
+              <h4 class="card-title">Listado de los Tipos de Ejercicios</h4>
+              <p class="card-category">Todos los registros</p>
+          </div>
+          <div class="card-body">
+              <div id="typography">
+                  <div class="card-title">
+                      <div class="row">
+                          <div class="col-6">
+                              <h2>Tipo Ejercicio</h2>
+                          </div>
+                          <div class="col-4">
                         
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>Imagen</label>
-                                  <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Escoge una foto</label>
-                                  </div>
-                         
-                                </div>
-                            </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Crear tipo ejercicio</button>
-                            <div class="clearfix"></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-       
-        </div>
-    </div>
+                          </div>
+                          <div class="col">
+                              <a  routerLink="/NuevoTipoEjercicio" routerLinkActive="active" class="btn btn-danger btn-round">Añadir</a>
+                          </div>
+                        </div>
+                  </div>
+                
+                  <div class="row">
+            
+                          <div class="table-responsive">
+                              <table class="table">
+                                  <thead class=" text-primary">
+                                      <th>
+                                          ID
+                                      </th>
+                                      <th>
+                                          Nombre TipoEjercicio
+                                      </th>
+                                      <th>
+                                        Descripcion
+                                    </th>
+                                   
+                                   
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>
+                                              1
+                                          </td>
+                                          <td>
+                                              Dakota Rice
+                                          </td>
+                                          <td>
+                                            martiixd
+                                        </td>
+                                      
+                                         
+                                      </tr>
+                               
+                                  </tbody>
+                              </table>
+                 
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
   

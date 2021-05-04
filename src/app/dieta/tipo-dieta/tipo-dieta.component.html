@@ -1,33 +1,59 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Añadir tipo dieta</h4>
-                        <p class="card-category">Complete your profile</p>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="row">
-                          
+        <div class="card">
+            <div class="card-header card-header-rosa">
+                <h4 class="card-title">Listado de Tipos de Dietas</h4>
+                <p class="card-category">Todos los registros</p>
+            </div>
+            <div class="card-body">
+                <div id="typography">
+                    <div class="card-title">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Tipo Dieta</h2>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre del tipo de dieta" type="text">
-                                  </mat-form-field>
-                                </div>
-                            </div>
+                            <div class="col-4">
 
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Crear tipo dieta</button>
-                            <div class="clearfix"></div>
-                        </form>
+                            </div>
+                            <div class="col">
+                                <a routerLink="/NuevoTipoIngrediente" routerLinkActive="active"
+                                    class="btn btn-danger btn-round">Añadir</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nombre Tipo Dieta
+                                    </th>
+
+
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            Dakota Rice
+                                        </td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
                 </div>
             </div>
-       
         </div>
     </div>
-  </div>
-  

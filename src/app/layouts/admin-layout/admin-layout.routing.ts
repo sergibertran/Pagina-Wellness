@@ -1,13 +1,11 @@
-import { NuevoTipoPlatoComponent } from './../../platos/tipo-plato/nuevo-tipo-plato/nuevo-tipo-plato.component';
+import { NuevoTipoPlatoComponent } from '../../platos/nuevo-tipo-plato/nuevo-tipo-plato.component';
 import { TipoPlatoComponent } from './../../platos/tipo-plato/tipo-plato.component';
-import { NuevoTipoingredienteComponent } from './../../tipo-ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
-import { TipoIngredientesComponent } from './../../tipo-ingredientes/tipo-ingredientes.component';
-import { NuevoIngredienteComponent } from './../../nuevo-ingrediente/nuevo-ingrediente.component';
+import { NuevoIngredienteComponent } from '../../ingredientes/nuevo-ingrediente/nuevo-ingrediente.component';
 import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
+import { TypographyComponent } from '../../ingredientes/typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
@@ -19,6 +17,11 @@ import { TipoDietaComponent } from 'app/dieta/tipo-dieta/tipo-dieta.component';
 import { EjerciciosComponent } from 'app/ejercicios/ejercicios.component';
 import { TipoEjercicioComponent } from 'app/ejercicios/tipo-ejercicio/tipo-ejercicio.component';
 import { RutinaComponent } from 'app/rutina/rutina.component';
+import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ejercicio.component';
+import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
+import { TipoIngredientesComponent } from 'app/ingredientes/tipo-ingredientes/tipo-ingredientes.component';
+import { NuevoTipoingredienteComponent } from 'app/ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
+import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -41,6 +44,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Ejercicio',  component: EjerciciosComponent },
     { path: 'TipoEjercicio',  component: TipoEjercicioComponent },
     { path: 'Rutina',  component: RutinaComponent },
+    { path: 'NuevoEjercicio',  component: NuevoEjercicioComponent },
+    { path: 'NuevoTipoEjercicio',  component: NuevoTipoEjercicioComponent },
+    { path: 'NuevoDieta',  component: NuevoDietaComponent },
+
+
+
 
 
 
