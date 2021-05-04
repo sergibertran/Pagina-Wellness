@@ -14,6 +14,11 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { PlatosComponent } from 'app/platos/platos.component';
 import { NuevoPlatoComponent } from 'app/platos/nuevo-plato/nuevo-plato.component';
+import { DietaComponent } from 'app/dieta/dieta.component';
+import { TipoDietaComponent } from 'app/dieta/tipo-dieta/tipo-dieta.component';
+import { EjerciciosComponent } from 'app/ejercicios/ejercicios.component';
+import { TipoEjercicioComponent } from 'app/ejercicios/tipo-ejercicio/tipo-ejercicio.component';
+import { RutinaComponent } from 'app/rutina/rutina.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -31,4 +36,13 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'NuevoPlato',  component: NuevoPlatoComponent },
     { path: 'TipoPlato',  component: TipoPlatoComponent },
     { path: 'NuevoTipoPlato',  component: NuevoTipoPlatoComponent },
+    { path: 'Dieta',  component: DietaComponent },
+    { path: 'TipoDieta',  component: TipoDietaComponent },
+    { path: 'Ejercicio',  component: EjerciciosComponent },
+    { path: 'TipoEjercicio',  component: TipoEjercicioComponent },
+    { path: 'Rutina',  component: RutinaComponent },
+
+
+
+
 ];
