@@ -11,7 +11,9 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { TipoIngredientesComponent } from './tipo-ingredientes/tipo-ingredientes.component';
-
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction'; 
 import { HomeComponent } from './home/home.component';
 
 import {MatCardModule} from '@angular/material/card';
@@ -26,9 +28,16 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { CalendarioComponent } from './calendario/calendario.component';
 
+FullCalendarModule.registerPlugins([ 
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   imports: [
+    FullCalendarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -39,6 +48,7 @@ import { CalendarioComponent } from './calendario/calendario.component';
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
+    
     MatButtonModule,
     MatRippleModule,
     MatFormFieldModule,
