@@ -58,19 +58,12 @@ export class CalendarioComponent implements OnInit {
         $("#myModal").modal("hide");
         this.successdata = res;
         if ((this.successdata["data"] = "success")) {
-          //sweetalert message popup
-          Swal.fire({
-            title: "Hurray!!",
-            text: " event has been added successfully",
-            icon: "success",
-          });
+        
+          console.log('works');
+          
         } else {
-          //sweetalert error message popup
-          Swal.fire({
-            title: "OPPSS!!",
-            text: "sdds",
-            icon: "alert",
-          });
+       console.log('funciona');
+       
         }
       });
   }

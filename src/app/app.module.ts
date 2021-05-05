@@ -50,7 +50,6 @@ FullCalendarModule.registerPlugins([
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
