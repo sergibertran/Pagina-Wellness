@@ -11,16 +11,17 @@ import { from } from 'rxjs';
 
 const routes: Routes =[
   { path: 'home', component: HomeComponent},
+
   { path: 'calendario', component: CalendarioComponent},
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
   }, {
-    path: '',
+    path: 'admin-layout',
     component: AdminLayoutComponent,
     children: [{
-      path: '',
+      path: 'admin-layout',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
     }]
   },
