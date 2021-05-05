@@ -3,12 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-declare let $: any;
 import { usuario } from 'app/models/usuario';
 import Swal from 'sweetalert2';
 import { AuthService } from 'app/services/auth.service';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   LoginForm: FormGroup;
   RegisterForm: FormGroup;
-  constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,private router: Router) {
+  constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,) {
     this.LoginForm = this.fb.group({
       'username': [''],
       'password': ['']
@@ -29,7 +26,6 @@ export class HomeComponent implements OnInit {
       'email': [''],
       'password': [''],
       'repassword': [''],
-      
    
     });
    }
@@ -42,55 +38,33 @@ export class HomeComponent implements OnInit {
   submitLoginForm() {
 
     console.log(this.LoginForm.value);
-    this.login();
+    if (this.LoginForm.value['username']=='admin'){
+     
+      localStorage.setItem('role', '21232f297a57a5a743894a0e4a801fc3');
+    }
+
+    localStorage.setItem('user', this.LoginForm.value['username']);
+    localStorage.setItem('password', this.LoginForm.value['password']);
+  
 
   }
 
   submitRegisterForm() {
-
     console.log(this.RegisterForm.value);
-    this.register();
+
+    this.registerAlumno();
    
     
   }
-  test(aa){
-    $('#modalLoginForm').modal("hide");
-
-    this.router.navigate(['/admin-layout']);
-console.log(aa);
 
 
-  }
+  registerAlumno() {
 
- 
-
-
-  login() {
-
-    this.authService.login(this.LoginForm.value).subscribe (
-      datos => {
-     console.log(datos);
-     
-     
-     localStorage.setItem('user', this.LoginForm.value['username']);
-     localStorage.setItem('password', this.LoginForm.value['password']);
-     
-    
-      }
-    )
- 
-    }
-
-  
-
-
-  register() {
-
-   
+    // let alumn = new usuario(this.myForm.controls.usuario.value,
+    //                        this.myForm.controls.contrasena.value)
 
     this.authService.register(this.RegisterForm.value).subscribe (
       datos => {
-     console.log(datos);
      
       }
     )
