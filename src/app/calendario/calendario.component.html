@@ -21,24 +21,45 @@
                <div class="col-sm-12">
                   <div class="form-group">
                         <label>Event Title</label>
-                        <input placeholder="Add Event Title" type="text" formControlName="title" class="titleinp form-control" />
-                       
+                        <select formControlName="title">
+                          <option [ngValue]="null" disabled>Choose your profile</option>
+                          <option *ngFor="let prf of allProfiles" [ngValue]="prf">
+                           {{ prf.prName }}
+                          </option>
+                        </select> 
+
                         </div>
-                     </div>
-               </div> 
-               <div class="col-sm-12">
+                   </div>
+              </div> 
+
+            
                 <div class="form-group">
                       <label>Event Date:</label>
-                      <div class="form-control eventstarttitle"></div>
+                      <div class="eventstarttitle">
+                      </div>
                    </div>
-             </div> 
-               
-               
-               
+          
 
            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
     </div>
+  </div>
+
+<!--Modal calendar-->
+<div id="calendarModal" class="modal fade">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
+              <h4 id="modalTitle" class="modal-title"></h4>
+          </div>
+          <div id="modalBody" class="modal-body"> </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='borrar()' >Eliminar</button>
+          </div>
+      </div>
+  </div>
   </div>

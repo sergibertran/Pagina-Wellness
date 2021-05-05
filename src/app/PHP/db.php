@@ -1,9 +1,8 @@
 <?php
  global $enlace; //variable de tipo global para llamarla en cualquier parte de la aplicacion donde se llame
 function conexion(){
-  // $enlace = mysqli_connect('localhost', 'root', 'usbw', 'ranking'); //conexion con la base de datos
-  //$enlace = mysqli_connect('oracle.ilerna.com', 'DAW2_GamifikG6', 'aGamifikG61', 'daw2_gamifikg6'); //conexion con la base desde casa
-   $enlace = mysqli_connect('192.168.3.26', 'DAW2_JAMSWEB', 'sector1g', 'daw2_jamsweb'); //conexion con la base de datos
+  $enlace = mysqli_connect('oracle.ilerna.com', 'DAW2_JAMSWEB', 'sector1g', 'daw2_jamsweb'); //conexion con la base desde casa
+   //$enlace = mysqli_connect('192.168.3.26', 'DAW2_JAMSWEB', 'sector1g', 'daw2_jamsweb'); //conexion con la base de datos
     mysqli_set_charset($enlace,"utf8");
 
 
@@ -17,8 +16,8 @@ function conexion(){
    return $enlace;
 }
 
-  $mysqli = new mysqli('192.168.3.26', 'DAW2_JAMSWEB', 'sector1g', 'DAW2_JAMSWEB');
+  //$mysqli = new mysqli('192.168.3.26', 'DAW2_JAMSWEB', 'sector1g', 'DAW2_JAMSWEB');
 
-  echo json_encode($enlace);
+ 
 
 ?>

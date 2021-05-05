@@ -5,7 +5,9 @@
 
     header('Content-Type: application/json');
 
+    require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
+    $conexion = conexion(); // CREA LA CONEXION
     
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 

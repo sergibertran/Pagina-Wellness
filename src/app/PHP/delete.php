@@ -11,10 +11,10 @@
     
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
- 
- $sql = "SELECT idCalendario, idDieta, idRutina, comentarios,idUsuario,fecha 
- FROM calendario
- WHERE idUsuario=1");
+ $sql = "DELETE FROM daw2_jamsweb.calendario
+ WHERE idCalendario=70;
+ ");
+
  
 
    while ($registros = mysqli_fetch_array($resultado)) {

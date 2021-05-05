@@ -17,8 +17,18 @@ export class CalendarioComponent implements OnInit {
   successdata: any;
   addEventForm: FormGroup;
   submitted = false;
-
+  events=[];
   data;
+  Profile;
+
+
+  
+  allProfiles = [
+    new Profile('Dieta'),
+    new Profile('Rutina'),
+    new Profile('Comentarios')
+] 
+  
   //Add user form actions
   get f() { return this.addEventForm.controls; }
   onSubmit() {
@@ -39,8 +49,9 @@ export class CalendarioComponent implements OnInit {
     var myFormData = new FormData();
   
     // Begin assigning parameters
+   console.log(this.addEventForm.controls.title.value.prName);
    
-       myFormData.append('title', this.addEventForm.controls.title.value);
+       myFormData.append('title', this.addEventForm.controls.title.value.prName);
        myFormData.append('fecha', this.addEventForm.controls.fecha.value);
         console.log(myFormData);
 
@@ -81,24 +92,43 @@ var myFormDataa = new FormData();
 
 
 
-this.http.post('http://localhost/test.php/'
+this.http.post('http://localhost/load.php/'
 , myFormDataa).subscribe((res: any) => {
- 
+
 console.log(res);
 
+for (let index = 0; index < Object.keys(res).length; index++) {
+
+  console.log(res);
+  
+if(res[index].comentarios=='Dieta'){
+
+  this.events.push( { title: res[index].comentarios, date: res[index].fecha,color: 'red',res: res,id: res[index].idCalendario, });
+}else if(res[index].comentarios=='Rutina'){
+  this.events.push( { title: res[index].comentarios, date: res[index].fecha,color: 'blue',res: res,id: res[index].idCalendario, });
+}else if(res[index].comentarios=='Comentarios'){
+  this.events.push( { title: res[index].comentarios, date: res[index].fecha,color: 'green',res: res,id: res[index].idCalendario, });
+}
+
+
+ 
+  
+
+  
+}
+
+this.calendarOptions = {
+  initialView: 'dayGridMonth',
+  dateClick: this.handleDateClick.bind(this),
+  eventClick: this.eventClick.bind(this),
+  events: this.events,
+};
 
 });
 
 
   
-    this.calendarOptions = {
-      initialView: 'dayGridMonth',
-      dateClick: this.handleDateClick.bind(this),
-      events: [
-        { title: 'event 1', date: '2020-11-05' },
-        { title: 'event 2', date: '2020-06-30' }
-      ]
-    };
+    
     //Add User form validations
     this.addEventForm = this.formBuilder.group({
       title: ['', [Validators.required]]
@@ -108,16 +138,37 @@ console.log(res);
   handleDateClick(arg) {
 
 
+
     $("#myModal").modal("show");
     $(".modal-title, .eventstarttitle").text("");
     $(".modal-title").text("Add Event at : " + arg.dateStr);
     $(".eventstarttitle").text(arg.dateStr);
 
     this.data = arg.dateStr
-
+    
 
 
   }
+
+  borrar(){
+    return this.http.post('http://localhost/delete.php/'
+    , '').subscribe((res: Response) => {
+     
+    });
+
+
+  }
+
+  eventClick(arg) {
+    console.log(arg);
+    console.log(arg.event.id);
+    console.log(arg.event.startStr);
+    $("#calendarModal").modal("show");
+    $(".modal-title, .eventstarttitle").text("");
+    $(".modal-title").text("Add Event at : " + arg.event.startStr);
+    $(".eventstarttitle").text(arg.dateStr);
+}
+
   //Hide Modal PopUp and clear the form validations
   hideForm() {
     this.addEventForm.patchValue({ title: "" });
@@ -125,21 +176,11 @@ console.log(res);
     this.addEventForm.get('title').updateValueAndValidity();
   }
 
-  load(){
-    console.log('222');
-    
-
-   
-
-    
-     
-    
-    
-    
-
-
-
-  }
 
 
 }
+
+export class Profile { 
+  constructor(public prName:string) {
+  }	
+} 
