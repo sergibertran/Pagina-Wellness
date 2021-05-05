@@ -1,5 +1,8 @@
 
-/* 
+
+
+  @charset "UTF-8";
+
   mat-form-field, mat-checkbox {
     width: 80%;
     display: block;
@@ -14,9 +17,8 @@
     display: block;
     width: 80%;
     margin: 20px auto;
-  } */
+  }
 
-  @charset "UTF-8";
   /*!
   * Start Bootstrap - Agency v6.0.5 (https://startbootstrap.com/theme/agency)
   * Copyright 2013-2021 Start Bootstrap
