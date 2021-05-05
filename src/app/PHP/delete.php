@@ -12,7 +12,7 @@
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
  $sql = "DELETE FROM daw2_jamsweb.calendario
- WHERE idCalendario=70;
+ WHERE idCalendario=72;
  ");
 
  
