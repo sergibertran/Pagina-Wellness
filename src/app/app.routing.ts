@@ -13,19 +13,12 @@ const routes: Routes =[
   { path: 'home', component: HomeComponent},
 
   { path: 'calendario', component: CalendarioComponent},
+  { path: 'admin-layout', component: AdminLayoutComponent},
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  }, {
-    path: 'admin-layout',
-    component: AdminLayoutComponent,
-    children: [{
-      path: 'admin-layout',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
-  },
-  { path: '**', redirectTo: 'home' }
+  },{ path: '**', redirectTo: 'home' }
 
 ];
 
