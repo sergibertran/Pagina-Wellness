@@ -20,8 +20,12 @@ import { RutinaComponent } from 'app/rutina/rutina.component';
 import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ejercicio.component';
 import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
 import { TipoIngredientesComponent } from 'app/ingredientes/tipo-ingredientes/tipo-ingredientes.component';
-import { NuevoTipoingredienteComponent } from 'app/ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
 import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
+import { NuevaRutinaComponent } from 'app/rutina/nueva-rutina/nueva-rutina.component';
+import { TipoRutinaComponent } from 'app/rutina/tipo-rutina/tipo-rutina.component';
+import { NuevaTipoRutinaComponent } from 'app/rutina/nueva-tipo-rutina/nueva-tipo-rutina.component';
+import { NuevoTipoIngredientesComponent } from 'app/ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
+import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -34,7 +38,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'NuevoIngrediente',  component: NuevoIngredienteComponent },
     { path: 'TipoIngrediente',  component: TipoIngredientesComponent },
-    { path: 'NuevoTipoIngrediente',  component: NuevoTipoingredienteComponent },
     { path: 'Platos',  component: PlatosComponent },
     { path: 'NuevoPlato',  component: NuevoPlatoComponent },
     { path: 'TipoPlato',  component: TipoPlatoComponent },
@@ -47,6 +50,17 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'NuevoEjercicio',  component: NuevoEjercicioComponent },
     { path: 'NuevoTipoEjercicio',  component: NuevoTipoEjercicioComponent },
     { path: 'NuevoDieta',  component: NuevoDietaComponent },
+    { path: 'NuevoTipoDieta',  component: NuevoTipoDietaComponent },
+    { path: 'NuevaRutina',  component: NuevaRutinaComponent },
+    { path: 'TipoRutina',  component: TipoRutinaComponent },
+    { path: 'NuevaTipoRutina',  component: NuevaTipoRutinaComponent },
+    { path: 'NuevoTipoIngredientes',  component: NuevoTipoIngredientesComponent },
+
+
+
+
+
+
 
 
 
