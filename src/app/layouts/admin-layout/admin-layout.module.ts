@@ -32,7 +32,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';  
-import { NuevoTipoingredienteComponent } from 'app/ingredientes/nuevo-tipoingrediente/nuevo-tipoingrediente.component';
 import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ejercicio.component';
 import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
 import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
@@ -67,7 +66,6 @@ import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component
     NotificationsComponent,
     UpgradeComponent,
     NuevoIngredienteComponent,
-    NuevoTipoingredienteComponent,
     PlatosComponent,
     NuevoPlatoComponent,
     NuevoPlatoComponent,

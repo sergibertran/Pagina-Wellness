@@ -30,6 +30,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { CalendarioComponent } from './calendario/calendario.component';
+import { NuevaRutinaComponent } from './rutina/nueva-rutina/nueva-rutina.component';
+import { TipoRutinaComponent } from './rutina/tipo-rutina/tipo-rutina.component';
+import { NuevaTipoRutinaComponent } from './rutina/nueva-tipo-rutina/nueva-tipo-rutina.component';
+import { TipoIngredientesComponent } from './ingredientes/tipo-ingredientes/tipo-ingredientes.component';
+import { NuevoTipoIngredientesComponent } from './ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
 
 
 FullCalendarModule.registerPlugins([ 
@@ -45,7 +50,6 @@ FullCalendarModule.registerPlugins([
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
@@ -69,6 +73,11 @@ FullCalendarModule.registerPlugins([
     AdminLayoutComponent,
     HomeComponent,
     CalendarioComponent,
+    NuevaRutinaComponent,
+    TipoRutinaComponent,
+    NuevaTipoRutinaComponent,
+    TipoIngredientesComponent,
+    NuevoTipoIngredientesComponent,
    
     
     
