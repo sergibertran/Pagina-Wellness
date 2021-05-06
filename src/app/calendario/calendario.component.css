@@ -1,0 +1,37 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .ganar-volumen {
+    background-image: url('../../assets/img/ganar_volumen.png');
+    background-size: cover;
+  }
+
+  .perder-peso {
+    background-image: url('../../assets/img/perdida_peso.png');
+    background-size: cover;
+  }
+
+  .mantener-peso {
+    background-image: url('../../assets/img/mantener_peso.png');
+    background-size: cover;
+  }
+
+  .hipertrofia {
+    background-image: url('../../assets/img/hipertrofia.png');
+    background-size: cover;
+  }
+
+  .ganar-fuerza {
+    background-image: url('../../assets/img/fuerza.png');
+    background-size: cover;
+  }
+
+  .hit {
+    background-image: url('../../assets/img/hit.png');
+    background-size: cover;
+  }
+
+  button {
+    margin-left: 240px;
+  }

@@ -76,10 +76,10 @@ FullCalendarModule.registerPlugins([
     TipoEjercicioComponent,
     RutinaComponent,
     NuevoEjercicioComponent,
-     NuevoTipoEjercicioComponent,
+    NuevoTipoEjercicioComponent,
     NuevoTipoDietaComponent,
     NuevoDietaComponent,
-    IngredientesComponent
+    IngredientesComponent,
 
   ]
 })
