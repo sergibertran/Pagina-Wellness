@@ -1,10 +1,10 @@
+import { IngredientesComponent } from './../../ingredientes/ingredientes/ingredientes.component';
 import { NuevoTipoPlatoComponent } from '../../platos/nuevo-tipo-plato/nuevo-tipo-plato.component';
 import { TipoPlatoComponent } from './../../platos/tipo-plato/tipo-plato.component';
 import { NuevoIngredienteComponent } from '../../ingredientes/nuevo-ingrediente/nuevo-ingrediente.component';
 import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TypographyComponent } from '../../ingredientes/typography/typography.component';
 import { PlatosComponent } from 'app/platos/platos.component';
 import { NuevoPlatoComponent } from 'app/platos/nuevo-plato/nuevo-plato.component';
 import { DietaComponent } from 'app/dieta/dieta.component';
@@ -27,7 +27,7 @@ import { CalendarioComponent } from 'app/calendario/calendario.component';
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'typography',     component: TypographyComponent },
+    { path: 'Ingredientes',   component: IngredientesComponent },
     { path: 'NuevoIngrediente',  component: NuevoIngredienteComponent },
     { path: 'TipoIngrediente',  component: TipoIngredientesComponent },
     { path: 'Platos',  component: PlatosComponent },

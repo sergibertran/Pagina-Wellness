@@ -1,3 +1,4 @@
+import { IngredientesComponent } from './../../ingredientes/ingredientes/ingredientes.component';
 import { NuevoTipoPlatoComponent } from '../../platos/nuevo-tipo-plato/nuevo-tipo-plato.component';
 import { TipoPlatoComponent } from './../../platos/tipo-plato/tipo-plato.component';
 import { NuevoPlatoComponent } from './../../platos/nuevo-plato/nuevo-plato.component';
@@ -9,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TypographyComponent } from '../../ingredientes/typography/typography.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -63,7 +63,6 @@ FullCalendarModule.registerPlugins([
   declarations: [
     DashboardComponent,
     UserProfileComponent,
-    TypographyComponent,
     CalendarioComponent,
     NuevoIngredienteComponent,
     PlatosComponent,
@@ -79,7 +78,8 @@ FullCalendarModule.registerPlugins([
     NuevoEjercicioComponent,
      NuevoTipoEjercicioComponent,
     NuevoTipoDietaComponent,
-    NuevoDietaComponent
+    NuevoDietaComponent,
+    IngredientesComponent
 
   ]
 })

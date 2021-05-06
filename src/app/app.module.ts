@@ -35,6 +35,7 @@ import { NuevaTipoRutinaComponent } from './rutina/nueva-tipo-rutina/nueva-tipo-
 import { TipoIngredientesComponent } from './ingredientes/tipo-ingredientes/tipo-ingredientes.component';
 import { NuevoTipoIngredientesComponent } from './ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
 import { EquestaInicialComponent } from './equesta-inicial/equesta-inicial.component';
+import { IngredientesComponent } from './ingredientes/ingredientes/ingredientes.component';
 
 
 FullCalendarModule.registerPlugins([ 
@@ -78,6 +79,7 @@ FullCalendarModule.registerPlugins([
     TipoIngredientesComponent,
     NuevoTipoIngredientesComponent,
     EquestaInicialComponent,
+    IngredientesComponent,
    
     
     
