@@ -29,12 +29,6 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { NuevaRutinaComponent } from './rutina/nueva-rutina/nueva-rutina.component';
-import { TipoRutinaComponent } from './rutina/tipo-rutina/tipo-rutina.component';
-import { NuevaTipoRutinaComponent } from './rutina/nueva-tipo-rutina/nueva-tipo-rutina.component';
-import { TipoIngredientesComponent } from './ingredientes/tipo-ingredientes/tipo-ingredientes.component';
-import { NuevoTipoIngredientesComponent } from './ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
-import { IngredientesComponent } from './ingredientes/ingredientes/ingredientes.component';
 import { EnquestaComponent } from './enquesta/enquesta.component';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -75,12 +69,7 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     AdminLayoutComponent,
     HomeComponent,
-    NuevaRutinaComponent,
-    TipoRutinaComponent,
-    NuevaTipoRutinaComponent,
-    TipoIngredientesComponent,
-    NuevoTipoIngredientesComponent,
-    IngredientesComponent,
+ 
     EnquestaComponent
    
     

@@ -33,10 +33,8 @@ import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component
 import { CalendarioComponent } from 'app/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
-
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
-import { DietasClientesComponent } from 'app/dieta/dietas-clientes/dietas-clientes.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -78,11 +76,10 @@ FullCalendarModule.registerPlugins([
     TipoEjercicioComponent,
     RutinaComponent,
     NuevoEjercicioComponent,
-    NuevoTipoEjercicioComponent,
+     NuevoTipoEjercicioComponent,
     NuevoTipoDietaComponent,
     NuevoDietaComponent,
-    IngredientesComponent,
-    DietasClientesComponent,
+    IngredientesComponent
 
   ]
 })
