@@ -10,7 +10,7 @@
                 <mat-form-field>
                     <mat-label>Nombre</mat-label>
                     <input matInput formControlName="Nombre" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }">
                     <mat-error *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
                         <div *ngIf="f.Nombre.errors.required">El Nombre es obligatorio</div>
                     </mat-error>
@@ -20,7 +20,7 @@
                 <mat-form-field>
                     <mat-label>Apellidos</mat-label>
                     <input matInput formControlName="Apellidos" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }">
                     <mat-error *ngIf="submitted && f.Apellidos.errors" class="invalid-feedback">
                         <div *ngIf="f.Apellidos.errors.required">El Apellido es obligatorio</div>
                     </mat-error>
@@ -29,7 +29,7 @@
             <div>
                 <mat-label>Sexo:</mat-label>
                 <div>
-                    <mat-radio-group required>
+                    <mat-radio-group formControlName="Sexo">
                         <mat-radio-button value="Hombre">Hombre</mat-radio-button>
                         <br>
                         <mat-radio-button value="Mujer">Mujer</mat-radio-button>
@@ -40,7 +40,7 @@
                 <mat-form-field>
                     <mat-label>Correo electrónico</mat-label>
                     <input matInput formControlName="Email" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
                     <mat-error *ngIf="submitted && f.Email.errors" class="invalid-feedback">
                         <div *ngIf="f.Email.errors.required">El Correo electrónico es obligatorio</div>
                     </mat-error>
@@ -50,7 +50,7 @@
                 <mat-form-field>
                     <mat-label>Edad</mat-label>
                     <input matInput formControlName="Edad" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Edad.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Edad.errors }">
                     <mat-error *ngIf="submitted && f.Edad.errors" class="invalid-feedback">
                         <div *ngIf="f.Edad.errors.required">La Edad es obligatorio</div>
                     </mat-error>
@@ -59,11 +59,11 @@
             <div>
                 <mat-form-field>
                     <mat-label>Antecedentes patológicos</mat-label>
-                    <input matInput formControlName="Antecedentes"  class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.Antecedentes.errors }" >
-                <mat-error *ngIf="submitted && f.Antecedentes.errors" class="invalid-feedback">
-                    <div *ngIf="f.Antecedentes.errors.required">Los Antecedentes patológicos es obligatorio</div>
-                </mat-error>
+                    <input matInput formControlName="Antecedentes" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Antecedentes.errors }">
+                    <mat-error *ngIf="submitted && f.Antecedentes.errors" class="invalid-feedback">
+                        <div *ngIf="f.Antecedentes.errors.required">Los Antecedentes patológicos es obligatorio</div>
+                    </mat-error>
                     <mat-hint>Obesidad,
                         Hipercolesterolemia,
                         Diabetes mellitus,
@@ -79,10 +79,10 @@
                     <mat-label>¿Algún familiar biológico ha padecido alguna de las anteriores patologías?¿Cuales son?
                     </mat-label>
                     <input matInput formControlName="FamBio" class="form-control"
-                    [ngClass]="{ 'is-invalid': submitted && f.FamBio.errors }" >
-                <mat-error *ngIf="submitted && f.FamBio.errors" class="invalid-feedback">
-                    <div *ngIf="f.FamBio.errors.required">El Campo es obligatorio</div>
-                </mat-error>
+                        [ngClass]="{ 'is-invalid': submitted && f.FamBio.errors }">
+                    <mat-error *ngIf="submitted && f.FamBio.errors" class="invalid-feedback">
+                        <div *ngIf="f.FamBio.errors.required">El Campo es obligatorio</div>
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
@@ -94,7 +94,7 @@
                 <mat-form-field>
                     <mat-label>Peso</mat-label>
                     <input matInput formControlName="Peso" placeholder="en kg" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Peso.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Peso.errors }">
                     <mat-error *ngIf="submitted && f.Peso.errors" class="invalid-feedback">
                         <div *ngIf="f.Peso.errors.required">El Peso es obligatorio</div>
                     </mat-error>
@@ -104,7 +104,7 @@
                 <mat-form-field>
                     <mat-label>Altura</mat-label>
                     <input matInput formControlName="Altura" placeholder="en cm" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Altura.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Altura.errors }">
                     <mat-error *ngIf="submitted && f.Altura.errors" class="invalid-feedback">
                         <div *ngIf="f.Altura.errors.required">La Altura es obligatorio</div>
                     </mat-error>
@@ -114,7 +114,7 @@
                 <mat-form-field>
                     <mat-label>Circunferencia de la cintura</mat-label>
                     <input matInput formControlName="Cintura" placeholder="en cm" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Cintura.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Cintura.errors }">
                     <mat-error *ngIf="submitted && f.Cintura.errors" class="invalid-feedback">
                         <div *ngIf="f.Cintura.errors.required">La Cintura es obligatorio</div>
                     </mat-error>
@@ -124,7 +124,7 @@
                 <mat-form-field>
                     <mat-label>Circunferencia de la cadera</mat-label>
                     <input matInput formControlName="Cadera" placeholder="en cm" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.Cadera.errors }" >
+                        [ngClass]="{ 'is-invalid': submitted && f.Cadera.errors }">
                     <mat-error *ngIf="submitted && f.Cadera.errors" class="invalid-feedback">
                         <div *ngIf="f.Cadera.errors.required">La Cadera es obligatorio</div>
                     </mat-error>
@@ -138,7 +138,7 @@
             <div>
                 <mat-label>¿Posee alguna intolerancia o alergia alimentaria?</mat-label>
                 <div>
-                    <mat-radio-group required>
+                    <mat-radio-group formControlName="Intolerancia">
                         <!-- Intolerancia  -->
                         <mat-radio-button value="Si">Si</mat-radio-button><br>
                         <mat-radio-button value="No">No</mat-radio-button>
@@ -148,12 +148,12 @@
             <div>
                 <mat-form-field>
                     <mat-label>Si es que sí…¿Cuál?</mat-label>
-                    <input matInput id="IntoleranciaEx">
+                    <input matInput formControlName="IntoleranciaEx">
                 </mat-form-field>
             </div>
             <div>
                 <mat-label>¿ Estás siguiendo alguna dieta? Vegana, vegetariana, keto, etc...</mat-label>
-                <mat-radio-group required> <br>
+                <mat-radio-group formControlName="Dieta"> <br>
                     <!-- Dieta -->
                     <mat-radio-button value="Si">Si</mat-radio-button><br>
                     <mat-radio-button value="No">No</mat-radio-button>
@@ -162,14 +162,14 @@
             <div>
                 <mat-form-field>
                     <mat-label>Si es que sí…¿Cuál?</mat-label>
-                    <input matInput id="DietaEx">
+                    <input matInput formControlName="DietaEx">
                 </mat-form-field>
             </div>
             <div>
                 <div class="row">
                     <div class="col-sm-3">
                         <mat-label>Consumo de lácteos</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Lacteos"><br>
                             <mat-radio-button value="Lacteos_mas4dia">+ de 4 al día</mat-radio-button><br>
                             <mat-radio-button value="Lacteos_2a3dia">2 a 3 día</mat-radio-button><br>
                             <mat-radio-button value="Lacteos_1dia">1 día</mat-radio-button><br>
@@ -179,7 +179,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de huevos</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Huevos"><br>
                             <mat-radio-button value="huevos_mas7dia">+ de 7 al día</mat-radio-button><br>
                             <mat-radio-button value="huevos_3a5semana">3 a 5 a la semana</mat-radio-button><br>
                             <mat-radio-button value="huevos_2dia">2 al día</mat-radio-button><br>
@@ -189,7 +189,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de fruta</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Fruta"><br>
                             <mat-radio-button value="Fruta_mas4dia">+ de 4 al día</mat-radio-button><br>
                             <mat-radio-button value="Fruta_2a3dia">2 a 3 día</mat-radio-button><br>
                             <mat-radio-button value="Fruta_1dia">1 día</mat-radio-button><br>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="col-sm-3">
                         <mat-label>Consumo de legumbres</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Legumbres"><br>
                             <mat-radio-button value="Legumbres_mas4semana">+ de 4 a la semana</mat-radio-button><br>
                             <mat-radio-button value="Legumbres_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
                             <mat-radio-button value="Legumbres_1semana">1 vez a la semana</mat-radio-button><br>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de carne</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Carne"><br>
                             <mat-radio-button value="Carne_mas4semana">+ de 4 a la semana</mat-radio-button><br>
                             <mat-radio-button value="Carne_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
                             <mat-radio-button value="Carne_1semana">1 vez a la semana</mat-radio-button><br>
@@ -219,7 +219,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de carne procesada o embutido</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Lacteos" CarneProcesada><br>
                             <mat-radio-button value="CarneProcesada_mas4semana">+ de 4 a la semana</mat-radio-button>
                             <br>
                             <mat-radio-button value="CarneProcesada_2a3semana">2 a 3 veces a la semana
@@ -232,7 +232,7 @@
                     </div>
                     <div class="col-sm-3">
                         <mat-label>Consumo de pescado</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Pescado"><br>
                             <mat-radio-button value="Pescado_mas4semana">+ de 4 a la semana</mat-radio-button><br>
                             <mat-radio-button value="Pescado_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
                             <mat-radio-button value="Pescado_1semana">1 vez a la semana</mat-radio-button><br>
@@ -242,7 +242,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de bollería o galletas</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="Bolleria"><br>
                             <mat-radio-button value="Bolleria_mas4semana">+ de 4 a la semana</mat-radio-button><br>
                             <mat-radio-button value="Bolleria_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
                             <mat-radio-button value="Bolleria_1semana">1 vez a la semana</mat-radio-button><br>
@@ -252,7 +252,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Consumo de alimentos procesados</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="AlimentosProcesados"><br>
                             <mat-radio-button value="AlimentosProcesados_mas4semana">+ de 4 a la semana
                             </mat-radio-button>
                             <br>
@@ -268,7 +268,7 @@
                     </div>
                     <div class="col-sm-3">
                         <mat-label>Consumo de comida ràpida</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="ComidaRapida"><br>
                             <mat-radio-button value="ComidaRapida_mas4semana">+ de 4 a la semana</mat-radio-button><br>
                             <mat-radio-button value="ComidaRapida_2a3semana">2 a 3 veces a la semana</mat-radio-button>
                             <br>
@@ -279,7 +279,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Bebidas azucaradas</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="BebidasAzucarada"><br>
                             <mat-radio-button value="BebidasAzucarada_mas4semana">+ de 4 a la semana</mat-radio-button>
                             <br>
                             <mat-radio-button value="BebidasAzucarada_2a3semana">2 a 3 veces a la semana
@@ -292,7 +292,7 @@
                     </div>
                     <div class="col-sm-4">
                         <mat-label>Bebidas alcohólicas</mat-label>
-                        <mat-radio-group required><br>
+                        <mat-radio-group formControlName="BebidasAlcoholicas"><br>
                             <mat-radio-button value="BebidasAlcoholicas_mas4semana">+ de 4 a la semana
                             </mat-radio-button>
                             <br>
@@ -308,19 +308,21 @@
                     </div>
                 </div>
                 <div>
-                    <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
-                    <input matInput formControlName="AlimentoExeso" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.AlimentoExeso.errors }" >
-                    <mat-error *ngIf="submitted && f.AlimentoExeso.errors" class="invalid-feedback">
-                        <div *ngIf="f.AlimentoExeso.errors.required">El campo es obligatorio</div>
-                    </mat-error>
+                    <mat-form-field>
+                        <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
+                        <input matInput formControlName="AlimentoExeso" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.AlimentoExeso.errors }">
+                        <mat-error *ngIf="submitted && f.AlimentoExeso.errors" class="invalid-feedback">
+                            <div *ngIf="f.AlimentoExeso.errors.required">La Campo es obligatorio</div>
+                        </mat-error>
+                    </mat-form-field>
                 </div>
             </div>
 
             <br>
         </div>
 
-        <button type="submit" button [disabled]="registerForm.invalid" class="btn btn-primary">Enviar Enquesta</button>
+        <button type="submit" class="btn btn-primary">Enviar Enquesta</button>
     </form>
     <br>
 

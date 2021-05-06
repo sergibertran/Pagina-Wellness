@@ -34,6 +34,7 @@ export class EnquestaComponent implements OnInit {
       Intolerancia: ['', Validators.required],
       IntoleranciaEx: ['', Validators.required],
       Dieta: ['', Validators.required],
+      DietaEx: ['', Validators.required],
       Lacteos: ['', Validators.required],
       Huevos: ['', Validators.required],
       Fruta: ['', Validators.required],
@@ -60,6 +61,9 @@ onSubmit() {
       return;
   }
 
+  // display form values on success
+  console.log(this.registerForm);
+  
 
 }
 
