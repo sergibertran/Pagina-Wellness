@@ -4,8 +4,10 @@ import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { usuario } from 'app/models/usuario';
+declare let $: any;
 import Swal from 'sweetalert2';
 import { AuthService } from 'app/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   LoginForm: FormGroup;
   RegisterForm: FormGroup;
-  constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,) {
+  constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
     this.LoginForm = this.fb.group({
       'username': [''],
       'password': ['']
@@ -46,6 +48,7 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('user', this.LoginForm.value['username']);
     localStorage.setItem('password', this.LoginForm.value['password']);
   
+    this.router.navigate(['/dashboard']);
 
   }
 
@@ -68,6 +71,11 @@ export class HomeComponent implements OnInit {
      
       }
     )
+    }
+
+    test(){
+      $('#modalLoginForm').modal("hide");
+
     }
 
 }
