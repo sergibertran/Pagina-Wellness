@@ -1,33 +1,34 @@
 export class enquesta {
-    Nombre: string;
-    Apellidos: string;
-    Sexo: string;
-    Email: string; 
-    Edad: string;
-    Antecedentes: string;
-    FamBio: string; 
-    Peso: string;
-    Altura: string;
-    Cintura: string;
-    Cadera: string;
-    Intolerancia: string;
-    IntoleranciaEx: string;
-    Dieta: string;
-    DietaEx: string;
-    Lacteos: string;
-    Huevos: string;
-    Fruta: string;
-    Legumbres: string;
-    Carne: string;
-    CarneProcesada: string;
-    Pescado: string;
-    Bolleria: string;
-    AlimentosProcesados: string;
-    ComidaRapida: string;
-    BebidasAzucarada: string;
-    BebidasAlcoholicas: string;
-    AlimentoExeso: string;
-
+  constructor(
+    public ombre: string,
+    public Apellidos: string,
+    public Sexo: string,
+    public Email: string, 
+    public Edad: string,
+    public Antecedentes: string,
+    public FamBio: string,
+    public Peso: string,
+    public Altura: string,
+    public Cintura: string,
+    public Cadera: string,
+    public Intolerancia: string,
+    public IntoleranciaEx: string,
+    public Dieta: string,
+    public DietaEx: string,
+    public Lacteos: string,
+    public Huevos: string,
+    public Fruta: string,
+    public Legumbres: string,
+    public Carne: string,
+    public CarneProcesada: string,
+    public Pescado: string,
+    public Bolleria: string,
+    public AlimentosProcesados: string,
+    public ComidaRapida: string,
+    public BebidasAzucarada: string,
+    public BebidasAlcoholicas: string,
+    public AlimentoExeso: string,
+    ){}
   }
   
   

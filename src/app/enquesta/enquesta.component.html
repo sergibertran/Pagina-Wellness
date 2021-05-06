@@ -2,6 +2,7 @@
 <br><br>
 <div class="container">
     <div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <h3>DATOS GENERALES</h3>
         <div>
             <mat-form-field>
@@ -111,6 +112,7 @@
         <div>
             <mat-label>¿ Estás siguiendo alguna dieta? Vegana, vegetariana, keto, etc...</mat-label>
             <mat-radio-group required> <br>
+                <!-- Dieta -->
                 <mat-radio-button value="Si">Si</mat-radio-button><br>
                 <mat-radio-button value="No">No</mat-radio-button>
             </mat-radio-group>
@@ -118,7 +120,7 @@
         <div>
             <mat-form-field>
                 <mat-label>Si es que sí…¿Cuál?</mat-label>
-                <input matInput id="Dieta">
+                <input matInput id="DietaEx">
             </mat-form-field>
         </div>
         <div class="row">
@@ -254,7 +256,7 @@
         <br>
 
         <button type="submit" class="btn btn-primary">Enviar Enquesta</button>
-
+    </form>
         <br>
 
         <br>
