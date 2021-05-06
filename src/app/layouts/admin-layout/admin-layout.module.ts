@@ -35,6 +35,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
+import { EnquestaComponent } from 'app/enquesta/enquesta.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -57,7 +59,8 @@ FullCalendarModule.registerPlugins([
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
     
   ],
   declarations: [
@@ -80,6 +83,7 @@ FullCalendarModule.registerPlugins([
     NuevoTipoDietaComponent,
     NuevoDietaComponent,
     IngredientesComponent,
+    EnquestaComponent
 
   ]
 })

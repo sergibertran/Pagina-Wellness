@@ -29,7 +29,6 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { EnquestaComponent } from './enquesta/enquesta.component';
 import { MatRadioModule } from '@angular/material/radio';
 
 
@@ -70,7 +69,7 @@ FullCalendarModule.registerPlugins([
     AdminLayoutComponent,
     HomeComponent,
  
-    EnquestaComponent
+   
    
     
     
