@@ -11,7 +11,6 @@ import { from } from 'rxjs';
 
 const routes: Routes =[
   { path: 'home', component: HomeComponent},
-  { path: 'calendario', component: CalendarioComponent},
   {
     path: '',
     redirectTo: 'home',

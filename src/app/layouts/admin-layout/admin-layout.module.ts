@@ -36,10 +36,20 @@ import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ej
 import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
 import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
 import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
+import { CalendarioComponent } from 'app/calendario/calendario.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
+import dayGridPlugin from '@fullcalendar/daygrid'; 
+import interactionPlugin from '@fullcalendar/interaction'; 
+
+FullCalendarModule.registerPlugins([ 
+  dayGridPlugin,
+  interactionPlugin
+]);
 
 @NgModule({
   imports: [
+    FullCalendarModule,
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
@@ -63,6 +73,7 @@ import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component
     TypographyComponent,
     IconsComponent,
     MapsComponent,
+    CalendarioComponent,
     NotificationsComponent,
     UpgradeComponent,
     NuevoIngredienteComponent,

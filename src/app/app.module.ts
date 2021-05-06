@@ -29,7 +29,6 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { CalendarioComponent } from './calendario/calendario.component';
 import { NuevaRutinaComponent } from './rutina/nueva-rutina/nueva-rutina.component';
 import { TipoRutinaComponent } from './rutina/tipo-rutina/tipo-rutina.component';
 import { NuevaTipoRutinaComponent } from './rutina/nueva-tipo-rutina/nueva-tipo-rutina.component';
@@ -72,7 +71,6 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     AdminLayoutComponent,
     HomeComponent,
-    CalendarioComponent,
     NuevaRutinaComponent,
     TipoRutinaComponent,
     NuevaTipoRutinaComponent,

@@ -48,7 +48,13 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('user', this.LoginForm.value['username']);
     localStorage.setItem('password', this.LoginForm.value['password']);
   
-    this.router.navigate(['/dashboard']);
+    if('admin'==localStorage.getItem('user')){
+      this.router.navigate(['/dashboard']);
+    }else{
+      this.router.navigate(['/Calendario']);
+    }
+    
+   
 
   }
 

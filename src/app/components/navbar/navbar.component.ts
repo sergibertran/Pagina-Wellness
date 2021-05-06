@@ -122,4 +122,19 @@ export class NavbarComponent implements OnInit {
       }
       return 'Dashboard';
     }
+
+
+    logout(){
+
+        
+   
+
+        localStorage.removeItem('user');
+        localStorage.removeItem('password');
+        this.router.navigate(['']);
+    
+  
+
+
+    }
 }

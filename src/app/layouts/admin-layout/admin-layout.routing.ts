@@ -26,6 +26,7 @@ import { TipoRutinaComponent } from 'app/rutina/tipo-rutina/tipo-rutina.componen
 import { NuevaTipoRutinaComponent } from 'app/rutina/nueva-tipo-rutina/nueva-tipo-rutina.component';
 import { NuevoTipoIngredientesComponent } from 'app/ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
 import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
+import { CalendarioComponent } from 'app/calendario/calendario.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -39,6 +40,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'NuevoIngrediente',  component: NuevoIngredienteComponent },
     { path: 'TipoIngrediente',  component: TipoIngredientesComponent },
     { path: 'Platos',  component: PlatosComponent },
+    { path: 'Calendario',  component: CalendarioComponent },
     { path: 'NuevoPlato',  component: NuevoPlatoComponent },
     { path: 'TipoPlato',  component: TipoPlatoComponent },
     { path: 'NuevoTipoPlato',  component: NuevoTipoPlatoComponent },
