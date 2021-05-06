@@ -119,7 +119,7 @@
             </mat-form-field>
         </div>
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm-3">
                 <mat-label>Consumo de lácteos</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Lacteos_mas4dia">+ de 4 al día</mat-radio-button><br>
@@ -129,7 +129,7 @@
                     <mat-radio-button value="Lacteos_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de huevos</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="huevos_mas7dia">+ de 7 al día</mat-radio-button><br>
@@ -139,7 +139,7 @@
                     <mat-radio-button value="heuvos_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de fruta</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Fruta_mas4dia">+ de 4 al día</mat-radio-button><br>
@@ -149,7 +149,7 @@
                     <mat-radio-button value="Fruta_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-3">
                 <mat-label>Consumo de legumbres</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Legumbres_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -159,7 +159,7 @@
                     <mat-radio-button value="Legumbres_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de carne</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Carne_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -169,7 +169,7 @@
                     <mat-radio-button value="Carne_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de carne procesada o embutido</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="CarneProcesada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -179,7 +179,7 @@
                     <mat-radio-button value="CarneProcesada_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-3">
                 <mat-label>Consumo de pescado</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Pescado_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -189,7 +189,7 @@
                     <mat-radio-button value="Pescado_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de bollería o galletas</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="Bolleria_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -199,7 +199,7 @@
                     <mat-radio-button value="Bolleria_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Consumo de alimentos procesados</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="AlimentosProcesados_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -210,7 +210,7 @@
                     <mat-radio-button value="AlimentosProcesados_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-3">
                 <mat-label>Consumo de comida ràpida</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="ComidaRapida_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -220,7 +220,7 @@
                     <mat-radio-button value="ComidaRapida_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Bebidas azucaradas</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="BebidasAzucarada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -230,7 +230,7 @@
                     <mat-radio-button value="BebidasAzucarada_nunca">Nunca</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <mat-label>Bebidas alcohólicas</mat-label>
                 <mat-radio-group required><br>
                     <mat-radio-button value="BebidasAlcoholicas_mas4semana">+ de 4 a la semana</mat-radio-button><br>
@@ -244,10 +244,14 @@
         </div>
         <div>
             <mat-form-field>
-                <mat-label>¿Crees que consumes algún alimento en exceso??</mat-label>
+                <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
                 <input matInput [formControlName]="AlimentoExeso">
             </mat-form-field>
         </div>
+
+        <button type="submit" class="btn btn-primary">Enviar Enquesta</button>
+
+
 
 
     </div>
