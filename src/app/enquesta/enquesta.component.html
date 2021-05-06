@@ -1,270 +1,298 @@
-<button mat-raised-button routerLink="/user-profile" routerLinkActive="active" class="btn btn-danger pull-right">Volver</button>
+<button mat-raised-button routerLink="/user-profile" routerLinkActive="active"
+    class="btn btn-danger pull-right">Volver</button>
 <br><br>
 <div class="container">
-    <div>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <h3>DATOS GENERALES</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
         <div>
-            <mat-form-field>
-                <mat-label>Nombre</mat-label>
-                <input matInput id="Nombre" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Apellidos</mat-label>
-                <input matInput id="Apellidos" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-label>Sexo:</mat-label>
+            <h3>DATOS GENERALES</h3>
             <div>
-                <mat-radio-group required>
-                    <mat-radio-button value="Hombre">Hombre</mat-radio-button>
-                    <br>
-                    <mat-radio-button value="Mujer">Mujer</mat-radio-button>
-                </mat-radio-group>
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="Nombre" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }">
+                    <mat-error *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
+                        <div *ngIf="f.Nombre.errors.required">El Nombre es obligatorio</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput formControlName="Apellidos" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Apellidos.errors }">
+                    <mat-error *ngIf="submitted && f.Apellidos.errors" class="invalid-feedback">
+                        <div *ngIf="f.Apellidos.errors.required">El Nombre es obligatorio</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-label>Sexo:</mat-label>
+                <div>
+                    <mat-radio-group required>
+                        <mat-radio-button value="Hombre">Hombre</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="Mujer">Mujer</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput formControlName="Email" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Email.errors }">
+                    <mat-error *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                        <div *ngIf="f.Email.errors.required">El Nombre es obligatorio</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Edad</mat-label>
+                    <input matInput formControlName="Edad" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.Edad.errors }">
+                    <mat-error *ngIf="submitted && f.Edad.errors" class="invalid-feedback">
+                        <div *ngIf="f.Edad.errors.required">El Nombre es obligatorio</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Antecedentes patológicos</mat-label>
+                    <input matInput formControlName="Antecedentes" required>
+                    <mat-hint>Obesidad,
+                        Hipercolesterolemia,
+                        Diabetes mellitus,
+                        Hipotiroidismo,
+                        Hipertensión,
+                        Cáncer,
+                        ECV, ...
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>¿Algún familiar biológico ha padecido alguna de las anteriores patologías?¿Cuales son?
+                    </mat-label>
+                    <input matInput formControlName="FamBio" required>
+                </mat-form-field>
             </div>
         </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Correo electrónico</mat-label>
-                <input matInput id="Email" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Edad</mat-label>
-                <input matInput id="Edad" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Antecedentes patológicos</mat-label>
-                <input matInput id="Antecedentes" required>
-                <mat-hint>Obesidad,
-                    Hipercolesterolemia,
-                    Diabetes mellitus,
-                    Hipotiroidismo,
-                    Hipertensión,
-                    Cáncer,
-                    ECV, ...
-                </mat-hint>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>¿Algún familiar biológico ha padecido alguna de las anteriores patologías?¿Cuales son?
-                </mat-label>
-                <input matInput id="FamBio" required>
-            </mat-form-field>
-        </div>
-    </div>
 
-    <div>
-        <br><br>
-        <h3>DATOS ANTROPOMÉTRICOS</h3>
         <div>
-            <mat-form-field>
-                <mat-label>Peso</mat-label>
-                <input matInput id="Peso" placeholder="en kg" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Altura</mat-label>
-                <input matInput id="Altura" placeholder="en cm" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Circunferencia de la cintura</mat-label>
-                <input matInput id="Cintura" placeholder="en cm" required>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Circunferencia de la cadera</mat-label>
-                <input matInput id="Cadera" placeholder="en cm" required>
-            </mat-form-field>
-        </div>
-    </div>
-    <br><br>
-    <div>
-        <h3>ENCUESTA DIETÉTICA</h3>
-        <br>
-        <div>
-            <mat-label>¿Posee alguna intolerancia o alergia alimentaria?</mat-label>
+            <br><br>
+            <h3>DATOS ANTROPOMÉTRICOS</h3>
             <div>
-                <mat-radio-group required>
-                   <!-- Intolerancia  -->
+                <mat-form-field>
+                    <mat-label>Peso</mat-label>
+                    <input matInput id="Peso" formControlName="Peso"  placeholder="en kg" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.Peso.errors }">
+                <mat-error *ngIf="submitted && f.Peso.errors" class="invalid-feedback">
+                    <div *ngIf="f.Peso.errors.required">El Nombre es obligatorio</div>
+                </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Altura</mat-label>
+                    <input matInput id="Altura" formControlName="Altura" placeholder="en cm" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Circunferencia de la cintura</mat-label>
+                    <input matInput id="Cintura" placeholder="en cm" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Circunferencia de la cadera</mat-label>
+                    <input matInput id="Cadera" placeholder="en cm" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <h3>ENCUESTA DIETÉTICA</h3>
+            <br>
+            <div>
+                <mat-label>¿Posee alguna intolerancia o alergia alimentaria?</mat-label>
+                <div>
+                    <mat-radio-group required>
+                        <!-- Intolerancia  -->
+                        <mat-radio-button value="Si">Si</mat-radio-button><br>
+                        <mat-radio-button value="No">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Si es que sí…¿Cuál?</mat-label>
+                    <input matInput id="IntoleranciaEx">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-label>¿ Estás siguiendo alguna dieta? Vegana, vegetariana, keto, etc...</mat-label>
+                <mat-radio-group required> <br>
+                    <!-- Dieta -->
                     <mat-radio-button value="Si">Si</mat-radio-button><br>
                     <mat-radio-button value="No">No</mat-radio-button>
                 </mat-radio-group>
             </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Si es que sí…¿Cuál?</mat-label>
+                    <input matInput id="DietaEx">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <mat-label>Consumo de lácteos</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Lacteos_mas4dia">+ de 4 al día</mat-radio-button><br>
+                        <mat-radio-button value="Lacteos_2a3dia">2 a 3 día</mat-radio-button><br>
+                        <mat-radio-button value="Lacteos_1dia">1 día</mat-radio-button><br>
+                        <mat-radio-button value="Lacteos_3a5semana">3 a 5 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Lacteos_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de huevos</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="huevos_mas7dia">+ de 7 al día</mat-radio-button><br>
+                        <mat-radio-button value="huevos_3a5semana">3 a 5 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="huevos_2dia">2 al día</mat-radio-button><br>
+                        <mat-radio-button value="huevos_1a2dia">1 o 2 al dia</mat-radio-button><br>
+                        <mat-radio-button value="heuvos_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de fruta</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Fruta_mas4dia">+ de 4 al día</mat-radio-button><br>
+                        <mat-radio-button value="Fruta_2a3dia">2 a 3 día</mat-radio-button><br>
+                        <mat-radio-button value="Fruta_1dia">1 día</mat-radio-button><br>
+                        <mat-radio-button value="Fruta_3a5semana">3 a 5 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Fruta_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-3">
+                    <mat-label>Consumo de legumbres</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Legumbres_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Legumbres_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Legumbres_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Legumbres_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="Legumbres_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de carne</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Carne_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Carne_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Carne_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Carne_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="Carne_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de carne procesada o embutido</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="CarneProcesada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="CarneProcesada_2a3semana">2 a 3 veces a la semana</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="CarneProcesada_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="CarneProcesada_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="CarneProcesada_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-3">
+                    <mat-label>Consumo de pescado</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Pescado_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Pescado_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Pescado_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Pescado_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="Pescado_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de bollería o galletas</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="Bolleria_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Bolleria_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Bolleria_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="Bolleria_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="Bolleria_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Consumo de alimentos procesados</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="AlimentosProcesados_mas4semana">+ de 4 a la semana</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="AlimentosProcesados_2a3semana">2 a 3 veces a la semana
+                        </mat-radio-button>
+                        <br>
+                        <mat-radio-button value="AlimentosProcesados_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="AlimentosProcesados_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="AlimentosProcesados_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-3">
+                    <mat-label>Consumo de comida ràpida</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="ComidaRapida_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="ComidaRapida_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
+                        <mat-radio-button value="ComidaRapida_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="ComidaRapida_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="ComidaRapida_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Bebidas azucaradas</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="BebidasAzucarada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
+                        <mat-radio-button value="BebidasAzucarada_2a3semana">2 a 3 veces a la semana</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="BebidasAzucarada_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="BebidasAzucarada_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="BebidasAzucarada_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-sm-4">
+                    <mat-label>Bebidas alcohólicas</mat-label>
+                    <mat-radio-group required><br>
+                        <mat-radio-button value="BebidasAlcoholicas_mas4semana">+ de 4 a la semana</mat-radio-button>
+                        <br>
+                        <mat-radio-button value="BebidasAlcoholicas_2a3semana">2 a 3 veces a la semana
+                        </mat-radio-button>
+                        <br>
+                        <mat-radio-button value="BebidasAlcoholicas_1semana">1 vez a la semana</mat-radio-button><br>
+                        <mat-radio-button value="BebidasAlcoholicas_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
+                        <mat-radio-button value="BebidasAlcoholicas_nunca">Nunca</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
+                        <input matInput id="AlimentoExeso">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <br>
         </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Si es que sí…¿Cuál?</mat-label>
-                <input matInput id="IntoleranciaEx">
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-label>¿ Estás siguiendo alguna dieta? Vegana, vegetariana, keto, etc...</mat-label>
-            <mat-radio-group required> <br>
-                <!-- Dieta -->
-                <mat-radio-button value="Si">Si</mat-radio-button><br>
-                <mat-radio-button value="No">No</mat-radio-button>
-            </mat-radio-group>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>Si es que sí…¿Cuál?</mat-label>
-                <input matInput id="DietaEx">
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <mat-label>Consumo de lácteos</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Lacteos_mas4dia">+ de 4 al día</mat-radio-button><br>
-                    <mat-radio-button value="Lacteos_2a3dia">2 a 3 día</mat-radio-button><br>
-                    <mat-radio-button value="Lacteos_1dia">1 día</mat-radio-button><br>
-                    <mat-radio-button value="Lacteos_3a5semana">3 a 5 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Lacteos_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de huevos</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="huevos_mas7dia">+ de 7 al día</mat-radio-button><br>
-                    <mat-radio-button value="huevos_3a5semana">3 a 5 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="huevos_2dia">2 al día</mat-radio-button><br>
-                    <mat-radio-button value="huevos_1a2dia">1 o 2 al dia</mat-radio-button><br>
-                    <mat-radio-button value="heuvos_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de fruta</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Fruta_mas4dia">+ de 4 al día</mat-radio-button><br>
-                    <mat-radio-button value="Fruta_2a3dia">2 a 3 día</mat-radio-button><br>
-                    <mat-radio-button value="Fruta_1dia">1 día</mat-radio-button><br>
-                    <mat-radio-button value="Fruta_3a5semana">3 a 5 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Fruta_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-3">
-                <mat-label>Consumo de legumbres</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Legumbres_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Legumbres_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Legumbres_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Legumbres_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="Legumbres_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de carne</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Carne_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Carne_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Carne_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Carne_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="Carne_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de carne procesada o embutido</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="CarneProcesada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="CarneProcesada_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="CarneProcesada_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="CarneProcesada_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="CarneProcesada_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-3">
-                <mat-label>Consumo de pescado</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Pescado_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Pescado_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Pescado_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Pescado_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="Pescado_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de bollería o galletas</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="Bolleria_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Bolleria_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Bolleria_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="Bolleria_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="Bolleria_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Consumo de alimentos procesados</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="AlimentosProcesados_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="AlimentosProcesados_2a3semana">2 a 3 veces a la semana</mat-radio-button>
-                    <br>
-                    <mat-radio-button value="AlimentosProcesados_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="AlimentosProcesados_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="AlimentosProcesados_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-3">
-                <mat-label>Consumo de comida ràpida</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="ComidaRapida_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="ComidaRapida_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="ComidaRapida_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="ComidaRapida_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="ComidaRapida_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Bebidas azucaradas</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="BebidasAzucarada_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAzucarada_2a3semana">2 a 3 veces a la semana</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAzucarada_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAzucarada_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAzucarada_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-sm-4">
-                <mat-label>Bebidas alcohólicas</mat-label>
-                <mat-radio-group required><br>
-                    <mat-radio-button value="BebidasAlcoholicas_mas4semana">+ de 4 a la semana</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAlcoholicas_2a3semana">2 a 3 veces a la semana</mat-radio-button>
-                    <br>
-                    <mat-radio-button value="BebidasAlcoholicas_1semana">1 vez a la semana</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAlcoholicas_1a2mes">1 o 2 veces al mes</mat-radio-button><br>
-                    <mat-radio-button value="BebidasAlcoholicas_nunca">Nunca</mat-radio-button>
-                </mat-radio-group>
-            </div>
-        </div>
-        <div>
-            <mat-form-field>
-                <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
-                <input matInput id="AlimentoExeso">
-            </mat-form-field>
-        </div>
-        <br>
 
         <button type="submit" class="btn btn-primary">Enviar Enquesta</button>
     </form>
-        <br>
+    <br>
 
-        <br>
+    <br>
 
-        <br>
+    <br>
 
 
-
-    </div>
 
 </div>
