@@ -1,22 +1,170 @@
 <br><br>
 <div class="container">
     <div>
+        <h3>DATOS GENERALES</h3>
         <div>
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput >
+                <input matInput [formControlName]="Nombre" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Apellidos</mat-label>
-                <input matInput >
+                <input matInput [formControlName]="Apellidos" required>
             </mat-form-field>
         </div>
         <div>
-            <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">Hombre</mat-radio-button>
-                <mat-radio-button value="2">Mujer</mat-radio-button>
+            <mat-label>Sexo:</mat-label>
+            <div>
+                <mat-radio-group required>
+                    <mat-radio-button value="Hombre">Hombre</mat-radio-button>
+                    <mat-radio-button value="Mujer">Mujer</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Correo electrónico</mat-label>
+                <input matInput [formControlName]="Email" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Edad</mat-label>
+                <input matInput [formControlName]="Edad" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Antecedentes patológicos</mat-label>
+                <input matInput [formControlName]="Antecedentes" required>
+                <mat-hint>Obesidad,
+                    Hipercolesterolemia,
+                    Diabetes mellitus,
+                    Hipotiroidismo,
+                    Hipertensión,
+                    Cáncer,
+                    ECV, ...
+                </mat-hint>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>¿Algún familiar biológico ha padecido alguna de las anteriores patologías?¿Cuales son?
+                </mat-label>
+                <input matInput [formControlName]="FamBio" required>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <br><br>
+        <h3>DATOS ANTROPOMÉTRICOS</h3>
+        <div>
+            <mat-form-field>
+                <mat-label>Peso</mat-label>
+                <input matInput [formControlName]="Peso" placeholder="en kg" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Altura</mat-label>
+                <input matInput [formControlName]="Altura" placeholder="en cm" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Circunferencia de la cintura</mat-label>
+                <input matInput [formControlName]="Cintura" placeholder="en cm" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Circunferencia de la cadera</mat-label>
+                <input matInput [formControlName]="Cadera" placeholder="en cm" required>
+            </mat-form-field>
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <h3>ENCUESTA DIETÉTICA</h3>
+        <div>
+            <mat-label>¿Posee alguna intolerancia o alergia alimentaria?</mat-label>
+            <div>
+                <mat-radio-group required>
+                    <mat-radio-button value="Si">Si</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Si es que sí…¿Cuál?</mat-label>
+                <input matInput [formControlName]="Intolerancia">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-label>¿ Estás siguiendo alguna dieta? Vegana, vegetariana, keto, etc...</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="Si">Si</mat-radio-button>
+                <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Si es que sí…¿Cuál?</mat-label>
+                <input matInput [formControlName]="Dieta">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-label>Consumo de lácteos</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="Lacteos_mas4dia">+ de 4 al día</mat-radio-button>
+                <mat-radio-button value="Lacteos_2a3dia">2 a 3 día</mat-radio-button>
+                <mat-radio-button value="Lacteos_1dia">1 día</mat-radio-button>
+                <mat-radio-button value="Lacteos_3a5semana">3 a 5 a la semana</mat-radio-button>
+                <mat-radio-button value="Lacteos_nunca">Nunca</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <mat-label>Consumo de huevos</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="huevos_mas7dia">+ de 7 al día</mat-radio-button>
+                <mat-radio-button value="huevos_3a5semana">3 a 5 a la semana</mat-radio-button>
+                <mat-radio-button value="huevos_2dia">2 al día</mat-radio-button>
+                <mat-radio-button value="huevos_1a2dia">1 o 2 al dia</mat-radio-button>
+                <mat-radio-button value="heuvos_nunca">Nunca</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <mat-label>Consumo de fruta</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="Fruta_mas4dia">+ de 4 al día</mat-radio-button>
+                <mat-radio-button value="Fruta_2a3dia">2 a 3 día</mat-radio-button>
+                <mat-radio-button value="Fruta_1dia">1 día</mat-radio-button>
+                <mat-radio-button value="Fruta_3a5semana">3 a 5 a la semana</mat-radio-button>
+                <mat-radio-button value="Fruta_nunca">Nunca</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <mat-label>Consumo de legumbres</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="Legumbres_mas4semana">+ de 4 a la semana</mat-radio-button>
+                <mat-radio-button value="Legumbres_2a3semana">2 a 3 veces a la semana</mat-radio-button>
+                <mat-radio-button value="Legumbres_1semana">1 vez a la semana</mat-radio-button>
+                <mat-radio-button value="Legumbres_1a2mes">1 o 2 veces al mes</mat-radio-button>
+                <mat-radio-button value="Legumbres_nunca">Nunca</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            <mat-label>Consumo de carne</mat-label>
+            <mat-radio-group required>
+                <mat-radio-button value="Carne_mas4semana">+ de 4 a la semana</mat-radio-button>
+                <mat-radio-button value="Carne_2a3semana">2 a 3 veces a la semana</mat-radio-button>
+                <mat-radio-button value="Carne_1semana">1 vez a la semana</mat-radio-button>
+                <mat-radio-button value="Carne_1a2mes">1 o 2 veces al mes</mat-radio-button>
+                <mat-radio-button value="Carne_nunca">Nunca</mat-radio-button>
             </mat-radio-group>
         </div>
 

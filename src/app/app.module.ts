@@ -36,6 +36,7 @@ import { TipoIngredientesComponent } from './ingredientes/tipo-ingredientes/tipo
 import { NuevoTipoIngredientesComponent } from './ingredientes/nuevo-tipo-ingredientes/nuevo-tipo-ingredientes.component';
 import { IngredientesComponent } from './ingredientes/ingredientes/ingredientes.component';
 import { EnquestaComponent } from './enquesta/enquesta.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 FullCalendarModule.registerPlugins([ 
@@ -67,7 +68,8 @@ FullCalendarModule.registerPlugins([
     MatCardModule,
     MatTabsModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
   ],
   declarations: [
     AppComponent,
