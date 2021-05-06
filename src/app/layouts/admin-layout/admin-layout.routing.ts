@@ -4,12 +4,7 @@ import { NuevoIngredienteComponent } from '../../ingredientes/nuevo-ingrediente/
 import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../ingredientes/typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { PlatosComponent } from 'app/platos/platos.component';
 import { NuevoPlatoComponent } from 'app/platos/nuevo-plato/nuevo-plato.component';
 import { DietaComponent } from 'app/dieta/dieta.component';
@@ -32,12 +27,7 @@ import { CalendarioComponent } from 'app/calendario/calendario.component';
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'upgrade',        component: UpgradeComponent },
     { path: 'NuevoIngrediente',  component: NuevoIngredienteComponent },
     { path: 'TipoIngrediente',  component: TipoIngredientesComponent },
     { path: 'Platos',  component: PlatosComponent },
