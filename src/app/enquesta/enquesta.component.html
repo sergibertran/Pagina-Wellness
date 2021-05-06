@@ -1,3 +1,4 @@
+<button mat-raised-button routerLink="/user-profile" routerLinkActive="active" class="btn btn-danger pull-right">Volver</button>
 <br><br>
 <div class="container">
     <div>
@@ -5,13 +6,13 @@
         <div>
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput [formControlName]="Nombre" required>
+                <input matInput id="Nombre" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Apellidos</mat-label>
-                <input matInput [formControlName]="Apellidos" required>
+                <input matInput id="Apellidos" required>
             </mat-form-field>
         </div>
         <div>
@@ -27,19 +28,19 @@
         <div>
             <mat-form-field>
                 <mat-label>Correo electrónico</mat-label>
-                <input matInput [formControlName]="Email" required>
+                <input matInput id="Email" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Edad</mat-label>
-                <input matInput [formControlName]="Edad" required>
+                <input matInput id="Edad" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Antecedentes patológicos</mat-label>
-                <input matInput [formControlName]="Antecedentes" required>
+                <input matInput id="Antecedentes" required>
                 <mat-hint>Obesidad,
                     Hipercolesterolemia,
                     Diabetes mellitus,
@@ -54,7 +55,7 @@
             <mat-form-field>
                 <mat-label>¿Algún familiar biológico ha padecido alguna de las anteriores patologías?¿Cuales son?
                 </mat-label>
-                <input matInput [formControlName]="FamBio" required>
+                <input matInput id="FamBio" required>
             </mat-form-field>
         </div>
     </div>
@@ -65,35 +66,37 @@
         <div>
             <mat-form-field>
                 <mat-label>Peso</mat-label>
-                <input matInput [formControlName]="Peso" placeholder="en kg" required>
+                <input matInput id="Peso" placeholder="en kg" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Altura</mat-label>
-                <input matInput [formControlName]="Altura" placeholder="en cm" required>
+                <input matInput id="Altura" placeholder="en cm" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Circunferencia de la cintura</mat-label>
-                <input matInput [formControlName]="Cintura" placeholder="en cm" required>
+                <input matInput id="Cintura" placeholder="en cm" required>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
                 <mat-label>Circunferencia de la cadera</mat-label>
-                <input matInput [formControlName]="Cadera" placeholder="en cm" required>
+                <input matInput id="Cadera" placeholder="en cm" required>
             </mat-form-field>
         </div>
     </div>
     <br><br>
     <div>
         <h3>ENCUESTA DIETÉTICA</h3>
+        <br>
         <div>
             <mat-label>¿Posee alguna intolerancia o alergia alimentaria?</mat-label>
             <div>
                 <mat-radio-group required>
+                   <!-- Intolerancia  -->
                     <mat-radio-button value="Si">Si</mat-radio-button><br>
                     <mat-radio-button value="No">No</mat-radio-button>
                 </mat-radio-group>
@@ -102,7 +105,7 @@
         <div>
             <mat-form-field>
                 <mat-label>Si es que sí…¿Cuál?</mat-label>
-                <input matInput [formControlName]="Intolerancia">
+                <input matInput id="IntoleranciaEx">
             </mat-form-field>
         </div>
         <div>
@@ -115,7 +118,7 @@
         <div>
             <mat-form-field>
                 <mat-label>Si es que sí…¿Cuál?</mat-label>
-                <input matInput [formControlName]="Dieta">
+                <input matInput id="Dieta">
             </mat-form-field>
         </div>
         <div class="row">
@@ -245,12 +248,18 @@
         <div>
             <mat-form-field>
                 <mat-label>¿Crees que consumes algún alimento en exceso?</mat-label>
-                <input matInput [formControlName]="AlimentoExeso">
+                <input matInput id="AlimentoExeso">
             </mat-form-field>
         </div>
+        <br>
 
         <button type="submit" class="btn btn-primary">Enviar Enquesta</button>
 
+        <br>
+
+        <br>
+
+        <br>
 
 
 
