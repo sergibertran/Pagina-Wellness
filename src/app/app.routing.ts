@@ -8,9 +8,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { from } from 'rxjs';
+import { EnquestaComponent } from './enquesta/enquesta.component';
 
 const routes: Routes =[
   { path: 'home', component: HomeComponent},
+  { path: 'Enquesta',  component: EnquestaComponent },
+
   {
     path: '',
     redirectTo: 'home',

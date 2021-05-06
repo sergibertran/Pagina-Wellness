@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EquestaInicialComponent } from './equesta-inicial.component';
+import { EnquestaComponent } from './enquesta.component';
 
-describe('EquestaInicialComponent', () => {
-  let component: EquestaInicialComponent;
-  let fixture: ComponentFixture<EquestaInicialComponent>;
+describe('EnquestaComponent', () => {
+  let component: EnquestaComponent;
+  let fixture: ComponentFixture<EnquestaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EquestaInicialComponent ]
+      declarations: [ EnquestaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EquestaInicialComponent);
+    fixture = TestBed.createComponent(EnquestaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

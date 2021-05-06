@@ -1,620 +1,330 @@
 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
 
-<div class="login-page">
-    <mat-card class="mat-elevation-z12">
-      <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
-      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-        <mat-tab label="Sign In">
-            <mat-card-content>
-              <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm()">
-                <mat-form-field>
-                  <input
-                    matInput
-                    formControlName="username"
-                    placeholder="Username"
-                    type="text"
-                    required
-                   >
+            <div class="login-page">
+                <mat-card class="mat-elevation-z12">
+                    <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
+                    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+                        <mat-tab label="Sign In">
+                            <mat-card-content>
+                                <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm()">
+                                    <mat-form-field>
+                                        <input matInput formControlName="username" placeholder="Username" type="text"
+                                            required>
 
-                  <mat-icon matSuffix>username</mat-icon>
-                </mat-form-field>
-                <mat-form-field>
-                  <input
-                    matInput
-                    placeholder="Password"
-                    type="password"
-                    required
-                    formControlName="password"
-                    name="password"
-                    ngModel
-                    >
+                                        <mat-icon matSuffix>username</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Password" type="password" required
+                                            formControlName="password" name="password" ngModel>
 
-                  <mat-icon matSuffix>lock</mat-icon>
-                </mat-form-field>
-                <button (click)='test()'
-                  mat-raised-button
-                  color="primary"
-                  class="login-button">
-                  Sign In
-                </button>
-  
-              </form>
-            </mat-card-content>
-        </mat-tab>
-        
-        
-        
-        
-        <!-- FORMULARI REGISTER -->
-        <mat-tab label="Sign Up">
-          <mat-card-content>
-            <form  [formGroup]="RegisterForm" (ngSubmit)="submitRegisterForm()">>
-              <mat-form-field>
-                <input
-                  matInput
-                  placeholder="User Name"
-                  required
-                  name="username"
-                  formControlName="username">
-                <mat-icon matSuffix>perm_identity</mat-icon>
-              </mat-form-field>
-              <mat-form-field>
-                <input
-                  matInput
-                  placeholder="Email"
-                  required
-                  name="email"
-                  formControlName="email">
-                <mat-icon matSuffix>email</mat-icon>
-              </mat-form-field>
-              <mat-form-field>
-                <input
-                  matInput
-                  placeholder="Password"
-                  type="password"
-                  required
-                  minlength="6"
-                  name="password"
-                  formControlName="password"
-                  >
-                
-                <mat-icon matSuffix>lock</mat-icon>
-  
-              </mat-form-field>
-              <mat-form-field>
-                  <input
-                  matInput
-                  placeholder="Password"
-                  type="password"
-                  required
-                  name="repassword"
-                  formControlName="repassword">
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                    </mat-form-field>
+                                    <button (click)='test()' mat-raised-button color="primary" class="login-button">
+                                        Sign In
+                                    </button>
 
-                <mat-icon matSuffix>lock</mat-icon>
-              </mat-form-field>
-              <button
-                mat-raised-button
-                color="primary"
-                class="login-button">
-                Sign Up
-              </button>
-            </form>
-          </mat-card-content>
-        </mat-tab>
-      </mat-tab-group>
-    </mat-card>
-  </div>
-  </div>
-  </div>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="text-center">
+                                </form>
+                            </mat-card-content>
+                        </mat-tab>
+
+
+
+
+                        <!-- FORMULARI REGISTER -->
+                        <mat-tab label="Sign Up">
+                            <mat-card-content>
+                                <form [formGroup]="RegisterForm" (ngSubmit)="submitRegisterForm()">>
+                                    <mat-form-field>
+                                        <input matInput placeholder="User Name" required name="username"
+                                            formControlName="username">
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Email" required name="email"
+                                            formControlName="email">
+                                        <mat-icon matSuffix>email</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Password" type="password" required minlength="6"
+                                            name="password" formControlName="password">
+
+                                        <mat-icon matSuffix>lock</mat-icon>
+
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Password" type="password" required
+                                            name="repassword" formControlName="repassword">
+
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                    </mat-form-field>
+                                    <button mat-raised-button color="primary" class="login-button">
+                                        Sign Up
+                                    </button>
+                                </form>
+                            </mat-card-content>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="text-center">
     <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-      Modal Login Form</a>
-  </div>
+        Modal Login Form</a>
+</div>
 
-  <!DOCTYPE html>
-  <html lang="es">
-      <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          <meta name="description" content="" />
-          <meta name="author" content="" />
-          <title>Agency - Start Bootstrap Theme</title>
-          <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-          <!-- Font Awesome icons (free version)-->
-          <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-          <!-- Google fonts-->
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-          <!-- Core theme CSS (includes Bootstrap)-->
-          <link href="css/styles.css" rel="stylesheet" />
-      </head>
-      <body id="page-top">
-          <!-- Masthead-->
-          <header class="masthead">
-              <div class="container">
-                  <div class="masthead-heading text-uppercase">Todas las rutinas y dietas que desees, y mucho mas</div>
-                  <div class="masthead-subheading">Disfruta donde quieras de forma gratuita o suscribete para una esperiencia premium</div>
-                  <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Empezar</a>
-              </div>
-          </header>
-          <!-- Services-->
-          <section class="page-section" id="services">
-              <div class="container">
-                  <div class="text-center">
-                      <h2 class="section-heading text-uppercase">Planes</h2>
-                      <h3 class="section-subheading text-muted">Elige uno de nuetros tres planes para empezar</h3>
-                  </div>
-                  <div class="row text-center">
-                      <div class="col-md-4">
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Usuario registrado</a>
-                          <h4 class="my-3">GRATUITO</h4>
-                          <p class="text-muted">Tan solo necesitas registrarte, sin tagetas, sin compromisos. Los usuarios gratuitos podran acceder a rutinas y dietas prediseñadas para cada una de sus necesidades.</p>
-                      </div>
-                      <div class="col-md-4">
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Premium</a>
-                          <h4 class="my-3">59,99€/mes</h4>
-                          <p class="text-muted">Tendras a tu disposicion un equipo de profesionales que atenderan tus necesidades. Dispondras de dietas y rutinas presonalizadas, asesorias con nuestros profesionales y mucho mas.</p>
-                      </div>
-                      <div class="col-md-4">
-                        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Gimnasio o club</a>
-                          <h4 class="my-3">59,99€/año</h4>
-                          <p class="text-muted">Si dispones de un negocio y quieres modernizarlo dando el paso al mundo web este es tu plan. Podras utilizar nuestra plataforma web para oganizar las dietas y rutinas de tus clientes, con este plan te ahorraras los gastos de crear y mantener una pagina web para tu negocio. </p>
-                      </div>
-                  </div>
-              </div>
-          </section>
-          <!-- About-->
-          <section class="page-section" id="about">
-              <div class="container">
-                  <ul class="timeline">
-                      <li>
-                          <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/hands-1851218_1920.jpg" alt="..." /></div>
-                          <div class="timeline-panel">
-                              <div class="timeline-heading">
-                                  <h4 class="subheading">Disfruta de Wellness desde cualquier dispositivo con internet</h4>
-                              </div>
-                              <div class="timeline-body"><p class="text-muted">Accede a WELLNESS desde cualquier dispositivo con acceso a interrnet, llevate tus rutinas y dietas a todos lados y consultalos en cualquier momento.</p></div>
-                          </div>
-                      </li>
-                      <li class="timeline-inverted">
-                          <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/video-conference-5162927_640.jpg" alt="..." /></div>
-                          <div class="timeline-panel">
-                              <div class="timeline-heading">
-                                  <h4 class="subheading">Asesorate con nuestros profesionales</h4>
-                              </div>
-                              <div class="timeline-body"><p class="text-muted">Disfruta de un trato persoal con nuestros profesionales, ya sea mediante video llamada o en persona desde nuestras oficinas mediante el plan premium.</p></div>
-                          </div>
-                      </li>
-                      <li>
-                          <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/bulletin-board-3233653_640.jpg" alt="..." /></div>
-                          <div class="timeline-panel">
-                              <div class="timeline-heading">
-                                  <h4 class="subheading">Disfruta de una interfaz sencilla y comoda</h4>
-                              </div>
-                              <div class="timeline-body"><p class="text-muted">Ten todas tus rutinas y dietas ordenadas mediante un comodo calendario, con descripciones de cada ejercicio y platos, como realizarlos e imagenes o videos descriptivos.</p></div>
-                          </div>
-                      </li>
-                      <li class="timeline-inverted">
-                          <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/physiotherapy-595529_640.jpg" alt="..." /></div>
-                          <div class="timeline-panel">
-                              <div class="timeline-heading">
-                                  <h4 class="subheading">Moderniza tu negocio</h4>
-                              </div>
-                              <div class="timeline-body"><p class="text-muted">No importa si tu negocio es un pequeño gimnasio o un club deportivo, Wellness facilita la gestion de rutinas y dietas por un precio asequible, haciendo mas comoda la vida de  tus clientes.</p></div>
-                          </div>
-                      </li>
-                      <li class="timeline-inverted">
-                          <div class="timeline-image">
-                              <h4>
-                                  Forma Parte
-                                  <br />
-                                  De
-                                  <br />
-                                  WELLNESS!
-                              </h4>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </section>
-          <!-- Portfolio Grid-->
-          <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Preguntas frecuentes</h2>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>WELLNESS</title>
+</head>
+
+<body id="page-top">
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-heading text-uppercase">Todas las rutinas y dietas que desees, y mucho mas</div>
+            <div class="masthead-subheading">Disfruta donde quieras de forma gratuita o suscribete para una experiencia
+                premium</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Entrar</a>
+        </div>
+    </header>
+    <!-- Planes-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Planes</h2>
+                <h3 class="section-subheading text-muted">Elige uno de nuetros tres planes para empezar</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Usuario
+                        registrado</a>
+                    <h4 class="my-3">GRATUITO</h4>
+                    <p class="text-muted">Tan solo necesitas registrarte, sin tagetas, sin compromisos. Los usuarios
+                        gratuitos podran acceder a rutinas y dietas prediseñadas para cada una de sus necesidades.</p>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"></div>
-                                </div>
-                                <img class="img-fluid" src="../../assets/img/WELLNESS_preguntas.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Que es WELLNESS?</div>
-                            </div>
+                <div class="col-md-4">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Premium</a>
+                    <h4 class="my-3">59,99€/mes</h4>
+                    <p class="text-muted">Tendras a tu disposicion un equipo de profesionales que atenderan tus
+                        necesidades. Dispondras de dietas y rutinas presonalizadas, asesorias con nuestros profesionales
+                        y mucho mas.</p>
+                </div>
+                <div class="col-md-4">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Gimnasio o
+                        club</a>
+                    <h4 class="my-3">59,99€/año</h4>
+                    <p class="text-muted">Si dispones de un negocio y quieres modernizarlo dando el paso al mundo web
+                        este es tu plan. Podras utilizar nuestra plataforma web para oganizar las dietas y rutinas de
+                        tus clientes, con este plan te ahorraras los gastos de crear y mantener una pagina web para tu
+                        negocio. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Info-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="../../assets/img/hands-1851218_1920.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Disfruta de Wellness desde cualquier dispositivo con internet</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Accede a WELLNESS desde cualquier dispositivo con acceso a interrnet,
+                                llevate tus rutinas y dietas a todos lados y consultalos en cualquier momento.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="..." />
-
-                           
-                                <img class="img-fluid" src="../../assets/img/unsub_preguntas.png" alt="..." />
-
-                             
-                                <img class="img-fluid" src="../../assets/img/unsub_preguntas.png" alt="..." />
-
-                        
-                                <img class="img-fluid" src="../../assets/img/unsub_preguntas.png" alt="..." />
-
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Como cancelo?</div>
-                            </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="../../assets/img/video-conference-5162927_640.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Asesorate con nuestros profesionales</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Disfruta de un trato persoal con nuestros profesionales, ya sea
+                                mediante video llamada o en persona desde nuestras oficinas mediante el plan premium.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/03-thumbnail.jpg" alt="..." />
-
-                           
-                                <img class="img-fluid" src="../../assets/img/mancuerna_preguntas.png" alt="..." />
-
-                       
-                                <img class="img-fluid" src="../../assets/img/mancuerna_preguntas.png" alt="..." />
-
-                        
-                                <img class="img-fluid" src="../../assets/img/mancuerna_preguntas.png" alt="..." />
-
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Que rutinas y dietas ofrece el plan gratuito?</div>
-                            </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="../../assets/img/bulletin-board-3233653_640.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Disfruta de una interfaz sencilla y comoda</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">Ten todas tus rutinas y dietas ordenadas mediante un comodo
+                                calendario, con descripciones de cada ejercicio y platos, como realizarlos e imagenes o
+                                videos descriptivos.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/04-thumbnail.jpg" alt="..." />
-
-                            
-                                <img class="img-fluid" src="../../assets/img/mapa_preguntas.png" alt="..." />
-
-                           
-                                <img class="img-fluid" src="../../assets/img/mapa_preguntas.png" alt="..." />
-
-                             
-                                <img class="img-fluid" src="../../assets/img/mapa_preguntas.png" alt="..." />
-
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Donde puedo asesorarme en persona?</div>
-                            </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="../../assets/img/physiotherapy-595529_640.jpg" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Moderniza tu negocio</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">No importa si tu negocio es un pequeño gimnasio o un club deportivo,
+                                Wellness facilita la gestion de rutinas y dietas por un precio asequible, haciendo mas
+                                comoda la vida de tus clientes.</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/05-thumbnail.jpg" alt="..." />
-
-                         
-                                <img class="img-fluid" src="../../assets/img/negocio_preguntas.png" alt="..." />
-
-                           
-                                <img class="img-fluid" src="../../assets/img/negocio_preguntas.png" alt="..." />
-
-                       
-                                <img class="img-fluid" src="../../assets/img/negocio_preguntas.png" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Como funciona el plan para negocios?</div>
-                            </div>
-                        </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            Forma Parte
+                            <br />
+                            De
+                            <br />
+                            WELLNESS!
+                        </h4>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Preguntas-->
 
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/06-thumbnail.jpg" alt="..." />
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Preguntas frecuentes</h2>
+    </div>
 
-                        
-                                <img class="img-fluid" src="../../assets/img/usub_negocio_preguntas.png" alt="..." />
+    <br>
 
-                        
-                                <img class="img-fluid" src="../../assets/img/usub_negocio_preguntas.png" alt="..." />
+    <div class="container">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_es"
+            style="margin-left: 70px;">
+            ¿Que es WELLNESS?
+        </button>
 
-                       
-                                <img class="img-fluid" src="../../assets/img/usub_negocio_preguntas.png" alt="..." />
-
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">¿Como cancelo el plan de negocio?</div>
-                            </div>
-                        </div>
+        <div class="modal fade" id="que_es" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">¿Que es WELLNESS?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        WELLNESS es una plataforma web creada para que los usuarios puedan organizar sus dietas y
+                        rutinas, ya sea mediante el plan gratuito prediseñado o personalizado por nuestros profesionales
+                        mediante el plan premium. Ademas ofrecemos nuestra plataforma para gimnasios o clibes
+                        deportivos, para organizar las dietas y rutinas de sus clientes sin los gastos que conlleva
+                        crear y mantener una pagina web.
                     </div>
                 </div>
             </div>
-        </section>
-          <!-- Footer-->
-          <footer class="footer py-4">
-              <div class="container">
-                  <div class="row align-items-center">
-                      <div class="col-lg-4 text-lg-left">
-                          Copyright &copy; WELLNESS
-                          <!-- This script automatically adds the current year to your website footer-->
-                          <!-- (credit: https://updateyourfooter.com/)-->
-                          <script>
-                              document.write(new Date().getFullYear());
-                          </script>
-                      </div>
-                  </div>
-              </div>
-          </footer>
-          <!-- Portfolio Modals-->
-          <!-- Modal 1-->
-          <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-                                      <h2 class="text-uppercase">¿Que es WELLNESS?</h2>
-                                      <br>
-                                      <p>WELLNESS es una plataforma web creada para que los usuarios puedan organizar sus dietas y rutinas, ya sea mediante el plan gratuito prediseñado o personalizado por nuestros profesionales mediante el plan premium. Ademas ofrecemos nuestra plataforma para gimnasios o clibes deportivos, para organizar las dietas y rutinas de sus clientes sin los gastos que conlleva crear y mantener una pagina web.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- Modal 2-->
-          <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
+        </div>
 
-                      <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelar"
+            style="margin-left: 20px;">
+            ¿Como cancelo?
+        </button>
 
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
+        <div class="modal fade" id="cancelar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">¿Como cancelo?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Podras cancelar tu suscripcion desde el apartado Perfil, la suscripcion se cancelara a finales
+                        de mes.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_ofrece"
+            style="margin-left: 20px;">
+            ¿Que rutinas y dietas ofrece el plan gratuito?
+        </button>
 
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
+        <div class="modal fade" id="que_ofrece" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">¿Que rutinas y dietas ofrece el plan
+                            gratuito?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Ofrecemos tres rutinas y tres dietas predefinidas. Ofrecemos rutinas de hipertrofia, fuerza y
+                        hit, y dietas para perder peso, ganar masa y vegetariana.
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-                                      <h2 class="text-uppercase">¿Como cancelo?</h2>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
+            ¿Donde puedo asesorarme en persona?
+        </button>
 
-                                      <br>
-
-                                      <br>
-
-                                      <br>
-
-                                      <p>Podras cancelar tu suscripcion desde el apartado Perfil, la suscripcion se cancelara a finales de mes.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-                                      </button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <!-- Modal 3-->
-          <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-
-                      <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-
-                                      <h2 class="text-uppercase">Project Name</h2>
-                                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                      <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/03-full.jpg" alt="..." />
-                                      <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                      <ul class="list-inline">
-                                          <li>Date: January 2021</li>
-                                          <li>Client: Finish</li>
-                                          <li>Category: Identity</li>
-                                      </ul>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          <i class="fas fa-times mr-1"></i>
-                                          Close Project
-
-                                      <h2 class="text-uppercase">¿Que rutinas y dietas ofrece el plan gratuito?</h2>
-                                      <br>
-                                      <p>Ofrecemos tres rutinas y tres dietas predefinidas. Ofrecemos rutinas de hipertrofia, fuerza y hit, y dietas para perder peso, ganar masa y vegetariana.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-
-                                      </button>
-   
-          <!-- Modal 4-->
-          <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-
-                      <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-
-                                      <h2 class="text-uppercase">Project Name</h2>
-                                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                      <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/04-full.jpg" alt="..." />
-                                      <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                      <ul class="list-inline">
-                                          <li>Date: January 2021</li>
-                                          <li>Client: Lines</li>
-                                          <li>Category: Branding</li>
-                                      </ul>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          <i class="fas fa-times mr-1"></i>
-                                          Close Project
-
-                                      <h2 class="text-uppercase">¿Donde puedo asesorarme en persona?</h2>
-                                      <br>
-                                      <p>Puedes encontrarnos en CEEILLEIDA Edificio 2 en Complejo la Caparrella, Lleida, Catalunya 25192. Para reservar hora con nuestros nutricionistas podeis concretar hora a traves de la web. En caso de querer informacion para negocios podeis concretar hora a traves del siguiente correo: informacio.wellness@gmail.com.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-
-                                      </button>
-         
-          <!-- Modal 5-->
-          <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-
-                      <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-
-                                      <h2 class="text-uppercase">Project Name</h2>
-                                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                      <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/05-full.jpg" alt="..." />
-                                      <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                      <ul class="list-inline">
-                                          <li>Date: January 2021</li>
-                                          <li>Client: Southwest</li>
-                                          <li>Category: Website Design</li>
-                                      </ul>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          <i class="fas fa-times mr-1"></i>
-                                          Close Project
-
-                                      <h2 class="text-uppercase">¿Como funciona el plan para negocios?</h2>
-                                      <br>
-                                      <p>Al contratar nuestro servicio para negocios tendreis acceso a cinco cuentas de administrador, se os proporcionara un codigo de cliente mediante el cual los usuarios desde la aplicacion deberan introducir en un apartado de usuario, al introducirlo tendreis acceso a su calendario para gestionar las dietas y rutinas.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-
-                                      </button>
-               
-          <!-- Modal 6-->
-          <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-
-                      <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="close-modal" data-dismiss="modal"><img src="../../assets/img/close-icon.svg" alt="Close modal" /></div>
-
-                      <div class="container">
-                          <div class="row justify-content-center">
-                              <div class="col-lg-8">
-                                  <div class="modal-body">
-                                      <!-- Project Details Go Here-->
-
-                                      <h2 class="text-uppercase">Project Name</h2>
-                                      <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                      <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/06-full.jpg" alt="..." />
-                                      <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                      <ul class="list-inline">
-                                          <li>Date: January 2021</li>
-                                          <li>Client: Window</li>
-                                          <li>Category: Photography</li>
-                                      </ul>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          <i class="fas fa-times mr-1"></i>
-                                          Close Project
-
-                                      <h2 class="text-uppercase">¿Como cancelo el plan de negocio?</h2>
-                                      <br>
-                                      <p>Puedes cancelar el servicio desde el apartado Perfil, la cancelacion se llevara a cabo a final de mes, se le retirara el acceso al panel de administrador y sus clientes dejaran de recibir sus dietas y rutinas.</p>
-                                      <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                          Volver
-
-                                      </button>
-                  
-
-          <!-- Bootstrap core JS-->
-          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-          <!-- Third party plugin JS-->
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-          <!-- Contact form JS-->
-          <script src="assets/mail/jqBootstrapValidation.js"></script>
-          <script src="assets/mail/contact_me.js"></script>
-          <!-- Core theme JS-->
-          <script src="js/scripts.js"></script>
-
-  
-  
+        <div class="modal fade" id="ubi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">¿Donde puedo asesorarme en persona?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Puedes encontrarnos en CEEILLEIDA Edificio 2 en Complejo la Caparrella, Lleida, Catalunya 25192.
+                        Para reservar hora con nuestros nutricionistas podeis concretar hora a traves de la web. En caso
+                        de querer informacion para negocios podeis concretar hora a traves del siguiente correo:
+                        informacio.wellness@gmail.com.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">
+                        Copyright &copy; WELLNESS
+                    </div>
+                </div>
+            </div>
+        </footer>
