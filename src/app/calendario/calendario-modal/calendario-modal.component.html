@@ -1,0 +1,229 @@
+<!--Modal PopUp with Add Event Form-->
+
+
+      <div mat-dialog-content>
+  
+        <div class="modal-header">
+          <h4 class="modal-title align-center"></h4>
+          <button type="button" class="close"  data-dismiss="modal">&times;</button>
+        </div>
+  
+        <div class="modal-body">
+          <form [formGroup]="addEventForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Event Title</label>
+                  <select  [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)">
+                    <option [ngValue]="null" disabled>Choose your profile</option>
+                    <option *ngFor="let prf of allProfiles" >
+                      {{ prf.prName }}
+                    </option>
+                  </select>
+  
+                  
+                  
+  
+              
+  
+                  {{selectedDay}}
+                </div>
+  
+  <div *ngIf="resultadoSelect=='Dieta'">
+                <label>Dieta</label>
+                <select   [formControl]="selectControlDieta" (ngModelChange)="mySelectHandlerDieta($event)"> Dieta
+                  <option [ngValue]="null" disabled>Choose your profile</option>
+                  <option>
+                   Volumen
+                  </option>
+                  <option>
+                    Perdida
+                   </option>
+                </select>
+  
+                <div *ngIf="resultadoSelectDieta!=''">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Enter a date range</mat-label>
+                    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                      <input matStartDate formControlName="start" placeholder="Start date" disabled>
+                      <input matEndDate formControlName="end" placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  
+                    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                  </mat-form-field>
+                  
+                  <p>Selected range: {{range.value | json}}</p>
+              </div>
+  
+              </div>
+  
+              <div *ngIf="resultadoSelect=='Rutina'">
+                <label>Rutina</label>
+                <select   [formControl]="selectControlRutina" (ngModelChange)="mySelectHandlerRutina($event)"> Rutina
+                  <option [ngValue]="null" disabled>Choose your profile</option>
+                  <option  >
+                  Hipertrofia
+                  </option>
+                  <option  >
+                    Fuerza
+                    </option>
+                </select>
+  
+  
+                <div *ngIf="resultadoSelectRutina!=''">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Enter a date range</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                      <input matStartDate placeholder="Start date">
+                      <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  </mat-form-field>
+              </div>
+  
+              </div>
+            </div>
+          </div>
+  
+            <div *ngIf="rutina==true">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rutina">
+                Elige una rutina
+              </button>
+              
+              <div class="modal fade" id="rutina" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Elige una rutina</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="hipertrofia"></div>
+                                  <mat-card-subtitle>Hipertrofia</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir rutina</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+              
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="ganar-fuerza"></div>
+                                  <mat-card-subtitle>Ganar fuerza</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir rutina</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+              
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="hit"></div>
+                                  <mat-card-subtitle>Rutina hit</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir rutina</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            
+            <div *ngIf="dieta==true">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dieta">
+                Elige una dieta
+              </button>
+              
+              <div class="modal fade" id="dieta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Elige una dieta</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="ganar-volumen"></div>
+                                  <mat-card-subtitle>Ganar volumen</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir dieta</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+              
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="perder-peso"></div>
+                                  <mat-card-subtitle>Perder peso</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir dieta</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+              
+                            <div class="col-sm">
+                              <mat-card class="example-card">
+                                <mat-card-header>
+                                  <div mat-card-avatar class="mantener-peso"></div>
+                                  <mat-card-subtitle>Mantener peso</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-actions>
+                                  <button mat-button>Seguir dieta</button>
+                                </mat-card-actions>
+                              </mat-card>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label>Event Date:</label>
+              <div class="eventstarttitle">
+              </div>
+            </div>
+  
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+ 

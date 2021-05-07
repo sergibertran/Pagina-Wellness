@@ -32,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 
 
+
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
   interactionPlugin
@@ -68,6 +69,7 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     AdminLayoutComponent,
     HomeComponent,
+ 
  
    
    

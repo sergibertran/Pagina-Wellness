@@ -30,13 +30,14 @@ import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ej
 import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
 import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
 import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
-import { CalendarioComponent } from 'app/calendario/calendario.component';
+import { CalendarioComponent} from 'app/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
 import { EnquestaComponent } from 'app/enquesta/enquesta.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { CalendarioModalComponent } from 'app/calendario/calendario-modal/calendario-modal.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -87,8 +88,9 @@ FullCalendarModule.registerPlugins([
     NuevoTipoDietaComponent,
     NuevoDietaComponent,
     IngredientesComponent,
-    EnquestaComponent
-
+    EnquestaComponent,
+    CalendarioModalComponent,
+  
   ],
   providers: [  
     MatDatepickerModule,  

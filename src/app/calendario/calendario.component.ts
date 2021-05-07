@@ -6,35 +6,34 @@ import { HttpClient } from "@angular/common/http";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { CalendarioService } from "app/services/calendario.service";
 import { first } from "rxjs/operators";
+import { MatDialog } from "@angular/material/dialog";
+import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
 @Component({
   selector: "app-calendario",
   templateUrl: "./calendario.component.html",
   styleUrls: ["./calendario.component.css"],
 })
 export class CalendarioComponent implements OnInit {
+  range = new FormGroup({
+    start: new FormControl('2021-05-12T22:00:00.000Z'),
+    end: new FormControl()
+  });
+
   /* Add Event Form */
   eventdate: string;
   successdata: any;
   addEventForm: FormGroup;
-  range: FormGroup;
   submitted = false;
   events = [];
+  test;
+  Fecha;
   data;
   Profile;
-  selectControl: FormControl = new FormControl();
-  selectControlDieta: FormControl = new FormControl();
-  selectControlRutina: FormControl = new FormControl();
-  selectControlComentarios: FormControl = new FormControl();
-  dieta = false;
-  rutina = false;
-  resultadoSelect;
 
-  selectedDay: string = '';
-  allProfiles = [
-    new Profile("Dieta"),
-    new Profile("Rutina"),
-    new Profile("Comentarios"),
-  ];
+  
+  
+
+
 
 
 
@@ -42,46 +41,12 @@ export class CalendarioComponent implements OnInit {
   get f() {
     return this.addEventForm.controls;
   }
-  onSubmit() {
-    console.log(this.data);
-    console.log(this.addEventForm.controls.title.value);
-    const titulo = this.addEventForm.controls.title.value;
-
-    this.addEventForm = this.formBuilder.group({
-      title: [titulo],
-      fecha: [this.data],
-    });
-
-    console.log(this.addEventForm.controls);
-
-    var myFormData = new FormData();
-
-    // Begin assigning parameters
-    console.log(this.addEventForm.controls.title.value.prName);
-
-    myFormData.append("title", this.addEventForm.controls.title.value.prName);
-    myFormData.append("fecha", this.addEventForm.controls.fecha.value);
-    console.log(myFormData);
-
-    return this.http
-      .post("http://localhost/save.php/", myFormData)
-      .subscribe((res: Response) => {
-        $("#myModal").modal("hide");
-        this.successdata = res;
-        if ((this.successdata["data"] = "success")) {
-
-          console.log('works');
-
-        } else {
-          console.log('funciona');
-
-        }
-      });
-  }
+ 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private calendarioService: CalendarioService
+    private calendarioService: CalendarioService,
+    public dialog: MatDialog
   ) { }
 
   calendarOptions: CalendarOptions;
@@ -127,8 +92,10 @@ export class CalendarioComponent implements OnInit {
 
         this.calendarOptions = {
           initialView: "dayGridMonth",
-          dateClick: this.handleDateClick.bind(this),
-          eventClick: this.eventClick.bind(this),
+          dateClick:   this.openDialog.bind(this),
+        
+          
+          eventClick:this.eventClick.bind(this),
           events: this.events,
 
         };
@@ -139,6 +106,14 @@ export class CalendarioComponent implements OnInit {
       title: [[Validators.required]],
     });
   }
+
+  openDialog() {
+  
+    this.dialog.open(CalendarioModalComponent, {
+   
+    });
+  }
+
   //Show Modal with Forn on dayClick Event
   handleDateClick(arg) {
     $("#myModal").modal("show");
@@ -147,69 +122,30 @@ export class CalendarioComponent implements OnInit {
     $(".eventstarttitle").text(arg.dateStr);
 
     this.data = arg.dateStr;
-  }
-
-  mySelectHandler($event) {
-    console.log($event);
-    this.resultadoSelect = $event
-    console.log(this.resultadoSelect);
+  
 
 
+console.log(this.Fecha);
 
-  }
+    this.range = new FormGroup({
+      start: new FormControl(this.data+'T21:00:00.000Z'),
+      end: new FormControl()
+    });
 
-  mySelectHandlerDieta($event) {
-    console.log($event);
-    this.resultadoSelect = $event
-    console.log(this.resultadoSelect);
-
-
-
-  }
-  mySelectHandlerRutina($event) {
-    console.log($event);
-    this.resultadoSelect = $event
-    console.log(this.resultadoSelect);
-
-
-
+    
   }
 
 
 
-
-  selectChangeHandler(event: any) {
-    //update the ui
-    this.selectedDay = event.target.value;
-
-    this.Tipos();
-
-  }
-
-  Tipos() {
-
-
-    if (this.selectedDay = "Dieta") {
-      this.dieta = true
-      console.log(this.selectedDay);
-    }
-    else if (this.selectedDay = "Rutina") {
-      this.rutina = true
-      this.dieta = false
-      console.log(this.selectedDay);
-    }
-    else if (this.selectedDay = "Comentarios") {
-      this.rutina = false
-      this.dieta = false
-      console.log(this.selectedDay);
-    }
+ 
 
 
 
-  }
+ 
   eventClick(arg) {
     console.log(arg);
     console.log(arg.event.id);
+
     console.log(arg.event.startStr);
     if (arg.event.id == 69) {
       $("#calendarModalDieta").modal("show");
@@ -251,3 +187,4 @@ export class CalendarioComponent implements OnInit {
 export class Profile {
   constructor(public prName: string) { }
 }
+
