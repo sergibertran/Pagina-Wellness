@@ -28,16 +28,60 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label>Event Title</label>
-                    <select  (change)="selectChangeHandler($event)" [(ngModel)]="selectedOption" formControlName="title">
+                    <select  [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)">
                       <option [ngValue]="null" disabled>Choose your profile</option>
                       <option *ngFor="let prf of allProfiles" >
                         {{ prf.prName }}
                       </option>
                     </select>
+
+                    
+                    <mat-form-field appearance="fill">
+                      <mat-label>Moment.js datepicker</mat-label>
+                      <input matInput [matDatepicker]="dp" >
+                      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                      <mat-datepicker #dp></mat-datepicker>
+                    </mat-form-field>
+
+                
+
                     {{selectedDay}}
                   </div>
+
+<div *ngIf="resultadoSelect=='Dieta'">
+                  <label>Dieta</label>
+                  <select   [formControl]="selectControlDieta" (ngModelChange)="mySelectHandlerDieta($event)"> Dieta
+                    <option [ngValue]="null" disabled>Choose your profile</option>
+                    <option>
+                     Volumen
+                    </option>
+                    <option>
+                      Perdida
+                     </option>
+                  </select>
+
+                
+
+                </div>
+
+                <div *ngIf="resultadoSelect=='Rutina'">
+                  <label>Rutina</label>
+                  <select   [formControl]="selectControlRutina" (ngModelChange)="mySelectHandlerRutina($event)"> Rutina
+                    <option [ngValue]="null" disabled>Choose your profile</option>
+                    <option  >
+                    Hipertrofia
+                    </option>
+                    <option  >
+                      Fuerza
+                      </option>
+                  </select>
+
+                  
+
+
                 </div>
               </div>
+            </div>
 
               <div *ngIf="rutina==true">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rutina">

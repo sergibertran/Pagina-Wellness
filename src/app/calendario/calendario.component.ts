@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 declare let $: any;
 import { CalendarOptions } from "@fullcalendar/angular";
 import { HttpClient } from "@angular/common/http";
@@ -16,13 +16,18 @@ export class CalendarioComponent implements OnInit {
   eventdate: string;
   successdata: any;
   addEventForm: FormGroup;
+  range: FormGroup;
   submitted = false;
   events = [];
   data;
   Profile;
+  selectControl: FormControl = new FormControl();
+  selectControlDieta: FormControl = new FormControl();
+  selectControlRutina: FormControl = new FormControl();
+  selectControlComentarios: FormControl = new FormControl();
   dieta = false;
   rutina = false;
-
+  resultadoSelect;
 
   selectedDay: string = '';
   allProfiles = [
@@ -31,7 +36,7 @@ export class CalendarioComponent implements OnInit {
     new Profile("Comentarios"),
   ];
 
-  
+
 
   //Add user form actions
   get f() {
@@ -64,12 +69,12 @@ export class CalendarioComponent implements OnInit {
         $("#myModal").modal("hide");
         this.successdata = res;
         if ((this.successdata["data"] = "success")) {
-        
+
           console.log('works');
-          
+
         } else {
-       console.log('funciona');
-       
+          console.log('funciona');
+
         }
       });
   }
@@ -77,7 +82,7 @@ export class CalendarioComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService
-  ) {}
+  ) { }
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
@@ -125,13 +130,13 @@ export class CalendarioComponent implements OnInit {
           dateClick: this.handleDateClick.bind(this),
           eventClick: this.eventClick.bind(this),
           events: this.events,
-          
+
         };
       });
 
     //Add User form validations
     this.addEventForm = this.formBuilder.group({
-      title: [ [Validators.required]],
+      title: [[Validators.required]],
     });
   }
   //Show Modal with Forn on dayClick Event
@@ -144,50 +149,79 @@ export class CalendarioComponent implements OnInit {
     this.data = arg.dateStr;
   }
 
-  selectChangeHandler (event: any) {
+  mySelectHandler($event) {
+    console.log($event);
+    this.resultadoSelect = $event
+    console.log(this.resultadoSelect);
+
+
+
+  }
+
+  mySelectHandlerDieta($event) {
+    console.log($event);
+    this.resultadoSelect = $event
+    console.log(this.resultadoSelect);
+
+
+
+  }
+  mySelectHandlerRutina($event) {
+    console.log($event);
+    this.resultadoSelect = $event
+    console.log(this.resultadoSelect);
+
+
+
+  }
+
+
+
+
+  selectChangeHandler(event: any) {
     //update the ui
     this.selectedDay = event.target.value;
-  
+
     this.Tipos();
 
   }
 
-Tipos(){
-
-  
-  if(this.selectedDay ="Dieta"){
-    this.dieta=true
-    console.log(this.selectedDay);
-  }
-  else if(this.selectedDay="Rutina"){
-    this.rutina=true
-    this.dieta=false
-    console.log(this.selectedDay);
-  }
-  else if(this.selectedDay="Comentarios"){
-    this.rutina=false
-    this.dieta=false
-    console.log(this.selectedDay);
-  }
- 
+  Tipos() {
 
 
-}
+    if (this.selectedDay = "Dieta") {
+      this.dieta = true
+      console.log(this.selectedDay);
+    }
+    else if (this.selectedDay = "Rutina") {
+      this.rutina = true
+      this.dieta = false
+      console.log(this.selectedDay);
+    }
+    else if (this.selectedDay = "Comentarios") {
+      this.rutina = false
+      this.dieta = false
+      console.log(this.selectedDay);
+    }
+
+
+
+  }
   eventClick(arg) {
     console.log(arg);
     console.log(arg.event.id);
     console.log(arg.event.startStr);
-    if (arg.event.id==69){
+    if (arg.event.id == 69) {
       $("#calendarModalDieta").modal("show");
       $(".modal-title, .eventstarttitle").text("");
       $(".modal-title").text("Add Event at : " + arg.event.startStr);
       $(".eventstarttitle").text(arg.dateStr);
-    }else if(arg.event.id==73){
+    } else if (arg.event.id == 73) {
       $("#calendarModalRutina").modal("show");
       $(".modal-title, .eventstarttitle").text("");
       $(".modal-title").text("Add Event at : " + arg.event.startStr);
       $(".eventstarttitle").text(arg.dateStr);
-    }else if(arg.event.id==74){
+    } else if (arg.event.id == 74) {
       $("#calendarModalComentarios").modal("show");
       $(".modal-title, .eventstarttitle").text("");
       $(".modal-title").text("Add Event at : " + arg.event.startStr);
@@ -197,12 +231,12 @@ Tipos(){
 
   }
 
- 
+
 
   borrar() {
     return this.http
       .post("http://localhost/delete.php/", "")
-      .subscribe((res: Response) => {});
+      .subscribe((res: Response) => { });
   }
 
 
@@ -215,5 +249,5 @@ Tipos(){
 }
 
 export class Profile {
-  constructor(public prName: string) {}
+  constructor(public prName: string) { }
 }

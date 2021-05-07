@@ -12,7 +12,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-import {MatRippleModule} from '@angular/material/core';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
@@ -32,7 +32,7 @@ import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-d
 import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
 import { CalendarioComponent } from 'app/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import dayGridPlugin from '@fullcalendar/daygrid'; 
 import interactionPlugin from '@fullcalendar/interaction'; 
 import { EnquestaComponent } from 'app/enquesta/enquesta.component';
@@ -60,7 +60,11 @@ FullCalendarModule.registerPlugins([
     MatTabsModule,
     MatCheckboxModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule 
+
+  
     
   ],
   declarations: [
@@ -85,7 +89,10 @@ FullCalendarModule.registerPlugins([
     IngredientesComponent,
     EnquestaComponent
 
-  ]
+  ],
+  providers: [  
+    MatDatepickerModule,  
+  ],
 })
 
 export class AdminLayoutModule {}
