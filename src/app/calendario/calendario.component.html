@@ -2,128 +2,6 @@
 <br>
 <br>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dieta">
-  Elige una dieta
-</button>
-
-<div class="modal fade" id="dieta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Elige una dieta</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="ganar-volumen"></div>
-                    <mat-card-subtitle>Ganar volumen</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir dieta</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="perder-peso"></div>
-                    <mat-card-subtitle>Perder peso</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir dieta</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="mantener-peso"></div>
-                    <mat-card-subtitle>Mantener peso</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir dieta</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rutina">
-  Elige una rutina
-</button>
-
-<div class="modal fade" id="rutina" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Elige una rutina</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="hipertrofia"></div>
-                    <mat-card-subtitle>Hipertrofia</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir rutina</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="ganar-fuerza"></div>
-                    <mat-card-subtitle>Ganar fuerza</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir rutina</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-
-              <div class="col-sm">
-                <mat-card class="example-card">
-                  <mat-card-header>
-                    <div mat-card-avatar class="hit"></div>
-                    <mat-card-subtitle>Rutina hit</mat-card-subtitle>
-                  </mat-card-header>
-                  <mat-card-actions>
-                    <button mat-button>Seguir rutina</button>
-                  </mat-card-actions>
-                </mat-card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="main-content">
   <div class="container-fluid">
     <div class="container">
@@ -161,13 +39,138 @@
                 </div>
               </div>
 
+              <div *ngIf="rutina==true">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#rutina">
+                  Elige una rutina
+                </button>
+                
+                <div class="modal fade" id="rutina" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Elige una rutina</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="hipertrofia"></div>
+                                    <mat-card-subtitle>Hipertrofia</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir rutina</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="ganar-fuerza"></div>
+                                    <mat-card-subtitle>Ganar fuerza</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir rutina</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="hit"></div>
+                                    <mat-card-subtitle>Rutina hit</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir rutina</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div *ngIf="dieta==true">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dieta">
+                  Elige una dieta
+                </button>
+                
+                <div class="modal fade" id="dieta" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Elige una dieta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="ganar-volumen"></div>
+                                    <mat-card-subtitle>Ganar volumen</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir dieta</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="perder-peso"></div>
+                                    <mat-card-subtitle>Perder peso</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir dieta</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                
+                              <div class="col-sm">
+                                <mat-card class="example-card">
+                                  <mat-card-header>
+                                    <div mat-card-avatar class="mantener-peso"></div>
+                                    <mat-card-subtitle>Mantener peso</mat-card-subtitle>
+                                  </mat-card-header>
+                                  <mat-card-actions>
+                                    <button mat-button>Seguir dieta</button>
+                                  </mat-card-actions>
+                                </mat-card>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="form-group">
                 <label>Event Date:</label>
                 <div class="eventstarttitle">
                 </div>
               </div>
-
 
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>

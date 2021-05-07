@@ -20,12 +20,16 @@ export class CalendarioComponent implements OnInit {
   events = [];
   data;
   Profile;
+  dieta = false;
+  rutina = false;
 
   allProfiles = [
     new Profile("Dieta"),
     new Profile("Rutina"),
     new Profile("Comentarios"),
   ];
+
+  
 
   //Add user form actions
   get f() {
