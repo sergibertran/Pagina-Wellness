@@ -28,13 +28,13 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label>Event Title</label>
-                    <select formControlName="title">
+                    <select  (change)="selectChangeHandler($event)" [(ngModel)]="selectedOption" formControlName="title">
                       <option [ngValue]="null" disabled>Choose your profile</option>
-                      <option *ngFor="let prf of allProfiles" [ngValue]="prf">
+                      <option *ngFor="let prf of allProfiles" >
                         {{ prf.prName }}
                       </option>
                     </select>
-
+                    {{selectedDay}}
                   </div>
                 </div>
               </div>

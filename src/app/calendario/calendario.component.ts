@@ -23,6 +23,8 @@ export class CalendarioComponent implements OnInit {
   dieta = false;
   rutina = false;
 
+
+  selectedDay: string = '';
   allProfiles = [
     new Profile("Dieta"),
     new Profile("Rutina"),
@@ -129,7 +131,7 @@ export class CalendarioComponent implements OnInit {
 
     //Add User form validations
     this.addEventForm = this.formBuilder.group({
-      title: ["", [Validators.required]],
+      title: [ [Validators.required]],
     });
   }
   //Show Modal with Forn on dayClick Event
@@ -142,8 +144,35 @@ export class CalendarioComponent implements OnInit {
     this.data = arg.dateStr;
   }
 
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedDay = event.target.value;
+  
+    this.Tipos();
+
+  }
+
+Tipos(){
+
+  
+  if(this.selectedDay ="Dieta"){
+    this.dieta=true
+    console.log(this.selectedDay);
+  }
+  else if(this.selectedDay="Rutina"){
+    this.rutina=true
+    this.dieta=false
+    console.log(this.selectedDay);
+  }
+  else if(this.selectedDay="Comentarios"){
+    this.rutina=false
+    this.dieta=false
+    console.log(this.selectedDay);
+  }
  
 
+
+}
   eventClick(arg) {
     console.log(arg);
     console.log(arg.event.id);
