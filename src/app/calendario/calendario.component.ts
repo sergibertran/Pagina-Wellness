@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 declare let $: any;
-import { CalendarOptions } from "@fullcalendar/angular";
+import { CalendarOptions, FullCalendarComponent } from "@fullcalendar/angular";
 import { HttpClient } from "@angular/common/http";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { CalendarioService } from "app/services/calendario.service";
 import { first } from "rxjs/operators";
 import { MatDialog } from "@angular/material/dialog";
 import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
+import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
 @Component({
   selector: "app-calendario",
@@ -52,6 +53,7 @@ export class CalendarioComponent implements OnInit {
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
+
     console.log("test");
 
     var myFormDataa = new FormData();
@@ -92,9 +94,11 @@ export class CalendarioComponent implements OnInit {
         }
 
         this.calendarOptions = {
+          locale: esLocale,
           initialView: "dayGridMonth",
           dateClick:   this.openDialog.bind(this),
           eventClick:this.openDialogInfo.bind(this),
+         
           events: this.events,
 
         };
