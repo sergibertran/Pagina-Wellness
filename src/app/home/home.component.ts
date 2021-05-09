@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
     }
     
    
-
+    this.login();
   }
 
   submitRegisterForm() {
@@ -74,10 +74,24 @@ export class HomeComponent implements OnInit {
 
     this.authService.register(this.RegisterForm.value).subscribe (
       datos => {
+     console.log(datos);
      
       }
     )
     }
+    login(){
+
+      this.authService.login(this.LoginForm.value).subscribe (
+        datos => {
+       console.log(datos);
+       
+        }
+      )
+
+
+    }
+
+
 
     test(){
       $('#modalLoginForm').modal("hide");
