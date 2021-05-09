@@ -16,7 +16,7 @@ function conexion(){
    return $enlace;
 }
 
-  $mysqli = new mysqli('192.168.3.26', 'DAW2_JAMSWEB', 'sector1g', 'DAW2_JAMSWEB');
+
 
  
 
