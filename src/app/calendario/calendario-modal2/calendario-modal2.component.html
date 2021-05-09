@@ -1,13 +1,10 @@
 <!--Modal calendar-->
-<div id="calendarModalDieta" class="modal fade">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"> <span class="sr-only">close</span></button>
-          <h4 id="modalTitle" class="modal-title"></h4>
-        </div>
-        <div id="modalBody" class="modal-body">
-          <div class="row">
+<div mat-dialog-content>
+  <div class="modal-body">
+
+
+    
+          <div *ngIf="Tipode=='Dieta'" class="row">
 
             <div class="col-md-3">
               <mat-card class="example-card">
@@ -97,10 +94,202 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)='borrar()'>Eliminar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" >Eliminar</button>
             </div>
           </div>
+
+          <div 
+          *ngIf="Tipode=='Comentarios'" class="row">
+
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Desayuno</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/desayuno.jpg" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Infusión/Café
+                    con leche sin
+                    azúcar
+                    Porridge de
+                    avena 100g con
+                    canela y 1/2
+                    frutas
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Comida</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/comida.JPG" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Revuelto de
+                    verduras,
+                    cebolla,
+                    calabacín y 150
+                    g de patata.
+                    250g de
+                    pechuga de
+                    pavo
+                    1 fruta
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Merienda</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Cena</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/cena.png" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Ensalada de
+                    arroz integral
+                    Arroz (150g),
+                    lechuga, tomate,
+                    cebolla, un
+                    aguacate y 1 lata
+                    de atún al
+                    natural.
+                    1 Fruta
+                    1 yogur natural
+                    sin azúcar
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" >Eliminar</button>
+            </div>
+          </div>
+
+
+          <div 
+          *ngIf="Tipode=='Rutina'" class="row">
+
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Desayuno</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/desayuno.jpg" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Infusión/Café
+                    con leche sin
+                    azúcar
+                    Porridge de
+                    avena 100g con
+                    canela y 1/2
+                    frutas
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Comida</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/comida.JPG" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Revuelto de
+                    verduras,
+                    cebolla,
+                    calabacín y 150
+                    g de patata.
+                    250g de
+                    pechuga de
+                    pavo
+                    1 fruta
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Merienda</mat-card-title>
+
+                </mat-card-header>
+                <img mat-card-image src="" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+
+              </mat-card>
+            </div>
+            <div class="col-md-3">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Cena</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="../../assets/img/cena.png" alt="Foto de dieta">
+                <mat-card-content>
+                  <p>
+                    Ensalada de
+                    arroz integral
+                    Arroz (150g),
+                    lechuga, tomate,
+                    cebolla, un
+                    aguacate y 1 lata
+                    de atún al
+                    natural.
+                    1 Fruta
+                    1 yogur natural
+                    sin azúcar
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" >Eliminar</button>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </div>
-  </div>
+

@@ -4,7 +4,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CalendarioService } from 'app/services/calendario.service';
 import { Profile } from '../calendario.component';
-
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Inject } from '@angular/core';
 @Component({
   selector: 'app-calendario-modal',
   templateUrl: './calendario-modal.component.html',
@@ -18,7 +19,8 @@ export class CalendarioModalComponent implements OnInit {
   });
   dieta = false;
   rutina = false;
-  data;
+  minDate: Date;
+  maxDate: Date;
   addEventForm: FormGroup;
   selectControl: FormControl = new FormControl();
   selectControlDieta: FormControl = new FormControl();
@@ -27,7 +29,8 @@ export class CalendarioModalComponent implements OnInit {
   resultadoSelectRutina='';
   resultadoSelectDieta='';
   resultadoSelect;
-
+  checked = true;
+  lastChecked = false;
   selectedDay: string = '';
   allProfiles = [
     new Profile("Dieta"),
@@ -38,12 +41,32 @@ export class CalendarioModalComponent implements OnInit {
   constructor(  private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog, 
+    @Inject(MAT_DIALOG_DATA) public data: any
+    ) {  const currentYear = new Date().getFullYear();
+      this.minDate = new Date;
+      this.maxDate = new Date(currentYear + 1, 11, 31);}
 
   ngOnInit(): void {
+    this.range = new FormGroup({
+      start: new FormControl(this.data.dateStr+'T21:00:00.000Z'),
+      end: new FormControl()
+    });
+
+    
   }
 
+
+
+
+
+
   onSubmit() {
+
+console.log(this.data.dateStr);
+
+ 
+
     console.log(this.data);
     console.log(this.addEventForm.controls.title.value);
     const titulo = this.addEventForm.controls.title.value;
@@ -79,6 +102,18 @@ export class CalendarioModalComponent implements OnInit {
         }
       });
   }
+
+  onChange(index) {
+
+
+
+    this.lastChecked=index.checked;
+console.log(index.checked);
+
+  
+
+}
+
 
   mySelectHandlerDieta($event) {
     console.log($event);

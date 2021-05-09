@@ -49,5 +49,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'NuevaTipoRutina',  component: NuevaTipoRutinaComponent },
     { path: 'NuevoTipoIngredientes',  component: NuevoTipoIngredientesComponent },
     { path: 'Enquesta',  component: EnquestaComponent },
+    { path: 'CalendarioModal2Component',  component: EnquestaComponent },
+    
 
 ];

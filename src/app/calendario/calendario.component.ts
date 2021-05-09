@@ -8,6 +8,7 @@ import { CalendarioService } from "app/services/calendario.service";
 import { first } from "rxjs/operators";
 import { MatDialog } from "@angular/material/dialog";
 import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
+import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
 @Component({
   selector: "app-calendario",
   templateUrl: "./calendario.component.html",
@@ -93,9 +94,7 @@ export class CalendarioComponent implements OnInit {
         this.calendarOptions = {
           initialView: "dayGridMonth",
           dateClick:   this.openDialog.bind(this),
-        
-          
-          eventClick:this.eventClick.bind(this),
+          eventClick:this.openDialogInfo.bind(this),
           events: this.events,
 
         };
@@ -107,32 +106,24 @@ export class CalendarioComponent implements OnInit {
     });
   }
 
-  openDialog() {
-  
+  openDialog(arg) {
+  console.log(arg);
     this.dialog.open(CalendarioModalComponent, {
-   
+      data: arg,
     });
   }
 
+  openDialogInfo(arg) {
+    console.log(arg);
+      this.dialog.open(CalendarioModal2Component, {
+        data: arg,
+      });
+    }
+
   //Show Modal with Forn on dayClick Event
   handleDateClick(arg) {
-    $("#myModal").modal("show");
-    $(".modal-title, .eventstarttitle").text("");
-    $(".modal-title").text("Add Event at : " + arg.dateStr);
-    $(".eventstarttitle").text(arg.dateStr);
-
-    this.data = arg.dateStr;
+  this.openDialog(arg);
   
-
-
-console.log(this.Fecha);
-
-    this.range = new FormGroup({
-      start: new FormControl(this.data+'T21:00:00.000Z'),
-      end: new FormControl()
-    });
-
-    
   }
 
 

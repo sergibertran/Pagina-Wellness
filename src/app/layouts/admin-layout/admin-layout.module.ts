@@ -38,6 +38,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { EnquestaComponent } from 'app/enquesta/enquesta.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { CalendarioModalComponent } from 'app/calendario/calendario-modal/calendario-modal.component';
+import { CalendarioModal2Component } from 'app/calendario/calendario-modal2/calendario-modal2.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -90,6 +91,7 @@ FullCalendarModule.registerPlugins([
     IngredientesComponent,
     EnquestaComponent,
     CalendarioModalComponent,
+    CalendarioModal2Component,
   
   ],
   providers: [  
