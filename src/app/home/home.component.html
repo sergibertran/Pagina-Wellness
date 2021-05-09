@@ -1,87 +1,3 @@
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-            <div class="login-page">
-                <mat-card class="mat-elevation-z12">
-                    <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title>
-                    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
-                        <mat-tab label="Sign In">
-                            <mat-card-content>
-                                <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm()">
-                                    <mat-form-field>
-                                        <input matInput formControlName="username" placeholder="Username" type="text"
-                                            required>
-
-                                        <mat-icon matSuffix>username</mat-icon>
-                                    </mat-form-field>
-                                    <mat-form-field>
-                                        <input matInput placeholder="Password" type="password" required
-                                            formControlName="password" name="password" ngModel>
-
-                                        <mat-icon matSuffix>lock</mat-icon>
-                                    </mat-form-field>
-                                    <button (click)='test()' mat-raised-button color="primary" class="login-button">
-                                        Sign In
-                                    </button>
-
-                                </form>
-                            </mat-card-content>
-                        </mat-tab>
-
-
-
-
-                        <!-- FORMULARI REGISTER -->
-                        <mat-tab label="Sign Up">
-                            <mat-card-content>
-                                <form [formGroup]="RegisterForm" (ngSubmit)="submitRegisterForm()">>
-                                    <mat-form-field>
-                                        <input matInput placeholder="User Name" required name="username"
-                                            formControlName="username">
-                                        <mat-icon matSuffix>perm_identity</mat-icon>
-                                    </mat-form-field>
-                                    <mat-form-field>
-                                        <input matInput placeholder="Email" required name="email"
-                                            formControlName="email">
-                                        <mat-icon matSuffix>email</mat-icon>
-                                    </mat-form-field>
-                                    <mat-form-field>
-                                        <input matInput placeholder="Password" type="password" required minlength="6"
-                                            name="password" formControlName="password">
-
-                                        <mat-icon matSuffix>lock</mat-icon>
-
-                                    </mat-form-field>
-                                    <mat-form-field>
-                                        <input matInput placeholder="Password" type="password" required
-                                            name="repassword" formControlName="repassword">
-
-                                        <mat-icon matSuffix>lock</mat-icon>
-                                    </mat-form-field>
-                                    <button mat-raised-button color="primary" class="login-button">
-                                        Sign Up
-                                    </button>
-                                </form>
-                            </mat-card-content>
-                        </mat-tab>
-                    </mat-tab-group>
-                </mat-card>
-            </div>
-        </div>
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="text-center">
-    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-        Modal Login Form</a>
-</div>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -93,6 +9,81 @@
     <title>WELLNESS</title>
 </head>
 
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="login-page">
+                <mat-card class="mat-elevation-z12">
+                    <mat-card-title style="text-align:center;">Iniciar sesion/Registrarse</mat-card-title>
+                    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+                        <mat-tab label="Iniciar sesion">
+                            <mat-card-content>
+                                <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm()">
+                                    <mat-form-field>
+                                        <input matInput formControlName="username" placeholder="Nombre" type="text"
+                                            required>
+
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Contraseña" type="password" required
+                                            formControlName="password" name="password" ngModel>
+
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                    </mat-form-field>
+                                    <button (click)='test()' mat-raised-button color="btn-primary" class="login-button">
+                                        Entrar
+                                    </button>
+
+                                </form>
+                            </mat-card-content>
+                        </mat-tab>
+
+
+
+
+                        <!-- FORMULARI REGISTER -->
+                        <mat-tab label="Registrarse">
+                            <mat-card-content>
+                                <form [formGroup]="RegisterForm" (ngSubmit)="submitRegisterForm()">>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Nombre" required name="username"
+                                            formControlName="username">
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Correo" required name="email"
+                                            formControlName="email">
+                                        <mat-icon matSuffix>email</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Contraseña" type="password" required minlength="6"
+                                            name="password" formControlName="password">
+
+                                        <mat-icon matSuffix>lock</mat-icon>
+
+                                    </mat-form-field>
+                                    <mat-form-field>
+                                        <input matInput placeholder="Confirmar contraseña" type="password" required
+                                            name="repassword" formControlName="repassword">
+
+                                        <mat-icon matSuffix>lock</mat-icon>
+                                    </mat-form-field>
+                                    <button mat-raised-button color="btn-primary" class="login-button">
+                                        Registrarse
+                                    </button>
+                                </form>
+                            </mat-card-content>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body id="page-top">
     <!-- Masthead-->
     <header class="masthead">
@@ -100,7 +91,7 @@
             <div class="masthead-heading text-uppercase">Todas las rutinas y dietas que desees, y mucho mas</div>
             <div class="masthead-subheading">Disfruta donde quieras de forma gratuita o suscribete para una experiencia
                 premium</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Entrar</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#modalLoginForm">Entrar</a>
         </div>
     </header>
     <!-- Planes-->
@@ -112,15 +103,15 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-4" style="margin-left: 100px;">
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Usuario
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#modalLoginForm">Usuario
                         registrado</a>
-                    <h4 class="my-3">GRATUITO</h4>
+                    <h2 class="my-3">GRATUITO</h2>
                     <p class="text-muted">Tan solo necesitas registrarte, sin tagetas, sin compromisos. Los usuarios
                         gratuitos podran acceder a rutinas y dietas prediseñadas para cada una de sus necesidades.</p>
                 </div>
                 <div class="col-md-4" style="margin-left: 130px;">
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Premium</a>
-                    <h4 class="my-3">59,99€/mes</h4>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">Premium</a>
+                    <h2 class="my-3">59,99€/mes</h2>
                     <p class="text-muted">Tendras a tu disposicion un equipo de profesionales que atenderan tus
                         necesidades. Dispondras de dietas y rutinas presonalizadas, asesorias con nuestros profesionales
                         y mucho mas.</p>
