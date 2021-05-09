@@ -30,6 +30,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { AuthGuard } from './_helpers/auth.guard';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -81,7 +83,6 @@ FullCalendarModule.registerPlugins([
 
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

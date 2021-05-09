@@ -15,7 +15,10 @@ export class AuthService {
 
 
   constructor(private http: HttpClient) {
+ 
+    
     this.currentUserSubject = new BehaviorSubject<usuario>(JSON.parse(localStorage.getItem('currentUser')));
+    console.log(this.currentUserSubject);
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -23,14 +26,6 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-
-  isAdmin() {
-    if (localStorage.getItem('role') === "21232f297a57a5a743894a0e4a801fc3") {
-      return true;
-    } else {
-      return false
-    }
-  }
 
   register(alumno) {
     console.log(alumno);
@@ -42,6 +37,31 @@ export class AuthService {
     console.log(alumno);
     
     return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
+  }
+
+
+  isLogged() {
+    if (localStorage.getItem('currentUser')) {
+      return true;
+    } else {
+      return false
+    }
+  }
+
+  isAdmin() {
+    if (localStorage.getItem('role') === "21232f297a57a5a743894a0e4a801fc3") {
+      return true;
+    } else {
+      return false
+    }
+  }
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('user');
+    localStorage.removeItem('password');
+
+    this.currentUserSubject.next(null);
   }
 
 

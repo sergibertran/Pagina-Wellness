@@ -39,6 +39,8 @@ import { EnquestaComponent } from 'app/enquesta/enquesta.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { CalendarioModalComponent } from 'app/calendario/calendario-modal/calendario-modal.component';
 import { CalendarioModal2Component } from 'app/calendario/calendario-modal2/calendario-modal2.component';
+import { AuthService } from 'app/services/auth.service';
+import { AuthGuard } from 'app/_helpers/auth.guard';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -96,7 +98,7 @@ FullCalendarModule.registerPlugins([
   ],
   providers: [  
     MatDatepickerModule,  
-  ],
-})
+  AuthService, AuthGuard, //Agregamos a los providers el guard],
+  ]})
 
 export class AdminLayoutModule {}

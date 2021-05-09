@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { usuario } from 'app/models/usuario';
 declare let $: any;
 import Swal from 'sweetalert2';
@@ -16,8 +16,15 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   LoginForm: FormGroup;
+  alumno = new usuario();
   RegisterForm: FormGroup;
   constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
+
+   // redirect to home if already logged in
+   if (this.authService.currentUserValue) {
+    this.router.navigate(['/Calendario']);
+  }
+
     this.LoginForm = this.fb.group({
       'username': [''],
       'password': ['']
@@ -30,29 +37,24 @@ export class HomeComponent implements OnInit {
       'repassword': [''],
    
     });
+
+
+ 
+
    }
 
   ngOnInit(): void {
-    console.log('2');
+   
     
   }
+
+
 // SUBMIT FORMS 
   submitLoginForm() {
 
     console.log(this.LoginForm.value);
-    if (this.LoginForm.value['username']=='admin'){
-     
-      localStorage.setItem('role', '21232f297a57a5a743894a0e4a801fc3');
-    }
-
-    localStorage.setItem('user', this.LoginForm.value['username']);
-    localStorage.setItem('password', this.LoginForm.value['password']);
   
-    if('admin'==localStorage.getItem('user')){
-      this.router.navigate(['/dashboard']);
-    }else{
-      this.router.navigate(['/Calendario']);
-    }
+  
     
    
     this.login();
@@ -81,12 +83,40 @@ export class HomeComponent implements OnInit {
     }
     login(){
 
-      this.authService.login(this.LoginForm.value).subscribe (
-        datos => {
-       console.log(datos);
-       
-        }
-      )
+      this.authService.login(this.LoginForm.value)
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+          
+          try {
+            if (data != null) {
+              console.log('Login realizado');
+              this.router.navigate(['alumno']);
+              localStorage.setItem('currentUser', JSON.stringify(data['idUsuario']));
+              localStorage.setItem('usernameUser', data['usuario']);
+              localStorage.setItem('role', data['tUsuario']);
+
+              this.router.navigate(['/Calendario']);
+
+            } else{
+              throw new Error('An error occurred');
+            }
+          }
+           catch (error) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Login incorrecto',
+              text: 'Datos introducidos incorrectos, revisa tus datos',
+            })
+          }
+        });
+
+
+
+
+
+
 
 
     }

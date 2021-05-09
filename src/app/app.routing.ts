@@ -6,7 +6,6 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { CalendarioComponent } from './calendario/calendario.component';
 import { from } from 'rxjs';
 
 const routes: Routes =[
