@@ -41,7 +41,7 @@ export class AuthService {
   login(alumno) {
     console.log(alumno);
     
-    return this.http.post(`${environment.apiUrl}/register.php`, JSON.stringify(alumno));
+    return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
   }
 
 
