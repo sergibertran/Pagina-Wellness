@@ -10169,11 +10169,12 @@
     padding-bottom: 6rem;
     text-align: center;
     color: #fff;
-    background-image: url("../home/assets/img/kettlebells-1677217_1920.jpg");
+    background-image: url("../home/assets/img/FONDO.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+    height: 100vh;
   }
   header.masthead .masthead-subheading {
     font-size: 1.5rem;
