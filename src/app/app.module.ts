@@ -32,6 +32,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { AuthGuard } from './_helpers/auth.guard';
 import { AuthService } from './services/auth.service';
+import { PremiumComponent } from './premium/premium.component';
 
 
 
@@ -71,6 +72,7 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     AdminLayoutComponent,
     HomeComponent,
+    PremiumComponent,
  
  
    

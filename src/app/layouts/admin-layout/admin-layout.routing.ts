@@ -25,6 +25,7 @@ import { CalendarioComponent } from 'app/calendario/calendario.component';
 import { EnquestaComponent } from 'app/enquesta/enquesta.component';
 import { AuthGuard } from 'app/_helpers/auth.guard';
 import { AdminGuard } from 'app/_helpers/admin.guard';
+import { PremiumComponent } from 'app/premium/premium.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent ,canActivate: [AuthGuard]},
@@ -51,6 +52,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'NuevaTipoRutina',  component: NuevaTipoRutinaComponent ,canActivate: [AuthGuard]},
     { path: 'NuevoTipoIngredientes',  component: NuevoTipoIngredientesComponent ,canActivate: [AuthGuard]},
     { path: 'Enquesta',  component: EnquestaComponent ,canActivate: [AuthGuard]},
+    { path: 'Premium',  component: PremiumComponent ,canActivate: [AuthGuard]},
+
 
     
 
