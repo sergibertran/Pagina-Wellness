@@ -1,6 +1,6 @@
 export class enquesta {
   constructor(
-    public ombre: string,
+    public nombre: string,
     public Apellidos: string,
     public Sexo: string,
     public Email: string, 
