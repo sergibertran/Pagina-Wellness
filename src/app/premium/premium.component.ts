@@ -34,14 +34,13 @@ export class PremiumComponent implements OnInit {
   get f() { return this.registerForm.controls; }
 
   ModificarValores() {
-    this.nombre = this.registerForm.controls.Nombre.value;
-    this.numTarjeta = this.registerForm.controls.Nombre.value;
-    this.expNum = this.registerForm.controls.Nombre.value;
-    this.cvv = this.registerForm.controls.Nombre.value;
-    this.cantidad = this.registerForm.controls.Nombre.value;
+    this.nombre = this.registerForm.controls.nombre.value;
+    this.numTarjeta = this.registerForm.controls.numTarjeta.value;
+    this.expNum = this.registerForm.controls.expNum.value;
+    this.cvv = this.registerForm.controls.cvv.value;
+    this.cantidad = this.registerForm.controls.cantidad.value;
 
     this.premiumModel = new premium(this.nombre, this.numTarjeta,this.expNum, this.cvv, this.cantidad);    
-      
   }
 
 onSubmit() {

@@ -3,78 +3,72 @@
     <div class="card-top border-bottom text-center"> <a routerLink="/user-profile"> Volver</a> </div>
     <div class="card-body">
         <div class="row upper"><span id="Pagamento"><span id="three">1</span>Pagamento</span> </div>
-        <div class="row">
-            <div class="col-md-7">
-                <div class="left border">
-                    <div class="row"> <span class="header">Pagar</span>
-                        <div class="icons"> <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img
-                                src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img
-                                src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
-                    </div>
-                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-                        <span>Nombre:</span> <input placeholder="Nombre" formControlName="Nombre" class="form-control"
-                            [ngClass]="{ 'is-invalid': submitted && f.Nombre.errors }">
-                        <mat-error *ngIf="submitted && f.Nombre.errors" class="invalid-feedback">
-                            <div *ngIf="f.Nombre.errors.required">El Nombre es obligatorio</div>
-                        </mat-error>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="left border">
+                        <div class="row"> <span class="header">Pagar</span>
+                            <div class="icons"> <img src="https://img.icons8.com/color/48/000000/visa.png" /> <img
+                                    src="https://img.icons8.com/color/48/000000/mastercard-logo.png" /> <img
+                                    src="https://img.icons8.com/color/48/000000/maestro.png" /> </div>
+                        </div>
+
+                        <span>Nombre:</span> <input placeholder="Nombre" formControlName="nombre" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }">
+
                         <span>Num Tarjeta:</span> <input placeholder="0125 6780 4567 9909" formControlName="numTarjeta"
                             class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numTarjeta.errors }">
-                        <mat-error *ngIf="submitted && f.numTarjeta.errors" class="invalid-feedback">
-                            <div *ngIf="f.numTarjeta.errors.required">El Num. de Tarjeta es obligatorio</div>
-                        </mat-error>
+
                         <div class="row">
                             <div class="col-4">
                                 <span>Exp. Numero:</span>
                                 <input placeholder="YY/MM" formControlName="expNum" class="form-control"
                                     [ngClass]="{ 'is-invalid': submitted && f.expNum.errors }">
-                                <mat-error *ngIf="submitted && f.expNum.errors" class="invalid-feedback">
-                                    <div *ngIf="f.expNum.errors.required">El campo es obligatorio</div>
-                                </mat-error>
+
                             </div>
                             <div class="col-4">
                                 <span>CVV:</span>
                                 <input placeholder="123" formControlName="cvv" class="form-control"
                                     [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }">
-                                <mat-error *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
-                                    <div *ngIf="f.cvv.errors.required">El CVV es obligatorio</div>
-                                </mat-error>
-                            </div>
-                        </div>
-                    </form>
 
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="right border">
-                    <div class="header">Pedido</div>
-                    <p>1 items</p>
-                    <div class="row item">
-                        <div class="col-4 align-self-center"><img class="img-fluid"
-                                src="https://i.ibb.co/C2FrdMX/userpremium.png"></div>
-                        <div class="col-8">
-                            <div class="row"><b>€ 59.99</b></div>
-                            <div class="row text-muted">Usuario premium en un mes</div>
-                            <div>Cantidad:</div>
-                            <div class="form-group col-md-7">
-                                <input type="number" value="1" min="0" formControlName="cantidad"
-                                    class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
                             </div>
                         </div>
+
                     </div>
-                    <hr>
-                    <div class="row lower">
-                        <div class="col text-left">Subtotal</div>
-                        <div class="col text-right">€ 59.99</div>
+                </div>
+                <div class="col-md-5">
+                    <div class="right border">
+                        <div class="header">Pedido</div>
+                        <p>1 items</p>
+                        <div class="row item">
+                            <div class="col-4 align-self-center"><img class="img-fluid"
+                                    src="https://i.ibb.co/C2FrdMX/userpremium.png"></div>
+                            <div class="col-8">
+                                <div class="row"><b>€ 59.99</b></div>
+                                <div class="row text-muted">Usuario premium en un mes</div>
+                                <div>Cantidad:</div>
+                                <div class="form-group col-md-7">
+                                    <input type="number" value="1" min="0" placeholder="5" formControlName="cantidad"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row lower">
+                            <div class="col text-left">Subtotal</div>
+                            <div class="col text-right">€ 59.99</div>
+                        </div>
+                        <div class="row lower">
+                            <div class="col text-left"><b>Total a pagar</b></div>
+                            <div class="col text-right"><b>€ 59.99</b></div>
+                        </div>
+                        <div class="row lower">
+                        </div> <button type="submit" class="btn">Pagar</button>
                     </div>
-                    <div class="row lower">
-                        <div class="col text-left"><b>Total a pagar</b></div>
-                        <div class="col text-right"><b>€ 59.99</b></div>
-                    </div>
-                    <div class="row lower">
-                    </div> <button type="submit" button [disabled]="registerForm.invalid" class="btn">Pagar</button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
