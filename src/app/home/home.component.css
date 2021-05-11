@@ -2463,13 +2463,13 @@
   
   .btn-primary {
     color: #fff;
-    background-color: #f2228e;
-    border-color: #f2228e;
+    background: linear-gradient(180deg, #efa8d0 0%, #f2228e 100%);
+    border-color: #efa8d0;
   }
   .btn-primary:hover {
     color: #fff;
     background-color: #f2228e;
-    border-color: #f2228e;
+    border-color: #efa8d0;
   }
   .btn-primary:focus, .btn-primary.focus {
     color: #fff;
