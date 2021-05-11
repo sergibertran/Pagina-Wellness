@@ -25,24 +25,12 @@
             <p>Menu Princial</p>
           </a>
         </li>
-        <li>
-          <div class="dropdown">
-              <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-                  <i class="material-icons">kitchen</i>
-                  <p>Ingredientes</p>
-              </a>
-              <ul class="dropdown-menu">
-                  <li><a class="nav-link" routerLink="/Ingredientes" routerLinkActive="active"> Listado Ingredientes </a></li>
-            <li><a class="nav-link" routerLink="/TipoIngrediente" routerLinkActive="active"> Listado Tipo Ingredientes </a></li>
-              </ul>
-          </div>
-      </li>
 
-      <li>
+      <li *ngIf="isAdmin()==true">
         <div class="dropdown">
             <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
                 <i class="material-icons">dinner_dining</i>
-                <p>Platos</p>
+                <p>Dietas</p>
             </a>
             <ul class="dropdown-menu">
                 <li><a class="nav-link" routerLink="/Platos" routerLinkActive="active"> Listado Platos </a></li>
@@ -51,24 +39,12 @@
         </div>
     </li>
 
-    <li>
-      <div class="dropdown">
-          <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-              <i class="material-icons">monitor_weight</i>
-              <p>Dieta</p>
-          </a>
-          <ul class="dropdown-menu">
-              <li><a class="nav-link" routerLink="/Dieta" routerLinkActive="active"> Listado Dietas </a></li>
-        <li><a class="nav-link" routerLink="/TipoDieta" routerLinkActive="active"> Listado Tipo Dietas </a></li>
-          </ul>
-      </div>
-  </li>
 
-  <li>
+  <li *ngIf="isAdmin()==true">
     <div class="dropdown">
         <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
             <i class="material-icons">fitness_center</i>
-            <p>Ejercicios</p>
+            <p>Rutina</p>
         </a>
         <ul class="dropdown-menu">
             <li><a class="nav-link" routerLink="/Ejercicio" routerLinkActive="active"> Listado Ejercicios </a></li>
@@ -77,18 +53,20 @@
     </div>
 </li>
 
-<li>
-  <div class="dropdown">
-      <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-          <i class="material-icons">run_circle</i>
-          <p>Rutina</p>
-      </a>
-      <ul class="dropdown-menu">
-          <li><a class="nav-link" routerLink="/Rutina" routerLinkActive="active"> Listado Rutinas </a></li>
-    <li><a class="nav-link" routerLink="/TipoRutina" routerLinkActive="active"> Listado Tipo Rutinas </a></li>
-      </ul>
-  </div>
+<li *ngIf="isAdmin()==true">
+    <div class="dropdown">
+        <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
+            <i class="material-icons">people</i>
+          
+            <p>Usuarios</p>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="nav-link" routerLink="/Usuarios" routerLinkActive="active"> Listado Platos </a></li>
+      <li><a class="nav-link" routerLink="/TipoPlato" routerLinkActive="active"> Listado Tipo Platos </a></li>
+        </ul>
+    </div>
 </li>
+
 
       
     </ul>
