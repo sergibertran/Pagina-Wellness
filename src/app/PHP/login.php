@@ -35,4 +35,4 @@ $instruccion = "SELECT contrasena FROM usuarios WHERE usuario = '$params->userna
 
 
 header('Content-Type: application/json');
-echo json_encode($potato);
+echo json_encode($datos);
