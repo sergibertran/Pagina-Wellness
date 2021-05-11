@@ -10,6 +10,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
 import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
+import { BLACK_ON_WHITE_CSS_CLASS } from "@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector";
 @Component({
   selector: "app-calendario",
   templateUrl: "./calendario.component.html",
@@ -70,7 +71,8 @@ export class CalendarioComponent implements OnInit {
             this.events.push({
               title: res[index].comentarios,
               date: res[index].fecha,
-              color: "red",
+              color: "#fed9d5",
+              textColor: "black",
               res: res,
               id: res[index].idCalendario,
             });
@@ -78,7 +80,8 @@ export class CalendarioComponent implements OnInit {
             this.events.push({
               title: res[index].comentarios,
               date: res[index].fecha,
-              color: "blue",
+              color: "#dae5fd",
+              textColor: "black",
               res: res,
               id: res[index].idCalendario,
             });
@@ -86,7 +89,8 @@ export class CalendarioComponent implements OnInit {
             this.events.push({
               title: res[index].comentarios,
               date: res[index].fecha,
-              color: "green",
+              color: "#e7f5d0",
+              textColor: "black",
               res: res,
               id: res[index].idCalendario,
             });

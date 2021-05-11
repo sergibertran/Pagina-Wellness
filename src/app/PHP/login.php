@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 $json = file_get_contents('php://input'); // RECIBE EL JSON DE ANGULAR
 $datos;
 $params = json_decode($json); // DECODIFICA EL JSON Y LO GUARADA EN LA VARIABLE
-
+$potato;
 require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
 $conexion = conexion(); // CREA LA CONEXION
@@ -17,10 +17,11 @@ $instruccion = "SELECT contrasena FROM usuarios WHERE usuario = '$params->userna
 		$password2=$fila["contrasena"];
 	}
 
-   if (!password_verify ($params->password, $password2)){
-
+   if (!password_verify ($params->password,$password2)){
+    $potato="test";
 
   }else{
+    $potato="aaa";
     $resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$params->username' AND contrasena='$password2'");
     while ($registros = mysqli_fetch_array($resultado))
     {
@@ -34,4 +35,4 @@ $instruccion = "SELECT contrasena FROM usuarios WHERE usuario = '$params->userna
 
 
 header('Content-Type: application/json');
-echo json_encode($datos);
+echo json_encode($potato);
