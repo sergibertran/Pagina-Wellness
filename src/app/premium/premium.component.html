@@ -49,8 +49,8 @@
 
                                 <div class="form-group col-md-7">
                                     <input type="number" (change)="CambiarprecioTotal()" min="0" placeholder="1" formControlName="cantidad"
-                                        class="form-control"
-                                        [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors } ">
+                                        class="form-control" onKeyDown="return false"
+                                        [ngClass]="{ 'is-invalid': submitted && f.cantidad.errors }">
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <div class="col text-right"><b>€ {{total}}</b></div>
                         </div>
                         <div class="row lower">
-                        </div> <button type="submit" button [disabled]="registerForm.invalid" class="btn">Pagar</button>
+                        </div> <button class="awd" type="submit" button [disabled]="registerForm.invalid" class="btn">Pagar</button>
                     </div>
                 </div>
             </div>
