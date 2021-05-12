@@ -13,23 +13,86 @@
                           
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Nombre dieta" type="text">
                                   </mat-form-field>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
                                     <input matInput placeholder="Tipo Dieta" type="text">
                                   </mat-form-field>
                                 </div>
+                                <div class="col-md-4">
+                                  <mat-form-field >
+                                    <mat-label>Selector</mat-label>
+                                    <mat-select>
+                                      <mat-option value="one">Premium</mat-option>
+                                      <mat-option value="two">No Premium</mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                                </div>
                             </div>
 
-                            <label for="exampleFormControlSelect2">Tipo de usuario</label>
-                            <select multiple class="form-control" id="premium">
-                            <option>Premium</option>
-                            <option>NO premium</option>
-                            </select>
+                            <div *ngIf="Dias">
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 1</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 2</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 3</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 4</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 5</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 6</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                              <mat-form-field >
+                                <mat-label>Dia 7</mat-label>
+                                <textarea matInput></textarea>
+                              </mat-form-field>
+                            </div>
+                            </div>
+                          </div>
+                           
                         
                             <div class="row">
                                 <div class="col-md-12">
@@ -42,6 +105,9 @@
                                 </div>
                             </div>
                             <button mat-raised-button type="submit" class="btn btn-primary pull-right">Crear dieta</button>
+                            <button mat-raised-button *ngIf="CDias" (click)="AddDia()" class="btn btn-primary pull-right">Añadir dias</button>
+                            <button mat-raised-button *ngIf="Dias" (click)="CerrarDia()" class="btn btn-primary pull-right">Cerrar dias</button>
+                          
                             <div class="clearfix"></div>
                         </form>
                     </div>

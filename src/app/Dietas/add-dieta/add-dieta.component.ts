@@ -9,7 +9,21 @@ export class AddDietaComponent implements OnInit {
 
   constructor() { }
 
+ Dias:boolean=false
+ CDias:boolean=true
   ngOnInit(): void {
   }
 
+  AddDia(){
+
+    this.Dias=true
+    this.CDias=false
+    
+  }
+  CerrarDia(){
+
+    this.Dias=false
+    this.CDias=true
+    
+  }
 }
