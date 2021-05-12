@@ -30,22 +30,9 @@ export class UsuariosComponent implements OnInit {
          this.filterData=data;
       console.log(data);
       // console.log(this.filterData[0][2]);
-      
-
-
         
       });
-
-
-
-
-
-
-
-
   }
-
-
 
   userClick(){
 console.log("test");
