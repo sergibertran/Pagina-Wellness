@@ -37,6 +37,11 @@ import { DietaUsuarioComponent } from './dieta-usuario/dieta-usuario.component';
 import { RutinaUsuarioComponent } from './rutina-usuario/rutina-usuario.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { CalendarioUsuariosComponent } from './calendario-usuarios/calendario-usuarios.component';
+import { VerDietasComponent } from './Dietas/ver-dietas/ver-dietas.component';
+import { VerRutinasComponent } from './Rutinas/ver-rutinas/ver-rutinas.component';
+import { AddRutinaComponent } from './Rutinas/add-rutina/add-rutina.component';
+import { AddDietaComponent } from './Dietas/add-dieta/add-dieta.component';
+
 
 
 
@@ -81,6 +86,11 @@ FullCalendarModule.registerPlugins([
     RutinaUsuarioComponent,
     UsuariosComponent,
     CalendarioUsuariosComponent,
+    VerDietasComponent,
+    VerRutinasComponent,
+    AddRutinaComponent,
+    AddDietaComponent,
+
  
  
    

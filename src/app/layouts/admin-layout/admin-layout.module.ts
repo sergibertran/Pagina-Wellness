@@ -1,8 +1,4 @@
-import { IngredientesComponent } from './../../ingredientes/ingredientes/ingredientes.component';
-import { NuevoTipoPlatoComponent } from '../../platos/nuevo-tipo-plato/nuevo-tipo-plato.component';
-import { TipoPlatoComponent } from './../../platos/tipo-plato/tipo-plato.component';
-import { NuevoPlatoComponent } from './../../platos/nuevo-plato/nuevo-plato.component';
-import { PlatosComponent } from './../../platos/platos.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -16,20 +12,12 @@ import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-import { NuevoIngredienteComponent } from '../../ingredientes/nuevo-ingrediente/nuevo-ingrediente.component';
-import { DietaComponent } from 'app/dieta/dieta.component';
-import { TipoDietaComponent } from 'app/dieta/tipo-dieta/tipo-dieta.component';
-import { EjerciciosComponent } from 'app/ejercicios/ejercicios.component';
-import { TipoEjercicioComponent } from 'app/ejercicios/tipo-ejercicio/tipo-ejercicio.component';
-import { RutinaComponent } from 'app/rutina/rutina.component';
+
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';  
-import { NuevoEjercicioComponent } from 'app/ejercicios/nuevo-ejercicio/nuevo-ejercicio.component';
-import { NuevoTipoEjercicioComponent } from 'app/ejercicios/nuevo-tipo-ejercicio/nuevo-tipo-ejercicio.component';
-import { NuevoTipoDietaComponent } from 'app/dieta/nuevo-tipo-dieta/nuevo-tipo-dieta.component';
-import { NuevoDietaComponent } from 'app/dieta/nuevo-dieta/nuevo-dieta.component';
+
 import { CalendarioComponent} from 'app/calendario/calendario.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -75,22 +63,8 @@ FullCalendarModule.registerPlugins([
     DashboardComponent,
     UserProfileComponent,
     CalendarioComponent,
-    NuevoIngredienteComponent,
-    PlatosComponent,
-    NuevoPlatoComponent,
-    NuevoPlatoComponent,
-    TipoPlatoComponent,
-    NuevoTipoPlatoComponent,
-    DietaComponent,
-    TipoDietaComponent,
-    EjerciciosComponent,
-    TipoEjercicioComponent,
-    RutinaComponent,
-    NuevoEjercicioComponent,
-    NuevoTipoEjercicioComponent,
-    NuevoTipoDietaComponent,
-    NuevoDietaComponent,
-    IngredientesComponent,
+
+  
     EnquestaComponent,
     CalendarioModalComponent,
     CalendarioModal2Component,

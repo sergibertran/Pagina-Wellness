@@ -19,8 +19,8 @@ export const ROUTES: RouteInfo[] = [
 export const ROUTESA: RouteInfo[] = [
 
   { path: '/dashboard', title: 'Menu Principal',  icon: 'dashboard', class: '' },
-  { path: '/Dieta', title: 'Dieta',  icon:'library_books', class: '' },
-  { path: '/Rutina', title: 'Rutinas',  icon:'content_paste', class: '' },
+  { path: '/VerDieta', title: 'Dieta',  icon:'library_books', class: '' },
+  { path: '/VerRutina', title: 'Rutinas',  icon:'content_paste', class: '' },
   { path: '/Usuarios', title: 'Usuarios',  icon:'bubble_chart', class: '' },
   { path: '/CalendarioUsuarios', title: 'Calendario Usuarios',  icon:'location_on', class: '' }
 ];
