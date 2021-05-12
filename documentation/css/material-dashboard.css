@@ -13043,7 +13043,7 @@ h2.title {
     opacity: .8; }
   .sidebar[data-background-color="black"] .nav li .dropdown-menu .dropdown-item {
     color: #fff; }
-  .sidebar[data-color="purple"] li.active > a {
+  .sidebar[data-color="#f02b91"] li.active > a {
     background-color: #9c27b0;
     -webkit-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
             box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4); }
@@ -13303,7 +13303,7 @@ h2.title {
   background-color: #f44336; }
 
 .fixed-plugin .badge-purple {
-  background-color: #9368E9; }
+  background-color: #f02b91; }
 
 .fixed-plugin .badge-white {
   background-color: rgba(200, 200, 200, 0.2); }
@@ -14037,7 +14037,7 @@ a[aria-expanded="true"] .caret,
 .full-page:before {
   background-color: rgba(0, 0, 0, 0.5); }
 
-.full-page[filter-color="purple"]:after, .full-page[filter-color="primary"]:after {
+.full-page[filter-color="#f02b91"]:after, .full-page[filter-color="primary"]:after {
   background: rgba(225, 190, 231, 0.56);
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
@@ -14046,7 +14046,7 @@ a[aria-expanded="true"] .caret,
   background: linear-gradient(60deg, rgba(225, 190, 231, 0.56), rgba(186, 104, 200, 0.95));
   /* Standard syntax */ }
 
-.full-page[filter-color="purple"].lock-page .form-group .form-control, .full-page[filter-color="primary"].lock-page .form-group .form-control {
+.full-page[filter-color="#f02b91"].lock-page .form-group .form-control, .full-page[filter-color="primary"].lock-page .form-group .form-control {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9c27b0), to(#9c27b0)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
   background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2); }
 
