@@ -10,19 +10,19 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
 
-    { path: '/dashboard', title: 'Menu Principal',  icon: 'dashboard', class: '' },
-    { path: '/typography', title: 'Ingredientes',  icon:'library_books', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/TipoIngrediente', title: 'Tipo Ingrediente',  icon:'unarchive', class: 'active-pro' },
-    { path: '/NuevoTipoIngediente', title: 'Nuevo Tipo Ingrediente',  icon:'unarchive', class: 'active-pro' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
-    { path: '/Platos', title: 'Platos',  icon:'unarchive', class: 'active-pro' },
-    { path: '/TipoPlato', title: 'Tipo Platos',  icon:'unarchive', class: 'active-pro' },
+    { path: '/Calendario', title: 'Menu Principal',  icon: 'dashboard', class: '' },
+    { path: '/DietasUsuario', title: 'Dietas ',  icon:'library_books', class: '' },
+    { path: '/RutinasUsuario', title: 'Rutinas',  icon:'person', class: '' },
 
+
+];
+export const ROUTESA: RouteInfo[] = [
+
+  { path: '/dashboard', title: 'Menu Principal',  icon: 'dashboard', class: '' },
+  { path: '/Dieta', title: 'Dieta',  icon:'library_books', class: '' },
+  { path: '/Rutina', title: 'Rutinas',  icon:'content_paste', class: '' },
+  { path: '/Usuarios', title: 'Usuarios',  icon:'bubble_chart', class: '' },
+  { path: '/CalendarioUsuarios', title: 'Calendario Usuarios',  icon:'location_on', class: '' }
 ];
 
 @Component({
@@ -31,14 +31,16 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  menuItems: any[];
+  menuItemsAdmin: any[];
+  menuItemsUser: any[];
   username;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.username=this.authService.getUser();
 
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItemsAdmin = ROUTESA.filter(menuItem => menuItem);
+    this.menuItemsUser = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

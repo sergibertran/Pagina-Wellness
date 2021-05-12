@@ -12,92 +12,27 @@
     <ul class="nav">
 
       
-        <!-- <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} ">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
-                <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
-            </a>
-        </li> -->
-       
-        <li *ngIf="isAdmin()==true">
-          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"> 
-            <i class="material-icons">home</i>
-            <p>Menu Princial</p>
-          </a>
-        </li>
-
-        <li *ngIf="isAdmin()==false">
-            <a class="nav-link" routerLink="/Calendario" routerLinkActive="active"> 
-              <i class="material-icons">home</i>
-              <p>Menu Princial</p>
-            </a>
-          </li>
-
-      <li *ngIf="isAdmin()==true">
-        <div class="dropdown">
-            <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-                <i class="material-icons">dinner_dining</i>
-                <p>Dietas</p>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="nav-link" routerLink="/Platos" routerLinkActive="active"> Listado Platos </a></li>
-          <li><a class="nav-link" routerLink="/TipoPlato" routerLinkActive="active"> Listado Tipo Platos </a></li>
-            </ul>
+        <div *ngIf="isAdmin()==true">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItemsAdmin" class="{{menuItem.class}} ">
+                <a class="nav-link" [routerLink]="[menuItem.path]">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+            </li> 
         </div>
-    </li>
 
+        <div *ngIf="isAdmin()==false">
+            <li routerLinkActive="active" *ngFor="let menuItem of menuItemsUser" class="{{menuItem.class}} ">
+                <a class="nav-link" [routerLink]="[menuItem.path]">
+                    <i class="material-icons">{{menuItem.icon}}</i>
+                    <p>{{menuItem.title}}</p>
+                </a>
+            </li> 
+        </div>
+       
 
-  <li *ngIf="isAdmin()==true">
-    <div class="dropdown">
-        <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-            <i class="material-icons">fitness_center</i>
-            <p>Rutina</p>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="nav-link" routerLink="/Ejercicio" routerLinkActive="active"> Listado Ejercicios </a></li>
-      <li><a class="nav-link" routerLink="/TipoEjercicio" routerLinkActive="active"> Listado Tipo Ejericios </a></li>
-        </ul>
-    </div>
-</li>
-
-<li *ngIf="isAdmin()==true">
-    <div class="dropdown">
-        <a class="btn-light nav-link " data-toggle="dropdown" aria-expanded="true" >
-            <i class="material-icons">people</i>
-          
-            <p>Usuarios</p>
-        </a>
-        <ul class="dropdown-menu">
-            <li><a class="nav-link" routerLink="/Usuarios" routerLinkActive="active"> Listado Platos </a></li>
-      <li><a class="nav-link" routerLink="/TipoPlato" routerLinkActive="active"> Listado Tipo Platos </a></li>
-        </ul>
-    </div>
-</li>
-
-<li *ngIf="isAdmin()==false">
-
-        <a class="btn-light nav-link " aria-expanded="true" >
-            <i class="material-icons">dinner_dining</i>
-            <p>Dietas</p>
-        </a>
-        <ul class="dropdown-menu">
-        </ul>
-
-</li>
-
-
-<li *ngIf="isAdmin()==false">
-
-    <a class="btn-light nav-link " aria-expanded="true" >
-        <i class="material-icons">fitness_center</i>
-        <p>Rutina</p>
-    </a>
-    <ul class="dropdown-menu">
-
-    </ul>
-
-</li>
-
+        
+  
 
       
     </ul>

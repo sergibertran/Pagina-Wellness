@@ -8,12 +8,12 @@ import { AuthService } from 'app/services/auth.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-
+idusuario;
   constructor(private http: HttpClient,private authService: AuthService) { }
 
   ngOnInit() {
-
-    this.authService.loadOwnProfile().subscribe (
+    this.idusuario=this.authService.getidUser();
+    this.authService.loadOwnProfileo(this.idusuario).subscribe (
       datos => {
      console.log(datos);
      
