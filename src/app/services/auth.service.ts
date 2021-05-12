@@ -45,6 +45,12 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/infoDashboard.php`, JSON.stringify(String));
   }
 
+
+  loadOwnProfileo(iduser) {
+  
+    
+    return this.http.post(`${environment.apiUrl}/loadProfile.php`, JSON.stringify(iduser));
+  }
  
 
 
@@ -68,6 +74,11 @@ export class AuthService {
       return localStorage.getItem('usernameUser');
   
   }
+
+  getidUser() {
+    return localStorage.getItem('iDUser');
+
+}
 
   logout() {
     // remove user from local storage to log user out
