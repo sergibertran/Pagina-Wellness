@@ -8,32 +8,50 @@
                         <p class="card-category">Complete el formulario para registrarlo</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="row">
-                          
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre rutina" type="text">
-                                  </mat-form-field>
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Nombre rutina" formControlName="nombreRutina"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted}">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Tipo Rutina" formControlName="tipoRutina"
+                                            class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted}">
+                                    </mat-form-field>
                                 </div>
                             </div>
 
                             <label for="exampleFormControlSelect2">Tipo de usuario</label>
                             <select multiple class="form-control" id="premium">
-                            <option>Premium</option>
-                            <option>NO premium</option>
+                                <option>Premium</option>
+                                <option>NO premium</option>
                             </select>
-                        
-                            <button mat-raised-button type="submit" class="btn btn-primary pull-right">Crear dieta</button>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Imagen</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Escoge una foto</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button mat-raised-button type="submit" button [disabled]="registerForm.invalid" class="btn btn-primary pull-right">Crear Rutina</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-       
+
         </div>
     </div>
-  </div>
-  
+</div>
