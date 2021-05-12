@@ -22,7 +22,7 @@
      $x++;
    }
 
-
+  
 
     echo json_encode($array); // MUESTRA EL JSON GENERADO
 
