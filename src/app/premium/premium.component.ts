@@ -16,8 +16,8 @@ export class PremiumComponent implements OnInit {
   expNum: string;
   cvv: string;
   cantidad: string;
-  total:59.99;
-  precio:59.99;
+  total:number=59.99;
+  precio:number=59.99;
 
   premiumModel = new premium("","","","","");
 
@@ -29,9 +29,15 @@ export class PremiumComponent implements OnInit {
       numTarjeta: ["", Validators.required],
       expNum: ["", Validators.required],
       cvv: ["", Validators.required],
-      cantidad: ["", Validators.required],
+      cantidad: [1, Validators.required],
     });
   }
+  
+
+
+CambiarprecioTotal(){
+  this.total=this.registerForm.value.cantidad*this.precio
+}
 
   get f() { return this.registerForm.controls; }
 

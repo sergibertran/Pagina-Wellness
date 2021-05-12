@@ -32,10 +32,11 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
+  username;
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.username=this.authService.getUser();
 
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
@@ -50,5 +51,6 @@ export class SidebarComponent implements OnInit {
     return  this.authService.isAdmin();
    
   }
+
  
 }

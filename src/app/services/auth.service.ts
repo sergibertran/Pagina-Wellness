@@ -39,6 +39,12 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
   }
 
+  getDashboardInfo() {
+    console.log('test');
+    
+    return this.http.post(`${environment.apiUrl}/infoDashboard.php`, JSON.stringify(String));
+  }
+
  
 
 
@@ -56,6 +62,11 @@ export class AuthService {
     } else {
       return false
     }
+  }
+
+  getUser() {
+      return localStorage.getItem('usernameUser');
+  
   }
 
   logout() {
