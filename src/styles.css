@@ -7,3 +7,16 @@
     width: 54px;
     top: 9px;
 }
+
+.sidebar[data-color=danger] li.active > a {
+    background-color: #f02b91;
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(#f02b91 / 40%);
+}
+
+
+.mat-button.btn.btn-primary, .mat-raised-button.btn.btn-primary, .mat-raised-button.btn:not([class*=mat-elevation-z]).btn-primary, .btn.btn-primary, .btn.btn-primary:hover, .btn.btn-primary:active {
+    color: #fff;
+    background-color: #f02b91 ;
+    border-color: #e22989;
+    box-shadow: 0 2px 2px 0 rgb(#f02b91 / 14%), 0 3px 1px -2px rgb(#f02b91 / 20%), 0 1px 5px 0 rgb(#f02b91 / 12%);
+}
