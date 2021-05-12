@@ -50,6 +50,11 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadDietasAdmin.php`, JSON.stringify(user));
   }
 
+  loadRutina() {
+
+    return this.http.post(`${environment.apiUrl}/loadRutinasAdmin.php`, JSON.stringify(String));
+  }
+
   getDashboardInfo() {
     console.log('test');
     

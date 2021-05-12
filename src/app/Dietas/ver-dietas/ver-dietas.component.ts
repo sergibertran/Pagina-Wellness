@@ -9,7 +9,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./ver-dietas.component.css']
 })
 export class VerDietasComponent implements OnInit {
-
+dietas;
   constructor(private http: HttpClient,private authService: AuthService) { }
   test=2;
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class VerDietasComponent implements OnInit {
     .pipe(first())
     .subscribe(
       (data) => {
+        this.dietas=data;
         console.log(data);
      
       });
