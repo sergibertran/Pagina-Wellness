@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { diasdieta } from 'app/models/diasdieta';
 
 @Component({
   selector: 'app-add-dieta',
@@ -11,6 +12,7 @@ export class AddDietaComponent implements OnInit {
 
  Dias:boolean=false
  CDias:boolean=true
+ DiasDieta:diasdieta[]=[new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta()]
   ngOnInit(): void {
   }
 
@@ -24,6 +26,11 @@ export class AddDietaComponent implements OnInit {
 
     this.Dias=false
     this.CDias=true
+    
+  }
+
+  MostrarDias(){
+    console.log(this.DiasDieta);
     
   }
 }
