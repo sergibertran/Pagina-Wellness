@@ -10,30 +10,30 @@
                     <div class="card-body">
                         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="row">
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
                                         <input matInput placeholder="Nombre rutina" formControlName="nombreRutina"
                                             class="form-control"
                                             [ngClass]="{ 'is-invalid': submitted}">
                                     </mat-form-field>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <mat-form-field class="example-full-width">
                                         <input matInput placeholder="Tipo Rutina" formControlName="tipoRutina"
                                             class="form-control"
                                             [ngClass]="{ 'is-invalid': submitted}">
                                     </mat-form-field>
                                 </div>
+                                <div class="col-md-4">
+                                    <mat-form-field >
+                                      <mat-label>Selector</mat-label>
+                                      <mat-select>
+                                        <mat-option value="one">Premium</mat-option>
+                                        <mat-option value="two">No Premium</mat-option>
+                                      </mat-select>
+                                    </mat-form-field>
+                                  </div>
                             </div>
-
-                            <label for="exampleFormControlSelect2">Tipo de usuario</label>
-                            <select multiple class="form-control" id="premium">
-                                <option>Premium</option>
-                                <option>NO premium</option>
-                            </select>
 
                             <div class="row">
                                 <div class="col-md-12">
