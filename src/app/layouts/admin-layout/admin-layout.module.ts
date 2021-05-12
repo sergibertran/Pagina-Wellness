@@ -56,7 +56,7 @@ FullCalendarModule.registerPlugins([
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    UsuariosComponent 
+ 
 
   
     
@@ -65,11 +65,10 @@ FullCalendarModule.registerPlugins([
     DashboardComponent,
     UserProfileComponent,
     CalendarioComponent,
-
-  
     EnquestaComponent,
     CalendarioModalComponent,
     CalendarioModal2Component,
+    UsuariosComponent 
   
   ],
   providers: [  

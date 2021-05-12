@@ -84,7 +84,6 @@ FullCalendarModule.registerPlugins([
     PremiumComponent,
     DietaUsuarioComponent,
     RutinaUsuarioComponent,
-    UsuariosComponent,
     CalendarioUsuariosComponent,
     VerDietasComponent,
     VerRutinasComponent,
