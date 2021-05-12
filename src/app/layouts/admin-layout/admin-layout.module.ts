@@ -29,6 +29,7 @@ import { CalendarioModalComponent } from 'app/calendario/calendario-modal/calend
 import { CalendarioModal2Component } from 'app/calendario/calendario-modal2/calendario-modal2.component';
 import { AuthService } from 'app/services/auth.service';
 import { AuthGuard } from 'app/_helpers/auth.guard';
+import { UsuariosComponent } from 'app/usuarios/usuarios.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -54,7 +55,8 @@ FullCalendarModule.registerPlugins([
     MatIconModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule 
+    MatNativeDateModule,
+    UsuariosComponent 
 
   
     
