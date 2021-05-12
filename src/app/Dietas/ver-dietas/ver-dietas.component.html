@@ -41,22 +41,22 @@
                     <th>
                       Imagen
                   </thead>
-                  <tbody>
+                  <tbody *ngFor="let item of dietas">
                     <tr>
                       <td>
-                        1
+                        {{item[0]}}
                       </td>
                       <td>
-                        Dakota Rice
+                        {{item[1]}}
                       </td>
                       <td>
-                        Niger
+                        {{item[2]}}
                       </td>
                       <td>
-                        No Premium
+                        {{item[3]}}
                       </td>
                       <td>
-                        Oud-Turnhout
+                        {{item[4]}}
                       </td>
                    
                       <td>

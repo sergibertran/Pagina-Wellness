@@ -31,6 +31,11 @@ import { AuthService } from 'app/services/auth.service';
 import { AuthGuard } from 'app/_helpers/auth.guard';
 import { UsuariosComponent } from 'app/usuarios/usuarios.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CalendarioUserComponent } from 'app/calendario/calendario-user/calendario-user.component';
+import { VerDietasComponent } from 'app/Dietas/ver-dietas/ver-dietas.component';
+import { VerRutinasComponent } from 'app/Rutinas/ver-rutinas/ver-rutinas.component';
+import { AddRutinaComponent } from 'app/Rutinas/add-rutina/add-rutina.component';
+import { AddDietaComponent } from 'app/Dietas/add-dieta/add-dieta.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -69,8 +74,13 @@ FullCalendarModule.registerPlugins([
     EnquestaComponent,
     CalendarioModalComponent,
     CalendarioModal2Component,
-    UsuariosComponent 
-  
+    UsuariosComponent, 
+    CalendarioUserComponent,
+    VerDietasComponent,
+    VerRutinasComponent,
+    AddRutinaComponent,
+    AddDietaComponent,
+    CalendarioUserComponent,
   ],
   providers: [  
     MatDatepickerModule,  

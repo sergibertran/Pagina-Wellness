@@ -41,6 +41,7 @@ import { VerDietasComponent } from './Dietas/ver-dietas/ver-dietas.component';
 import { VerRutinasComponent } from './Rutinas/ver-rutinas/ver-rutinas.component';
 import { AddRutinaComponent } from './Rutinas/add-rutina/add-rutina.component';
 import { AddDietaComponent } from './Dietas/add-dieta/add-dieta.component';
+import { CalendarioUserComponent } from './calendario/calendario-user/calendario-user.component';
 
 
 
@@ -86,10 +87,7 @@ FullCalendarModule.registerPlugins([
     DietaUsuarioComponent,
     RutinaUsuarioComponent,
     CalendarioUsuariosComponent,
-    VerDietasComponent,
-    VerRutinasComponent,
-    AddRutinaComponent,
-    AddDietaComponent,
+   
 
  
  
