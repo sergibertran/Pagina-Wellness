@@ -77,7 +77,6 @@ FullCalendarModule.registerPlugins([
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
-    MatListModule
   ],
   declarations: [
     AppComponent,
