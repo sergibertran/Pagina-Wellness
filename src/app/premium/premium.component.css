@@ -131,7 +131,6 @@ input:focus::-webkit-input-placeholder {
 .btn {
     background-color: rgb(23, 4, 189);
     border-color: rgb(23, 4, 189);
-    color: white;
     width: 100%;
     font-size: 0.7rem;
     margin: 4vh 0 1.5vh 0;
@@ -150,7 +149,8 @@ input:focus::-webkit-input-placeholder {
 }
 
 .btn:hover {
-    color: white
+    background-color: rgb(23, 4, 189);
+    cursor: default;
 }
 
 a {
@@ -166,12 +166,3 @@ input[type=checkbox] {
     width: unset;
     margin-bottom: unset
 }
-
-#cvv {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center
-}
-
-#cvv:hover {}
