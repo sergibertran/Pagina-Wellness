@@ -32,8 +32,8 @@ export class CalendarioComponent implements OnInit {
   Fecha;
   data;
   Profile;
-
-  
+  idUsuario;
+  RegisterForm: FormGroup;
   
 
 
@@ -49,18 +49,25 @@ export class CalendarioComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private fb: FormBuilder
   ) { }
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
+    this.idUsuario=localStorage.getItem('iDUser');
+    this.RegisterForm = this.fb.group({
+      'idUsuario': [ this.idUsuario],
 
-    console.log("test");
+   
+    });
 
     var myFormDataa = new FormData();
-
+   
+    console.log(this.idUsuario);
+    
     this.http
-      .post("http://localhost/load.php/", myFormDataa)
+      .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
         console.log(res);
 
@@ -133,39 +140,6 @@ export class CalendarioComponent implements OnInit {
   this.openDialog(arg);
   
   }
-
-
-
- 
-
-
-
- 
-  eventClick(arg) {
-    console.log(arg);
-    console.log(arg.event.id);
-
-    console.log(arg.event.startStr);
-    if (arg.event.id == 69) {
-      $("#calendarModalDieta").modal("show");
-      $(".modal-title, .eventstarttitle").text("");
-      $(".modal-title").text("Add Event at : " + arg.event.startStr);
-      $(".eventstarttitle").text(arg.dateStr);
-    } else if (arg.event.id == 73) {
-      $("#calendarModalRutina").modal("show");
-      $(".modal-title, .eventstarttitle").text("");
-      $(".modal-title").text("Add Event at : " + arg.event.startStr);
-      $(".eventstarttitle").text(arg.dateStr);
-    } else if (arg.event.id == 74) {
-      $("#calendarModalComentarios").modal("show");
-      $(".modal-title, .eventstarttitle").text("");
-      $(".modal-title").text("Add Event at : " + arg.event.startStr);
-      $(".eventstarttitle").text(arg.dateStr);
-    }
-
-
-  }
-
 
 
   borrar() {

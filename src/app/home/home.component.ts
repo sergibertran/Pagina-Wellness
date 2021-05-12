@@ -88,13 +88,14 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (data) => {
           console.log(data);
-          
+          this.authService.login(data);
           try {
             if (data != null) {
               console.log('Login realizado');
               this.router.navigate(['alumno']);
               localStorage.setItem('currentUser', JSON.stringify(data['idUsuario']));
               localStorage.setItem('usernameUser', data['usuario']);
+              localStorage.setItem('iDUser', data['idUsuario']);
               localStorage.setItem('role', data['tUsuario']);
 
               this.router.navigate(['/Calendario']);

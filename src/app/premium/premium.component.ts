@@ -16,6 +16,8 @@ export class PremiumComponent implements OnInit {
   expNum: string;
   cvv: string;
   cantidad: string;
+  total:59.99;
+  precio:59.99;
 
   premiumModel = new premium("","","","","");
 

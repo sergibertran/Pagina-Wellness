@@ -39,6 +39,8 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
   }
 
+ 
+
 
   isLogged() {
     if (localStorage.getItem('currentUser')) {
@@ -58,9 +60,10 @@ export class AuthService {
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('user');
-    localStorage.removeItem('password');
-
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('role');
+    localStorage.removeItem('iDUser');
+    localStorage.removeItem('usernameUser');
     this.currentUserSubject.next(null);
   }
 
