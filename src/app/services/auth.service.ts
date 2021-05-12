@@ -45,6 +45,11 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadUsers.php`, JSON.stringify(user));
   }
 
+  loadDieta(user) {
+
+    return this.http.post(`${environment.apiUrl}/loadDietasAdmin.php`, JSON.stringify(user));
+  }
+
   getDashboardInfo() {
     console.log('test');
     
