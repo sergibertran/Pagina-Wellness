@@ -10,19 +10,19 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
 
-    { path: '/Calendario', title: 'Menu Principal',  icon: 'dashboard', class: '' },
-    { path: '/DietasUsuario', title: 'Dietas ',  icon:'library_books', class: '' },
-    { path: '/RutinasUsuario', title: 'Rutinas',  icon:'person', class: '' },
+    { path: '/Calendario', title: 'Menu Principal',  icon: 'home', class: '' },
+    { path: '/DietasUsuario', title: 'Dietas',  icon:'restaurant_menu', class: '' },
+    { path: '/RutinasUsuario', title: 'Rutinas',  icon:'fitness_center', class: '' },
 
 
 ];
 export const ROUTESA: RouteInfo[] = [
 
-  { path: '/dashboard', title: 'Menu Principal',  icon: 'dashboard', class: '' },
-  { path: '/VerDieta', title: 'Dieta',  icon:'library_books', class: '' },
-  { path: '/VerRutina', title: 'Rutinas',  icon:'content_paste', class: '' },
-  { path: '/Usuarios', title: 'Usuarios',  icon:'bubble_chart', class: '' },
-  { path: '/CalendarioUsuarios', title: 'Calendario Usuarios',  icon:'location_on', class: '' }
+  { path: '/dashboard', title: 'Menu Principal',  icon: 'home', class: '' },
+  { path: '/VerDieta', title: 'Dietas',  icon:'restaurant_menu', class: '' },
+  { path: '/VerRutina', title: 'Rutinas',  icon:'fitness_center', class: '' },
+  { path: '/Usuarios', title: 'Usuarios',  icon:'manage_accounts', class: '' },
+  { path: '/CalendarioUsuarios', title: 'Calendario Usuarios',  icon:'perm_contact_calendar', class: '' }
 ];
 
 @Component({
