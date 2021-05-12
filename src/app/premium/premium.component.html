@@ -1,8 +1,7 @@
 <br><br><br>
 <div class="card">
-    <div class="card-top border-bottom text-center"> <a routerLink="/user-profile"> Volver</a> </div>
+    <div class="card-top border-bottom text-center"></div>
     <div class="card-body">
-        <div class="row upper"><span id="Pagamento"><span id="three">1</span>Pagamento</span> </div>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
             <div class="row">
@@ -46,8 +45,7 @@
                                     src="https://i.ibb.co/C2FrdMX/userpremium.png"></div>
                             <div class="col-8">
                                 <div class="row"><b>€ 59.99</b></div>
-                                <div class="row text-muted">Usuario premium en un mes</div>
-                                <div>Cantidad:</div>
+                                <div class="row text-muted">Suscripción mensual</div>
 
                                 <div class="form-group col-md-7">
                                     <input type="number" (change)="CambiarprecioTotal()" min="0" placeholder="1" formControlName="cantidad"

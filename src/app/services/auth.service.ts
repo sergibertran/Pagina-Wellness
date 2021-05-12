@@ -45,6 +45,12 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/infoDashboard.php`, JSON.stringify(String));
   }
 
+
+  loadOwnProfile() {
+  
+    
+    return this.http.post(`${environment.apiUrl}/loadProfile.php`, JSON.stringify(String));
+  }
  
 
 
