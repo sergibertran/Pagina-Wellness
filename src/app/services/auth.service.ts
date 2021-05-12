@@ -39,6 +39,12 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
   }
 
+  loadUsers(user) {
+
+    
+    return this.http.post(`${environment.apiUrl}/loadUsers.php`, JSON.stringify(user));
+  }
+
   getDashboardInfo() {
     console.log('test');
     

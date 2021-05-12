@@ -30,6 +30,7 @@ import { CalendarioModal2Component } from 'app/calendario/calendario-modal2/cale
 import { AuthService } from 'app/services/auth.service';
 import { AuthGuard } from 'app/_helpers/auth.guard';
 import { UsuariosComponent } from 'app/usuarios/usuarios.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -56,7 +57,7 @@ FullCalendarModule.registerPlugins([
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
- 
+    Ng2SearchPipeModule,
 
   
     

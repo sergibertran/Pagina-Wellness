@@ -30,8 +30,29 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-              <td></td>
+          <tbody >
+          
+              
+
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+                </div>
+            
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Usuario</th>
+ 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div *ngFor="let item of filterData  | filter:term">
+                            <td style="hover: aqua;" (click)="userClick()">{{item.usuario}}</td>
+                 
+                        </div>
+                    </tbody>
+                </table>
+            
               <td></td>
               <td></td>
               <td>

@@ -41,7 +41,7 @@ import { VerDietasComponent } from './Dietas/ver-dietas/ver-dietas.component';
 import { VerRutinasComponent } from './Rutinas/ver-rutinas/ver-rutinas.component';
 import { AddRutinaComponent } from './Rutinas/add-rutina/add-rutina.component';
 import { AddDietaComponent } from './Dietas/add-dieta/add-dieta.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -61,6 +61,7 @@ FullCalendarModule.registerPlugins([
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+   
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     }),
