@@ -33,6 +33,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { AuthGuard } from './_helpers/auth.guard';
 import { AuthService } from './services/auth.service';
 import { PremiumComponent } from './premium/premium.component';
+import { DietaUsuarioComponent } from './dieta-usuario/dieta-usuario.component';
+import { RutinaUsuarioComponent } from './rutina-usuario/rutina-usuario.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CalendarioUsuariosComponent } from './calendario-usuarios/calendario-usuarios.component';
 
 
 
@@ -73,6 +77,10 @@ FullCalendarModule.registerPlugins([
     AdminLayoutComponent,
     HomeComponent,
     PremiumComponent,
+    DietaUsuarioComponent,
+    RutinaUsuarioComponent,
+    UsuariosComponent,
+    CalendarioUsuariosComponent,
  
  
    
