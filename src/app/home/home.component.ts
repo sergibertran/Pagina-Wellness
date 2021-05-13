@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 // SUBMIT FORMS 
   submitLoginForm() {
 
-    console.log(this.LoginForm.value);
+  
   
   
     
@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitRegisterForm() {
-    console.log(this.RegisterForm.value);
+
 
     this.registerAlumno();
    
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
 
     this.authService.register(this.RegisterForm.value).subscribe (
       datos => {
-     console.log(datos);
+
      
       }
     )
@@ -87,11 +87,11 @@ export class HomeComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          console.log(data);
+          
           this.authService.login(data);
           try {
             if (data != null) {
-              console.log('Login realizado');
+            
               this.router.navigate(['alumno']);
               localStorage.setItem('currentUser', JSON.stringify(data['idUsuario']));
               localStorage.setItem('usernameUser', data['usuario']);

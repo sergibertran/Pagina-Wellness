@@ -22,7 +22,7 @@ dietas;
     .subscribe(
       (data) => {
         this.dietas=data;
-        console.log(data);
+       
      
       });
   }

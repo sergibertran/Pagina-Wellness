@@ -54,7 +54,7 @@ CambiarprecioTotal(){
 onSubmit() {
  
   this.ModificarValores()
-  console.log(this.premiumModel);
+
   
   
   this.submitted = true;

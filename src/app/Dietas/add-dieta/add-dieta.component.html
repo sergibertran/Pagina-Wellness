@@ -8,27 +8,27 @@
                         <p class="card-category">Complete your profile</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="anadirDietaForm" (ngSubmit)="Submit()">
                             <div class="row">
                           
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Nombre dieta" type="text">
+                                    <input matInput formControlName="nombreDieta"  placeholder="Nombre dieta" type="text">
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                   <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Tipo Dieta" type="text">
+                                    <input matInput formControlName="tipoDieta" placeholder="Tipo Dieta" type="text">
                                   </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
                                   <mat-form-field >
                                     <mat-label>Selector</mat-label>
-                                    <mat-select>
-                                      <mat-option value="one">Premium</mat-option>
-                                      <mat-option value="two">No Premium</mat-option>
+                                    <mat-select formControlName="PremiumNoPremium">
+                                      <mat-option value="1">Premium</mat-option>
+                                      <mat-option value="0">No Premium</mat-option>
                                     </mat-select>
                                   </mat-form-field>
                                 </div>
@@ -41,7 +41,7 @@
                                 <div class="col-md-12">
                                   <label>Imagen</label>
                                   <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <input type="file" class="custom-file-input" id="customFile" formControlName="image">
                                     <label class="custom-file-label" for="customFile">Escoge una foto</label>
                                   </div>
                          

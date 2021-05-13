@@ -10,11 +10,11 @@ export class CalendarioService {
 
 
   load(text) {
-    console.log(text);
+   
     
     return this.http.post('http://localhost/load.php/', JSON.stringify(text))
       .pipe(map(any => {
-        console.log(any);
+   
         
         return any;
       }));

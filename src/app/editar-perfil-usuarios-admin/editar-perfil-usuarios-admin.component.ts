@@ -26,7 +26,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log( this.router.url.split('/')[2]);
+    
     this.idUsuario=this.router.url.split('/')[2];
      
       this.RegisterForm = this.fb.group({
@@ -37,15 +37,14 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   
       var myFormDataa = new FormData();
      
-      console.log(this.idUsuario);
+    
       
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {
           this.ready=true;
-       console.log(datos);
+   
        this.infoUser=datos;
-       console.log(this.infoUser[0][2]);
-       
+    
         }
       )
   

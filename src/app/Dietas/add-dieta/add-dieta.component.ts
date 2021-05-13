@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { diasdieta } from 'app/models/diasdieta';
 
 @Component({
@@ -8,12 +9,20 @@ import { diasdieta } from 'app/models/diasdieta';
 })
 export class AddDietaComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private fb: FormBuilder) { }
+  anadirDietaForm: FormGroup;
  Dias:boolean=false
  CDias:boolean=true
- DiasDieta:diasdieta[]=[new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta()]
+ //DiasDieta:diasdieta[]=[new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta()]
   ngOnInit(): void {
+
+    this.anadirDietaForm = this.fb.group({
+      'nombreDieta': [''],
+      'tipoDieta': [''],
+      'PremiumNoPremium': [''],
+      'image': [''],
+   
+    });
   }
 
   AddDia(){
@@ -21,6 +30,10 @@ export class AddDietaComponent implements OnInit {
     this.Dias=true
     this.CDias=false
     
+  }
+  Submit(){
+ 
+ 
   }
   CerrarDia(){
 
@@ -30,7 +43,7 @@ export class AddDietaComponent implements OnInit {
   }
 
   MostrarDias(){
-    console.log(this.DiasDieta);
+
     
   }
 }

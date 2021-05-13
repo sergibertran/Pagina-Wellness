@@ -74,7 +74,7 @@ FullCalendarModule.registerPlugins([
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    HomeComponent,
+    HomeComponent
 
   
 
