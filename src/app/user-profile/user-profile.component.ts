@@ -30,6 +30,7 @@ idusuario;
         this.DatosModal=datos[0];
   
      datos[0]['usuario'];
+    console.log(datos);
     
      
      this.myForm = new FormGroup(
