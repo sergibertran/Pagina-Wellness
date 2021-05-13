@@ -13,7 +13,12 @@ export class AdminGuard implements CanActivate {
 
 canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const currentUser = this.AuthService.currentUserValue;
-    if (currentUser && localStorage.getItem('role') === '1') {
+    console.log('trueAdmin');
+    console.log(currentUser);
+    
+
+
+    if (localStorage.getItem('role') == '1') {
         // logged in so return true
         console.log('eres admin');
         
