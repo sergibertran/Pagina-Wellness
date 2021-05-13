@@ -4,21 +4,25 @@ import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { first, map } from 'rxjs/operators';
 import { usuario } from 'app/models/usuario';
+import { MatDialog } from "@angular/material/dialog";
 declare let $: any;
 import Swal from 'sweetalert2';
 import { AuthService } from 'app/services/auth.service';
 import { Router } from '@angular/router';
+import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  gratuito='gratuito';
+  cancelo='cancelo';
   LoginForm: FormGroup;
+  data;
   alumno = new usuario();
   RegisterForm: FormGroup;
-  constructor( private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
+  constructor(   public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
 
    // redirect to home if already logged in
    if (this.authService.currentUserValue) {
@@ -49,6 +53,14 @@ export class HomeComponent implements OnInit {
   }
 
 
+  openDialogInfo(info) {
+    console.log(info);
+    
+      this.dialog.open(ModalhomeComponent,{
+        data: info,
+      });
+    }
+  
 // SUBMIT FORMS 
   submitLoginForm() {
 
@@ -124,9 +136,7 @@ export class HomeComponent implements OnInit {
 
 
 
-    test(){
-      $('#modalLoginForm').modal("hide");
-
-    }
 
 }
+
+

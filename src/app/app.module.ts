@@ -32,7 +32,8 @@ import { PremiumComponent } from './premium/premium.component';
 import { DietaUsuarioComponent } from './Dietas/dieta-usuario/dieta-usuario.component';
 import { RutinaUsuarioComponent } from './Rutinas/rutina-usuario/rutina-usuario.component';
 import { ModificarDietaComponent } from './Dietas/modificar-dieta/modificar-dieta.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalhomeComponent } from './modalhome/modalhome.component';
 
 
 
@@ -54,6 +55,7 @@ FullCalendarModule.registerPlugins([
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatDialogModule,
    
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
@@ -74,7 +76,8 @@ FullCalendarModule.registerPlugins([
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    HomeComponent
+    HomeComponent,
+    ModalhomeComponent,
 
   
 

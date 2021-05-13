@@ -33,7 +33,7 @@
 
                                         <mat-icon matSuffix>lock</mat-icon>
                                     </mat-form-field>
-                                    <button (click)='test()' mat-raised-button color="btn-primary" class="login-button">
+                                    <button  mat-raised-button color="btn-primary" class="login-button">
                                         Entrar
                                     </button>
 
@@ -236,29 +236,14 @@
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_ofrece"
+
+        <button  (click)='openDialogInfo(gratuito)' type="button"  class="btn btn-primary" 
             style="margin-left: 20px;">
             ¿Que rutinas y dietas ofrece el plan gratuito?
+
         </button>
 
-        <div class="modal fade" id="que_ofrece" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">¿Que rutinas y dietas ofrece el plan
-                            gratuito?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Ofrecemos tres rutinas y tres dietas predefinidas. Ofrecemos rutinas de hipertrofia, fuerza y
-                        hit, y dietas para perder peso, ganar masa y mantener peso.
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
             ¿Donde puedo asesorarme en persona?
