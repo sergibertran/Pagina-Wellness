@@ -14,7 +14,7 @@ import { CalendarioService } from 'app/services/calendario.service';
 export class EditarPerfilUsuariosAdminComponent implements OnInit {
   idUsuario;
   RegisterForm: FormGroup;
-  ready;
+  ready=false;
   infoUser;
   perfilalumno;
   myForm;
@@ -50,7 +50,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
       
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {
-          this.ready=true;
+          
        console.log(datos);
        this.infoUser=datos;
      console.log(datos);
@@ -92,13 +92,15 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
       }
 
     );
+  
+    
     this.ready=true;
     this.usuario=this.myForm.controls.usuario.value;
     this.nombre=this.myForm.controls.nombre.value;
     this.apellidos=this.myForm.controls.apellidos.value;
     this.correo=this.myForm.controls.correo.value;
     this.direccion=this.myForm.controls.direccion.value;
-   
+    this.ready=true;
       }
     )
 
