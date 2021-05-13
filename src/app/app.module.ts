@@ -80,7 +80,9 @@ FullCalendarModule.registerPlugins([
     AdminLayoutComponent,
     HomeComponent,
     PremiumComponent,
-
+ DietaUsuarioComponent,
+    RutinaUsuarioComponent,
+  
 
 
  

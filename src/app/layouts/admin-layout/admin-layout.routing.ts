@@ -35,6 +35,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Usuario',  component: UsuariosComponent ,canActivate: [AuthGuard]},
     { path: 'CalendarioUser/:id',  component: CalendarioUserComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'EditarPerfilUsuariosAdmin/:id',  component: EditarPerfilUsuariosAdminComponent ,canActivate: [AuthGuard, AdminGuard]},
-    ,
+    
 
 ];
