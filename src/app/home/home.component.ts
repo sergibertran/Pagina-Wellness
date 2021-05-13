@@ -63,6 +63,8 @@ export class HomeComponent implements OnInit {
         data: info,
       });
     }
+
+    
     openDialogLogin() {
       console.log();
       

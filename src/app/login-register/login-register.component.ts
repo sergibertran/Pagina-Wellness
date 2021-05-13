@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
 import { usuario } from 'app/models/usuario';
@@ -25,7 +25,7 @@ export class LoginRegisterComponent implements OnInit {
   alumno = new usuario();
   RegisterForm: FormGroup;
 
-  constructor(  public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
+  constructor(  public dialog: MatDialog, private dialogRef: MatDialogRef<LoginRegisterComponent>,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
     
 
   
@@ -84,7 +84,7 @@ export class LoginRegisterComponent implements OnInit {
   
     this.authService.register(this.RegisterForm.value).subscribe (
       datos => {
-  
+        this.dialogRef.close();
      
       }
     )
@@ -95,7 +95,8 @@ export class LoginRegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          
+          console.log(data);
+          this.dialogRef.close();
           this.authService.login(data);
           try {
             if (data != null) {
@@ -105,6 +106,7 @@ export class LoginRegisterComponent implements OnInit {
               localStorage.setItem('usernameUser', data['usuario']);
               localStorage.setItem('iDUser', data['idUsuario']);
               localStorage.setItem('role', data['tUsuario']);
+              localStorage.setItem('Npremium', data['Npremium']);
   
               this.router.navigate(['/Calendario']);
   

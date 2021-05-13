@@ -12,7 +12,7 @@
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
  
- $sql = "SELECT idCalendario, idDieta, idRutina, comentarios,idUsuario,fecha 
+ $sql = "SELECT idCalendario, idDieta,idDia, idRutina, comentarios,idUsuario,fecha 
  FROM calendario
  WHERE idUsuario=$params->idUsuario");
  

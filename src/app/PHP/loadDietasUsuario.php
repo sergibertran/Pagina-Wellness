@@ -12,8 +12,9 @@
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
  
- $sql = "SELECT idDiaDieta, numDiaDieta, idDIeta, Desayuno, Desayuno2, Comida, Merienda, Merienda2, Cena, Comentarios
- FROM daw2_jamsweb.dias where idDIeta=1 and numDiaDieta=1");
+ $sql = "SELECT idDieta, TipoDieta, NDieta, Premium, Imagen
+ FROM daw2_jamsweb.dieta where Premium=0
+ ");
  
 
    while ($registros = mysqli_fetch_array($resultado)) {
@@ -21,7 +22,7 @@
      $x++;
    }
 
-
+  
 
     echo json_encode($array); // MUESTRA EL JSON GENERADO
 

@@ -15,13 +15,21 @@ export class DietaUsuarioComponent implements OnInit {
   filterData;
 
   ngOnInit(): void {
-    // this.iduser=this.authService.getidUser();
-    // this.authService.loadUsers(this.iduser)
-    // .pipe(first())
-    // .subscribe(
-    //   (data) => {
-    //      this.filterData=data;
-    // });
+    this.iduser=this.authService.getNpremium();
+    console.log(this.iduser);
+    
+    if(this.iduser==0){
+      this.authService.loadDietasUsuario(this.iduser)
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          console.log(data);
+           this.filterData=data;
+      });
+
+
+    }
+    
   }
 
   userClick(){

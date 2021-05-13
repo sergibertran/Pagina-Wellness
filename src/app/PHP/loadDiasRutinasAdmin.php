@@ -13,8 +13,7 @@
  $resultado = mysqli_query($conexion, 
  
  $sql = "SELECT idDiaRutina, numDiaRutina, idRutina, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6, Comentarios
- FROM daw2_jamsweb.dias_rutinas;
- ");
+ FROM daw2_jamsweb.dias_rutinas where idRutina=1 and numDiaRutina=1");
  
 
    while ($registros = mysqli_fetch_array($resultado)) {

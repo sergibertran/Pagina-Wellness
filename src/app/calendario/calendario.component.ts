@@ -70,6 +70,7 @@ export class CalendarioComponent implements OnInit {
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
     console.log(res);
+    console.log(res[0].idDia);
     
 
         for (let index = 0; index < Object.keys(res).length; index++) {
@@ -81,7 +82,8 @@ export class CalendarioComponent implements OnInit {
               color: "#fed9d5",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
+              groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Rutina") {
             this.events.push({
@@ -90,7 +92,8 @@ export class CalendarioComponent implements OnInit {
               color: "#dae5fd",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
+              groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Comentarios") {
             this.events.push({
@@ -99,10 +102,12 @@ export class CalendarioComponent implements OnInit {
               color: "#e7f5d0",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
+              groupId: res[index].idDia,
             });
           }
         }
+console.log(this.events);
 
         this.calendarOptions = {
           locale: esLocale,
@@ -125,6 +130,7 @@ export class CalendarioComponent implements OnInit {
 
     this.dialog.open(CalendarioModalComponent, {
       data: arg,
+
     });
   }
 
