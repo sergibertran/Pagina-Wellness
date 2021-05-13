@@ -1,22 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { environment } from 'environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { first, map } from 'rxjs/operators';
-import { usuario } from 'app/models/usuario';
-import { MatDialog } from "@angular/material/dialog";
-declare let $: any;
-import Swal from 'sweetalert2';
-import { AuthService } from 'app/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
-import { LoginRegisterComponent } from 'app/login-register/login-register.component';
+import { usuario } from 'app/models/usuario';
+import { AuthService } from 'app/services/auth.service';
+import { first } from 'rxjs/operators';
+import Swal from 'sweetalert2';
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-login-register',
+  templateUrl: './login-register.component.html',
+  styleUrls: ['./login-register.component.css']
 })
-export class HomeComponent implements OnInit {
+export class LoginRegisterComponent implements OnInit {
+
   gratuito='gratuito';
   cancelo='cancelo';
   asesorarme='asesorarme';
@@ -25,13 +24,11 @@ export class HomeComponent implements OnInit {
   data;
   alumno = new usuario();
   RegisterForm: FormGroup;
-  constructor(   public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
 
-   // redirect to home if already logged in
-   if (this.authService.currentUserValue) {
-    this.router.navigate(['/Calendario']);
-  }
+  constructor(  public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
+    
 
+  
     this.LoginForm = this.fb.group({
       'username': [''],
       'password': ['']
@@ -44,11 +41,7 @@ export class HomeComponent implements OnInit {
       'repassword': [''],
    
     });
-
-
- 
-
-   }
+  }
 
   ngOnInit(): void {
    
@@ -63,17 +56,10 @@ export class HomeComponent implements OnInit {
         data: info,
       });
     }
-    openDialogLogin() {
-      console.log();
-      
-        this.dialog.open(LoginRegisterComponent,{
-
-        });
-      }
   
-// SUBMIT FORMS 
+  // SUBMIT FORMS 
   submitLoginForm() {
-
+  
   
   
   
@@ -81,30 +67,30 @@ export class HomeComponent implements OnInit {
    
     this.login();
   }
-
+  
   submitRegisterForm() {
-
-
+  
+  
     this.registerAlumno();
    
     
   }
-
-
+  
+  
   registerAlumno() {
-
+  
     // let alumn = new usuario(this.myForm.controls.usuario.value,
     //                        this.myForm.controls.contrasena.value)
-
+  
     this.authService.register(this.RegisterForm.value).subscribe (
       datos => {
-
+  
      
       }
     )
     }
     login(){
-
+  
       this.authService.login(this.LoginForm.value)
       .pipe(first())
       .subscribe(
@@ -119,9 +105,9 @@ export class HomeComponent implements OnInit {
               localStorage.setItem('usernameUser', data['usuario']);
               localStorage.setItem('iDUser', data['idUsuario']);
               localStorage.setItem('role', data['tUsuario']);
-
+  
               this.router.navigate(['/Calendario']);
-
+  
             } else{
               throw new Error('An error occurred');
             }
@@ -134,19 +120,32 @@ export class HomeComponent implements OnInit {
             })
           }
         });
-
-
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
     }
+  
+  
+  
+  
+  }
+  
+  
 
 
 
 
-}
 
 
+
+  
+
+ 
+
+
+ 

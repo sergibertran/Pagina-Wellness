@@ -34,6 +34,7 @@ import { RutinaUsuarioComponent } from './Rutinas/rutina-usuario/rutina-usuario.
 import { ModificarDietaComponent } from './Dietas/modificar-dieta/modificar-dieta.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalhomeComponent } from './modalhome/modalhome.component';
+import { LoginRegisterComponent } from './login-register/login-register.component';
 
 
 
@@ -78,6 +79,7 @@ FullCalendarModule.registerPlugins([
     AdminLayoutComponent,
     HomeComponent,
     ModalhomeComponent,
+    LoginRegisterComponent,
 
   
 
