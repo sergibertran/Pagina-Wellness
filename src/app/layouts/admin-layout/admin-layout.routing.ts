@@ -41,7 +41,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'AddDiaDietas',  component: AddDiasDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarDieta',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietaUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard, AdminGuard]},
-    { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard, AdminGuard]},
+    { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard]},
 
     
     

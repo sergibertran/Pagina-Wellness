@@ -69,6 +69,7 @@ export class CalendarioComponent implements OnInit {
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
+    console.log(res);
     
 
         for (let index = 0; index < Object.keys(res).length; index++) {
