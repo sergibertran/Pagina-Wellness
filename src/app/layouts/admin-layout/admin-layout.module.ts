@@ -42,6 +42,7 @@ import { AddDiasDietaComponent } from 'app/Dietas/add-dias-dieta/add-dias-dieta.
 import { DietaUsuarioComponent } from 'app/Dietas/dieta-usuario/dieta-usuario.component';
 import { UserModificarPwdComponent } from 'app/user-profile/user-modificar-pwd/user-modificar-pwd.component';
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
+import { PremiumComponent } from 'app/premium/premium.component';
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -93,6 +94,7 @@ FullCalendarModule.registerPlugins([
     DietaUsuarioComponent,
     UserModificarPwdComponent,
     RutinaUsuarioComponent,
+    PremiumComponent,
   ],
   providers: [  
     MatDatepickerModule,  

@@ -106,7 +106,7 @@ export class LoginRegisterComponent implements OnInit {
               localStorage.setItem('usernameUser', data['usuario']);
               localStorage.setItem('iDUser', data['idUsuario']);
               localStorage.setItem('role', data['tUsuario']);
-              localStorage.setItem('Npremium', data['Npremium']);
+              localStorage.setItem('Premium', data['Npremium']);
   
               this.router.navigate(['/Calendario']);
   
