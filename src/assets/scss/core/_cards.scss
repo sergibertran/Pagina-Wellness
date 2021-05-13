@@ -167,7 +167,7 @@
     &.bg-primary,
     &.card-rotate.bg-primary .front,
     &.card-rotate.bg-primary .back{
-      background: linear-gradient(60deg, $purple-400, $purple-600);
+      background: linear-gradient(60deg, #dc8bb5 , #f02b91);
     }
     .card-header-info .card-icon,
     .card-header-info .card-text,
@@ -208,7 +208,7 @@
     &.bg-rosa,
     &.card-rotate.bg-rosa .front,
     &.card-rotate.bg-rosa .back{
-      background: linear-gradient(to right, #CE279A 0%, #A45290 100%); 
+      background: linear-gradient(to right, #dc8bb5 0%, #f02b91 100%); 
        }
 
     .card-header-rose .card-icon,

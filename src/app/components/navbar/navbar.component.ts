@@ -35,6 +35,10 @@ export class NavbarComponent implements OnInit {
      });
     }
 
+    isAdmin(){
+        return  this.authService.isAdmin();
+       
+      }
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];
