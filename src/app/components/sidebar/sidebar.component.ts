@@ -22,7 +22,6 @@ export const ROUTESA: RouteInfo[] = [
   { path: '/VerDieta', title: 'Dietas',  icon:'restaurant_menu', class: '' },
   { path: '/VerRutina', title: 'Rutinas',  icon:'fitness_center', class: '' },
   { path: '/Usuarios', title: 'Usuarios',  icon:'manage_accounts', class: '' },
-  { path: '/CalendarioUsuarios', title: 'Calendario Usuarios',  icon:'perm_contact_calendar', class: '' }
 ];
 
 @Component({

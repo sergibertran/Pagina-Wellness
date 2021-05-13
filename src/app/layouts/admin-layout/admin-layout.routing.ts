@@ -1,7 +1,6 @@
 import { DietaUsuarioComponent } from './../../Dietas/dieta-usuario/dieta-usuario.component';
 
 import { UsuariosComponent } from './../../usuarios/usuarios.component';
-import { CalendarioUsuariosComponent } from './../../calendario-usuarios/calendario-usuarios.component';
 import { VerDietasComponent } from './../../Dietas/ver-dietas/ver-dietas.component';
 import { VerRutinasComponent } from './../../Rutinas/ver-rutinas/ver-rutinas.component';
 import { AddRutinaComponent } from './../../Rutinas/add-rutina/add-rutina.component';
@@ -17,6 +16,8 @@ import { AuthGuard } from 'app/_helpers/auth.guard';
 import { AdminGuard } from 'app/_helpers/admin.guard';
 import { PremiumComponent } from 'app/premium/premium.component';
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
+import { CalendarioUserComponent } from 'app/calendario/calendario-user/calendario-user.component';
+import { EditarPerfilUsuariosAdminComponent } from 'app/editar-perfil-usuarios-admin/editar-perfil-usuarios-admin.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent ,canActivate: [AuthGuard]},
@@ -28,13 +29,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'AddRutina',  component: AddRutinaComponent ,canActivate: [AuthGuard]},
     { path: 'VerRutina',  component: VerRutinasComponent ,canActivate: [AuthGuard]},
     { path: 'VerDieta',  component: VerDietasComponent ,canActivate: [AuthGuard]},
-    { path: 'CalendarioUsuarios',  component: CalendarioUsuariosComponent ,canActivate: [AuthGuard]},
-    { path: 'Usuarios',  component: UsuariosComponent ,canActivate: [AuthGuard]},
+    { path: 'Usuarios',  component: UsuariosComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietasUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard]},
     { path: 'RutinasUsuario',  component: RutinaUsuarioComponent ,canActivate: [AuthGuard]},
     { path: 'Usuario',  component: UsuariosComponent ,canActivate: [AuthGuard]},
-    { path: 'CalendarioUser',  component: UsuariosComponent ,canActivate: [AuthGuard]},
-
-    
+    { path: 'CalendarioUser/:id',  component: CalendarioUserComponent ,canActivate: [AuthGuard, AdminGuard]},
+    { path: 'EditarPerfilUsuariosAdmin/:id',  component: EditarPerfilUsuariosAdminComponent ,canActivate: [AuthGuard, AdminGuard]},
+    ,
 
 ];

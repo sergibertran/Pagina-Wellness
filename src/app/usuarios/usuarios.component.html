@@ -22,7 +22,7 @@
             [(ngModel)]="term">
           <!-- <button type="button" class="btn btn-outline-primary"><i class="material-icons">person_search</i></button> -->
         </div>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover" *ngIf="potato==true">
           <thead>
             <th></th>
             <th></th>
@@ -37,9 +37,11 @@
             <td>{{item.usuario}}</td>
             <td></td>
             <td>
-              <i (click)='AbrirCalendarioUser()' class="material-icons">event_note</i>
-              <i class="material-icons">account_circle</i>
+              <i  [routerLink]="['/CalendarioUser',item.idUsuario]" routerLinkActive="active"  class="material-icons">event_note</i>
+
+    
             </td>
+            <td>          <i [routerLink]="['/EditarPerfilUsuariosAdmin',item.idUsuario]" routerLinkActive="active" class="material-icons">account_circle</i></td>
             <td></td>
           </tbody>
         </table>

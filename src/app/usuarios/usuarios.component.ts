@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 export class UsuariosComponent implements OnInit {
   iduser;
   term: string;
-
+potato=false;
   constructor(private http: HttpClient,private authService: AuthService) { }
   filterData;
 
@@ -27,6 +27,7 @@ export class UsuariosComponent implements OnInit {
     .pipe(first())
     .subscribe(
       (data) => {
+        this.potato=true;
          this.filterData=data;
       console.log(data);
       // console.log(this.filterData[0][2]);

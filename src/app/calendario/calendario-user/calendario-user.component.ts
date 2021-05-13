@@ -14,6 +14,8 @@ import esLocale from '@fullcalendar/core/locales/es';
 import { BLACK_ON_WHITE_CSS_CLASS } from "@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector";
 import { CalendarioModalComponent } from "../calendario-modal/calendario-modal.component";
 import { CalendarioModal2Component } from "../calendario-modal2/calendario-modal2.component";
+import { Router } from "@angular/router";
+import { AuthService } from "app/services/auth.service";
 
 @Component({
   selector: 'app-calendario-user',
@@ -38,8 +40,8 @@ export class CalendarioUserComponent implements OnInit {
   Profile;
   idUsuario;
   RegisterForm: FormGroup;
-  
-
+  infoUser;
+  ready;
 
 
 
@@ -54,12 +56,16 @@ export class CalendarioUserComponent implements OnInit {
     private http: HttpClient,
     private calendarioService: CalendarioService,
     public dialog: MatDialog,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
-    this.idUsuario=localStorage.getItem('iDUser');
+  console.log( this.router.url.split('/')[2]);
+  this.idUsuario=this.router.url.split('/')[2];
+   
     this.RegisterForm = this.fb.group({
       'idUsuario': [ this.idUsuario],
 
@@ -70,6 +76,17 @@ export class CalendarioUserComponent implements OnInit {
    
     console.log(this.idUsuario);
     
+    this.authService.loadOwnProfileo(this.idUsuario).subscribe (
+      datos => {
+        this.ready=true;
+     console.log(datos);
+     this.infoUser=datos;
+     console.log(this.infoUser[0][2]);
+     
+      }
+    )
+
+
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
