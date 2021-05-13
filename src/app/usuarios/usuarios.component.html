@@ -12,16 +12,12 @@
               <div class="col">
                 <h2>Usuarios</h2>
               </div>
-              <div class="col-7">
-
-              </div>
             </div>
           </div>
 
           <div class="row">
-
             <div class="table-responsive">
-              <input type="text" class="form-control rounded" placeholder="Buscar Usuario" placeholder="Search Here"
+              <input type="text" class="form-control rounded" placeholder="Buscar Usuario" placeholder="Buscar..."
                 [(ngModel)]="term">
               <!-- <button type="button" class="btn btn-outline-primary"><i class="material-icons">person_search</i></button> -->
             </div>
@@ -33,7 +29,9 @@
                     <th></th>
                     <th>Nombre Usuario</th>
                     <th></th>
-                    <th style="padding-left: 220px;">Acciones</th>
+                    <td></td>
+                    <td></td>
+                    <th style="padding-left: 235px;">Acciones</th>
                   </div>
                 </div>
 
@@ -41,12 +39,26 @@
               <tbody>
                 <div *ngFor="let item of filterData  | filter:term">
                   <td></td>
-                  <td style="padding-left: 150px;">{{item.usuario}}</td>
                   <td></td>
-                  <td style="padding-left: 295px;"><i [routerLink]="['/CalendarioUser',item.idUsuario]" routerLinkActive="active"
+                  <td></td>
+                  <td></td>
+                  <td >{{item.usuario}}</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>                 
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>                  
+                  <td></td>
+                  <td >
+                    <i [routerLink]="['/CalendarioUser',item.idUsuario]" routerLinkActive="active"
                       class="material-icons">event_note</i>
-                  <i [routerLink]="['/EditarPerfilUsuariosAdmin',item.idUsuario]" routerLinkActive="active"
-                      class="material-icons">account_circle</i></td>
+                    <i [routerLink]="['/EditarPerfilUsuariosAdmin',item.idUsuario]" routerLinkActive="active"
+                      class="material-icons">account_circle</i>
+                  </td>
                 </div>
               </tbody>
             </table>

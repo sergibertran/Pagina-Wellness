@@ -6,12 +6,12 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
-            <label>Event Title</label>
+            <label>¿Que quieres guardar? </label>
             <select
               [formControl]="selectControl"
               (ngModelChange)="mySelectHandler($event)"
             >
-              <option [ngValue]="null" disabled>Choose your profile</option>
+              <option [ngValue]="null" disabled>Escojer</option>
               <option *ngFor="let prf of allProfiles">
                 {{ prf.prName }}
               </option>
@@ -21,20 +21,20 @@
           </div>
 <!-- DIETA -->
           <div *ngIf="resultadoSelect == 'Dieta'">
-            <label>Dieta</label>
+            <label>¿Que dieta quieres hacer?</label>
             <select
               [formControl]="selectControlDieta"
               (ngModelChange)="mySelectHandlerDieta($event)"
             >
               Dieta
-              <option [ngValue]="null" disabled>Choose your profile</option>
+              <option [ngValue]="null" disabled>Escojer</option>
               <option>Volumen</option>
               <option>Perdida</option>
             </select>
 
             <div *ngIf="resultadoSelectDieta != ''">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Choose a date</mat-label>
+                <mat-label>Escoja la fecha fin</mat-label>
                 <input
                   matInput
                   [min]="minDate"
@@ -51,20 +51,20 @@
           </div>
 <!-- RUTINA -->
           <div *ngIf="resultadoSelect == 'Rutina'">
-            <label>Rutina</label>
+            <label>¿Que Rutina quieres hacer?</label>
             <select
               [formControl]="selectControlRutina"
               (ngModelChange)="mySelectHandlerRutina($event)"
             >
               Rutina
-              <option [ngValue]="null" disabled>Choose your profile</option>
+              <option [ngValue]="null" disabled>Escojer</option>
               <option>Hipertrofia</option>
               <option>Fuerza</option>
             </select>
 
             <div *ngIf="resultadoSelectRutina != ''">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Choose a date</mat-label>
+                <mat-label>Escoja la fecha fin</mat-label>
                 <input
                   matInput
                   [min]="minDate"
@@ -97,7 +97,7 @@
 
         <div *ngIf="lastChecked == true">
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Choose a date</mat-label>
+            <mat-label>Escojer</mat-label>
             <input
               matInput
               [min]="minDate"
@@ -115,12 +115,12 @@
 
 
       <div class="form-group">
-        <label>Event Date:</label>
+        <label>Fecha seleccionada: </label>
         {{ this.data.dateStr }}
         <div class="eventstarttitle"></div>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
   </div>
 </div>
