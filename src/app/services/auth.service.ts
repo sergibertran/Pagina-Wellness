@@ -50,6 +50,17 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadDietasAdmin.php`, JSON.stringify(user));
   }
 
+  loadDietasUsuario(user){
+
+    return this.http.post(`${environment.apiUrl}/loadDietasUsuario.php`, JSON.stringify(user));
+  }
+
+  loadRutinasUsuario(user){
+console.log(user);
+
+    return this.http.post(`${environment.apiUrl}/loadRutinasUsuario.php`, JSON.stringify(user));
+  }
+
   loadRutina() {
 
     return this.http.post(`${environment.apiUrl}/loadRutinasAdmin.php`, JSON.stringify(String));
@@ -68,6 +79,19 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadProfile.php`, JSON.stringify(iduser));
   }
  
+  cargarDatosDieta(iduser) {
+  
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/loadDiasDietasAdmin.php`, JSON.stringify(iduser));
+  }
+
+  cargarDatosRutina(iduser) {
+  
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(iduser));
+  }
 
 
   isLogged() {
@@ -96,12 +120,18 @@ export class AuthService {
 
 }
 
+getNpremium() {
+  return localStorage.getItem('Premium');
+
+}
+
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     localStorage.removeItem('role');
     localStorage.removeItem('iDUser');
     localStorage.removeItem('usernameUser');
+    localStorage.removeItem('Premium');
     this.currentUserSubject.next(null);
   }
 

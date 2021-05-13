@@ -39,12 +39,11 @@
                 </thead>
               </div>
 
-              <tbody>
-
-
+              <div *ngFor="let item of filterData  | filter:term">
                 <td></td>
-
-              </tbody>
+                <td style="padding-left: 150px;">{{item.NDieta}}</td>
+                <td></td>
+              </div>
             </table>
 
           </div>
