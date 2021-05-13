@@ -19,7 +19,7 @@ export class PremiumComponent implements OnInit {
   total:number=59.99;
   precio:number=59.99;
 
-  premiumModel = new premium("","","","","");
+
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -37,6 +37,8 @@ export class PremiumComponent implements OnInit {
 
 CambiarprecioTotal(){
   this.total=this.registerForm.value.cantidad*this.precio
+  console.log();
+  
 }
 
   get f() { return this.registerForm.controls; }
@@ -48,12 +50,15 @@ CambiarprecioTotal(){
     this.cvv = this.registerForm.controls.cvv.value;
     this.cantidad = this.registerForm.controls.cantidad.value;
 
-    this.premiumModel = new premium(this.nombre, this.numTarjeta,this.expNum, this.cvv, this.cantidad);    
+ 
   }
 
 onSubmit() {
  
-  this.ModificarValores()
+  console.log('test');
+  
+ console.log(this.registerForm.controls);
+ 
 
   
   

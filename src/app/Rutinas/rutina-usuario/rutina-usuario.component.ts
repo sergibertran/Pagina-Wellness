@@ -16,8 +16,10 @@ export class RutinaUsuarioComponent implements OnInit {
   filterData;
   ngOnInit(): void {
     this.iduser=this.authService.getNpremium();
-    console.log(this.iduser);
+    console.log(this.authService.getNpremium());
     if(this.iduser==0){
+      console.log('test');
+      
     this.authService.loadRutinasUsuario(this.iduser)
     .pipe(first())
     .subscribe(
