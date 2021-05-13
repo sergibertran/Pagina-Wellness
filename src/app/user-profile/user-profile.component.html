@@ -1,89 +1,90 @@
 <div class="main-content">
   <div class="container-fluid">
-      <div class="row">
-          
-        <div class="col-md-4">
-          <div class="card card-profile">
-              <div class="card-avatar">
-                  <a>
-                      <img class="img" src="./assets/img/faces/marc.jpg" />
-                  </a>
-              </div>
-              <div class="card-body">
-                  <h6 class="card-category text-gray">Usuario: </h6>
-                  <h4 class="card-title">Alec Thompson</h4>
-                
-                  <p class="card-title ">
-                    Direccion: pulapulapulapula <br>
-                    Altura: <br>
-                    Peso:
-                  </p>
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a>
+              <img class="img" src="./assets/img/faces/marc.jpg" />
+            </a>
+          </div>
+          <div class="card-body">
+            <h6 class="card-category text-gray">Usuario: </h6>
+            <h4 class="card-title">Alec Thompson</h4>
+
+            <p class="card-title ">
+              Direccion: pulapulapulapula <br>
+              Altura: <br>
+              Peso:
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Editar Perfil</h4>
+
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="row">
+
+                <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Usuario">
+                  </mat-form-field>
                 </div>
-           
-          </div>
-      </div>
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header card-header-primary">
-                      <h4 class="card-title">Editar Perfil</h4>
-                
-                  </div>
-                  <div class="card-body">
-                      <form>
-                          <div class="row">
-                        
-                              <div class="col-md-3">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Usuario">
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-9">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Correo electronico" type="email">
-                                  </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Nombre" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Apellidos" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                       
-                          <div class="row">
-                            <div class="col-md-8">
-                              <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Direccion" type="text">
-                              </mat-form-field>
-                            </div>
-                              <div class="col-md-2">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Peso (kg)" type="number">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-2">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Altura (cm)" type="number">
-                                </mat-form-field>
-                              </div>
-                           
-                          </div>
-                          <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar Perfil</button>
-                          <button mat-raised-button routerLink="/Enquesta" routerLinkActive="active" class="btn btn-primary pull-right">Realizar Enquesta</button>
-
-                          <div class="clearfix"></div>
-                      </form>
-                  </div>
+                <div class="col-md-9">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Correo electronico" type="email">
+                  </mat-form-field>
+                </div>
               </div>
-          </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nombre" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Apellidos" type="text">
+                  </mat-form-field>
+                </div>
+              </div>
 
-        
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Direccion" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Peso (kg)" type="number">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Altura (cm)" type="number">
+                  </mat-form-field>
+                </div>
+
+              </div>
+              <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar Perfil</button>
+              <div *ngIf="isAdmin()==false">
+                <button mat-raised-button routerLink="/Enquesta" routerLinkActive="active"
+                  class="btn btn-primary pull-right">Realizar Enquesta</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+
+
+    </div>
   </div>
 </div>

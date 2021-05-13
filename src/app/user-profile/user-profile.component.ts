@@ -21,5 +21,9 @@ idusuario;
     )
 
   }
+  isAdmin(){
+    return  this.authService.isAdmin();
+   
+  }
 
 }
