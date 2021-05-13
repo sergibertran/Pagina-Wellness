@@ -64,16 +64,15 @@ export class CalendarioComponent implements OnInit {
 
     var myFormDataa = new FormData();
    
-    console.log(this.idUsuario);
+ 
     
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
-        console.log(res);
+    
 
         for (let index = 0; index < Object.keys(res).length; index++) {
-          console.log(res);
-
+  
           if (res[index].comentarios == "Dieta") {
             this.events.push({
               title: res[index].comentarios,
@@ -122,14 +121,14 @@ export class CalendarioComponent implements OnInit {
   }
 
   openDialog(arg) {
-  console.log(arg);
+
     this.dialog.open(CalendarioModalComponent, {
       data: arg,
     });
   }
 
   openDialogInfo(arg) {
-    console.log(arg);
+ 
       this.dialog.open(CalendarioModal2Component, {
         data: arg,
       });

@@ -21,12 +21,11 @@ export class DietaUsuarioComponent implements OnInit {
     // .subscribe(
     //   (data) => {
     //      this.filterData=data;
-    //   console.log(data);      
     // });
   }
 
   userClick(){
-console.log("test");
+
 
   }
 

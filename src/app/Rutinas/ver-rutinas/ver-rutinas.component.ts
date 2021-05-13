@@ -25,7 +25,7 @@ export class VerRutinasComponent implements OnInit {
     .subscribe(
       (data) => {
         this.rutinas=data;
-        console.log(data);
+    
      
       });
   }

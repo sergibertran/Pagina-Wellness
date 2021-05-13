@@ -1,3 +1,4 @@
+import { ModificarDietaComponent } from './../../Dietas/modificar-dieta/modificar-dieta.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -87,8 +88,9 @@ FullCalendarModule.registerPlugins([
     CalendarioUserComponent,
     EditarPerfilUsuariosAdminComponent,
     AddDiasDietaComponent,
+    ModificarDietaComponent,
     DietaUsuarioComponent,
-    UserModificarPwdComponent
+    UserModificarPwdComponent,
   ],
   providers: [  
     MatDatepickerModule,  

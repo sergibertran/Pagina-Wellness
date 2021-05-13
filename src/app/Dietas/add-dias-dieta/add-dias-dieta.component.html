@@ -15,9 +15,12 @@
 
                 <div *ngFor="let lessonForm of lessons.controls; let i = index">
 
-                  <div [formGroup]="lessonForm">
+                  <div [formGroup]="lessonForm" (ngSubmit)="Submit()">
 
                   <strong>Dia  {{i+1}} </strong>
+
+
+       
 
                     <div class="row">
                       <div class="col-md-4">
@@ -27,12 +30,12 @@
                       </div>
                       <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                          <input matInput  placeholder="Desayuno 2" type="text">
+                          <input matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text">
                         </mat-form-field>
                       </div>
                       <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                          <input matInput  placeholder="Comida" type="text">
+                          <input matInput formControlName="Comida" placeholder="Comida" type="text">
                         </mat-form-field>
                       </div>
                     </div>
@@ -40,17 +43,17 @@
                       <div class="row">
                         <div class="col-md-4">
                           <mat-form-field class="example-full-width">
-                            <input matInput  placeholder="Merienda" type="text">
+                            <input matInput formControlName="Merienda" placeholder="Merienda" type="text">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field class="example-full-width">
-                            <input matInput  placeholder="Merienda 2" type="text">
+                            <input matInput formControlName="Merienda2" placeholder="Merienda 2" type="text">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field class="example-full-width">
-                            <input matInput  placeholder="Cena" type="text">
+                            <input matInput formControlName="Cena" placeholder="Cena" type="text">
                           </mat-form-field>
                       
                     </div>
@@ -75,7 +78,7 @@
 
 
 
-            <button mat-raised-button type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
+            <button mat-raised-button (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
             <button mat-raised-button (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
 
 

@@ -28,9 +28,9 @@ idusuario;
     this.authService.loadOwnProfileo(this.idusuario).subscribe (
       datos => {
         this.DatosModal=datos[0];
-     console.log(datos);
+  
      datos[0]['usuario'];
-     console.log(datos[0]['usuario']);
+    
      
      this.myForm = new FormGroup(
       {
@@ -86,7 +86,7 @@ idusuario;
   EnviarDatos() {
 
  
-console.log(this.myForm.value);
+
 
 
   }

@@ -1,13 +1,16 @@
 export class diasdieta {
-    numDiaDieta?: number;
-    idDieta?: number;
-    Desayuno: string;
-    Desayuno2: string;
-    Comida:string;
-    Merienda:string;
-    Merienda2:string;
-    Cena:string;
-    Comentarios:string
+
+  constructor(
+   public  numDiaDieta: number,
+   public  idDieta: number,
+   public Desayuno: string,
+   public Desayuno2: string,
+   public Comida:string,
+   public Merienda:string,
+   public Merienda2:string,
+   public Cena:string,
+   public Comentarios:string)
+    {}
   }
   
   

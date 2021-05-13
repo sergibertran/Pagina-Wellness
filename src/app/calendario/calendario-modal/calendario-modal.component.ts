@@ -63,12 +63,10 @@ export class CalendarioModalComponent implements OnInit {
 
   onSubmit() {
 
-console.log(this.data.dateStr);
+
 
  
 
-    console.log(this.data);
-    console.log(this.addEventForm.controls.title.value);
     const titulo = this.addEventForm.controls.title.value;
 
     this.addEventForm = this.formBuilder.group({
@@ -76,16 +74,14 @@ console.log(this.data.dateStr);
       fecha: [this.data],
     });
 
-    console.log(this.addEventForm.controls);
 
     var myFormData = new FormData();
 
     // Begin assigning parameters
-    console.log(this.addEventForm.controls.title.value.prName);
-
+ 
     myFormData.append("title", this.addEventForm.controls.title.value.prName);
     myFormData.append("fecha", this.addEventForm.controls.fecha.value);
-    console.log(myFormData);
+   
 
     return this.http
       .post("http://localhost/save.php/", myFormData)
@@ -108,7 +104,6 @@ console.log(this.data.dateStr);
 
 
     this.lastChecked=index.checked;
-console.log(index.checked);
 
   
 
@@ -116,17 +111,17 @@ console.log(index.checked);
 
 
   mySelectHandlerDieta($event) {
-    console.log($event);
+
     this.resultadoSelectDieta = $event
-    console.log(this.resultadoSelect);
+
 
 
 
   }
   mySelectHandlerRutina($event) {
-    console.log($event);
+
     this.resultadoSelectRutina = $event
-    console.log(this.resultadoSelect);
+ 
 
 
 
@@ -134,12 +129,10 @@ console.log(index.checked);
 
 
   mySelectHandler($event) {
-    console.log($event);
+ 
     this.resultadoSelect = $event
-    console.log(this.resultadoSelect);
-    console.log();
-    
-console.log(this.range);
+
+
 
 
   }
@@ -156,17 +149,17 @@ console.log(this.range);
 
     if (this.selectedDay = "Dieta") {
       this.dieta = true
-      console.log(this.selectedDay);
+   
     }
     else if (this.selectedDay = "Rutina") {
       this.rutina = true
       this.dieta = false
-      console.log(this.selectedDay);
+ 
     }
     else if (this.selectedDay = "Comentarios") {
       this.rutina = false
       this.dieta = false
-      console.log(this.selectedDay);
+   
     }
 
 

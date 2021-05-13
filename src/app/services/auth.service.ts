@@ -18,7 +18,7 @@ export class AuthService {
  
     
     this.currentUserSubject = new BehaviorSubject<usuario>(JSON.parse(localStorage.getItem('currentUser')));
-    console.log(this.currentUserSubject);
+   
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -28,13 +28,13 @@ export class AuthService {
 
 
   register(alumno) {
-    console.log(alumno);
+    
     
     return this.http.post(`${environment.apiUrl}/register.php`, JSON.stringify(alumno));
   }
 
   login(alumno) {
-    console.log(alumno);
+  
     
     return this.http.post(`${environment.apiUrl}/login.php`, JSON.stringify(alumno));
   }
@@ -56,7 +56,7 @@ export class AuthService {
   }
 
   getDashboardInfo() {
-    console.log('test');
+   
     
     return this.http.post(`${environment.apiUrl}/infoDashboard.php`, JSON.stringify(String));
   }

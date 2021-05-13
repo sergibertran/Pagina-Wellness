@@ -122,7 +122,7 @@ ModificarValores() {
 onSubmit() {
  
   this.ModificarValores()
-  console.log(this.enquestaModel);
+ 
   
   
   this.submitted = true;

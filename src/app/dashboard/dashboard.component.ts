@@ -23,9 +23,9 @@ export class DashboardComponent implements OnInit {
     .pipe(first())
     .subscribe(
       (data) => {
-        console.log(data);
+      
         this.datos=data;
-        console.log(this.datos[2].nUsuarios);
+       
         
       });
  

@@ -46,7 +46,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   
       var myFormDataa = new FormData();
      
-      console.log(this.idUsuario);
+    
       
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {
