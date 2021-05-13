@@ -23,6 +23,7 @@
         </div>
       </div>
 
+      <!-- EDITAR PERFIL USUARIO -->
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
@@ -88,54 +89,145 @@
       </div>
 
 
+      <!-- DATOS ENCUESTA -->
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Respuestas de la Encuesta</h4>
-
           </div>
           <div class="card-body" *ngIf="ready==true">
             <div class="row">
               <div class="col-md-9">
+                <br>
+                <h4>DATOS GENERALES</h4>
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Correo electronico" type="email" formControlName="correo"
-                    value={{this.correo}}>
+                  <label>Correo: </label>{{this.correo}}
                 </mat-form-field>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Nombre" type="text" formControlName="nombre" value={{this.nombre}}>
+                  <label>Nombre: </label>{{this.nombre}}
                 </mat-form-field>
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Apellidos" type="text" formControlName="apellidos"
-                    value={{this.apellidos}}>
+                  <label>Apellidos: </label>{{this.apellidos}}
                 </mat-form-field>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-8">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Direccion" type="text" formControlName="direccion"
-                    value={{this.direccion}}>
+                  <label>Direccion: </label>{{this.direccion}}
                 </mat-form-field>
               </div>
-
-
               <div class="col-md-8">
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.altura}}>
+                  <label>Altura: </label>{{this.altura}}
                 </mat-form-field>
               </div>
-
-
-              <div class="col-md-8">
+              <h4 class="col-md-12">DATOS ANTROPOMÉTRICOS</h4>
+              <div class="col-md-6">                
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}}>
+                  <label>Peso: </label>{{this.peso}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Cintura: </label>{{this.cintura}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Cadera: </label>{{this.cadera}}
+                </mat-form-field>
+              </div>
+              <h4 class="col-md-12">ENCUESTA DIETÉTICA</h4>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>¿Posee alguna intolerancia o alergia alimentaria? </label>{{this.intolerancia}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Si es que sí…¿Cuál? </label>{{this.intoleranciaEx}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>¿Estás siguiendo alguna dieta? </label>{{this.dieta}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Si es que sí…¿Cuál? </label>{{this.dietaEx}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de lácteos: </label>{{this.lacteos}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de huevos: </label>{{this.huevos}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de fruta: </label>{{this.fruta}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de legumbres: </label>{{this.legumbres}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de carne: </label>{{this.carne}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de carne procesada o embutido: </label>{{this.lacteos}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de pescado: </label>{{this.pescado}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de bollería o galletas: </label>{{this.bolleria}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de alimentos procesados: </label>{{this.alimentosProcesados}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Consumo de comida ràpida: </label>{{this.comidaRapida}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Bebidas azucaradas: </label>{{this.bebidasAzucarada}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>Bebidas alcohólica: </label>{{this.bebidasAlcoholicas}}
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <label>¿Crees que consumes algún alimento en exceso? </label>{{this.alimentoExeso}}
                 </mat-form-field>
               </div>
 
