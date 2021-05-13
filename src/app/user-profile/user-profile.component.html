@@ -12,16 +12,18 @@
           <div class="card-body" *ngIf="ready==true">
             <h6 class="card-category text-gray">Usuario: </h6>
             <h4 class="card-title">{{DatosModal['usuario']}}</h4>
+            <div *ngIf="isAdmin()==false">
 
-            <p class="card-title ">
-              Direccion: {{DatosModal['direccion']}} <br>
-              Altura:{{DatosModal['altura']}} <br>
-              Peso: {{DatosModal['peso']}}
-            </p>
+              <p class="card-title ">
+                Direccion: {{DatosModal['direccion']}} <br>
+                Altura:{{DatosModal['altura']}} <br>
+                Peso: {{DatosModal['peso']}}
+              </p>
+            </div>
           </div>
-
         </div>
       </div>
+
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
@@ -30,50 +32,58 @@
           </div>
           <div class="card-body" *ngIf="ready==true">
             <form [formGroup]="myForm" (ngSubmit)="EnviarDatos()">
-              <div class="row" >
+              <div class="row">
                 <div class="col-md-9">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Correo electronico" type="email"  formControlName="correo" value={{this.correo}}>
+                    <input matInput placeholder="Correo electronico" type="email" formControlName="correo"
+                      value={{this.correo}}>
                   </mat-form-field>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type="text" formControlName="nombre" value={{this.nombre}}>
-                  </mat-form-field>
-                </div>
-                <div class="col-md-6">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Apellidos" type="text" formControlName="apellidos" value={{this.apellidos}}>
-                  </mat-form-field>
-                </div>
-              </div>
+              <div *ngIf="isAdmin()==false">
 
-              <div class="row">
-                <div class="col-md-8">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Direccion" type="text" formControlName="direccion" value={{this.direccion}}>
-                  </mat-form-field>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nombre" type="text" formControlName="nombre" value={{this.nombre}}>
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Apellidos" type="text" formControlName="apellidos"
+                        value={{this.apellidos}}>
+                    </mat-form-field>
+                  </div>
                 </div>
 
-                
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Direccion" type="text" formControlName="direccion"
+                        value={{this.direccion}}>
+                    </mat-form-field>
+                  </div>
+
+
                   <div class="col-md-8">
                     <mat-form-field class="example-full-width">
                       <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.altura}}>
                     </mat-form-field>
                   </div>
 
-               
-                    <div class="col-md-8">
-                      <mat-form-field class="example-full-width">
-                        <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}}>
-                      </mat-form-field>
-                    </div>
-                
+
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}}>
+                    </mat-form-field>
+                  </div>
+                </div>
 
               </div>
               <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar Perfil</button>
+              <button mat-raised-button routerLink="/modificarPwd" class="btn btn-primary pull-right">Cambiar
+                contraseña</button>
+
               <div *ngIf="isAdmin()==false">
                 <button mat-raised-button routerLink="/Enquesta" routerLinkActive="active"
                   class="btn btn-primary pull-right">Realizar Enquesta</button>
