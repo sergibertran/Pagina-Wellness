@@ -13,11 +13,13 @@
             <h6 class="card-category text-gray">Usuario: </h6>
             <h4 class="card-title">Alec Thompson</h4>
 
-            <p class="card-title ">
-              Direccion: pulapulapulapula <br>
-              Altura: <br>
-              Peso:
-            </p>
+            <div *ngIf="isAdmin()==false">
+              <p class="card-title ">
+                Direccion: <br>
+                Altura: <br>
+                Peso:
+              </p>
+            </div>
           </div>
 
         </div>
@@ -56,21 +58,23 @@
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-8">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Direccion" type="text">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-2">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Peso (kg)" type="number">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-2">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Altura (cm)" type="number">
-                  </mat-form-field>
+              <div *ngIf="isAdmin()==false">
+                <div class="row">
+                  <div class="col-md-8">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Direccion" type="text">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Peso (kg)" type="number">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Altura (cm)" type="number">
+                    </mat-form-field>
+                  </div>
                 </div>
 
               </div>
