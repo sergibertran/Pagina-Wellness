@@ -187,54 +187,16 @@
     <br>
 
     <div class="container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_es"
+        <button (click)='openDialogInfo(wellness)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_es"
             style="margin-left: 70px;">
             ¿Que es WELLNESS?
         </button>
 
-        <div class="modal fade" id="que_es" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">¿Que es WELLNESS?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        WELLNESS es una plataforma web creada para que los usuarios puedan organizar sus dietas y
-                        rutinas, ya sea mediante el plan gratuito prediseñado o personalizado por nuestros profesionales
-                        mediante el plan premium. Ademas ofrecemos nuestra plataforma para gimnasios o clibes
-                        deportivos, para organizar las dietas y rutinas de sus clientes sin los gastos que conlleva
-                        crear y mantener una pagina web.
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelar"
+        <button (click)='openDialogInfo(cancelo)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelar"
             style="margin-left: 20px;">
             ¿Como cancelo?
         </button>
-
-        <div class="modal fade" id="cancelar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">¿Como cancelo?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Podras cancelar tu suscripcion desde el apartado Perfil, la suscripcion se cancelara a finales
-                        de mes.
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <button  (click)='openDialogInfo(gratuito)' type="button"  class="btn btn-primary" 
@@ -243,34 +205,11 @@
 
         </button>
 
-      
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
+        <button (click)='openDialogInfo(asesorarme)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
             ¿Donde puedo asesorarme en persona?
         </button>
 
-        <div class="modal fade" id="ubi" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">¿Donde puedo asesorarme en persona?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Puedes encontrarnos en CEEILLEIDA Edificio 2 en Complejo la Caparrella, Lleida, Catalunya 25192.
-                        Para reservar hora con nuestros nutricionistas podeis concretar hora a traves de la web. En caso
-                        de querer informacion para negocios podeis concretar hora a traves del siguiente correo:
-                        informacio.wellness@gmail.com.
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">

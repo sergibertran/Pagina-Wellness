@@ -18,6 +18,8 @@ import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
 export class HomeComponent implements OnInit {
   gratuito='gratuito';
   cancelo='cancelo';
+  asesorarme='asesorarme';
+  wellness='wellness';
   LoginForm: FormGroup;
   data;
   alumno = new usuario();
