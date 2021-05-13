@@ -31,13 +31,9 @@ import { AuthService } from './services/auth.service';
 import { PremiumComponent } from './premium/premium.component';
 import { DietaUsuarioComponent } from './Dietas/dieta-usuario/dieta-usuario.component';
 import { RutinaUsuarioComponent } from './Rutinas/rutina-usuario/rutina-usuario.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { VerDietasComponent } from './Dietas/ver-dietas/ver-dietas.component';
-import { VerRutinasComponent } from './Rutinas/ver-rutinas/ver-rutinas.component';
-import { AddRutinaComponent } from './Rutinas/add-rutina/add-rutina.component';
-import { AddDietaComponent } from './Dietas/add-dieta/add-dieta.component';
-import { CalendarioUserComponent } from './calendario/calendario-user/calendario-user.component';
-import { EditarPerfilUsuariosAdminComponent } from './editar-perfil-usuarios-admin/editar-perfil-usuarios-admin.component';
+import { ModificarDietaComponent } from './Dietas/modificar-dieta/modificar-dieta.component';
+
+
 
 
 
@@ -79,9 +75,7 @@ FullCalendarModule.registerPlugins([
     AppComponent,
     AdminLayoutComponent,
     HomeComponent,
-    PremiumComponent,
- DietaUsuarioComponent,
-    RutinaUsuarioComponent,
+
   
 
 

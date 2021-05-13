@@ -34,53 +34,7 @@
                                 </div>
                             </div>
 
-                            <div *ngIf="Dias">
-                            <form>
-                            <div *ngFor="let items of DiasDieta;let i=index" class="row">
-                             
-                              <div class="col">
-                                Dia {{i+1}}
-                                
-                                <div class="row">
-                                  <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput (ngModel)="items.Desayuno" placeholder="Desayuno" type="text">
-                                    </mat-form-field>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput  placeholder="Desayuno 2" type="text">
-                                    </mat-form-field>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                      <input matInput  placeholder="Comida" type="text">
-                                    </mat-form-field>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput  placeholder="Merienda" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput  placeholder="Merienda 2" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput  placeholder="Cena" type="text">
-                                  </mat-form-field>
-                                </div>
-                            </div>
-                            
-                            </div>
-                            </div>
-                            <button type="submit" (click)="MostrarDias()">Enviar</button>
-                          </form>
-                          </div>
+                          
                        
                         
                             <div class="row">
@@ -94,8 +48,7 @@
                                 </div>
                             </div>
                             <button mat-raised-button type="submit" class="btn btn-primary pull-right">Crear dieta</button>
-                            <button mat-raised-button *ngIf="CDias" (click)="AddDia()" class="btn btn-primary pull-right">Añadir dias</button>
-                            <button mat-raised-button *ngIf="Dias" (click)="CerrarDia()" class="btn btn-primary pull-right">Cerrar dias</button>
+                           
                           
                             <div class="clearfix"></div>
                         </form>
