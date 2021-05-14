@@ -38,8 +38,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Usuario',  component: UsuariosComponent ,canActivate: [AuthGuard]},
     { path: 'CalendarioUser/:id',  component: CalendarioUserComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'EditarPerfilUsuariosAdmin/:id',  component: EditarPerfilUsuariosAdminComponent ,canActivate: [AuthGuard, AdminGuard]},
-    { path: 'AddDiaDietas',  component: AddDiasDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
-    { path: 'ModificarDieta',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
+    { path: 'AddDiaDietas/:id',  component: AddDiasDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
+    { path: 'ModificarDieta/:id',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietaUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard]},
 

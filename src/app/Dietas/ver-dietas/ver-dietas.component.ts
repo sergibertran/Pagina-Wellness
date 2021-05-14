@@ -29,5 +29,9 @@ dietas;
 
  
 
+  EnviarId(datos){
 
+    console.log(datos);
+    
+  }
 }

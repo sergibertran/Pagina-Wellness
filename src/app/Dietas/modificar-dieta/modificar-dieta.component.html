@@ -8,7 +8,7 @@
                         <p class="card-category">Complete your profile</p>
                     </div>
                     <div class="card-body">
-                        <form [formGroup]="ModificarDieta" (ngSubmit)="Submit()">
+                        <form [formGroup]="myForm" (ngSubmit)="Submit()" *ngIf="ready==true">
                             <div class="row">
                           
                             </div>
