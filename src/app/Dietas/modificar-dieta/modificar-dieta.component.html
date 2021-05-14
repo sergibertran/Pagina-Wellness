@@ -48,11 +48,15 @@
                                 </div>
                             </div>
                             <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar dieta</button>
-                           
+                         
                           
-                            <div class="clearfix"></div>
+                           
                         </form>
+                        <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
                     </div>
+                    <div *ngIf="MostrarDiasB" class="card-body">
+                      HOLAHOLAHOLA
+                      </div>
                 </div>
             </div>
        
