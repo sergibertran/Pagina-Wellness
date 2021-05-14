@@ -46,6 +46,7 @@ export class AuthService {
   }
 
   loadDieta(user) {
+console.log(user);
 
     return this.http.post(`${environment.apiUrl}/loadDietasAdmin.php`, JSON.stringify(user));
   }
