@@ -6,11 +6,13 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="form-group">
+            <label>Fecha seleccionada: </label>
+            {{ this.data.dateStr }}
+            <div class="eventstarttitle"></div>
+          </div>
+          <div class="form-group">
             <label>¿Que quieres guardar? </label>
-            <select
-              [formControl]="selectControl"
-              (ngModelChange)="mySelectHandler($event)"
-            >
+            <select class="custom-select" [formControl]="selectControl" (ngModelChange)="mySelectHandler($event)">
               <option [ngValue]="null" disabled>Escojer</option>
               <option *ngFor="let prf of allProfiles">
                 {{ prf.prName }}
@@ -19,107 +21,73 @@
 
             {{ selectedDay }}
           </div>
-<!-- DIETA -->
+          <!-- DIETA -->
           <div *ngIf="resultadoSelect == 'Dieta'">
             <label>¿Que dieta quieres hacer?</label>
-            <select
-              [formControl]="selectControlDieta"
-              (ngModelChange)="mySelectHandlerDieta($event)"
-            >
+            <select class="custom-select" [formControl]="selectControlDieta"
+              (ngModelChange)="mySelectHandlerDieta($event)">
               Dieta
               <option [ngValue]="null" disabled>Escojer</option>
               <option>Volumen</option>
               <option>Perdida</option>
             </select>
+            
 
-            <div *ngIf="resultadoSelectDieta != ''">
+            <div style="margin-top: 15px;" *ngIf="resultadoSelectDieta != ''">    
+              <label>¿Que dia quieres terminar?</label>          
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Escoja la fecha fin</mat-label>
-                <input
-                  matInput
-                  [min]="minDate"
-                  [max]="maxDate"
-                  [matDatepicker]="picker"
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker"
-                ></mat-datepicker-toggle>
+                <mat-label>Escoja el intervalo de dias</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
             </div>
           </div>
-<!-- RUTINA -->
+          <!-- RUTINA -->
           <div *ngIf="resultadoSelect == 'Rutina'">
             <label>¿Que Rutina quieres hacer?</label>
-            <select
-              [formControl]="selectControlRutina"
-              (ngModelChange)="mySelectHandlerRutina($event)"
-            >
+            <select class="custom-select" [formControl]="selectControlRutina" (ngModelChange)="mySelectHandlerRutina($event)">
               Rutina
               <option [ngValue]="null" disabled>Escojer</option>
               <option>Hipertrofia</option>
               <option>Fuerza</option>
             </select>
-
-            <div *ngIf="resultadoSelectRutina != ''">
+            <div style="margin-top: 15px;" *ngIf="resultadoSelectRutina != ''">
+              <label>¿Que dia quieres terminar?</label>          
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Escoja la fecha fin</mat-label>
-                <input
-                  matInput
-                  [min]="minDate"
-                  [max]="maxDate"
-                  [matDatepicker]="picker"
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker"
-                ></mat-datepicker-toggle>
+                <mat-label>Escoja el intervalo de dias</mat-label>
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+                </mat-form-field>              
             </div>
           </div>
         </div>
       </div>
 
-<!-- COMENTARIOS -->
+      <!-- COMENTARIOS -->
       <div *ngIf="resultadoSelect == 'Comentarios'">
         <label>Comentarios</label>
-        
+
         <div class="form-group">
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
         <section class="example-section">
-          <mat-checkbox class="example-margin" [(ngModel)]="checked" (change)="onChange($event)" >Multidias</mat-checkbox>
+          <mat-checkbox class="example-margin" [(ngModel)]="checked" (change)="onChange($event)">Multidias
+          </mat-checkbox>
           {{lastChecked}}
         </section>
 
         <div *ngIf="lastChecked == true">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Escojer</mat-label>
-            <input
-              matInput
-              [min]="minDate"
-              [max]="maxDate"
-              [matDatepicker]="picker"
-            />
-            <mat-datepicker-toggle
-              matSuffix
-              [for]="picker"
-            ></mat-datepicker-toggle>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
       </div>
-
-
-      <div class="form-group">
-        <label>Fecha seleccionada: </label>
-        {{ this.data.dateStr }}
-        <div class="eventstarttitle"></div>
-      </div>
-
       <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
   </div>
