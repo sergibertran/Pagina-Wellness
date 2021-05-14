@@ -13,7 +13,7 @@ const routes: Routes =[
   { path: '404', component: Error404Component},
   {
     path: '',
-    redirectTo: '404',
+    redirectTo: 'home',
     pathMatch: 'full',
   }, {
     path: '',
