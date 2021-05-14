@@ -1,7 +1,10 @@
+
+
 import { Validators } from '@angular/forms';
 import { diasdieta } from './../../models/diasdieta';
 import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-add-dias-dieta',
@@ -12,6 +15,7 @@ export class AddDiasDietaComponent implements OnInit {
 
   index;
   mostrarboton:boolean=false
+  mostrarboton2:boolean=true
   addDias: FormGroup;
   Dias = new diasdieta(0,0,'','','','','','','');
 i:number=null
@@ -118,6 +122,14 @@ longitud: number;
   if (this.i==0) {
     this.mostrarboton=false
   }
+
+  if(this.lessons.length<7){
+    this.mostrarboton2=true
+    }
+
+  if(this.lessons.length==7){
+    this.mostrarboton2=false
+    }
   }
  
 
@@ -129,6 +141,9 @@ console.log(this.lessons);
   
 
  }
+
+
+
   
 
 
