@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 export class AddDiasDietaComponent implements OnInit {
 
   index;
+  mostrarboton:boolean=false
   addDias: FormGroup;
   Dias = new diasdieta(0,0,'','','','','','','');
-i:number=0
+i:number=null
 longitud: number;
   form = this.fb.group({
     lessons:this.fb.array([])
@@ -25,7 +26,8 @@ longitud: number;
   }
 
   addLesson(){
-
+    console.log(this.i);
+   
     this.longitud = this.lessons.length;
     for (let index = this.index; index < this.longitud; index++) {
       this.lessons.push(
@@ -85,22 +87,39 @@ longitud: number;
     
  
  
-    this.i++;
-   if(this.i<8){
+   if(this.i<7){
     this.lessons.push(lessonForm);
 
+    this.i++;
    }
-  
+   this.botonadd();
    
  
   }
   deleteLesson(lessonIndex:number){
     this.lessons.removeAt(lessonIndex)
+    this.i=this.i-1
+    console.log(this.i);
+    this.botonadd()
 
   }
   ngOnInit(): void {
- 
+
   }
+
+  botonadd(){
+  
+    console.log(this.lessons.length+' HOLAHOLA');
+    
+    if(this.lessons.length>0){
+    this.mostrarboton=true
+    }
+  
+  if (this.i==0) {
+    this.mostrarboton=false
+  }
+  }
+ 
 
  Submit(){
 
