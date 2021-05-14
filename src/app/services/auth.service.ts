@@ -101,7 +101,11 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(String));
 
   }
-
+  modificarPwd(iduser){
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/modificarPwd.php`, JSON.stringify(iduser));
+  }
 
   isLogged() {
     if (localStorage.getItem('currentUser')) {

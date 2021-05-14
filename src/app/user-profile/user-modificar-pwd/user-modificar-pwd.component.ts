@@ -1,71 +1,106 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { perfilAlumno } from 'app/models/perfilAlumno';
-import { AuthService } from 'app/services/auth.service';
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
+import { Router } from "@angular/router";
+import { perfilAlumno } from "app/models/perfilAlumno";
+import { AuthService } from "app/services/auth.service";
+import Swal from "sweetalert2";
 
 @Component({
-  selector: 'app-user-modificar-pwd',
-  templateUrl: './user-modificar-pwd.component.html',
-  styleUrls: ['./user-modificar-pwd.component.css']
+  selector: "app-user-modificar-pwd",
+  templateUrl: "./user-modificar-pwd.component.html",
+  styleUrls: ["./user-modificar-pwd.component.css"],
 })
 export class UserModificarPwdComponent implements OnInit {
-  idusuario;
-  constructor(private http: HttpClient,private authService: AuthService) { }
-  perfilalumno;
-  myForm;
-  usuario;
-  ready;
-  DatosModal;
-  pwdActual;
-  pwdNuevaRepetida;
+  modpwdForm: FormGroup;
+  submitted = false;
+  pwdActual: string;
+  pwdNueva: string;
+  pwdNuevaRepetida: string;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.idusuario=this.authService.getidUser();
-    this.authService.loadOwnProfileo(this.idusuario).subscribe (
-      datos => {
-        this.DatosModal=datos[0];
-     console.log(datos);
-     datos[0]['usuario'];
-     console.log(datos[0]['usuario'])
-
-
-    this.myForm = new FormGroup(
-      {
-        pwdActual: new FormControl((datos[0]['pwdActual']), [
-          Validators.email,
-          Validators.required,
-        ]),
-        pwdNueva: new FormControl((datos[0]['pwdNueva']), [
-          Validators.email,
-          Validators.required,
-        ]),
-        pwdNuevaRepetida: new FormControl((datos[0]['pwdNuevaRepetida']), [
-          Validators.email,
-          Validators.required,
-        ]),
-      }
-
-      );
-      this.ready=true;
-      this.usuario=this.myForm.controls.usuario.value;
-      this.pwdActual=this.myForm.controls.usuario.value;
-      this.pwdNuevaRepetida=this.myForm.controls.usuario.value;
-
-     
-        }
-      )
-  
+    this.modpwdForm = this.formBuilder.group({
+      pwdActual: ["", Validators.required],
+      pwdNueva: ["", Validators.required],
+      pwdNuevaRepetida: ["", Validators.required],
+    },
+    {
+      validator: MustMatch('pwdNueva', 'pwdNuevaRepetida'),
     }
-    EnviarDatos() {  
-   
-  console.log(this.myForm.value);
-  
-  
-    }
-  
+    );
   }
 
-  
+  get f() {
+    return this.modpwdForm.controls;
+  }
 
+  onSubmit() {
+    this.submitted = true;
 
+    // stop here if form is invalid
+    if (this.modpwdForm.invalid) {
+      return;
+    }
+
+    // display form values on success
+    this.authService
+      .modificarPwd(this.modpwdForm.value)
+      .subscribe((datos) => {
+        if (datos["result"] === "ERROR") {
+          Swal.fire({
+            icon: "error",
+            title: datos["result"],
+            text: datos["message"],
+          });
+        } else {
+          if (datos != null) {
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Contraseña modificada.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            this.router.navigate(["/user-profile"]);
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Intentalo mas tarde!",
+            });
+          }
+          console.log(this.modpwdForm.value);
+        }
+      });
+  }
+}
+
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+
+    if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+      return;
+    }
+
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ mustMatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
+  };
+}
