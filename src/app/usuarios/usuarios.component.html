@@ -24,41 +24,38 @@
             <table class="table table-striped table-hover" *ngIf="potato==true">
 
               <thead>
-                <div class="card-header card-header-primary">
-                  <div style="margin-left: 80px;">
-                    <th></th>
-                    <th>Nombre Usuario</th>
-                    <th></th>
-                    <td></td>
-                    <td></td>
-                    <th style="padding-left: 235px;">Acciones</th>
+                <div class="row card-header card-header-primary">
+                  <div class="col-md-9" >
+
+                    Nombre Usuario
+                  </div>
+                  <div class="col-md-2">
+                    Acciones
                   </div>
                 </div>
 
               </thead>
               <tbody>
-                <div *ngFor="let item of filterData  | filter:term">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td >{{item.usuario}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>                 
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>                  
-                  <td></td>
-                  <td >
-                    <i [routerLink]="['/CalendarioUser',item.idUsuario]" routerLinkActive="active"
-                      class="material-icons">event_note</i>
-                    <i [routerLink]="['/EditarPerfilUsuariosAdmin',item.idUsuario]" routerLinkActive="active"
-                      class="material-icons">account_circle</i>
-                  </td>
+                <div class="row ml-2 mt-2" *ngFor="let item of filterData  | filter:term">
+                  <div class="col-md-8">
+
+                  {{item.usuario}}
+                </div>
+                  <div class="col-md-1">
+
+                    <button [routerLink]="['/CalendarioUser',item.idUsuario]" routerLinkActive="active"
+                      class="btn btn-primary btn-round">
+                      <i class="material-icons">
+                        date_range</i> </button>
+                  </div>
+                  <div class="col-md-1">
+                    <button [routerLink]="['/EditarPerfilUsuariosAdmin',item.idUsuario]" routerLinkActive="active"
+                      class="btn btn-primary btn-round">
+                      <i class="material-icons">
+                        manage_accounts</i> </button>
+                  </div>
+
+
                 </div>
               </tbody>
             </table>

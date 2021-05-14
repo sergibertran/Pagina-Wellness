@@ -15,7 +15,7 @@
 
                 <div *ngFor="let lessonForm of lessons.controls; let i = index">
 
-                  <div [formGroup]="lessonForm" (ngSubmit)="Submit()">
+                  <form [formGroup]="lessonForm" (ngSubmit)="Submit()">
 
                   <strong>Dia  {{i+1}} </strong>
 
@@ -65,7 +65,7 @@
                       <br>
                       <br>
                   
-                  </div>
+                  </form>
                 </div>
 
               </div>
@@ -78,8 +78,8 @@
 
 
 
-            <button mat-raised-button (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
-            <button mat-raised-button (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
+            <button mat-raised-button [disabled]="!form.valid" (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
+            <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
 
 
             <div class="clearfix"></div>
