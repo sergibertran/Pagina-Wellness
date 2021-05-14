@@ -1,66 +1,133 @@
 <div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header card-header-rosa">
-                        <h4 class="card-title">Modificar dieta</h4>
-                        <p class="card-category">Complete your profile</p>
-                    </div>
-                    <div class="card-body">
-                        <form [formGroup]="myForm" (ngSubmit)="Submit()" *ngIf="ready==true">
-                            <div class="row">
-                          
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput formControlName="nombreDieta"  placeholder="Nombre dieta" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput formControlName="tipoDieta" placeholder="Tipo Dieta" type="text">
-                                  </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
-                                  <mat-form-field >
-                                    <mat-label>Selector</mat-label>
-                                    <mat-select formControlName="PremiumNoPremium">
-                                      <mat-option value="1">Premium</mat-option>
-                                      <mat-option value="0">No Premium</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                </div>
-                            </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header card-header-rosa">
+            <h4 class="card-title">Modificar dieta</h4>
+            <p class="card-category">Complete your profile</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="myForm" (ngSubmit)="Submit()" *ngIf="ready==true">
+              <div class="row">
 
-                          
-                       
-                        
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>Imagen</label>
-                                  <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" formControlName="image">
-                                    <label class="custom-file-label" for="customFile">Escoge una foto</label>
-                                  </div>
-                         
-                                </div>
-                            </div>
-                            <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar dieta</button>
-                         
-                          
-                           
-                        </form>
-                        <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
-                    </div>
-                    <div *ngIf="MostrarDiasB" class="card-body">
-                      HOLAHOLAHOLA
-                      </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="nombreDieta" placeholder="Nombre dieta" type="text">
+                  </mat-form-field>
                 </div>
-            </div>
-       
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="tipoDieta" placeholder="Tipo Dieta" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field>
+                    <mat-label>Selector</mat-label>
+                    <mat-select formControlName="PremiumNoPremium">
+                      <mat-option value="1">Premium</mat-option>
+                      <mat-option value="0">No Premium</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+
+
+              <div class="row">
+                <div class="col-md-12">
+                  <label>Imagen</label>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" formControlName="image">
+                    <label class="custom-file-label" for="customFile">Escoge una foto</label>
+                  </div>
+
+                </div>
+              </div>
+              <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar dieta</button>
+
+
+
+            </form>
+            <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
+          </div>
         </div>
+      </div>
+
+      <div class="card">
+        <div *ngIf="MostrarDiasB" class="card-body">
+          <div>
+    
+            <!-- <div [formGroup]="form"> -->
+    
+            <div formArrayName="lessons">
+    
+              <!-- <div *ngFor="let lessonForm of lessons.controls; let i = index"> -->
+    
+              <!-- <form [formGroup]="lessonForm" (ngSubmit)="Submit()"> -->
+    
+              <!-- <strong>Dia  {{i+1}} </strong> -->
+    
+    
+    
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Desayuno" placeholder="Desayuno" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Comida" placeholder="Comida" type="text">
+                  </mat-form-field>
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Merienda" placeholder="Merienda" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Merienda2" placeholder="Merienda 2" type="text">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Cena" placeholder="Cena" type="text">
+                  </mat-form-field>
+    
+                </div>
+              </div>
+    
+    
+    
+              <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
+              <br>
+              <br>
+    
+              <!-- </form> -->
+              <!-- </div> -->
+    
+            </div>
+    
+            <!-- </div> -->
+    
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-  
+</div>
