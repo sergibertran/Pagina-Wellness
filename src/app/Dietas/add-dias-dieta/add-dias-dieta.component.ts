@@ -104,6 +104,7 @@ longitud: number;
 
  Submit(){
 
+console.log(this.lessons);
 
   
   

@@ -35,6 +35,7 @@ import { ModificarDietaComponent } from './Dietas/modificar-dieta/modificar-diet
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalhomeComponent } from './modalhome/modalhome.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
+import { Error404Component } from './error404/error404.component';
 
 
 
@@ -80,6 +81,7 @@ FullCalendarModule.registerPlugins([
     HomeComponent,
     ModalhomeComponent,
     LoginRegisterComponent,
+    Error404Component,
 
   
 
