@@ -20,6 +20,7 @@ export class ModificarDietaComponent implements OnInit {
   id;
   myForm;
   ready;
+  MostrarDiasB:boolean=false
   datos;
   ngOnInit(): void {
 
@@ -72,6 +73,10 @@ export class ModificarDietaComponent implements OnInit {
   Submit(){
     console.log(this.myForm);
     
+  }
+
+  MostrarDias(){
+    this.MostrarDiasB=true
   }
 
 }

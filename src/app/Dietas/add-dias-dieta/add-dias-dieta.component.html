@@ -78,9 +78,13 @@
 
 
 
+            <div *ngIf="mostrarboton">
             <button mat-raised-button [disabled]="!form.valid" (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
-            <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
+            </div>
 
+            <div *ngIf="mostrarboton2">
+            <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
+            </div>
 
             <div class="clearfix"></div>
 
