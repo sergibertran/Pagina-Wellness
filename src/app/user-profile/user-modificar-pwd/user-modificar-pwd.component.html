@@ -34,10 +34,12 @@
                                         <input matInput placeholder="Repetir Contraseña"
                                             formControlName="pwdNuevaRepetida" class="form-control"
                                             [ngClass]="{ 'is-invalid': submitted}">
-                                        <mat-error *ngIf="submitted && f.pwdNuevaRepetida.errors" class="invalid-feedback">
+                                        <mat-error *ngIf="submitted && f.pwdNuevaRepetida.errors"
+                                            class="invalid-feedback">
                                             <mat-error *ngIf="f.pwdNuevaRepetida.errors.required">La contraseña es
                                                 obligatorio. </mat-error>
-                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.mustMatch">No coincide con la nueva</mat-error>
+                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.mustMatch">No coincide con la
+                                                nueva</mat-error>
                                         </mat-error>
 
                                     </mat-form-field>

@@ -62,7 +62,7 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadRutinasUsuario.php`, JSON.stringify(user));
   }
 
-  loadRutina() {
+  loadRutina(user) {
 
     return this.http.post(`${environment.apiUrl}/loadRutinasAdmin.php`, JSON.stringify(String));
   }
