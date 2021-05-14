@@ -28,14 +28,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { AuthGuard } from './_helpers/auth.guard';
 import { AuthService } from './services/auth.service';
-import { PremiumComponent } from './premium/premium.component';
-import { DietaUsuarioComponent } from './Dietas/dieta-usuario/dieta-usuario.component';
-import { RutinaUsuarioComponent } from './Rutinas/rutina-usuario/rutina-usuario.component';
-import { ModificarDietaComponent } from './Dietas/modificar-dieta/modificar-dieta.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalhomeComponent } from './modalhome/modalhome.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { Error404Component } from './error404/error404.component';
+
 
 
 
@@ -82,6 +79,7 @@ FullCalendarModule.registerPlugins([
     ModalhomeComponent,
     LoginRegisterComponent,
     Error404Component,
+   
 
   
 

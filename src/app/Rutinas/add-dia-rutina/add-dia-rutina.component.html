@@ -1,0 +1,91 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header card-header-rosa">
+              <h4 class="card-title">Añadir dias</h4>
+              <p class="card-category">Complete your profile</p>
+            </div>
+            <div class="card-body">
+  
+              <div [formGroup]="form">
+  
+                <div formArrayName="lessons">
+  
+                  <div *ngFor="let lessonForm of lessons.controls; let i = index">
+  
+                    <form [formGroup]="lessonForm" (ngSubmit)="Submit()">
+  
+                    <strong>Dia  {{i+1}} </strong>
+  
+  
+         
+  
+                      <div class="row">
+                        <div class="col-md-4">
+                          <mat-form-field class="example-full-width">
+                            <input matInput formControlName="Desayuno" placeholder="Desayuno" type="text">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                          <mat-form-field class="example-full-width">
+                            <input matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text">
+                          </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                          <mat-form-field class="example-full-width">
+                            <input matInput formControlName="Comida" placeholder="Comida" type="text">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                        
+                        <div class="row">
+                          <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                              <input matInput formControlName="Merienda" placeholder="Merienda" type="text">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                              <input matInput formControlName="Merienda2" placeholder="Merienda 2" type="text">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-4">
+                            <mat-form-field class="example-full-width">
+                              <input matInput formControlName="Cena" placeholder="Cena" type="text">
+                            </mat-form-field>
+                        
+                      </div>
+                        </div>
+  
+                     
+  
+                        <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button>
+                        <br>
+                        <br>
+                    
+                    </form>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+              <div *ngIf="mostrarboton">
+              <button mat-raised-button [disabled]="!form.valid" (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
+              </div>
+  
+              <div *ngIf="mostrarboton2">
+              <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
+              </div>
+  
+              <div class="clearfix"></div>
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

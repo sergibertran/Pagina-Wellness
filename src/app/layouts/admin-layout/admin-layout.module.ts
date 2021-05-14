@@ -1,3 +1,4 @@
+import { AddDiaRutinaComponent } from './../../Rutinas/add-dia-rutina/add-dia-rutina.component';
 import { ModificarDietaComponent } from './../../Dietas/modificar-dieta/modificar-dieta.component';
 
 import { NgModule } from '@angular/core';
@@ -95,6 +96,7 @@ FullCalendarModule.registerPlugins([
     UserModificarPwdComponent,
     RutinaUsuarioComponent,
     PremiumComponent,
+    AddDiaRutinaComponent
   ],
   providers: [  
     MatDatepickerModule,  

@@ -1,3 +1,4 @@
+import { AddDiaRutinaComponent } from './../../Rutinas/add-dia-rutina/add-dia-rutina.component';
 import { DietaUsuarioComponent } from './../../Dietas/dieta-usuario/dieta-usuario.component';
 
 import { UsuariosComponent } from './../../usuarios/usuarios.component';
@@ -42,6 +43,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'ModificarDieta/:id',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietaUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard]},
+    { path: 'AddDiaRutina',  component: AddDiaRutinaComponent ,canActivate: [AuthGuard, AdminGuard]},
 
     
     
