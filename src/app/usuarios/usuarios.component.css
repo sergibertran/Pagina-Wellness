@@ -261,6 +261,10 @@ table.table .avatar {
 	box-shadow: none;
 	background: #ddd;
 }
+i:hover{
+	cursor: pointer;
+}
+
 /* Modal styles */
 .modal .modal-dialog {
 	max-width: 400px;
@@ -294,3 +298,4 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }
+
