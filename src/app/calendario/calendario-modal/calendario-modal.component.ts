@@ -6,6 +6,8 @@ import { CalendarioService } from 'app/services/calendario.service';
 import { Profile } from '../calendario.component';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-calendario-modal',
   templateUrl: './calendario-modal.component.html',
@@ -17,10 +19,13 @@ export class CalendarioModalComponent implements OnInit {
     start: new FormControl('2021-05-12T22:00:00.000Z'),
     end: new FormControl()
   });
+ 
   dieta = false;
   rutina = false;
   minDate: Date;
   maxDate: Date;
+  datoFechas: FormGroup;
+  filterData;
   addEventForm: FormGroup;
   selectControl: FormControl = new FormControl();
   selectControlDieta: FormControl = new FormControl();
@@ -29,6 +34,9 @@ export class CalendarioModalComponent implements OnInit {
   resultadoSelectRutina='';
   resultadoSelectDieta='';
   resultadoSelect;
+  fechaStart;
+  fechaEnd
+  iduser;
   checked = true;
   lastChecked = false;
   selectedDay: string = '';
@@ -39,7 +47,8 @@ export class CalendarioModalComponent implements OnInit {
   ];
   successdata: Response;
   constructor(  private formBuilder: FormBuilder,
-    private http: HttpClient,
+    private http: HttpClient, private authService: AuthService,
+    
     private calendarioService: CalendarioService,
     public dialog: MatDialog, 
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -63,41 +72,46 @@ export class CalendarioModalComponent implements OnInit {
 
   onSubmit() {
 
+console.log('test');
 
 
+console.log(this.range.controls);
+console.log(this.range.controls.end.value);
+
+console.log(this.range.controls.start.value);
  
 
-    const titulo = this.addEventForm.controls.title.value;
+function convertend(str) {
+  var date = new Date(str),
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [date.getFullYear(), mnth, day].join("-");
+}
 
-    this.addEventForm = this.formBuilder.group({
-      title: [titulo],
-      fecha: [this.data],
-    });
 
 
-    var myFormData = new FormData();
+this.fechaEnd=convertend(this.range.controls.end.value);
+this.fechaStart=(this.range.controls.start.value).split('T')[0];
 
-    // Begin assigning parameters
- 
-    myFormData.append("title", this.addEventForm.controls.title.value.prName);
-    myFormData.append("fecha", this.addEventForm.controls.fecha.value);
-   
+console.log( this.fechaStart +" y start "+ this.fechaEnd);
 
-    return this.http
-      .post("http://localhost/save.php/", myFormData)
-      .subscribe((res: Response) => {
-      
-        this.successdata = res;
-        if ((this.successdata["data"] = "success")) {
 
-          console.log('works');
+this.datoFechas = new FormGroup({
+  start: this.fechaEnd,
+  end: this.fechaStart
+});
 
-        } else {
-          console.log('funciona');
 
-        }
-      });
+
+
+this.authService.anadirDietaCalendario();
+
+  
+
+
   }
+
+  
 
   onChange(index) {
 
@@ -132,6 +146,44 @@ export class CalendarioModalComponent implements OnInit {
  
     this.resultadoSelect = $event
 
+
+if(this.resultadoSelect=='Dieta'){
+
+  this.iduser=this.authService.getNpremium();
+  console.log(this.iduser);
+  
+  if(this.iduser==0){
+    this.authService.loadDietasUsuario(this.iduser)
+    .pipe(first())
+    .subscribe(
+      (data) => {
+        console.log(data);
+         this.filterData=data;
+    });
+
+
+  }
+
+}else if(this.resultadoSelect=='Rutina'){
+
+  this.iduser=this.authService.getNpremium();
+  console.log(this.iduser);
+  
+  if(this.iduser==0){
+    this.authService.loadRutinasUsuario(this.iduser)
+    .pipe(first())
+    .subscribe(
+      (data) => {
+        console.log(data);
+         this.filterData=data;
+    });
+
+
+  }
+
+}else if (this.resultadoSelect=='Comentarios'){
+
+}
 
 
 

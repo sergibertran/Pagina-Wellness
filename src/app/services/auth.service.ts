@@ -94,6 +94,14 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(iduser));
   }
 
+  anadirDietaCalendario(){
+
+    console.log();
+    
+    return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(String));
+
+  }
+
 
   isLogged() {
     if (localStorage.getItem('currentUser')) {

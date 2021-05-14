@@ -20,3 +20,31 @@
     border-color: #e22989;
     box-shadow: 0 2px 2px 0 rgb(#f02b91 / 14%), 0 3px 1px -2px rgb(#f02b91 / 20%), 0 1px 5px 0 rgb(#f02b91 / 12%);
 }
+
+mat-dialog-container{
+    border: 4px solid;
+
+    border-image: linear-gradient( 
+    60deg
+    , #dc8bb5, #f02b91 ) 1 100%;
+}
+
+
+mat-dialog-container ng-tns-c68-0 ng-trigger ng-trigger-dialogContainer ng-star-inserted{
+    border: 4px solid;
+
+    border-image: linear-gradient( 
+    60deg
+    , #dc8bb5, #f02b91 ) 1 100%; 
+}
+
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: linear-gradient( 
+        60deg
+        , #dc8bb5, #f02b91 ) ;
+
+
+        background-image: linear-gradient(  60deg,#dc8bb5, #f02b91)
+}
+
