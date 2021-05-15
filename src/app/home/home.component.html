@@ -12,11 +12,39 @@
 
 <body id="page-top">
     <!-- Header-->
+ 
+      
+              
     <header class="masthead">
+        <ul style="float:left  " class="navbar-nav">
+               
+              
+            <li class="nav-item">
+                <a class="nav-link" >
+                    <div class="dropleft  ">
+                        <button type="button" class="btn btn-primary" data-toggle="dropdown">
+                            <i class="material-icons">person</i>IDIOMA
+                        </button>
+                        <div class="dropdown-menu">
+                           
+                          <a class="dropdown-item" (click)="Espanol()" >Español</a>
+                          
+                          <a class="dropdown-item" (click)="English()" >English</a>
+                        
+                       
+                        </div>
+                      </div>
+                      
+                   
+
+                </a>
+            </li>
+        </ul>
+        
         <div class="container">
-            <div class="masthead-heading text-uppercase">Todas las rutinas y dietas que desees, y mucho mas</div>
-            <div class="masthead-subheading">Disfruta donde quieras de forma gratuita o suscribete para una experiencia
-                premium</div>
+          
+            <div class="masthead-heading text-uppercase"> {{"HOME1" | translate}}</div>
+            <div class="masthead-subheading">{{"HOME2" | translate}}</div>
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'  >Entrar</a>
         </div>
     </header>

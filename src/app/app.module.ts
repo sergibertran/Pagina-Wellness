@@ -1,7 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -32,10 +31,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalhomeComponent } from './modalhome/modalhome.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { Error404Component } from './error404/error404.component';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-
-
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}
 
 
 FullCalendarModule.registerPlugins([ 
@@ -71,6 +73,13 @@ FullCalendarModule.registerPlugins([
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   declarations: [
     AppComponent,
