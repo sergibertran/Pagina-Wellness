@@ -16,6 +16,8 @@ export class RutinaUsuarioComponent implements OnInit {
   form: any;
   todosDias;
   mostrarDias=false;
+  i=0;
+
   constructor(private http: HttpClient,private authService: AuthService,private fb: FormBuilder) { }
   filterData;
   rutinas: any;
@@ -64,8 +66,19 @@ console.log(this.form);
 
          
     });
+    this.i++;
+    if(this.i%2!=0){
+      this.mostrarDias=true;
+    }else {
+      this.mostrarDias=false;
+    }
 
 
+  }
+  close(){
+    this.mostrarDias=false;
+    this.i=0;
+    
   }
 
 
