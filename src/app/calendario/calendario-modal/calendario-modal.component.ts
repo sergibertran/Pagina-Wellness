@@ -37,7 +37,13 @@ export class CalendarioModalComponent implements OnInit {
   fechaStart;
   fechaEnd
   iduser;
+  datoId;
+  diasMaximo;
+  fecha: Date;
+  diasArray;
+  TotaldiasArray=[];
   checked = true;
+  dia=1;
   lastChecked = false;
   selectedDay: string = '';
   allProfiles = [
@@ -48,6 +54,7 @@ export class CalendarioModalComponent implements OnInit {
   successdata: Response;
   constructor(  private formBuilder: FormBuilder,
     private http: HttpClient, private authService: AuthService,
+    private fb: FormBuilder,
     
     private calendarioService: CalendarioService,
     public dialog: MatDialog, 
@@ -58,7 +65,7 @@ export class CalendarioModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.range = new FormGroup({
-      start: new FormControl(this.data.dateStr+'T21:00:00.000Z'),
+      start: new FormControl(this.data.dateStr+'T22:00:00.000Z'),
       end: new FormControl()
     });
 
@@ -70,15 +77,11 @@ export class CalendarioModalComponent implements OnInit {
 
 
 
-  onSubmit() {
+  onSubmit(): void {
 
 console.log('test');
 
 
-console.log(this.range.controls);
-console.log(this.range.controls.end.value);
-
-console.log(this.range.controls.start.value);
  
 
 function convertend(str) {
@@ -93,19 +96,76 @@ function convertend(str) {
 this.fechaEnd=convertend(this.range.controls.end.value);
 this.fechaStart=(this.range.controls.start.value).split('T')[0];
 
-console.log( this.fechaStart +" y start "+ this.fechaEnd);
 
 
-this.datoFechas = new FormGroup({
-  start: this.fechaEnd,
-  end: this.fechaStart
+let newDateStart = new Date(this.fechaStart);
+let newDateEnd = new Date(this.fechaEnd);
+
+console.log(newDateStart);
+console.log(newDateEnd);
+
+
+console.log( this.filterData[0]['idDieta']);
+this.datoId = this.fb.group({
+  'id': this.filterData[0]['idDieta'],
+
 });
 
 
+this.authService.obtenerDias(this.datoId.value)
+.pipe(first())
+.subscribe(
+  (data) => {
+ 
+    this.diasMaximo=Object.keys(data).length;
+    console.log( this.diasMaximo);
+    
+    
 
-//this.authService.anadirDietaCalendario(this.datoFechas);
+    this.TotaldiasArray=[];
 
-  
+    while(newDateStart.getMonth()!=newDateEnd.getMonth() ||  newDateStart.getDate()!= newDateEnd.getDate() || newDateStart.getFullYear()!= newDateEnd.getFullYear()){
+   if(this.dia>this.diasMaximo){
+   this.dia=1
+   
+    }
+   
+    this.TotaldiasArray.push({date: newDateStart,nDia: this.dia});
+    newDateStart = new Date(newDateStart);
+    newDateStart.setDate(newDateStart.getDate()+1);
+   this.dia++;
+   
+    }
+    if(this.dia>this.diasMaximo){
+      this.dia=1
+      
+       }
+   
+    this.TotaldiasArray.push({date: newDateStart,nDia: this.dia});
+    newDateStart = new Date(newDateStart);
+    newDateStart.setDate(newDateStart.getDate()+1);
+    this.dia++;
+    console.log(this.TotaldiasArray);
+   
+   this.dia=0;
+   
+   
+   this.authService.comprovarDietasEnDias(this.TotaldiasArray)
+   .pipe(first())
+   .subscribe(
+     (data) => {
+console.log(data);
+
+
+
+    });
+
+
+
+
+});
+
+
 
 
   }

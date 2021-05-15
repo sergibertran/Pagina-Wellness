@@ -87,6 +87,13 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDiasDietasAdmin.php`, JSON.stringify(iduser));
   }
 
+  comprovarDietasEnDias(iduser) {
+  
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/comprovarDietasEnDias.php`, JSON.stringify(iduser));
+  }
+
   cargarDatosRutina(iduser) {
   
     console.log(iduser);
@@ -94,11 +101,11 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(iduser));
   }
 
-  anadirDietaCalendario(){
+  obtenerDias(datos){
 
-    console.log();
+    console.log(datos);
     
-    return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(String));
+    return this.http.post(`${environment.apiUrl}/anadirDietaCalendario.php`, JSON.stringify(datos));
 
   }
 
