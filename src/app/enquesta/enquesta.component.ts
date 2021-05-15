@@ -40,8 +40,8 @@ export class EnquestaComponent implements OnInit {
   BebidasAzucarada: string;
   BebidasAlcoholicas: string;
   AlimentoExeso: string;
-  enquestaModel = new enquesta("","","","","","","","","","","","","","","","","","","","","","","","","","","","");
-
+  enquestaModel = new enquesta("","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+  iduser: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -51,6 +51,8 @@ export class EnquestaComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.iduser= localStorage.getItem('currentUser')
+   
     this.registerForm = this.formBuilder.group({
       Nombre: ['', Validators.required],
       Apellidos: ['', Validators.required],
@@ -98,9 +100,9 @@ ModificarValores() {
   this.Cintura = this.registerForm.controls.Cintura.value;
   this.Cadera = this.registerForm.controls.Cadera.value;
   this.Intolerancia = this.registerForm.controls.Intolerancia.value;
-  this.IntoleranciaEx = this.registerForm.controls.Nombre.value;
-  this.Dieta = this.registerForm.controls.Apellidos.value;
-  this.DietaEx = this.registerForm.controls.Sexo.value;
+  this.IntoleranciaEx = this.registerForm.controls.IntoleranciaEx.value;
+  this.Dieta = this.registerForm.controls.Dieta.value;
+  this.DietaEx = this.registerForm.controls.DietaEx.value;
   this.Lacteos = this.registerForm.controls.Lacteos.value;
   this.Huevos = this.registerForm.controls.Huevos.value;
   this.Fruta = this.registerForm.controls.Fruta.value;
@@ -110,14 +112,14 @@ ModificarValores() {
   this.Pescado = this.registerForm.controls.Pescado.value;
   this.Bolleria = this.registerForm.controls.Bolleria.value;
   this.AlimentosProcesados = this.registerForm.controls.AlimentosProcesados.value;
-  this.ComidaRapida = this.registerForm.controls.Pescado.value;
-  this.BebidasAzucarada = this.registerForm.controls.Bolleria.value;
-  this.BebidasAlcoholicas = this.registerForm.controls.AlimentosProcesados.value;
+  this.ComidaRapida = this.registerForm.controls.ComidaRapida.value;
+  this.BebidasAzucarada = this.registerForm.controls.BebidasAzucarada.value;
+  this.BebidasAlcoholicas = this.registerForm.controls.BebidasAlcoholicas.value;
   this.AlimentoExeso = this.registerForm.controls.AlimentoExeso.value;
  
- this.enquestaModel = new enquesta(this.Nombre, this.Apellidos,this.Sexo, this.Email,this.Edad,this.Antecedentes,this.FamBio,this.Peso ,this.Altura
+ this.enquestaModel = new enquesta(this.iduser, this.Nombre, this.Apellidos,this.Sexo, this.Email,this.Edad,this.Antecedentes,this.FamBio,this.Peso ,this.Altura
   , this.Cintura,this.Cadera,this.Intolerancia,this.IntoleranciaEx,this.Dieta,this.DietaEx,this.Lacteos,this.Huevos,this.Fruta,this.Legumbres,this.Carne, this.CarneProcesada
-  ,this.Pescado,this.Bolleria,this.AlimentosProcesados,this.ComidaRapida, this.BebidasAzucarada ,this.BebidasAlcoholicas,this.AlimentoExeso );
+  ,this.Pescado,this.Bolleria,this.AlimentosProcesados,this.ComidaRapida, this.BebidasAzucarada ,this.BebidasAlcoholicas,this.AlimentoExeso);
 
   }
 
