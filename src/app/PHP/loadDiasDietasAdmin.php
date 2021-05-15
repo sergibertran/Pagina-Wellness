@@ -13,7 +13,7 @@
  $resultado = mysqli_query($conexion, 
  
  $sql = "SELECT idDiaDieta, numDiaDieta, idDIeta, Desayuno, Desayuno2, Comida, Merienda, Merienda2, Cena, Comentarios
- FROM daw2_jamsweb.dias where idDIeta=1 and numDiaDieta=1");
+ FROM daw2_jamsweb.dias where idDIeta=$params->groupId and numDiaDieta=$params->groupId");
  
 
    while ($registros = mysqli_fetch_array($resultado)) {

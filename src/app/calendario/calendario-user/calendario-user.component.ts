@@ -90,7 +90,11 @@ export class CalendarioUserComponent implements OnInit {
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
+      console.log(res);
       
+
+      if (res!=null){
+
         for (let index = 0; index < Object.keys(res).length; index++) {
          
           if (res[index].comentarios == "Dieta") {
@@ -101,6 +105,7 @@ export class CalendarioUserComponent implements OnInit {
               textColor: "black",
               res: res,
               id: res[index].idCalendario,
+              groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Rutina") {
             this.events.push({
@@ -110,6 +115,7 @@ export class CalendarioUserComponent implements OnInit {
               textColor: "black",
               res: res,
               id: res[index].idCalendario,
+              groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Comentarios") {
             this.events.push({
@@ -119,10 +125,11 @@ export class CalendarioUserComponent implements OnInit {
               textColor: "black",
               res: res,
               id: res[index].idCalendario,
+              groupId: res[index].idDia,
             });
           }
         }
-
+      }
         this.calendarOptions = {
           locale: esLocale,
           initialView: "dayGridMonth",
@@ -133,6 +140,7 @@ export class CalendarioUserComponent implements OnInit {
 
         };
       });
+      
 
     //Add User form validations
     this.addEventForm = this.formBuilder.group({
@@ -141,13 +149,16 @@ export class CalendarioUserComponent implements OnInit {
   }
 
   openDialog(arg) {
-
+    arg.idUser=this.idUsuario;
+    console.log('abrir');
+   
     this.dialog.open(CalendarioModalComponent, {
       data: arg,
     });
   }
 
   openDialogInfo(arg) {
+console.log(arg);
 
       this.dialog.open(CalendarioModal2Component, {
         data: arg,

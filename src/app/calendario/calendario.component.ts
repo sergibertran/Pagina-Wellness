@@ -70,7 +70,9 @@ export class CalendarioComponent implements OnInit {
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
     console.log(res);
-    console.log(res[0].idDia);
+if (res!=null){
+
+
     
 
         for (let index = 0; index < Object.keys(res).length; index++) {
@@ -107,7 +109,9 @@ export class CalendarioComponent implements OnInit {
             });
           }
         }
-console.log(this.events);
+      }
+
+console.log(this);
 
         this.calendarOptions = {
           locale: esLocale,
@@ -127,6 +131,9 @@ console.log(this.events);
   }
 
   openDialog(arg) {
+    arg.idUser=this.idUsuario;
+console.log('abrir');
+console.log(arg);
 
     this.dialog.open(CalendarioModalComponent, {
       data: arg,
@@ -135,6 +142,7 @@ console.log(this.events);
   }
 
   openDialogInfo(arg) {
+ console.log('aaa');
  
       this.dialog.open(CalendarioModal2Component, {
         data: arg,

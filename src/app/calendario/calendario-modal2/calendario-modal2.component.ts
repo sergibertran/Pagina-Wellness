@@ -21,6 +21,7 @@ export class CalendarioModal2Component implements OnInit {
   ngOnInit(): void {
     console.log(this.data.event.id);
     console.log(this.data);
+    console.log(this.data.event.groupId);
     
 this.Tipode=this.data.event.title;
    console.log(this.Tipode);
