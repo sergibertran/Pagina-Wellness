@@ -3,225 +3,252 @@
   <div class="modal-body">
 
 
-   <!-- DIETA --> 
-          <div *ngIf="Tipode=='Dieta'" class="row">
+    <!-- DIETA -->
+    <div *ngFor="let item of dietas">
+      <div *ngIf="Tipode=='Dieta'" class="row">
 
-            <div class="col-md-3">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Desayuno</mat-card-title>
+        <div *ngIf="item['Desayuno'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Desayuno</mat-card-title>
+            </mat-card-header>
 
-                </mat-card-header>
-               
-                <mat-card-content>
-                  <p>
-                    Infusión/Café
-                    con leche sin
-                    azúcar
-                    Porridge de
-                    avena 100g con
-                    canela y 1/2
-                    frutas
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="col-md-3">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Comida</mat-card-title>
+            <mat-card-content>
+              <p>
+                {{item['Desayuno']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-                </mat-card-header>
-              
-                <mat-card-content>
-                  <p>
-                    Revuelto de
-                    verduras,
-                    cebolla,
-                    calabacín y 150
-                    g de patata.
-                    250g de
-                    pechuga de
-                    pavo
-                    1 fruta
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="col-md-3">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Merienda</mat-card-title>
+        <div *ngIf="item['Desayuno2'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Desayuno 2</mat-card-title>
+            </mat-card-header>
 
-                </mat-card-header>
-       
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
+            <mat-card-content>
+              <p>
+                {{item['Desayuno2']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-              </mat-card>
-            </div>
-            <div class="col-md-3">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Cena</mat-card-title>
-                </mat-card-header>
-   
-                <mat-card-content>
-                  <p>
-                    Ensalada de
-                    arroz integral
-                    Arroz (150g),
-                    lechuga, tomate,
-                    cebolla, un
-                    aguacate y 1 lata
-                    de atún al
-                    natural.
-                    1 Fruta
-                    1 yogur natural
-                    sin azúcar
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" >Eliminar</button>
-            </div>
-          </div>
-<!-- COMENTARIOS -->
-          <div 
-          *ngIf="Tipode=='Comentarios'" class="row">
+        <div *ngIf="item['Comida'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Comida</mat-card-title>
+            </mat-card-header>
 
-            <div class="col-md-12">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>COMENTARIOS</mat-card-title>
+            <mat-card-content>
+              <p>
+                {{item['Comida']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-                </mat-card-header>
-               
-                <mat-card-content>
-                  <p>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis quia corrupti cumque voluptatum molestias repellat eveniet, nobis assumenda nam omnis earum dolore molestiae consectetur illum, totam quibusdam sit consequuntur ducimus recusandae veniam quisquam ullam laborum natus? Inventore reiciendis similique asperiores ab, expedita quas fuga blanditiis alias distinctio praesentium corrupti veritatis rerum delectus nihil amet, suscipit vel vero explicabo numquam provident sunt. Quae ratione totam qui, corporis consequuntur voluptatum. Doloribus similique optio dolor cupiditate eligendi aliquid commodi. Hic, pariatur rem! Perferendis voluptas architecto voluptatum odio cum eligendi ipsam? Aliquam sit vel molestias quibusdam reiciendis doloribus iure, incidunt omnis, officia rem magni eveniet nobis ipsum beatae ratione dolores esse corporis consectetur modi sint. Possimus eum, necessitatibus ratione voluptates tempora optio? Commodi veniam eligendi sunt fugiat facilis accusantium corrupti placeat totam, rem laboriosam deleniti magni quibusdam mollitia a quas eos dicta accusamus velit, quam eius! Vero reiciendis quis sit recusandae illum magnam nobis eius labore unde quae rerum modi nisi vitae totam, ex velit. Maiores placeat libero ipsum possimus repellat unde accusantium. Eos eum exercitationem fugit, rem, illum asperiores, temporibus officia numquam autem accusantium est dolor saepe perspiciatis nam dicta unde quibusdam fuga porro sed aliquid culpa hic nostrum velit aliquam. Ad.
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-           
-          </div>
+        <div *ngIf="item['Merienda'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Merienda</mat-card-title>
+            </mat-card-header>
 
-<!-- RUTINA -->
-    <div *ngIf="Tipode=='Rutina'" >
-       
-      <div class="row">
-            <div class="col-md-4">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>PRESS DE BANCA</mat-card-title>
+            <mat-card-content>
+              <p>
+                {{item['Merienda']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-                </mat-card-header>
-              
-                <mat-card-content>
-                  <p>
-                    Series: 3-5 <br>
-                    Repeticiones: 6-8 <br>
-                    Descanso: 2' <br>
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="col-md-4">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>PRESS MANCUERNA</mat-card-title>
+        <div *ngIf="item['Merienda2'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Merienda 2</mat-card-title>
+            </mat-card-header>
 
-                </mat-card-header>
-          
-                <mat-card-content>
-                  <p>
-                    Series: 3-4 <br>
-                    Repeticiones: 10-12 <br>
-                    Descanso: 1' 30'' <br>
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="col-md-4">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>REMO CON BARRA</mat-card-title>
+            <mat-card-content>
+              <p>
+                {{item['Merienda2']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-                </mat-card-header>
-            
-                <mat-card-content>
-                  <p>
-                    Series: 3-5 <br>
-                    Repeticiones: 6-8 <br>
-                    Descanso: 2' <br>
-                  </p>
-                </mat-card-content>
+        <div *ngIf="item['Cena'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Cena</mat-card-title>
+            </mat-card-header>
 
-              </mat-card>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>REMO EN POLEA BAJA</mat-card-title>
-                </mat-card-header>
-            
-                <mat-card-content>
-                  <p>
-                    Series: 3-4 <br>
-                    Repeticiones: 10-12 <br>
-                    Descanso: 1' 30'' <br>
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-            <div class="col-md-6">
-              <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>ELEVACIONES LATERALES</mat-card-title>
-                </mat-card-header>
-    
-                <mat-card-content>
-                  <p>
-                    Series: 3-5 <br>
-                    Repeticiones: 12-15 <br>
-                    Descanso: 1' 30'' <br>
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-       
-          </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" >Eliminar</button>
-            </div>
-          </div>
+            <mat-card-content>
+              <p>
+                {{item['Cena']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div *ngIf="item['Comentarios'] != null" class="col-md-3">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Comentarios</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              <p>
+                {{item['Comentarios']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
 
-
-
-
-
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Dieta</button>
         </div>
       </div>
+    </div>
+    <!-- COMENTARIOS -->
+    <div *ngIf="Tipode=='Comentarios'" class="row">
 
+      <div class="col-md-12">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>COMENTARIOS</mat-card-title>
+
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quis quia corrupti cumque voluptatum
+              molestias repellat eveniet, nobis assumenda nam omnis earum dolore molestiae consectetur illum, totam
+              quibusdam sit consequuntur ducimus recusandae veniam quisquam ullam laborum natus? Inventore reiciendis
+              similique asperiores ab, expedita quas fuga blanditiis alias distinctio praesentium corrupti veritatis
+              rerum delectus nihil amet, suscipit vel vero explicabo numquam provident sunt. Quae ratione totam qui,
+              corporis consequuntur voluptatum. Doloribus similique optio dolor cupiditate eligendi aliquid commodi.
+              Hic, pariatur rem! Perferendis voluptas architecto voluptatum odio cum eligendi ipsam? Aliquam sit vel
+              molestias quibusdam reiciendis doloribus iure, incidunt omnis, officia rem magni eveniet nobis ipsum
+              beatae ratione dolores esse corporis consectetur modi sint. Possimus eum, necessitatibus ratione
+              voluptates tempora optio? Commodi veniam eligendi sunt fugiat facilis accusantium corrupti placeat totam,
+              rem laboriosam deleniti magni quibusdam mollitia a quas eos dicta accusamus velit, quam eius! Vero
+              reiciendis quis sit recusandae illum magnam nobis eius labore unde quae rerum modi nisi vitae totam, ex
+              velit. Maiores placeat libero ipsum possimus repellat unde accusantium. Eos eum exercitationem fugit, rem,
+              illum asperiores, temporibus officia numquam autem accusantium est dolor saepe perspiciatis nam dicta unde
+              quibusdam fuga porro sed aliquid culpa hic nostrum velit aliquam. Ad.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+
+    <!-- RUTINA -->
+    <div *ngFor="let item of rutinas">
+      <div *ngIf="Tipode=='Rutina'">
+        <div class="row">
+          <div *ngIf="item['Ejercicio'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 1</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio2'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 2</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio2']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio3'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 3</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio3']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio4'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 4</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio4']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio5'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 5</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio5']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio6'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 6</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio6']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+      
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Rutina</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
