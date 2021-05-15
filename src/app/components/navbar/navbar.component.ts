@@ -3,6 +3,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,8 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
+    constructor(public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
+        this.translate.setDefaultLang('en')
       this.location = location;
           this.sidebarVisible = false;
     }

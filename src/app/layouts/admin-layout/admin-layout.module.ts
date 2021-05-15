@@ -44,6 +44,14 @@ import { DietaUsuarioComponent } from 'app/Dietas/dieta-usuario/dieta-usuario.co
 import { UserModificarPwdComponent } from 'app/user-profile/user-modificar-pwd/user-modificar-pwd.component';
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
 import { PremiumComponent } from 'app/premium/premium.component';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { NavbarComponent } from 'app/components/navbar/navbar.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http,'./assets/i18n/','.json');
+}
 
 FullCalendarModule.registerPlugins([ 
   dayGridPlugin,
@@ -71,6 +79,14 @@ FullCalendarModule.registerPlugins([
     MatDatepickerModule,
     MatNativeDateModule,
     Ng2SearchPipeModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
 
   
     
@@ -96,7 +112,8 @@ FullCalendarModule.registerPlugins([
     UserModificarPwdComponent,
     RutinaUsuarioComponent,
     PremiumComponent,
-    AddDiaRutinaComponent
+    AddDiaRutinaComponent,
+   
   ],
   providers: [  
     MatDatepickerModule,  
