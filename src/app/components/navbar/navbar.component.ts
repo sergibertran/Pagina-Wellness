@@ -19,7 +19,8 @@ export class NavbarComponent implements OnInit {
 
     constructor(public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
 
-        this.translate.setDefaultLang('en')
+        this.translate.addLangs(['es','en']);
+        this.translate.use(this.translate.getBrowserLang())
       this.location = location;
           this.sidebarVisible = false;
     }

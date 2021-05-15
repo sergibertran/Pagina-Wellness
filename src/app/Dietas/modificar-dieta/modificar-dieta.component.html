@@ -56,83 +56,82 @@
           </div>
         </div>
       </div>
+    </div>
 
-   
-<div *ngIf="MostrarDiasB">
+      <div *ngIf="MostrarDiasB">
 
-          <tbody *ngFor="let item of Ranking_modificarArray.controls;index as i "
+        <div *ngFor="let item of Ranking_modificarArray.controls;index as i "
           [formGroup]="Ranking_modificarArray.controls[i]">
 
           <div class="card">
-            <div  class="card-body">
+            <div class="card-body">
 
-          <div>
-    
-    
-    
-            <div class="row">
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Desayuno"  type="text">
-                </mat-form-field>
+
+
+
+              Dia {{i+1}}
+
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Desayuno" type="text"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Comida" placeholder="Comida" type="text"></textarea>
+                  </mat-form-field>
+                </div>
               </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Desayuno2"  placeholder="Desayuno 2" type="text">
-                </mat-form-field>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Merienda" placeholder="Merienda" type="text"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Merienda2" placeholder="Merienda 2" type="text"></textarea>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput formControlName="Cena" placeholder="Cena" type="text"></textarea>
+                  </mat-form-field>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
+
+
+
               </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Comida" placeholder="Comida" type="text">
-                </mat-form-field>
-              </div>
-            </div>
-  
-            <div class="row">
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Merienda"  placeholder="Merienda" type="text">
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Merienda2"   placeholder="Merienda 2" type="text">
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <input matInput formControlName="Cena" placeholder="Cena" type="text">
-                </mat-form-field>
-  
-              </div>
 
-     
-
-
-
-
-
-
-   
-        
-    
-       
           
 
-              <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
-              <br>
-              <br>
-    
-              <!-- </form> -->
-              <!-- </div> -->
-    
+
             </div>
-    
-            <!-- </div> -->
-    
           </div>
         </div>
       </div>
-    </div>
-    </div>
 
+  </div>
+</div>
