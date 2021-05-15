@@ -96,6 +96,12 @@ console.log(user);
     
     return this.http.post(`${environment.apiUrl}/loadProfile.php`, JSON.stringify(iduser));
   }
+
+  cargarEncuestaUser(iduser) {
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/AdminCargarEncuestaUser.php`, JSON.stringify(iduser));
+  }
  
   cargarDatosDieta(iduser) {
   

@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   constructor(public translate:TranslateService,private http: HttpClient,private authService: AuthService,) {
     
     this.translate.addLangs(['es','en']);
-    this.translate.getBrowserLang()
     this.translate.use(this.translate.getBrowserLang())
    }
 

@@ -30,37 +30,41 @@
               <div class="card-header card-header-primary">
                 <thead>
 
-                  <div style="margin-left: 80px;">
-
-                    <th scope="col">Tipo Dieta</th>
-
-                    <th style="padding-left: 220px;">Nombre</th>
-
-                    <th style="padding-left: 220px;">Aciones</th>
+                  <div class="col-md-4" style="margin-left: 80px;">
 
                   </div>
+               
+                    <th >Tipo Dieta</th>
+
+                    <th style="padding-left: 330px;">Nombre</th>
+
+                    <th style="padding-left: 330px;">Aciones</th>
+
 
                 </thead>
               </div>
+            </table>
+          </div>
+            
 
-              <div *ngFor="let item of filterData  | filter:term">
-                <td>
+              <div class="row" *ngFor="let item of filterData  | filter:term">
+                <div class="col-md-2">
                   <p style="margin-left: 120px;">{{item.TipoDieta}} </p>
-                </td>
+                </div>
 
-                <td>
+                <div style="padding-right: 200px;" class="col-md-4">
                   <p style="margin-left: 205px;">{{item.NDieta}}</p>
-                </td>
+                </div>
 
-                <td>
+                <div class="col-md-3">
                   <p style="margin-left: 170px;"><button class="btn btn-primary btn-round"
                       (click)='verDias()'>VER</button> </p>
-                </td>
+                </div>
 
               </div>
-            </table>
+            
 
-          </div>
+          
         </div>
       </div>
     </div>
