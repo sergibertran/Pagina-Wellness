@@ -13,6 +13,7 @@ export class DietaUsuarioComponent implements OnInit {
   mostrarDias=false;
   iduser;
   term: string;
+  i=0;
   dietas: any;
   form: any;
   constructor(private http: HttpClient,private authService: AuthService, private fb: FormBuilder) { }
@@ -47,7 +48,7 @@ export class DietaUsuarioComponent implements OnInit {
   }
 
   verDias(){
-    this.mostrarDias=true;
+   
 
 
     this.form = this.fb.group({
@@ -67,8 +68,13 @@ console.log(this.form);
 
          
     });
-
-
+    this.i++;
+    if(this.i%2!=0){
+      this.mostrarDias=true;
+    }else {
+      this.mostrarDias=false;
+    }
+   
   }
 
   userClick(){
