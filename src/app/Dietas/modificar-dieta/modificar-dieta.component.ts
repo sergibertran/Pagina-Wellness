@@ -1,4 +1,4 @@
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -26,6 +26,7 @@ export class ModificarDietaComponent implements OnInit {
   ArrayDatos=[];
   DatosForm;
   infoTodosDias;
+  Ranking_modificarArray = new FormArray([]);
   ngOnInit(): void {
 
 
@@ -50,6 +51,10 @@ export class ModificarDietaComponent implements OnInit {
       (data) => {
         this.datos=data;
       console.log(data);
+      
+
+
+
       
       this.myForm = new FormGroup(
         {
@@ -100,51 +105,48 @@ export class ModificarDietaComponent implements OnInit {
       (data) => {
         this.infoTodosDias=data;
  
-      
+        this.Ranking_modificarArray.clear();
        
         for (let index = 0; index < Object.keys(data).length; index++) {
          
           
-      
-        this.DatosForm = new FormGroup(
-          {
-            Cena: new FormControl((this.infoTodosDias[index]['Cena']), [
-              Validators.minLength(2),
-              Validators.maxLength(15),
-              Validators.required,
-            ]),
-            Comentarios: new FormControl((this.infoTodosDias[index]['Comentarios']), [
-              Validators.minLength(2),
-              Validators.maxLength(15),
-              Validators.required,
-            ]),
-            Comida: new FormControl((this.infoTodosDias[index]['Comida']), [
-              Validators.email,
-              Validators.required,
-            ]),
-            Desayuno: new FormControl((this.infoTodosDias[index]['Desayuno']), [
-              Validators.email,
-              Validators.required,
-            ]),
-            Desayuno2: new FormControl((this.infoTodosDias[index]['Desayuno2']), [
-              Validators.email,
-              Validators.required,
-            ]),
-            Merienda: new FormControl((this.infoTodosDias[index]['Merienda']), [
-              Validators.email,
-              Validators.required,
-            ]),
-            Merienda2: new FormControl((this.infoTodosDias[index]['Merienda2']), [
-              Validators.email,
-              Validators.required,
-            ]),
+            this.Ranking_modificarArray.push(
+              new FormGroup({
+                Cena: new FormControl((this.infoTodosDias[index]['Cena']), [
+                  Validators.minLength(2),
+                  Validators.maxLength(15),
+                  Validators.required,
+                ]),
+                Comentarios: new FormControl((this.infoTodosDias[index]['Comentarios']), [
+                  Validators.minLength(2),
+                  Validators.maxLength(15),
+                  Validators.required,
+                ]),
+                Comida: new FormControl((this.infoTodosDias[index]['Comida']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                Desayuno: new FormControl((this.infoTodosDias[index]['Desayuno']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                Desayuno2: new FormControl((this.infoTodosDias[index]['Desayuno2']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                Merienda: new FormControl((this.infoTodosDias[index]['Merienda']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                Merienda2: new FormControl((this.infoTodosDias[index]['Merienda2']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+              })
+            );
+
           }
-    
-        );
- 
-        this.ArrayDatos.push(this.DatosForm.value);
-      }
-    console.log(this.ArrayDatos);
+
     
         this.MostrarDiasB=true;
 

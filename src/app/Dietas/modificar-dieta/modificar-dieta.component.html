@@ -57,60 +57,68 @@
         </div>
       </div>
 
-      <div class="card">
-        <div *ngIf="MostrarDiasB" class="card-body">
-          <div *ngFor="let item of infoTodosDias">
-              <div [formGroup]="DatosForm" (ngSubmit)="Submit()">
-            <!-- <div [formGroup]="form"> -->
-    
-            <div>
-    
-              <!-- <div *ngFor="let lessonForm of lessons.controls; let i = index"> -->
-    
-              <!-- <form [formGroup]="lessonForm" (ngSubmit)="Submit()"> -->
-    
-              <!-- <strong>Dia  {{i+1}} </strong> -->
+   
+<div *ngIf="MostrarDiasB">
+
+          <tbody *ngFor="let item of Ranking_modificarArray.controls;index as i "
+          [formGroup]="Ranking_modificarArray.controls[i]">
+
+          <div class="card">
+            <div  class="card-body">
+
+          <div>
     
     
-              <div class="row">
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Desayuno" value="{{DatosForm.Desayuno}}"  type="text">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Desayuno2"  value="" placeholder="Desayuno 2" type="text">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Comida"  value="" placeholder="Comida" type="text">
-                  </mat-form-field>
-                </div>
+    
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Desayuno"  type="text">
+                </mat-form-field>
               </div>
-    
-              <div class="row">
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Merienda"  value="" placeholder="Merienda" type="text">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Merienda2"  value="" placeholder="Merienda 2" type="text">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Cena" value="" placeholder="Cena" type="text">
-                  </mat-form-field>
-    
-                </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Desayuno2"  placeholder="Desayuno 2" type="text">
+                </mat-form-field>
               </div>
-    
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Comida" placeholder="Comida" type="text">
+                </mat-form-field>
+              </div>
             </div>
+  
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Merienda"  placeholder="Merienda" type="text">
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Merienda2"   placeholder="Merienda 2" type="text">
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <input matInput formControlName="Cena" placeholder="Cena" type="text">
+                </mat-form-field>
+  
+              </div>
+
+     
+
+
+
+
+
+
+   
+        
     
+       
+          
+
               <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
               <br>
               <br>
@@ -125,7 +133,6 @@
           </div>
         </div>
       </div>
-
     </div>
-  </div>
-</div>
+    </div>
+
