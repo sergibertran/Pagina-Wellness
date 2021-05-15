@@ -104,7 +104,7 @@ export class CalendarioUserComponent implements OnInit {
               color: "#fed9d5",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
               groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Rutina") {
@@ -114,7 +114,7 @@ export class CalendarioUserComponent implements OnInit {
               color: "#dae5fd",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
               groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Comentarios") {
@@ -124,7 +124,7 @@ export class CalendarioUserComponent implements OnInit {
               color: "#e7f5d0",
               textColor: "black",
               res: res,
-              id: res[index].idCalendario,
+              id: res[index].idDieta,
               groupId: res[index].idDia,
             });
           }
