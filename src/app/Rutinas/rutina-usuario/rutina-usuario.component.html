@@ -1,4 +1,4 @@
-<div class="main-content">
+<div>
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
@@ -44,9 +44,14 @@
               </div>
 
               <div *ngFor="let item of filterData  | filter:term">
-                <td><p style="margin-left: 120px;">{{item.Nrutina}}</p></td>
+                <td>
+                  <p style="margin-left: 120px;">{{item.Nrutina}}</p>
+                </td>
 
-                <td><p style="margin-left: 205px;"> <button class="btn btn-primary btn-round" (click)='verDias()'>VER</button></p></td>
+                <td>
+                  <p style="margin-left: 205px;"> <button class="btn btn-primary btn-round"
+                      (click)='verDias()'>VER</button></p>
+                </td>
 
               </div>
 
@@ -60,97 +65,91 @@
   </div>
 </div>
 
-<div *ngFor="let item of todosDias">
-  <div *ngIf="mostrarDias==true" class="row">
-    <div class="row">
-      <div *ngIf="item['Ejercicio'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 1</mat-card-title>
-          </mat-card-header>
+<div style="padding-left: 30px;" *ngIf="mostrarDias==true" class="row">
+  <div *ngIf="todosDias!=null">
+    <div *ngFor="let item of todosDias; index as i">
+      <div *ngIf="item['Descanso']!=1">
+        <div class="row">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h3 class="card-title">Dia {{i+1}}</h3>
+              <br>
+              <div>
+                <div *ngIf="item['Ejercicio'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 1</mat-card-title>
+                  </mat-card-header>
 
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <div *ngIf="item['Ejercicio2'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 2</mat-card-title>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio2']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <div *ngIf="item['Ejercicio3'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 3</mat-card-title>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio3']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <div *ngIf="item['Ejercicio4'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 4</mat-card-title>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio4']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <div *ngIf="item['Ejercicio5'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 5</mat-card-title>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio5']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <div *ngIf="item['Ejercicio6'] != null" class="col-md-12">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Ejercicio 6</mat-card-title>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <p>
+                      {{item['Ejercicio6']}}
+                    </p>
+                  </mat-card-content>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div *ngIf="item['Ejercicio2'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 2</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio2']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div *ngIf="item['Ejercicio3'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 3</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio3']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div *ngIf="item['Ejercicio4'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 4</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio4']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div *ngIf="item['Ejercicio5'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 5</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio5']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <div *ngIf="item['Ejercicio6'] != null" class="col-md-3">
-        <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Ejercicio 6</mat-card-title>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              {{item['Ejercicio6']}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-
-
-
     </div>
- 
-  </div>
-</div>

@@ -1,4 +1,6 @@
-
+p{
+	margin-left: 50px;
+}
 .container > header {
 	margin: 0 auto;
 	padding: 1em;
