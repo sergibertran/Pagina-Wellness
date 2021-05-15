@@ -62,7 +62,7 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadRutinasUsuario.php`, JSON.stringify(user));
   }
 
-  loadRutina() {
+  loadRutina(user) {
 
     return this.http.post(`${environment.apiUrl}/loadRutinasAdmin.php`, JSON.stringify(String));
   }
@@ -108,7 +108,11 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/anadirDietaCalendario.php`, JSON.stringify(datos));
 
   }
-
+  modificarPwd(iduser){
+    console.log(iduser);
+    
+    return this.http.post(`${environment.apiUrl}/modificarPwd.php`, JSON.stringify(iduser));
+  }
 
   isLogged() {
     if (localStorage.getItem('currentUser')) {

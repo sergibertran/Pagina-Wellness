@@ -13,16 +13,20 @@
                 <h2>Rutinas</h2>
               </div>
               <div class="col-7">
+
+                <div class=" pb-5 buscar-caja">
+                  <input type="text"  class="buscar-txt"  [(ngModel)]="term" placeholder="Buscar..."/>
+                  <a class="buscar-btn">
+                    <i class="material-icons">search</i> 
+                  </a>
+                 </div>
               </div>
             </div>
           </div>
 
           <div class="row">
 
-            <div class="table-responsive">
-              <input type="text" class="form-control rounded" placeholder="Buscar Dieta" [(ngModel)]="term">
-              <!-- <button type="button" class="btn btn-outline-primary"><i class="material-icons">person_search</i></button> -->
-            </div>
+        
             <table class="table table-striped table-hover">
 
               <div class="card-header card-header-primary">
@@ -41,7 +45,7 @@
 
               <div *ngFor="let item of filterData  | filter:term">
                 <td></td>
-                <td style="padding-left: 150px;">{{item.Nrutina}}</td>
+                <td style="padding-left: 100px;">{{item.Nrutina}}</td>
                 <td>
                   <!-- <button class="btn btn-primary btn-round"> <i class="material-icons">
                     delete</i> </button> -->
