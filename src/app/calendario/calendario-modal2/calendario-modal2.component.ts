@@ -22,12 +22,12 @@ export class CalendarioModal2Component implements OnInit {
   Tipode;
   ngOnInit(): void {
     console.log(this.data.event.id);
-    console.log(this.data);
-    console.log(this.data.event.groupId);
+ 
     
 this.Tipode=this.data.event.title;
-   console.log(this.Tipode);
+
    
+console.log(this.data.event);
 
    this.form = this.fb.group({
     'id': [this.data.event.id],

@@ -78,13 +78,18 @@ console.log(this.data.idUser);
 
   onSubmit(): void {
     console.log("test");
+    
+console.log(this.resultadoSelect);
 
-    function convertend(str) {
-      var date = new Date(str),
-        mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-        day = ("0" + date.getDate()).slice(-2);
-      return [date.getFullYear(), mnth, day].join("-");
-    }
+function convertend(str) {
+  var date = new Date(str),
+    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+    day = ("0" + date.getDate()).slice(-2);
+  return [date.getFullYear(), mnth, day].join("-");
+}
+
+if(this.resultadoSelect=='Dieta'){
+
 
     this.fechaEnd = convertend(this.range.controls.end.value);
     this.fechaStart = this.range.controls.start.value.split("T")[0];
@@ -153,6 +158,83 @@ console.log(this.data.idUser);
             console.log(data);
           });
       });
+    }else if(this.resultadoSelect=='Rutina'){
+
+      this.fechaEnd = convertend(this.range.controls.end.value);
+      this.fechaStart = this.range.controls.start.value.split("T")[0];
+  
+      let newDateStart = new Date(this.fechaStart);
+      let newDateEnd = new Date(this.fechaEnd);
+  
+      console.log(newDateStart);
+      console.log(newDateEnd);
+  
+      console.log(this.filterData[0]["idRutina"]);
+      this.datoId = this.fb.group({
+        id: this.filterData[0]["idRutina"],
+      });
+  
+      this.dia = 1;
+      this.authService
+        .obtenerDiasRutina(this.datoId.value)
+        .pipe(first())
+        .subscribe((data) => {
+          this.diasMaximo = Object.keys(data).length;
+          console.log(this.diasMaximo);
+  
+          this.TotaldiasArray = [];
+  
+          while (
+            newDateStart.getMonth() != newDateEnd.getMonth() ||
+            newDateStart.getDate() != newDateEnd.getDate() ||
+            newDateStart.getFullYear() != newDateEnd.getFullYear()
+          ) {
+            if (this.dia > this.diasMaximo) {
+              this.dia = 1;
+            }
+  
+            this.TotaldiasArray.push({
+              date: newDateStart,
+              nDia: this.dia,
+              idUsuario: this.data.idUser,
+              idrutina: this.filterData[0]["idRutina"],
+            });
+            newDateStart = new Date(newDateStart);
+            newDateStart.setDate(newDateStart.getDate() + 1);
+            this.dia++;
+          }
+          if (this.dia > this.diasMaximo) {
+            this.dia = 1;
+          }
+  
+          this.TotaldiasArray.push({
+            date: newDateStart,
+            nDia: this.dia,
+            idUsuario: this.data.idUser,
+            idrutina: this.filterData[0]["idRutina"],
+          });
+          newDateStart = new Date(newDateStart);
+          newDateStart.setDate(newDateStart.getDate() + 1);
+          this.dia++;
+          console.log(this.TotaldiasArray);
+  
+          this.dia = 0;
+  
+          this.authService
+            .comprovarRutinasEnDias(this.TotaldiasArray)
+            .pipe(first())
+            .subscribe((data) => {
+              console.log(data);
+            });
+        });
+
+
+
+
+
+
+
+    }
   }
 
   onChange(index) {
