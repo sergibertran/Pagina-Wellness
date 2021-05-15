@@ -12,13 +12,22 @@ export class DietaUsuarioComponent implements OnInit {
   mostrarDias=false;
   iduser;
   term: string;
+  dietas: any;
+  form: any;
   constructor(private http: HttpClient,private authService: AuthService) { }
   filterData;
 
   ngOnInit(): void {
     this.iduser=this.authService.getNpremium();
     console.log(this.iduser);
-    
+
+    // this.authService.cargarDatosDieta(this.form.value).subscribe (
+    //   datos => {
+    //   console.log(datos);
+    //   this.dietas = datos;  
+    //   }
+    // )
+
     if(this.iduser==0){
       this.authService.loadDietasUsuario(this.iduser)
       .pipe(first())
@@ -27,9 +36,8 @@ export class DietaUsuarioComponent implements OnInit {
           console.log(data);
            this.filterData=data;
       });
-
-
     }
+
     
   }
 

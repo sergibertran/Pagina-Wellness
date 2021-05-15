@@ -15,18 +15,18 @@
               <div class="col-7">
 
                 <div class=" pb-5 buscar-caja">
-                  <input type="text"  class="buscar-txt"  [(ngModel)]="term" placeholder="Buscar..."/>
+                  <input type="text" class="buscar-txt" [(ngModel)]="term" placeholder="Buscar..." />
                   <a class="buscar-btn">
-                    <i class="material-icons">search</i> 
+                    <i class="material-icons">search</i>
                   </a>
-                 </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="row">
 
-        
+
             <table class="table table-striped table-hover">
 
               <div class="card-header card-header-primary">
@@ -36,7 +36,7 @@
 
                     <th scope="col">Tipo Dieta</th>
 
-                    <th style="padding-left: 220px;">Nombre</th>
+                    <th style="padding-left: 220px;">Aciones</th>
 
                   </div>
 
@@ -44,15 +44,13 @@
               </div>
 
               <div *ngFor="let item of filterData  | filter:term">
-                <td></td>
-                <td style="padding-left: 100px;">{{item.Nrutina}}</td>
-                <td>
-                  <!-- <button class="btn btn-primary btn-round"> <i class="material-icons">
-                    delete</i> </button> -->
+                <td><p style="margin-left: 120px;">{{item.Nrutina}}</p></td>
 
+                <td><p style="margin-left: 205px;"> <button class="btn btn-primary btn-round" (click)='verDias()'>VER</button></p></td>
 
-                </td>
               </div>
+
+
             </table>
 
           </div>
@@ -62,26 +60,99 @@
   </div>
 </div>
 
-<div id="tarjeta" class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-      <div class="card-body">
-        <div id="typography">
-          <div class="card-title">
-            <div class="row">
-              <div class="col-7">
-              </div>
-            </div>
-          </div>
-          <div>
-          <h3>Hipertrofia</h3>
+<div *ngFor="let item of rutinas">
+  <div *ngIf="mostrarDias==true" class="row">
+    <div class="row">
+      <div *ngIf="item['Ejercicio'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 1</mat-card-title>
+          </mat-card-header>
 
-          <h5>Dia 1:</h5>
-          <p>Press banca, Press inclinado, Fondos, Aberturas y Flexiones.</p>
-
-        </div>
-        </div>
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
       </div>
+      <div *ngIf="item['Ejercicio2'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 2</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio2']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="item['Ejercicio3'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 3</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio3']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="item['Ejercicio4'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 4</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio4']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="item['Ejercicio5'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 5</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio5']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div *ngIf="item['Ejercicio6'] != null" class="col-md-3">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Ejercicio 6</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{item['Ejercicio6']}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Rutina</button>
     </div>
   </div>
 </div>
