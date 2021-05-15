@@ -15,10 +15,10 @@
 
 
 
-  // REALIZA LA QUERY A LA DB
-  // $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
-  // SET nombre='$params->nombre', apellido='$params->apellidos', correo='$params->correo', Peso=$params->peso, Altura=$params->altura, Direccion='$params->direccion'
-  //   WHERE usuario='$params->usuario'");
+  //REALIZA LA QUERY A LA DB
+  $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
+  SET nombre='$params->nombre', apellido='$params->apellidos', correo='$params->correo', Peso=$params->peso, Altura=$params->altura, Direccion='$params->direccion'
+    WHERE usuario='$params->usuario'");
 
   
     header('Content-Type: application/json');
