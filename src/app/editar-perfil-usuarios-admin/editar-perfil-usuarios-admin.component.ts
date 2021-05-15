@@ -26,6 +26,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   DatosModal;
   altura;
   peso;
+  datosEncuesta: any;
   constructor( private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
@@ -39,14 +40,17 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
     this.idUsuario=this.router.url.split('/')[2];
      
       this.RegisterForm = this.fb.group({
-        'idUsuario': [ this.idUsuario],
-  
-     
+        'idUsuario': [ this.idUsuario],     
       });
   
       var myFormDataa = new FormData();
      
-    
+      this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
+        (data) => {
+          this.datosEncuesta=data;
+          console.log(this.datosEncuesta);
+
+        })
       
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {
@@ -119,6 +123,7 @@ console.log(this.myForm.value);
   }
 
 }
+
 
 
 
