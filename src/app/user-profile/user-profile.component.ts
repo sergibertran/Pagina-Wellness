@@ -11,6 +11,8 @@ import { AuthService } from 'app/services/auth.service';
 })
 export class UserProfileComponent implements OnInit {
 idusuario;
+submitted = false;
+  formBuilder: any;
   constructor(private http: HttpClient,private authService: AuthService) { }
   perfilalumno;
   myForm;
@@ -76,8 +78,17 @@ idusuario;
     this.direccion=this.myForm.controls.direccion.value;
    
       }
-    )
+    )  
+    
+    this.myForm = this.formBuilder.group({
+      correo: ['', Validators.required],
+      usuario: ['', Validators.required],
+      apellidos: ['', Validators.required],
+      direccion: ['', Validators.required],
+      altura: ['', Validators.required],
+      peso: ['', Validators.required],
 
+    } );
   }
   isAdmin(){
     return  this.authService.isAdmin();
@@ -85,6 +96,19 @@ idusuario;
   }
 
   EnviarDatos() {
+
+    this.submitted = true;
+
+// stop here if form is invalid
+if (this.myForm.invalid) {
+  return;
+}
+
+console.log(this.myForm);
+
+
+// display form values on success
+
 
  
 
