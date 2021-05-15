@@ -11,12 +11,12 @@
           </div>
           <div class="card-body" *ngIf="ready==true">
             <h6 class="card-category text-gray">Usuario: </h6>
-            <h4 class="card-title">{{infoUser['usuario']}}</h4>
+            <h4 class="card-title">{{this.usuario}}</h4>
 
             <p class="card-title ">
-              Direccion: {{infoUser['direccion']}} <br>
-              Altura:{{infoUser['altura']}} <br>
-              Peso: {{infoUser['peso']}}
+              Direccion: {{this.direccion}} <br>
+              Altura:{{this.altura}} <br>
+              Peso: {{this.peso}}
             </p>
           </div>
 
@@ -58,21 +58,21 @@
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
                     <input matInput placeholder="Direccion" type="text" formControlName="direccion"
-                      value={{this.direccion}}>
+                      value={{this.Direccion}}>
                   </mat-form-field>
                 </div>
 
 
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.altura}}>
+                    <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.Altura}}>
                   </mat-form-field>
                 </div>
 
 
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}}>
+                    <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.Peso}}>
                   </mat-form-field>
                 </div>
 
