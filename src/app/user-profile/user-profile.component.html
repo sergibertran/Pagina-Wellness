@@ -11,7 +11,7 @@
           </div>
           <div class="card-body" *ngIf="ready==true">
             <h6 class="card-category text-gray">Usuario: </h6>
-            <h4 class="card-title">{{DatosModal['usuario']}}</h4>
+            <h4 class="card-title">{{this.usuario}}</h4>
             <div *ngIf="isAdmin()==false">
 
               <p class="card-title ">

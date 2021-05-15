@@ -9,40 +9,27 @@ require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
 $conexion = conexion(); // CREA LA CONEXION
 
-$passwordc = password_hash($params->pwdActual, PASSWORD_DEFAULT);
+$pwdActual = password_hash($params->pwdActual, PASSWORD_DEFAULT);
 
-$instruccion ="SELECT count(*) AS cuantos FROM usuarios WHERE contrasena = '$passwordc'";
+$instruccion ="SELECT count(*) AS cuantos FROM `daw2_jamsweb.usuarios` WHERE contrasena = '$pwdActual'";
 
-$result = mysqli_query($con, $instruccion);
-
-while ($fila = $result->fetch_assoc()) {
-    $numero=$fila["cuantos"];
-}
-  if($numero==0){
-    echo('{ "result": "ERROR", "message": "Contraseña antigua incorrecta"  }');
-  } else{
+$result = mysqli_query($conexion, $instruccion);
 
     $passA = password_hash($params->pwdNueva, PASSWORD_DEFAULT);
-    $sentencia ="UPDATE `daw2_jamsweb.usuarios` SET `contrasena`='$passA' WHERE `contrasena`='$passwordc'";
+    $sentencia ="UPDATE `daw2_jamsweb.usuarios` SET `contrasena`='$passA' WHERE `contrasena`='$pwdActual'";
 
-  if ($res = mysqli_query($con, $sentencia)) {
+  if ($res = mysqli_query($conexion, $sentencia)) {
       $instruccion2 = "SELECT * FROM daw2_jamsweb.usuarios WHERE contrasena = '$passA'";
       $result2 = mysqli_query($con, $instruccion2);
 
-      while ($fila = $result2->fetch_assoc()) {
-        $datos [] =$fila;
-
-
+      while ($registros = mysqli_fetch_array($resultado)) {
+        $datos = $registros;
+      }
     }
-    if($datos){
-      header('Content-Type: application/json');
-      json_encode($datos);
-      echo(json_encode($datos));
 
-    }
-  } else {
-    echo('{ "result": "ERROR", "message": "No se ha podido modificar el usuario"  }');
-  }
-}
+    header('Content-Type: application/json');
+    echo json_encode($params);
+   
+
 
 ?>

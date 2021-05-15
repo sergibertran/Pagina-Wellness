@@ -186,6 +186,10 @@ getNpremium() {
 
 }
 
+GuardarEncuesta(user) {    
+  return this.http.post(`${environment.apiUrl}/guardarEncuesta.php`, JSON.stringify(user));
+}
+
   logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');

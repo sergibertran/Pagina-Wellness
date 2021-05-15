@@ -1,5 +1,6 @@
 export class enquesta {
   constructor(
+    public iduser: string,
     public nombre: string,
     public Apellidos: string,
     public Sexo: string,
