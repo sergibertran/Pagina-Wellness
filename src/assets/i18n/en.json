@@ -37,6 +37,14 @@
     "Menu Principal":"Main Menu",
     "Rutinas":"Routines",
     "HacersePREMIUM": "Be VIP",
-    "VerPerfil": "View Profile"
-    
+    "VerPerfil": "View Profile",
+
+    "DashBoard":{
+
+        "Dietas":"Diets",
+        "Rutinas":"Routines",
+        "Usuarios": "Users",
+        "Premiums": "VI"
+
+    }
 }
