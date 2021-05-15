@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
   formBuilder: any;
   constructor(private http: HttpClient, private authService: AuthService) {}
   perfilalumno;
-  myForm;
+  myForm:FormGroup;
   usuario;
   nombre;
   apellidos;
@@ -26,6 +26,40 @@ export class UserProfileComponent implements OnInit {
   altura;
   peso;
   ngOnInit() {
+   
+    this.myForm = new FormGroup({
+      usuario: new FormControl([0]["usuario"], [
+        Validators.minLength(2),
+        Validators.maxLength(15),
+        Validators.required,
+      ]),
+      nombre: new FormControl([0]["nombre"], [
+        Validators.minLength(2),
+        Validators.maxLength(15),
+        Validators.required,
+      ]),
+      apellidos: new FormControl([0]["apellido"], [
+        Validators.email,
+        Validators.required,
+      ]),
+      correo: new FormControl([0]["correo"], [
+        Validators.email,
+        Validators.required,
+      ]),
+      direccion: new FormControl([0]["Direccion"], [
+        Validators.email,
+        Validators.required,
+      ]),
+      altura: new FormControl([0]["Altura"], [
+        Validators.email,
+        Validators.required,
+      ]),
+      peso: new FormControl([0]["Peso"], [
+        Validators.email,
+        Validators.required,
+      ]),
+    });
+
     this.idusuario = this.authService.getidUser();
     this.authService.loadOwnProfileo(this.idusuario).subscribe((datos) => {
       this.DatosModal = datos[0];

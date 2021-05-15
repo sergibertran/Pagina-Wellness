@@ -5,5 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class IdiomaService {
 
+  idioma:string
   constructor() { }
+
+  
+public getIdioma() {
+  return this.idioma;
 }
+
+public setIdioma(idiomae:string){
+  this.idioma=idiomae
+  console.log(this.idioma);
+  
+}
+}
+

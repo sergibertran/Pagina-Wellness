@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
 import { LoginRegisterComponent } from 'app/login-register/login-register.component';
 import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,11 +27,13 @@ export class HomeComponent implements OnInit {
   data;
   alumno = new usuario();
   RegisterForm: FormGroup;
-  constructor( public translate:TranslateService,  public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
+  constructor( private _servicio:IdiomaService,public translate:TranslateService,  public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
 
     this.translate.addLangs(['es','en']);
     this.translate.getBrowserLang()
     this.translate.use(this.translate.getBrowserLang())
+    this._servicio.setIdioma(this.translate.getBrowserLang())
+    this.translate.use(this._servicio.getIdioma())
    // redirect to home if already logged in
    if (this.authService.currentUserValue) {
     this.router.navigate(['/Calendario']);
@@ -61,9 +64,11 @@ export class HomeComponent implements OnInit {
 
 Espanol(){
   this.translate.use('es')
+  this._servicio.setIdioma('es')
 }
 English(){
   this.translate.use('en')
+  this._servicio.setIdioma('en')
 }
   openDialogInfo(info) {
     console.log(info);
