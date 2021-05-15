@@ -25,10 +25,13 @@
             <li routerLinkActive="active" *ngFor="let menuItem of menuItemsUser" class="{{menuItem.class}} ">
                 <a class="nav-link" [routerLink]="[menuItem.path]">
                     <i class="material-icons">{{menuItem.icon}}</i>
-                    <p>{{menuItem.title}}</p>
+                    <p>{{ menuItem.title | translate}}</p>
                 </a>
             </li> 
+
+
         </div>
+        
        
 
         

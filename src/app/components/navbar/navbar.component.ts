@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
 
     constructor(public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
+
         this.translate.setDefaultLang('en')
       this.location = location;
           this.sidebarVisible = false;
@@ -36,6 +37,13 @@ export class NavbarComponent implements OnInit {
          }
      });
     }
+    
+ Espanol(){
+    this.translate.use('es')
+  }
+  English(){
+    this.translate.use('en')
+  }
 
     isAdmin(){
         return  this.authService.isAdmin();

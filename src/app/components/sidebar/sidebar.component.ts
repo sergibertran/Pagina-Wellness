@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'app/services/auth.service';
 
 declare const $: any;
@@ -10,7 +11,7 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
 
-    { path: '/Calendario', title: 'Menu Principal',  icon: 'home', class: '' },
+    { path: '/Calendario', title: 'Menu Principal',   icon: 'home', class: '' },
     { path: '/DietasUsuario', title: 'Dietas',  icon:'restaurant_menu', class: '' },
     { path: '/RutinasUsuario', title: 'Rutinas',  icon:'fitness_center', class: '' },
 
@@ -33,7 +34,9 @@ export class SidebarComponent implements OnInit {
   menuItemsAdmin: any[];
   menuItemsUser: any[];
   username;
-  constructor(private authService: AuthService) { }
+  constructor(public translate:TranslateService ,private authService: AuthService) { 
+    this.translate.setDefaultLang('en')
+  }
 
   ngOnInit() {
     this.username=this.authService.getUser();

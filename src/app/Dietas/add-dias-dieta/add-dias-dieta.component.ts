@@ -113,7 +113,6 @@ longitud: number;
 
   botonadd(){
   
-    console.log(this.lessons.length+' HOLAHOLA');
     
     if(this.lessons.length>0){
     this.mostrarboton=true

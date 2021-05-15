@@ -6,6 +6,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import PerfectScrollbar from 'perfect-scrollbar';
 import * as $ from "jquery";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-admin-layout',
@@ -17,7 +18,9 @@ export class AdminLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public translate:TranslateService,public location: Location, private router: Router) {
+    this.translate.addLangs(['es','en']);
+  }
 
   ngOnInit() {
 
@@ -25,6 +28,7 @@ export class AdminLayoutComponent implements OnInit {
   }
 
   
+
   isMaps(path){
       var titlee = this.location.prepareExternalUrl(this.location.path());
       titlee = titlee.slice( 1 );
