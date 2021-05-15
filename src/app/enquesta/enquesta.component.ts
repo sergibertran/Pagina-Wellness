@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,CheckboxRequiredValidator } from '@angular/forms';
 import { enquesta } from 'app/models/enquesta';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-enquesta',
@@ -43,7 +44,8 @@ export class EnquestaComponent implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService
   ) { }
 
   
@@ -132,9 +134,14 @@ onSubmit() {
       return;
   }
 
-  // display form values on success
 
-  
+  // display form values on success
+console.log(this.enquestaModel);
+
+
+this.authService.GuardarEncuesta(this.enquestaModel).subscribe((datos) => {
+
+})
 
 }
 
