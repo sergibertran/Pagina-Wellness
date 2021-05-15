@@ -29,9 +29,9 @@
                           </button>
                           <div class="dropdown-menu">
                              
-                            <a class="dropdown-item" (click)="Espanol()"><img style="width: 50%; " src="../../assets/img/españa.png" alt=""></a>
+                            <a class="dropdown-item" (click)="Espanol()"><img style="width: 25%; " src="../../assets/img/españa2.png" alt=""></a>
                              
-                            <a class="dropdown-item" (click)="English()"><img style="width: 40%;" src="../../assets/img/english.png" alt=""></a>
+                            <a class="dropdown-item" (click)="English()"><img style="width: 25%;" src="../../assets/img/english2.png" alt=""></a>
                        
                           
                
@@ -48,27 +48,27 @@
         <div class="container">
           
             <div class="masthead-heading text-uppercase"> {{"home.HOME1" | translate}}</div>
-            <div class="masthead-subheading">{{"HOME2" | translate}}</div>
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>{{"Entrar" | translate}}</a>
+            <div class="masthead-subheading">{{"home.HOME2" | translate}}</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>{{"home.Entrar" | translate}}</a>
         </div>
     </header>
     <!-- Planes-->
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">{{"Planes" | translate}}</h2>
-                <h3 class="section-subheading text-muted">{{"Elige" | translate}}</h3>
+                <h2 class="section-heading text-uppercase">{{"home.Planes" | translate}}</h2>
+                <h3 class="section-subheading text-muted">{{"home.Elige" | translate}}</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4" style="margin-left: 100px;">
-                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>{{"Usuario" | translate}}</a>
-                    <h2 class="my-3">{{"GRATUITO" | translate}}</h2>
-                    <p class="text-muted">{{"infog" | translate}}</p>
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>{{"home.Usuario" | translate}}</a>
+                    <h2 class="my-3">{{"home.GRATUITO" | translate}}</h2>
+                    <p class="text-muted">{{"home.infog" | translate}}</p>
                 </div>
                 <div class="col-md-4" style="margin-left: 130px;">
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>Premium</a>
-                    <h2 class="my-3">{{"precio" | translate}}</h2>
-                    <p class="text-muted">{{"infop" | translate}}</p>
+                    <h2 class="my-3">{{"home.precio" | translate}}</h2>
+                    <p class="text-muted">{{"home.infop" | translate}}</p>
                 </div>
             </div>
         </div>
@@ -82,10 +82,10 @@
                             src="../../assets/img/hands-1851218_1920.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">{{"dispositivo" | translate}}</h4>
+                            <h4 class="subheading">{{"home.dispositivo" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">{{"infod" | translate}}</p>
+                            <p class="text-muted">{{"home.infod" | translate}}</p>
                         </div>
                     </div>
                 </li>
@@ -94,10 +94,10 @@
                             src="../../assets/img/video-conference-5162927_640.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">{{"asesorate" | translate}}</h4>
+                            <h4 class="subheading">{{"home.asesorate" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">{{"infoa" | translate}}</p>
+                            <p class="text-muted">{{"home.infoa" | translate}}</p>
                         </div>
                     </div>
                 </li>
@@ -106,21 +106,21 @@
                             src="../../assets/img/bulletin-board-3233653_640.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">{{"interfaz" | translate}}</h4>
+                            <h4 class="subheading">{{"home.interfaz" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">{{"infoi" | translate}}</p>
+                            <p class="text-muted">{{"home.infoi" | translate}}</p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
-                            {{"Forma Parte" | translate}}
+                            {{"home.Forma Parte" | translate}}
                             <br />
-                            {{"De" | translate}}
+                            {{"home.De" | translate}}
                             <br />
-                            {{"WELLNESS!" | translate}}
+                            {{"home.WELLNESS!" | translate}}
                         </h4>
                     </div>
                 </li>
@@ -130,7 +130,7 @@
     <!-- Preguntas-->
 
     <div class="text-center">
-        <h2 class="section-heading text-uppercase">{{"preguntas" | translate}}</h2>
+        <h2 class="section-heading text-uppercase">{{"home.preguntas" | translate}}</h2>
     </div>
 
     <br>
@@ -138,24 +138,24 @@
     <div class="container">
         <button (click)='openDialogInfo(wellness)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_es"
             style="margin-left: 70px;">
-            {{"que es" | translate}}
+            {{"home.que es" | translate}}
         </button>
 
 
         <button (click)='openDialogInfo(cancelo)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelar"
             style="margin-left: 20px;">
-            {{"cancelo" | translate}}
+            {{"home.cancelo" | translate}}
         </button>
 
 
         <button  (click)='openDialogInfo(gratuito)' type="button"  class="btn btn-primary" 
             style="margin-left: 20px;">
-            {{"ofrece" | translate}}
+            {{"home.ofrece" | translate}}
         </button>
 
 
         <button (click)='openDialogInfo(asesorarme)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
-            {{"donde" | translate}}
+            {{"home.donde" | translate}}
         </button>
 
         <!-- Footer-->

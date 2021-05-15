@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
   constructor( public translate:TranslateService,  public dialog: MatDialog,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) {
 
     this.translate.addLangs(['es','en']);
-    this.translate.setDefaultLang('es');
-    this.translate.use('es')
+    this.translate.getBrowserLang()
+    this.translate.use(this.translate.getBrowserLang())
    // redirect to home if already logged in
    if (this.authService.currentUserValue) {
     this.router.navigate(['/Calendario']);

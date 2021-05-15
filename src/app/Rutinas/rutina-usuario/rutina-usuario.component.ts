@@ -12,14 +12,25 @@ export class RutinaUsuarioComponent implements OnInit {
 
   iduser;
   term: string;
+  form: any;
+  mostrarDias=false;
   constructor(private http: HttpClient,private authService: AuthService) { }
   filterData;
+  rutinas: any;
   ngOnInit(): void {
     this.iduser=this.authService.getNpremium();
     console.log(this.authService.getNpremium());
     if(this.iduser==0){
       console.log('test');
+
+      // this.authService.cargarDatosRutina(this.form.value).subscribe (
+      //   datos => {
+      //   console.log(datos);
+      //   this.rutinas = datos;    
+      //   }
+      // )
       
+
     this.authService.loadRutinasUsuario(this.iduser)
     .pipe(first())
     .subscribe(
@@ -29,5 +40,11 @@ export class RutinaUsuarioComponent implements OnInit {
     });
   }
   }
+
+  verDias(){
+
+    this.mostrarDias=true;
+  }
+
 
 }

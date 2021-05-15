@@ -20,13 +20,23 @@ export class AdminLayoutComponent implements OnInit {
 
   constructor( public translate:TranslateService,public location: Location, private router: Router) {
     this.translate.addLangs(['es','en']);
+    this.translate.getBrowserLang()
+    this.translate.use(this.translate.getBrowserLang())
+    console.log(this.translate.getBrowserLang());
+    
   }
 
   ngOnInit() {
 
 
   }
-
+    
+  Espanol(){
+    this.translate.use('es')
+  }
+  English(){
+    this.translate.use('en')
+  }
   
 
   isMaps(path){

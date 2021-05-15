@@ -30,11 +30,13 @@
               <div class="card-header card-header-primary">
                 <thead>
 
-                  <div style="margin-left: 80px;">
+                  <div style="margin-left: 80px;" >
 
                     <th scope="col">Tipo Dieta</th>
 
-                    <th style="padding-left: 220px;">Nombre</th>
+                    <th style="padding-left: 220px;" >Nombre</th>
+
+                    <th style="padding-left: 220px;">Aciones</th>
 
                   </div>
 
@@ -42,10 +44,12 @@
               </div>
 
               <div *ngFor="let item of filterData  | filter:term">
-                <td></td>
-                <td style="padding-left: 150px;">{{item.NDieta}}</td>
-              
-                <td> <button (click)='verDias()'>click</button></td>
+                <td> <p style="margin-left: 120px;">{{item.TipoDieta}} </p></td>
+
+                <td> <p style="margin-left: 205px;">{{item.NDieta}}</p></td>
+
+                <td> <p style="margin-left: 170px;"><button class="btn btn-primary btn-round" (click)='verDias()'>VER</button> </p> </td>
+
               </div>
             </table>
 
@@ -58,8 +62,117 @@
 
 
 
-<div *ngIf="mostrarDias==true" class="card-body">
-  <div class="card">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatem suscipit distinctio saepe culpa. Tempore at dicta eveniet culpa harum aut error nihil fugit sunt aliquam dolore aliquid, ipsam consectetur soluta dolores a exercitationem autem quidem, officia, reiciendis nostrum nesciunt deleniti expedita rerum. Accusantium, inventore. Debitis obcaecati inventore optio, voluptate exercitationem beatae totam quibusdam culpa, facere vitae numquam, quo aliquam asperiores nihil labore! Harum omnis dolores fugit reiciendis, aliquid hic officia obcaecati ipsum ut accusantium sequi odit sint commodi totam! Consequatur saepe cum error amet animi, modi fuga quae impedit, sunt voluptate officiis? Ex, quidem provident consequatur cum libero veniam.</p>
+<div *ngFor="let item of dietas">
+  <div *ngIf="mostrarDias==true" class="row">
+
+    <div *ngIf="item['Desayuno'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Desayuno</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Desayuno']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Desayuno2'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Desayuno 2</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Desayuno2']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Comida'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Comida</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Comida']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Merienda'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Merienda</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Merienda']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Merienda2'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Merienda 2</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Merienda2']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Cena'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Cena</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Cena']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="item['Comentarios'] != null" class="col-md-3">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Comentarios</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p>
+            {{item['Comentarios']}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Dieta</button>
+    </div>
   </div>
 </div>
