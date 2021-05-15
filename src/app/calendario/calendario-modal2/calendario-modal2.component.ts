@@ -34,7 +34,7 @@ this.Tipode=this.data.event.title;
     console.log(this.form);
     if(this.data.event.title=='Dieta'){
 
-  
+
 
    this.authService.cargarDatosDieta(this.form.value).subscribe (
     datos => {
