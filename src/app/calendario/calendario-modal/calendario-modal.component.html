@@ -76,20 +76,23 @@
       <div *ngIf="resultadoSelect == 'Comentarios'">
         <label>Comentarios</label>
 
-        <div class="form-group">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+        <form [formGroup]="myForm" (ngSubmit)="Submit()">
+         
+
+          
+
+        </form>
 
         <section class="example-section">
-          <mat-checkbox class="example-margin" [(ngModel)]="checked" (change)="onChange($event)">Multidias
+          <mat-checkbox class="example-margin" (change)="onChange($event)">Multidias
           </mat-checkbox>
           {{lastChecked}}
         </section>
 
         <div *ngIf="lastChecked == true">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Escojer</mat-label>
-            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" />
+          <mat-form-field color="accent" [formGroup]="range" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput formControlName="end" [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>

@@ -33,11 +33,13 @@ export class CalendarioModalComponent implements OnInit {
   resultadoSelectRutina = "";
   resultadoSelectDieta = "";
   resultadoSelect;
+
   fechaStart;
   fechaEnd;
   iduser;
   datoId;
   diasMaximo;
+  myForm: FormGroup;
   fecha: Date;
   diasArray;
   TotaldiasArray = [];
@@ -67,63 +69,71 @@ export class CalendarioModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-console.log(this.data);
-console.log(this.data.idUser);
-
+    console.log(this.data);
+    console.log(this.data.idUser);
 
     this.range = new FormGroup({
       start: new FormControl(this.data.dateStr + "T22:00:00.000Z"),
       end: new FormControl(),
     });
-
-
-    
   }
 
   onSubmit(): void {
     console.log("test");
-    
-console.log(this.resultadoSelect);
 
-function convertend(str) {
-  var date = new Date(str),
-    mnth = ("0" + (date.getMonth() + 1)).slice(-2),
-    day = ("0" + date.getDate()).slice(-2);
-  return [date.getFullYear(), mnth, day].join("-");
-}
+    console.log(this.resultadoSelect);
 
-if(this.resultadoSelect=='Dieta'){
+    function convertend(str) {
+      var date = new Date(str),
+        mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+        day = ("0" + date.getDate()).slice(-2);
+      return [date.getFullYear(), mnth, day].join("-");
+    }
 
+    if (this.resultadoSelect == "Dieta") {
+      this.fechaEnd = convertend(this.range.controls.end.value);
+      this.fechaStart = this.range.controls.start.value.split("T")[0];
 
-    this.fechaEnd = convertend(this.range.controls.end.value);
-    this.fechaStart = this.range.controls.start.value.split("T")[0];
+      let newDateStart = new Date(this.fechaStart);
+      let newDateEnd = new Date(this.fechaEnd);
 
-    let newDateStart = new Date(this.fechaStart);
-    let newDateEnd = new Date(this.fechaEnd);
+      console.log(newDateStart);
+      console.log(newDateEnd);
 
-    console.log(newDateStart);
-    console.log(newDateEnd);
+      console.log(this.filterData[0]["idDieta"]);
+      this.datoId = this.fb.group({
+        id: this.filterData[0]["idDieta"],
+      });
 
-    console.log(this.filterData[0]["idDieta"]);
-    this.datoId = this.fb.group({
-      id: this.filterData[0]["idDieta"],
-    });
+      this.dia = 1;
+      this.authService
+        .obtenerDias(this.datoId.value)
+        .pipe(first())
+        .subscribe((data) => {
+          this.diasMaximo = Object.keys(data).length;
+          console.log(this.diasMaximo);
 
-    this.dia = 1;
-    this.authService
-      .obtenerDias(this.datoId.value)
-      .pipe(first())
-      .subscribe((data) => {
-        this.diasMaximo = Object.keys(data).length;
-        console.log(this.diasMaximo);
+          this.TotaldiasArray = [];
 
-        this.TotaldiasArray = [];
+          while (
+            newDateStart.getMonth() != newDateEnd.getMonth() ||
+            newDateStart.getDate() != newDateEnd.getDate() ||
+            newDateStart.getFullYear() != newDateEnd.getFullYear()
+          ) {
+            if (this.dia > this.diasMaximo) {
+              this.dia = 1;
+            }
 
-        while (
-          newDateStart.getMonth() != newDateEnd.getMonth() ||
-          newDateStart.getDate() != newDateEnd.getDate() ||
-          newDateStart.getFullYear() != newDateEnd.getFullYear()
-        ) {
+            this.TotaldiasArray.push({
+              date: newDateStart,
+              nDia: this.dia,
+              idUsuario: this.data.idUser,
+              idDieta: this.filterData[0]["idDieta"],
+            });
+            newDateStart = new Date(newDateStart);
+            newDateStart.setDate(newDateStart.getDate() + 1);
+            this.dia++;
+          }
           if (this.dia > this.diasMaximo) {
             this.dia = 1;
           }
@@ -137,47 +147,32 @@ if(this.resultadoSelect=='Dieta'){
           newDateStart = new Date(newDateStart);
           newDateStart.setDate(newDateStart.getDate() + 1);
           this.dia++;
-        }
-        if (this.dia > this.diasMaximo) {
-          this.dia = 1;
-        }
+          console.log(this.TotaldiasArray);
 
-        this.TotaldiasArray.push({
-          date: newDateStart,
-          nDia: this.dia,
-          idUsuario: this.data.idUser,
-          idDieta: this.filterData[0]["idDieta"],
+          this.dia = 0;
+
+          this.authService
+            .comprovarDietasEnDias(this.TotaldiasArray)
+            .pipe(first())
+            .subscribe((data) => {
+              console.log(data);
+            });
         });
-        newDateStart = new Date(newDateStart);
-        newDateStart.setDate(newDateStart.getDate() + 1);
-        this.dia++;
-        console.log(this.TotaldiasArray);
-
-        this.dia = 0;
-
-        this.authService
-          .comprovarDietasEnDias(this.TotaldiasArray)
-          .pipe(first())
-          .subscribe((data) => {
-            console.log(data);
-          });
-      });
-    }else if(this.resultadoSelect=='Rutina'){
-
+    } else if (this.resultadoSelect == "Rutina") {
       this.fechaEnd = convertend(this.range.controls.end.value);
       this.fechaStart = this.range.controls.start.value.split("T")[0];
-  
+
       let newDateStart = new Date(this.fechaStart);
       let newDateEnd = new Date(this.fechaEnd);
-  
+
       console.log(newDateStart);
       console.log(newDateEnd);
-  
+
       console.log(this.filterData[0]["idRutina"]);
       this.datoId = this.fb.group({
         id: this.filterData[0]["idRutina"],
       });
-  
+
       this.dia = 1;
       this.authService
         .obtenerDiasRutina(this.datoId.value)
@@ -185,9 +180,9 @@ if(this.resultadoSelect=='Dieta'){
         .subscribe((data) => {
           this.diasMaximo = Object.keys(data).length;
           console.log(this.diasMaximo);
-  
+
           this.TotaldiasArray = [];
-  
+
           while (
             newDateStart.getMonth() != newDateEnd.getMonth() ||
             newDateStart.getDate() != newDateEnd.getDate() ||
@@ -196,7 +191,7 @@ if(this.resultadoSelect=='Dieta'){
             if (this.dia > this.diasMaximo) {
               this.dia = 1;
             }
-  
+
             this.TotaldiasArray.push({
               date: newDateStart,
               nDia: this.dia,
@@ -210,7 +205,7 @@ if(this.resultadoSelect=='Dieta'){
           if (this.dia > this.diasMaximo) {
             this.dia = 1;
           }
-  
+
           this.TotaldiasArray.push({
             date: newDateStart,
             nDia: this.dia,
@@ -221,9 +216,9 @@ if(this.resultadoSelect=='Dieta'){
           newDateStart.setDate(newDateStart.getDate() + 1);
           this.dia++;
           console.log(this.TotaldiasArray);
-  
+
           this.dia = 0;
-  
+
           this.authService
             .comprovarRutinasEnDias(this.TotaldiasArray)
             .pipe(first())
@@ -231,13 +226,91 @@ if(this.resultadoSelect=='Dieta'){
               console.log(data);
             });
         });
+    } else if (this.resultadoSelect == "Comentarios") {
+
+      this.myForm = new FormGroup(
+        {
+ 
+        }
+  
+      );
+     
+
+      this.fechaStart = this.range.controls.start.value.split("T")[0];
+      let newDateStart = new Date(this.fechaStart);
 
 
 
+      if(this.lastChecked==true){
 
+        this.fechaEnd = convertend(this.range.controls.end.value);
 
+     
+      let newDateEnd = new Date(this.fechaEnd);
 
+      while (
+        newDateStart.getMonth() != newDateEnd.getMonth() ||
+        newDateStart.getDate() != newDateEnd.getDate() ||
+        newDateStart.getFullYear() != newDateEnd.getFullYear()
+      ) {
+        if (this.dia > this.diasMaximo) {
+          this.dia = 1;
+        }
 
+        this.TotaldiasArray.push({
+          date: newDateStart,
+          nDia: this.dia,
+          idUsuario: this.data.idUser,
+        
+        });
+        newDateStart = new Date(newDateStart);
+        newDateStart.setDate(newDateStart.getDate() + 1);
+        this.dia++;
+      }
+      if (this.dia > this.diasMaximo) {
+        this.dia = 1;
+      }
+
+      this.TotaldiasArray.push({
+        date: newDateStart,
+        nDia: this.dia,
+        idUsuario: this.data.idUser,
+   
+      });
+      newDateStart = new Date(newDateStart);
+      newDateStart.setDate(newDateStart.getDate() + 1);
+      this.dia++;
+      console.log(this.TotaldiasArray);
+
+      this.dia = 0;
+
+      // this.authService
+      //   .comprovarRutinasEnDias(this.TotaldiasArray)
+      //   .pipe(first())
+      //   .subscribe((data) => {
+      //     console.log(data);
+      //   });
+
+    }else{
+ 
+      
+      
+      this.TotaldiasArray.push({
+        date: newDateStart,
+        nDia: this.dia,
+        idUsuario: this.data.idUser,
+      
+      });
+      console.log(this.TotaldiasArray);
+      
+
+// this.authService
+      //   .comprovarRutinasEnDias(this.TotaldiasArray)
+      //   .pipe(first())
+      //   .subscribe((data) => {
+      //     console.log(data);
+      //   });
+    }
     }
   }
 
@@ -265,7 +338,7 @@ if(this.resultadoSelect=='Dieta'){
           .pipe(first())
           .subscribe((data) => {
             console.log(data);
-            
+
             this.filterData = data;
           });
       }

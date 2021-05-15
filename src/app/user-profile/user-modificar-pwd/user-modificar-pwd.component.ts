@@ -32,7 +32,9 @@ export class UserModificarPwdComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.modpwdForm = this.formBuilder.group({
+      idUser: [this.authService.getidUser()],
       pwdActual: ["", Validators.required],
       pwdNueva: ["", Validators.required],
       pwdNuevaRepetida: ["", Validators.required],
@@ -59,31 +61,8 @@ export class UserModificarPwdComponent implements OnInit {
     this.authService
       .modificarPwd(this.modpwdForm.value)
       .subscribe((datos) => {
-        if (datos["result"] === "ERROR") {
-          Swal.fire({
-            icon: "error",
-            title: datos["result"],
-            text: datos["message"],
-          });
-        } else {
-          if (datos != null) {
-            Swal.fire({
-              position: "top",
-              icon: "success",
-              title: "Contraseña modificada.",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-            this.router.navigate(["/user-profile"]);
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "Error",
-              text: "Intentalo mas tarde!",
-            });
-          }
-          console.log(this.modpwdForm.value);
-        }
+      console.log(datos);
+      
       });
   }
 }
