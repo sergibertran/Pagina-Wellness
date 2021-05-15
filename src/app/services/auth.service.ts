@@ -133,7 +133,13 @@ console.log(user);
 
   }
 
-  
+  modificarPerfil(datos){
+
+    console.log(datos);
+    
+    return this.http.post(`${environment.apiUrl}/modificarPerfil.php`, JSON.stringify(datos));
+
+  }
 
   obtenerDiasRutina(datos){
 
