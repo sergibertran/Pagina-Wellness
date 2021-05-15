@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { diasdieta } from 'app/models/diasdieta';
+import { AuthService } from 'app/services/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-dieta',
@@ -9,7 +11,7 @@ import { diasdieta } from 'app/models/diasdieta';
 })
 export class AddDietaComponent implements OnInit {
 
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder,private authService: AuthService) { }
   anadirDietaForm: FormGroup;
  Dias:boolean=false
  CDias:boolean=true
@@ -32,8 +34,20 @@ export class AddDietaComponent implements OnInit {
     
   }
   Submit(){
+ console.log(this.anadirDietaForm.value);
  
+ this.authService.insertDietas(this.anadirDietaForm.value)
+ .pipe(first())
+ .subscribe(
+   (data) => {
+     console.log(data);
+     
+
+
+   });
  
+
+
   }
   CerrarDia(){
 

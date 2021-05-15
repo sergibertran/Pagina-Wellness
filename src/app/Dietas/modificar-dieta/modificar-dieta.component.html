@@ -41,7 +41,7 @@
                 <div class="col-md-12">
                   <label>Imagen</label>
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile" formControlName="image">
+                    <input type="file" class="custom-file-input" formControlName="Imagen" id="customFile">
                     <label class="custom-file-label" for="customFile">Escoge una foto</label>
                   </div>
 
@@ -59,11 +59,11 @@
 
       <div class="card">
         <div *ngIf="MostrarDiasB" class="card-body">
-          <div>
-    
+          <div *ngFor="let item of infoTodosDias">
+              <div [formGroup]="DatosForm" (ngSubmit)="Submit()">
             <!-- <div [formGroup]="form"> -->
     
-            <div formArrayName="lessons">
+            <div>
     
               <!-- <div *ngFor="let lessonForm of lessons.controls; let i = index"> -->
     
@@ -72,22 +72,20 @@
               <!-- <strong>Dia  {{i+1}} </strong> -->
     
     
-    
-    
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Desayuno" placeholder="Desayuno" type="text">
+                    <input matInput formControlName="Desayuno" value="{{DatosForm.Desayuno}}"  type="text">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text">
+                    <input matInput formControlName="Desayuno2"  value="" placeholder="Desayuno 2" type="text">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Comida" placeholder="Comida" type="text">
+                    <input matInput formControlName="Comida"  value="" placeholder="Comida" type="text">
                   </mat-form-field>
                 </div>
               </div>
@@ -95,23 +93,23 @@
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Merienda" placeholder="Merienda" type="text">
+                    <input matInput formControlName="Merienda"  value="" placeholder="Merienda" type="text">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Merienda2" placeholder="Merienda 2" type="text">
+                    <input matInput formControlName="Merienda2"  value="" placeholder="Merienda 2" type="text">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="Cena" placeholder="Cena" type="text">
+                    <input matInput formControlName="Cena" value="" placeholder="Cena" type="text">
                   </mat-form-field>
     
                 </div>
               </div>
     
-    
+            </div>
     
               <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
               <br>
