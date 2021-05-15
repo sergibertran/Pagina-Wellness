@@ -23,7 +23,7 @@
                 <a class="nav-link" >
                     <div class="dropleft  ">
                         <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                            <i class="material-icons">person</i>IDIOMA
+                            <i class="material-icons">language</i>IDIOMA
                         </button>
                         <div class="dropdown-menu">
                            
@@ -59,15 +59,12 @@
                 <div class="col-md-4" style="margin-left: 100px;">
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>{{"Usuario" | translate}}</a>
                     <h2 class="my-3">{{"GRATUITO" | translate}}</h2>
-                    <p class="text-muted">Tan solo necesitas registrarte, sin tagetas, sin compromisos. Los usuarios
-                        gratuitos podran acceder a rutinas y dietas prediseñadas para cada una de sus necesidades.</p>
+                    <p class="text-muted">{{"infog" | translate}}</p>
                 </div>
                 <div class="col-md-4" style="margin-left: 130px;">
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" (click)='openDialogLogin()'>Premium</a>
-                    <h2 class="my-3">59,99€/mes</h2>
-                    <p class="text-muted">Tendras a tu disposicion un equipo de profesionales que atenderan tus
-                        necesidades. Dispondras de dietas y rutinas presonalizadas, asesorias con nuestros profesionales
-                        y mucho mas.</p>
+                    <h2 class="my-3">{{"precio" | translate}}</h2>
+                    <p class="text-muted">{{"infop" | translate}}</p>
                 </div>
             </div>
         </div>
@@ -81,11 +78,10 @@
                             src="../../assets/img/hands-1851218_1920.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">Disfruta de Wellness desde cualquier dispositivo con internet</h4>
+                            <h4 class="subheading">{{"dispositivo" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Accede a WELLNESS desde cualquier dispositivo con acceso a interrnet,
-                                llevate tus rutinas y dietas a todos lados y consultalos en cualquier momento.</p>
+                            <p class="text-muted">{{"infod" | translate}}</p>
                         </div>
                     </div>
                 </li>
@@ -94,12 +90,10 @@
                             src="../../assets/img/video-conference-5162927_640.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">Asesorate con nuestros profesionales</h4>
+                            <h4 class="subheading">{{"asesorate" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Disfruta de un trato persoal con nuestros profesionales, ya sea
-                                mediante video llamada o en persona desde nuestras oficinas mediante el plan premium.
-                            </p>
+                            <p class="text-muted">{{"infoa" | translate}}</p>
                         </div>
                     </div>
                 </li>
@@ -108,23 +102,21 @@
                             src="../../assets/img/bulletin-board-3233653_640.jpg" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="subheading">Disfruta de una interfaz sencilla y comoda</h4>
+                            <h4 class="subheading">{{"interfaz" | translate}}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p class="text-muted">Ten todas tus rutinas y dietas ordenadas mediante un comodo
-                                calendario, con descripciones de cada ejercicio y platos, como realizarlos e imagenes o
-                                videos descriptivos.</p>
+                            <p class="text-muted">{{"infoi" | translate}}</p>
                         </div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image">
                         <h4>
-                            Forma Parte
+                            {{"Forma Parte" | translate}}
                             <br />
-                            De
+                            {{"De" | translate}}
                             <br />
-                            WELLNESS!
+                            {{"WELLNESS!" | translate}}
                         </h4>
                     </div>
                 </li>
@@ -134,7 +126,7 @@
     <!-- Preguntas-->
 
     <div class="text-center">
-        <h2 class="section-heading text-uppercase">Preguntas frecuentes</h2>
+        <h2 class="section-heading text-uppercase">{{"preguntas" | translate}}</h2>
     </div>
 
     <br>
@@ -142,25 +134,24 @@
     <div class="container">
         <button (click)='openDialogInfo(wellness)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#que_es"
             style="margin-left: 70px;">
-            ¿Que es WELLNESS?
+            {{"que es" | translate}}
         </button>
 
 
         <button (click)='openDialogInfo(cancelo)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelar"
             style="margin-left: 20px;">
-            ¿Como cancelo?
+            {{"cancelo" | translate}}
         </button>
 
 
         <button  (click)='openDialogInfo(gratuito)' type="button"  class="btn btn-primary" 
             style="margin-left: 20px;">
-            ¿Que rutinas y dietas ofrece el plan gratuito?
-
+            {{"ofrece" | translate}}
         </button>
 
 
         <button (click)='openDialogInfo(asesorarme)' type="button" class="btn btn-primary" data-toggle="modal" data-target="#ubi" style="margin-left: 20px;">
-            ¿Donde puedo asesorarme en persona?
+            {{"donde" | translate}}
         </button>
 
         <!-- Footer-->
