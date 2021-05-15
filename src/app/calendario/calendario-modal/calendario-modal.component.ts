@@ -45,6 +45,7 @@ export class CalendarioModalComponent implements OnInit {
   TotaldiasArray = [];
   checked = true;
   dia = 1;
+  myGroup:FormGroup
   lastChecked = false;
   selectedDay: string = "";
   allProfiles = [
@@ -63,12 +64,18 @@ export class CalendarioModalComponent implements OnInit {
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
+
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(this.data.dateStr);
     this.maxDate = new Date(currentYear + 1, 11, 31);
   }
 
   ngOnInit(): void {
+
+    this.myGroup = new FormGroup({
+      firstName: new FormControl()
+   });
+
     console.log(this.data);
     console.log(this.data.idUser);
 
@@ -228,12 +235,9 @@ export class CalendarioModalComponent implements OnInit {
         });
     } else if (this.resultadoSelect == "Comentarios") {
 
-      this.myForm = new FormGroup(
-        {
- 
-        }
+   
   
-      );
+      
      
 
       this.fechaStart = this.range.controls.start.value.split("T")[0];

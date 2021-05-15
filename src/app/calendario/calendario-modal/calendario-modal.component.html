@@ -76,13 +76,12 @@
       <div *ngIf="resultadoSelect == 'Comentarios'">
         <label>Comentarios</label>
 
-        <form [formGroup]="myForm" (ngSubmit)="Submit()">
-         
-
           
+    <div [formGroup]="myGroup">
+      <input formControlName="firstName">
+    </div>
 
-        </form>
-
+    
         <section class="example-section">
           <mat-checkbox class="example-margin" (change)="onChange($event)">Multidias
           </mat-checkbox>
