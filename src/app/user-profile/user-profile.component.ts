@@ -21,7 +21,7 @@ export class UserProfileComponent implements OnInit {
   apellidos;
   direccion;
   correo;
-  ready= false;
+  ready=false;
   DatosModal;
   altura;
   peso;
@@ -66,12 +66,14 @@ export class UserProfileComponent implements OnInit {
           Validators.required,
         ]),
       });
-      this.ready = true;
+   
       this.usuario = this.myForm.controls.usuario.value;
       this.nombre = this.myForm.controls.nombre.value;
       this.apellidos = this.myForm.controls.apellidos.value;
       this.correo = this.myForm.controls.correo.value;
       this.direccion = this.myForm.controls.direccion.value;
+      this.altura = this.myForm.controls.altura.value;
+      this.peso = this.myForm.controls.peso.value;
     });
     this.ready=true;
   }
