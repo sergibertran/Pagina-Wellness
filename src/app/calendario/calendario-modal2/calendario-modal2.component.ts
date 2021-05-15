@@ -12,6 +12,7 @@ import { AuthService } from 'app/services/auth.service';
 export class CalendarioModal2Component implements OnInit {
   form;
   dietas: any;
+  rutinas: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private formBuilder: FormBuilder,
   private http: HttpClient,
   private fb: FormBuilder,
@@ -54,6 +55,7 @@ this.Tipode=this.data.event.title;
   this.authService.cargarDatosRutina(this.form.value).subscribe (
     datos => {
     console.log(datos);
+    this.rutinas = datos;
     
 
  

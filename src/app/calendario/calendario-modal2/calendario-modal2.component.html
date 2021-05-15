@@ -5,10 +5,10 @@
 
     <!-- DIETA -->
     <div *ngFor="let item of dietas">
-    <div *ngIf="Tipode=='Dieta'" class="row">
-      
+      <div *ngIf="Tipode=='Dieta'" class="row">
+
         <div *ngIf="item['Desayuno'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Desayuno</mat-card-title>
@@ -23,7 +23,7 @@
         </div>
 
         <div *ngIf="item['Desayuno2'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Desayuno 2</mat-card-title>
@@ -38,7 +38,7 @@
         </div>
 
         <div *ngIf="item['Comida'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Comida</mat-card-title>
@@ -53,7 +53,7 @@
         </div>
 
         <div *ngIf="item['Merienda'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Merienda</mat-card-title>
@@ -68,7 +68,7 @@
         </div>
 
         <div *ngIf="item['Merienda2'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Merienda 2</mat-card-title>
@@ -83,7 +83,7 @@
         </div>
 
         <div *ngIf="item['Cena'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Cena</mat-card-title>
@@ -98,7 +98,7 @@
         </div>
 
         <div *ngIf="item['Comentarios'] != null" class="col-md-3">
-          <mat-card  class="example-card">
+          <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Comentarios</mat-card-title>
@@ -112,9 +112,9 @@
           </mat-card>
         </div>
 
-      
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Dieta</button>
         </div>
       </div>
     </div>
@@ -154,107 +154,101 @@
     </div>
 
     <!-- RUTINA -->
-    <div *ngIf="Tipode=='Rutina'">
+    <div *ngFor="let item of rutinas">
+      <div *ngIf="Tipode=='Rutina'">
+        <div class="row">
+          <div *ngIf="item['Ejercicio'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 1</mat-card-title>
+              </mat-card-header>
 
-      <div class="row">
-        <div class="col-md-4">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>PRESS DE BANCA</mat-card-title>
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio2'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 2</mat-card-title>
+              </mat-card-header>
 
-            </mat-card-header>
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio2']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio3'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 3</mat-card-title>
+              </mat-card-header>
 
-            <mat-card-content>
-              <p>
-                Series: 3-5 <br>
-                Repeticiones: 6-8 <br>
-                Descanso: 2' <br>
-              </p>
-            </mat-card-content>
-          </mat-card>
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio3']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio4'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 4</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio4']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio5'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 5</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio5']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="item['Ejercicio6'] != null" class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Ejercicio 6</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+                <p>
+                  {{item['Ejercicio6']}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+      
+
         </div>
-        <div class="col-md-4">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>PRESS MANCUERNA</mat-card-title>
-
-            </mat-card-header>
-
-            <mat-card-content>
-              <p>
-                Series: 3-4 <br>
-                Repeticiones: 10-12 <br>
-                Descanso: 1' 30'' <br>
-              </p>
-            </mat-card-content>
-          </mat-card>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Rutina</button>
         </div>
-        <div class="col-md-4">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>REMO CON BARRA</mat-card-title>
-
-            </mat-card-header>
-
-            <mat-card-content>
-              <p>
-                Series: 3-5 <br>
-                Repeticiones: 6-8 <br>
-                Descanso: 2' <br>
-              </p>
-            </mat-card-content>
-
-          </mat-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>REMO EN POLEA BAJA</mat-card-title>
-            </mat-card-header>
-
-            <mat-card-content>
-              <p>
-                Series: 3-4 <br>
-                Repeticiones: 10-12 <br>
-                Descanso: 1' 30'' <br>
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div class="col-md-6">
-          <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>ELEVACIONES LATERALES</mat-card-title>
-            </mat-card-header>
-
-            <mat-card-content>
-              <p>
-                Series: 3-5 <br>
-                Repeticiones: 12-15 <br>
-                Descanso: 1' 30'' <br>
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar</button>
       </div>
     </div>
-
-
-
-
-
-
   </div>
 </div>
