@@ -1,4 +1,6 @@
-
+mat-card-title{
+	color: #000;
+}
 .container > header {
 	margin: 0 auto;
 	padding: 1em;

@@ -1,4 +1,4 @@
-<div class="main-content">
+<div >
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
@@ -14,11 +14,11 @@
               </div>
               <div class="col-7">
                 <div class=" pb-5 buscar-caja">
-                  <input type="text"  class="buscar-txt"  [(ngModel)]="term" placeholder="Buscar..."/>
+                  <input type="text" class="buscar-txt" [(ngModel)]="term" placeholder="Buscar..." />
                   <a class="buscar-btn">
-                    <i class="material-icons">search</i> 
+                    <i class="material-icons">search</i>
                   </a>
-                 </div>
+                </div>
               </div>
             </div>
           </div>
@@ -30,11 +30,11 @@
               <div class="card-header card-header-primary">
                 <thead>
 
-                  <div style="margin-left: 80px;" >
+                  <div style="margin-left: 80px;">
 
                     <th scope="col">Tipo Dieta</th>
 
-                    <th style="padding-left: 220px;" >Nombre</th>
+                    <th style="padding-left: 220px;">Nombre</th>
 
                     <th style="padding-left: 220px;">Aciones</th>
 
@@ -44,11 +44,18 @@
               </div>
 
               <div *ngFor="let item of filterData  | filter:term">
-                <td> <p style="margin-left: 120px;">{{item.TipoDieta}} </p></td>
+                <td>
+                  <p style="margin-left: 120px;">{{item.TipoDieta}} </p>
+                </td>
 
-                <td> <p style="margin-left: 205px;">{{item.NDieta}}</p></td>
+                <td>
+                  <p style="margin-left: 205px;">{{item.NDieta}}</p>
+                </td>
 
-                <td> <p style="margin-left: 170px;"><button class="btn btn-primary btn-round" (click)='verDias()'>VER</button> </p> </td>
+                <td>
+                  <p style="margin-left: 170px;"><button class="btn btn-primary btn-round"
+                      (click)='verDias()'>VER</button> </p>
+                </td>
 
               </div>
             </table>
@@ -60,118 +67,117 @@
   </div>
 </div>
 
+<div *ngIf="mostrarDias==true" class="row">
+  <div *ngIf="todosDias!=null">
+    <div *ngFor="let item of todosDias; index as i">
+      <div>
+        <div *ngIf="item['Desayuno'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <h3>Dia {{i+1}}</h3>
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Desayuno</mat-card-title>
+            </mat-card-header>
 
-<div *ngIf="todosDias!=null">
-<div *ngFor="let item of todosDias">
-  <div *ngIf="mostrarDias==true" class="row">
-    <div class="card">
+            <mat-card-content>
+              <p>
+                {{item['Desayuno']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Desayuno'] != null" class="col-md-3">
-      <mat-card class="example-card">
-     
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Desayuno</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Desayuno2'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Desayuno 2</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Desayuno']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <mat-card-content>
+              <p>
+                {{item['Desayuno2']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Desayuno2'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Desayuno 2</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Comida'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Comida</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Desayuno2']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <mat-card-content>
+              <p>
+                {{item['Comida']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Comida'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Comida</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Merienda'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Merienda</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Comida']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <mat-card-content>
+              <p>
+                {{item['Merienda']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Merienda'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Merienda</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Merienda2'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Merienda 2</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Merienda']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <mat-card-content>
+              <p>
+                {{item['Merienda2']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Merienda2'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Merienda 2</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Cena'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Cena</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Merienda2']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+            <mat-card-content>
+              <p>
+                {{item['Cena']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-    <div *ngIf="item['Cena'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Cena</mat-card-title>
-        </mat-card-header>
+        <div *ngIf="item['Comentarios'] != null" class="col-md-4">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Comentarios</mat-card-title>
+            </mat-card-header>
 
-        <mat-card-content>
-          <p>
-            {{item['Cena']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-
-    <div *ngIf="item['Comentarios'] != null" class="col-md-3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Comentarios</mat-card-title>
-        </mat-card-header>
-
-        <mat-card-content>
-          <p>
-            {{item['Comentarios']}}
-          </p>
-        </mat-card-content>
-      </mat-card>
+            <mat-card-content>
+              <p>
+                {{item['Comentarios']}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <br>
+      </div>
     </div>
   </div>
-  </div>
-</div>
 </div>
