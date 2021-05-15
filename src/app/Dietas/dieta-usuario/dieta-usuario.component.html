@@ -14,7 +14,7 @@
               </div>
               <div class="col-7">
                 <div class=" pb-5 buscar-caja">
-                  <input type="text" class="buscar-txt" [(ngModel)]="term" placeholder="Buscar..." />
+                  <input type="text" class="buscar-txt" [(ngModel)]="term" placeholder="Buscar..." (change)="close()" />
                   <a class="buscar-btn">
                     <i class="material-icons">search</i>
                   </a>

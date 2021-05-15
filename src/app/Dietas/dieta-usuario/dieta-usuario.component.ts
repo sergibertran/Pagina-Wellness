@@ -77,6 +77,12 @@ console.log(this.form);
    
   }
 
+  close(){
+    this.mostrarDias=false;
+    this.i=0;
+    
+  }
+
   userClick(){
 
 
