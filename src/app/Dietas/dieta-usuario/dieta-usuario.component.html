@@ -44,7 +44,8 @@
               <div *ngFor="let item of filterData  | filter:term">
                 <td></td>
                 <td style="padding-left: 150px;">{{item.NDieta}}</td>
-                <td></td>
+              
+                <td> <button (click)='verDias()'>click</button></td>
               </div>
             </table>
 
@@ -55,41 +56,10 @@
   </div>
 </div>
 
-<div id="tarjeta" class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-      <div class="card-body">
-        <div id="typography">
-          <div class="card-title">
-            <div class="row">
-              <div class="col-7">
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3>Volumen</h3>
 
-            <h4>Dia 1:</h4>
 
-            <h5>Desayuno:</h5>
-            <p>200 g de Kéfir con frutas
-              Pera/ Naranja/fresas</p>
-            <h5>Segundo desayuno</h5>
-            <p>Tostada de pan integral 100 g con queso fresco 70 g, tomate, albahaca y AOVE 5 ml.
-              Infusión de poleo menta</p>
-            <h5>Comida:</h5>
-            <p>Ensalada de quinoa 150 g con escarola, canónigos,, 150 g de lentejas, zanahoria y 10 ml AOVE
-              Rodaja de sandía</p>
-            <h5>Merienda:</h5>
-            <p>200 g Yogur vegetal con una fruta (pruna)</p>
-            <h5>Cena:</h5>
-            <p>Puré de calabacín (con leche entera 100 ml y sin quitar la piel) 15 ml AOVE
-              Filete de salmón 250 g al horno con hojas de laurel y 5 ml AOVE.
-              infusión - manzanilla</p>
-
-          </div>
-        </div>
-      </div>
-    </div>
+<div *ngIf="mostrarDias==true" class="card-body">
+  <div class="card">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptatem suscipit distinctio saepe culpa. Tempore at dicta eveniet culpa harum aut error nihil fugit sunt aliquam dolore aliquid, ipsam consectetur soluta dolores a exercitationem autem quidem, officia, reiciendis nostrum nesciunt deleniti expedita rerum. Accusantium, inventore. Debitis obcaecati inventore optio, voluptate exercitationem beatae totam quibusdam culpa, facere vitae numquam, quo aliquam asperiores nihil labore! Harum omnis dolores fugit reiciendis, aliquid hic officia obcaecati ipsum ut accusantium sequi odit sint commodi totam! Consequatur saepe cum error amet animi, modi fuga quae impedit, sunt voluptate officiis? Ex, quidem provident consequatur cum libero veniam.</p>
   </div>
 </div>

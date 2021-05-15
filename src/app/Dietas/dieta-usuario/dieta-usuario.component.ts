@@ -9,6 +9,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./dieta-usuario.component.css']
 })
 export class DietaUsuarioComponent implements OnInit {
+  mostrarDias=false;
   iduser;
   term: string;
   constructor(private http: HttpClient,private authService: AuthService) { }
@@ -30,6 +31,11 @@ export class DietaUsuarioComponent implements OnInit {
 
     }
     
+  }
+
+  verDias(){
+
+    this.mostrarDias=true;
   }
 
   userClick(){
