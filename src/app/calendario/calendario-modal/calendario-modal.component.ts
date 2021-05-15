@@ -62,7 +62,7 @@ export class CalendarioModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     const currentYear = new Date().getFullYear();
-    this.minDate = new Date();
+    this.minDate = new Date(this.data.dateStr);
     this.maxDate = new Date(currentYear + 1, 11, 31);
   }
 
@@ -70,10 +70,14 @@ export class CalendarioModalComponent implements OnInit {
 console.log(this.data);
 console.log(this.data.idUser);
 
+
     this.range = new FormGroup({
       start: new FormControl(this.data.dateStr + "T22:00:00.000Z"),
       end: new FormControl(),
     });
+
+
+    
   }
 
   onSubmit(): void {

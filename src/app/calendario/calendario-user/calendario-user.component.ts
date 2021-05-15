@@ -114,7 +114,7 @@ export class CalendarioUserComponent implements OnInit {
               color: "#dae5fd",
               textColor: "black",
               res: res,
-              id: res[index].idDieta,
+              id: res[index].idRutina,
               groupId: res[index].idDia,
             });
           } else if (res[index].comentarios == "Comentarios") {
