@@ -51,6 +51,12 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/cargarTodosDiasDieta.php`, JSON.stringify(user));
   }
 
+  cargarTodosDiasRutina(user){
+console.log(user);
+
+    return this.http.post(`${environment.apiUrl}/cargarTodosDiasRutina.php`, JSON.stringify(user));
+  }
+
   loadDieta(user) {
 console.log(user);
 
