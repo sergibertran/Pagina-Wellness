@@ -4,8 +4,8 @@
       <div class="col">
         <div class="card">
           <div class="card-header card-header-rosa">
-            <h4 class="card-title">Modificar dieta</h4>
-            <p class="card-category">Rellene el formulario</p>
+            <h4 class="card-title">{{"modificardiet" | translate}}</h4>
+            <p class="card-category">{{"relleneform" | translate}}</p>
           </div>
           <div class="card-body">
             <form [formGroup]="myForm" (ngSubmit)="Submit()" *ngIf="ready==true">
@@ -52,7 +52,7 @@
 
 
             </form>
-            <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
+            <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">{{"verdias" | translate}}</button>
           </div>
         </div>
       </div>

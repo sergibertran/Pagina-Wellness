@@ -100,7 +100,8 @@
         "salir":"Salir sin guardar",
         "modificar":"Modificar",
 
-
+        "modificardiet":"Modificar dieta",
+        "verdias":"Ver dias",
 
 
         "listadoda":"Listado de Dietas",
@@ -115,7 +116,23 @@
 
         "añadirdiet":"Añadir dieta",
         "relleneform":"Rellene el formulario",
-        "creard":"Crear dieta"
+        "creard":"Crear dieta",
+
+        "añadirdia":"Añadir dias",
+        "dia":"Dia",
+        "añadirdiad":"Añadir dias a la dieta",
+        "nuevodia":"Nuevo dia",
+
+        "listadousu":"Listado de Usuarios",
+        "todosusus":"Todos los usuarios",
+        "usuarios":"Usuarios",
+        "nombreusu":"Nombre Usuario",
+        "accionusu":"Acciones",
+
+        "añadirrutina":"Añadir rutina",
+        "completeform":"Complete el formulario para registrarlo"
+
+
 
 
 
