@@ -90,7 +90,7 @@
 
 
       <!-- DATOS ENCUESTA -->
-      <!-- <div class="col-md-12">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Respuestas de la Encuesta</h4>
@@ -118,27 +118,34 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-8">
+               <div class="col-md-8">
                 <mat-form-field class="example-full-width">
-                  <label>Direccion: </label>{{this.direccion}}
+                  <label>Direccion: </label>{{this.direccionform}}
                 </mat-form-field>
-              </div>
-              <div class="col-md-8">
-                <mat-form-field class="example-full-width">
-                  <label>Altura: </label>{{this.altura}}
-                </mat-form-field>
-              </div>
+              </div> 
+                <div class="col-md-8">
+                 <mat-form-field class="example-full-width">
+                   <label>Sexo: </label>{{this.sexo}}
+                 </mat-form-field>
+               </div> 
               <h4 class="col-md-12">DATOS ANTROPOMÉTRICOS</h4>
+               <div class="col-md-8">
+                <mat-form-field class="example-full-width">
+                  <label>Altura: </label>{{this.alturaform}}
+                </mat-form-field>
+              </div>
               <div class="col-md-6">                
                 <mat-form-field class="example-full-width">
-                  <label>Peso: </label>{{this.peso}}
+                  <label>Peso: </label>{{this.pesoform}}
                 </mat-form-field>
               </div>
+              
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <label>Cintura: </label>{{this.cintura}}
                 </mat-form-field>
               </div>
+              
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <label>Cadera: </label>{{this.cadera}}
@@ -192,7 +199,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <label>Consumo de carne procesada o embutido: </label>{{this.lacteos}}
+                  <label>Consumo de carne procesada o embutido: </label>{{this.carneProcesada}}
                 </mat-form-field>
               </div>
               <div class="col-md-6">
@@ -227,7 +234,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                  <label>¿Crees que consumes algún alimento en exceso? </label>{{this.alimentoExeso}}
+                  <label>¿Crees que consumes algún alimento en exceso?   </label>{{this.alimentoExeso}}
                 </mat-form-field>
               </div>
 
@@ -235,7 +242,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div> 
 
     </div>
   </div>

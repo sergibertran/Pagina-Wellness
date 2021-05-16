@@ -31,6 +31,27 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   direccionform: any;
   alturaform: any;
   pesoform: any;
+  cintura: string;
+  cadera: string;
+  sexo: string;
+  intolerancia: string;
+  intoleranciaEx: string;
+  dieta: string;
+  dietaEx: string;
+  lacteos: string;
+  huevos: string;
+  fruta: string;
+  legumbres: string;
+  carne: string;
+  pescado: string;
+  bolleria: string;
+  alimentosProcesados: string;
+  comidaRapida: string;
+  bebidasAzucarada: string;
+  bebidasAlcoholicas: string;
+  carneProcesada: string;
+  alimentoExeso: string;
+  
   constructor( private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
@@ -54,11 +75,59 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
       this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
         (data) => {
           this.datosEncuesta=data;
-          console.log(data);
-          
           console.log(this.datosEncuesta);
 
+          localStorage.setItem('sexo', this.datosEncuesta[0].Sexo);
+          localStorage.setItem('cintura', this.datosEncuesta[0].Cintura);
+          localStorage.setItem('cadera', this.datosEncuesta[0].Cadera);
+          localStorage.setItem('intolerancia', this.datosEncuesta[0].Intolerancia);
+          localStorage.setItem('intoleranciaEx', this.datosEncuesta[0].IntoleranciaEx);
+          localStorage.setItem('dieta', this.datosEncuesta[0].Dieta);
+          localStorage.setItem('dietaEx', this.datosEncuesta[0].DietaEx);
+          localStorage.setItem('lacteos', this.datosEncuesta[0].Lacteos);
+          localStorage.setItem('huevos', this.datosEncuesta[0].Huevos);
+          localStorage.setItem('fruta', this.datosEncuesta[0].Fruta);
+          localStorage.setItem('legumbres', this.datosEncuesta[0].Legumbres);
+          localStorage.setItem('carne', this.datosEncuesta[0].Carne);
+          localStorage.setItem('pescado', this.datosEncuesta[0].Pescado);
+          localStorage.setItem('bolleria', this.datosEncuesta[0].Bolleria);
+          localStorage.setItem('alimentosProcesados', this.datosEncuesta[0].AlimentosProcesados);
+          localStorage.setItem('comidaRapida', this.datosEncuesta[0].ComidaRapida);
+          localStorage.setItem('bebidasAzucarada', this.datosEncuesta[0].BebidasAzucarada);
+          localStorage.setItem('bebidasAlcoholicas', this.datosEncuesta[0].BebidasAlcoholicas);
+          localStorage.setItem('carneProcesada', this.datosEncuesta[0].CarneProcesada);
+          localStorage.setItem('alimentoExeso', this.datosEncuesta[0].AlimentoExeso);
+
+          
+          
+          this.sexo = localStorage.getItem('sexo')
+          this.cintura = localStorage.getItem('cintura')
+          this.cadera = localStorage.getItem('cadera')
+          this.intolerancia = localStorage.getItem('intolerancia')
+          this.intoleranciaEx = localStorage.getItem('intoleranciaEx')
+          this.dieta = localStorage.getItem('dieta')
+          this.dietaEx = localStorage.getItem('dietaEx')
+          this.lacteos = localStorage.getItem('lacteos')
+          this.huevos = localStorage.getItem('huevos')
+          this.fruta = localStorage.getItem('fruta')
+          this.legumbres = localStorage.getItem('legumbres')
+          this.carne = localStorage.getItem('carne')
+          this.pescado = localStorage.getItem('pescado')
+          this.bolleria = localStorage.getItem('bolleria')
+          this.alimentosProcesados = localStorage.getItem('alimentosProcesados')
+          this.comidaRapida = localStorage.getItem('comidaRapida')
+          this.bebidasAzucarada = localStorage.getItem('bebidasAzucarada')
+          this.bebidasAlcoholicas = localStorage.getItem('bebidasAlcoholicas')
+          this.carneProcesada = localStorage.getItem('carneProcesada')
+          this.alimentoExeso = localStorage.getItem('alimentoExeso')
+
+
+
+
+
         })
+
+        
 
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {          
@@ -72,6 +141,10 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
      localStorage.setItem('direccion', this.infoUser[0]['Direccion']);
      localStorage.setItem('peso', this.infoUser[0]['Peso']);
      localStorage.setItem('altura', this.infoUser[0]['Altura']);
+     
+     this.direccion = localStorage.getItem('direccion')
+     this.peso = localStorage.getItem('peso')
+     this.altura = localStorage.getItem('altura')
 
      this.myForm = new FormGroup(
       {
