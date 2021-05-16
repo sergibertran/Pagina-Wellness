@@ -18,6 +18,8 @@ import { ready } from "jquery";
   styleUrls: ["./modificar-dieta.component.css"],
 })
 export class ModificarDietaComponent implements OnInit {
+  nombreDieta: any;
+  tipoDieta: any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -46,12 +48,19 @@ export class ModificarDietaComponent implements OnInit {
   }
 
   cargarDieta() {
+    console.log(this.id);
+    
     this.authService
-      .loadDieta(this.id)
+      .loadDietaUn(this.id)
       .pipe(first())
       .subscribe((data) => {
         this.datos = data;
         console.log(data);
+
+        this.nombreDieta= data[0].NDieta;
+        this.tipoDieta= data[0].TipoDieta;
+console.log(this.nombreDieta);
+
 
         this.Ranking_modificarDietaArray.clear();
 
