@@ -23,7 +23,12 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(){
-    this.translate.use(this._servicio.getIdioma())
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
     this.authService.getDashboardInfo()
     .pipe(first())
     .subscribe(

@@ -10,12 +10,15 @@ export class IdiomaService {
 
   
 public getIdioma() {
+  console.log(this.idioma+" ESTE ES EL IDIOMA QUE PILLO");
   return this.idioma;
+  
+  
 }
 
 public setIdioma(idiomae:string){
   this.idioma=idiomae
-  console.log(this.idioma);
+
   
 }
 }

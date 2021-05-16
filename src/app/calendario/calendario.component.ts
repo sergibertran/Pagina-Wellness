@@ -62,7 +62,12 @@ export class CalendarioComponent implements OnInit {
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
-    this.translate.use(this._servicio.getIdioma())
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
     this.idUsuario=localStorage.getItem('iDUser');
     this.RegisterForm = this.fb.group({
       'idUsuario': [ this.idUsuario],
