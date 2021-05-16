@@ -12,37 +12,50 @@
 
     $conexion = conexion(); // CREA LA CONEXION
     
- // REALIZA LA QUERY A LA DB
+// REALIZA LA QUERY A LA DB
 
  
-//  $resultado = mysqli_query($conexion, 
+$resultado = mysqli_query($conexion, 
  
-//  $sql = "SELECT idRutina, Nrutina, Premium FROM daw2_jamsweb.rutina WHERE NRutina='$params->nombreRutina'");
+$sql = "SELECT idRutina, Premium, Imagen
+FROM daw2_jamsweb.rutina WHERE Nrutina='$params->nombreRutina'");
 
 
-//   while ($registros = mysqli_fetch_array($resultado)) {
-//     $array[$x]=$registros;
-//     $x++;
-//   }
+ while ($registros = mysqli_fetch_array($resultado)) {
+   $array[$x]=$registros;
+   $x++;
+ }
 
-// if(count($array)>0){
-// $respuesta='existe ya una dieta con ese nombre';
-// }else{
-
-
+if(count($array)>0){
+$respuesta='existe ya una rutina con ese nombre';
+}else{
 
 
+
+
+$resultado = mysqli_query($conexion, 
+
+$sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Imagen) VALUES('$params->nombreRutina','$params->img')");
+
+
+ 
  $resultado = mysqli_query($conexion, 
- 
-  $sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Imagen)
-   VALUES(
-   '$params->nombreRutina',
-   '$params->img') ");  
+ $sql = "SELECT idRutina FROM daw2_jamsweb.rutina WHERE Nrutina='$params->nombreRutina'");
 
-  // $respuesta='funciona';
- 
-// }
+ while ($fila = $resultado->fetch_assoc()) {
+   $id=$fila["idRutina"];
+ }
 
+ for ($i = 1; $i <= 7; $i++) {
+ $resultado = mysqli_query($conexion, 
+ $sql = "INSERT INTO daw2_jamsweb.dias_rutinas
+ (numDiaRutina, idRutina, Titulo, Descanso, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6, Comentarios)
+ VALUES($i, $id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
+
+ }
+ $respuesta='funciona';
+
+}
 
     echo json_encode($params); // MUESTRA EL JSON GENERADO
 

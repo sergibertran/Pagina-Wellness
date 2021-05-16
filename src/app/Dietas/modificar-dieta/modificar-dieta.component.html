@@ -54,9 +54,10 @@
                 </div>
               </div>
               <button mat-raised-button type="submit" [disabled]="ModificarDieta.invalid" class="btn btn-primary pull-right">Modificar dieta</button>
-              <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
             </div>
           </form>
+          <button mat-raised-button type="submit" (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
+
         </div>
       </div>
     </div>
@@ -78,7 +79,7 @@
           <div class="row">
             <div class="col-md-4">
               <mat-form-field class="example-full-width">
-                <textarea matInput formControlName="Desayuno" type="text"></textarea>
+                <textarea matInput formControlName="Desayuno" placeholder="Desayuno 1" type="text"></textarea>
               </mat-form-field>
             </div>
             <div class="col-md-4">
@@ -107,34 +108,19 @@
               <mat-form-field class="example-full-width">
                 <textarea matInput formControlName="Cena" placeholder="Cena" type="text"></textarea>
               </mat-form-field>
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
-
-
-
           </div>
 
 
 
 
         </div>
+
       </div>
+
     </div>
+    <button mat-raised-button type="submit" (click)="ModificarDias()" class="btn btn-primary pull-right">Guardar</button>
+
   </div>
 
 </div>

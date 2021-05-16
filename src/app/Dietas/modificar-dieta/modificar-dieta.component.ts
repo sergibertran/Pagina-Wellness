@@ -22,6 +22,7 @@ import { ready } from "jquery";
 export class ModificarDietaComponent implements OnInit {
   nombreDieta: any;
   tipoDieta: any;
+  idDieta: any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -74,8 +75,8 @@ export class ModificarDietaComponent implements OnInit {
       .pipe(first())
       .subscribe((data) => {
         this.datos = data;
-        console.log(data);
-
+        
+        this.idDieta= data[0].idDieta;
         this.nombreDieta= data[0].NDieta;
         this.tipoDieta= data[0].TipoDieta;
         this.imagen= data[0].Imagen;
@@ -94,21 +95,37 @@ export class ModificarDietaComponent implements OnInit {
             Validators.required])),
             imagen: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
         });      
-        console.log(this.ModificarDieta.value);
 
         this.ready = true;
       });
   }
 
   Submit() {
-    console.log(this.Ranking_modificarArray.controls);
 
+
+    this.ModificarDieta.value.idDieta= this.idDieta;
+    console.log(this.ModificarDieta.value);
+    
+    this.authService
+    .moddiet(this.ModificarDieta.value)
+    .pipe(first())
+    .subscribe((data) => {
+      this.router.navigate(['/VerDieta']);
+
+    });
+
+
+
+  }
+
+  ModificarDias(){
     this.authService
       .guardarDiasDieta(this.Ranking_modificarArray)
       .pipe(first())
       .subscribe((data) => {
         console.log(data);
       });
+      this.MostrarDiasB = false
   }
 
   MostrarDias() {

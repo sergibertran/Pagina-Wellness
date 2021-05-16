@@ -41,6 +41,7 @@ dietas;
     .subscribe(
       (data) => {
         this.dietas=data;
+       console.log(this.dietas);
        
      
       });
