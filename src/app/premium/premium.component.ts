@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { premium } from 'app/models/premium';
+import { AuthService } from "app/services/auth.service";
 
 
 @Component({
@@ -18,10 +19,14 @@ export class PremiumComponent implements OnInit {
   cantidad: string;
   total:number=59.99;
   precio:number=59.99;
+  router: any;
+  usuario: any;
 
 
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService
+    ) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -30,6 +35,8 @@ export class PremiumComponent implements OnInit {
       expNum: ["", Validators.required],
       cvv: ["", Validators.required],
       cantidad: [1, Validators.required],
+      usuario: [this.authService.getidUser()],
+
     });
   }
   
@@ -49,19 +56,13 @@ CambiarprecioTotal(){
     this.expNum = this.registerForm.controls.expNum.value;
     this.cvv = this.registerForm.controls.cvv.value;
     this.cantidad = this.registerForm.controls.cantidad.value;
-
+    this.usuario = this.usuario;
  
   }
 
 onSubmit() {
  
-  console.log('test');
-  
- console.log(this.registerForm.controls);
  
-
-  
-  
   this.submitted = true;
 
   // stop here if form is invalid
@@ -70,6 +71,18 @@ onSubmit() {
   }
 
   // display form values on success
+  this.authService
+  .guardarpremium(this.registerForm.value)
+  .subscribe((datos) => {
+
+    console.log(datos);
+    
+    // this.router.navigate(['/user-profile']);
+
+  });
+
+
+
 
   
 

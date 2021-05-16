@@ -172,6 +172,15 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/modificarPerfil.php`, JSON.stringify(datos));
 
   }
+ 
+
+  guardarpremium(datos){
+
+    console.log(datos);
+    
+    return this.http.post(`${environment.apiUrl}/guardarpremium.php`, JSON.stringify(datos));
+
+  }
 
   obtenerDiasRutina(datos){
 
