@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'app/services/auth.service';
+import { IdiomaService } from 'app/services/idioma.service';
 
 import { first } from 'rxjs/operators';
 
@@ -13,22 +14,16 @@ import { first } from 'rxjs/operators';
 export class DashboardComponent implements OnInit {
 
   datos;
-  constructor(public translate:TranslateService,private http: HttpClient,private authService: AuthService,) {
+  constructor(private _servicio:IdiomaService,public translate:TranslateService,private http: HttpClient,private authService: AuthService,) {
     
     this.translate.addLangs(['es','en']);
-    this.translate.use(this.translate.getBrowserLang())
+   
    }
 
-   Espanol(){
-    this.translate.use('es')
-  }
-  English(){
-    this.translate.use('en')
-  }
 
 
   ngOnInit(){
-
+    this.translate.use(this._servicio.getIdioma())
     this.authService.getDashboardInfo()
     .pipe(first())
     .subscribe(
