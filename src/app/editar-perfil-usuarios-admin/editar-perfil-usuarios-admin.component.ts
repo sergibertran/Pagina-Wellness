@@ -51,23 +51,20 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
      
       console.log(this.idUsuario);
       
-      // this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
-      //   (data) => {
-      //     this.datosEncuesta=data;
-      //     console.log(this.datosEncuesta);
+      this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
+        (data) => {
+          this.datosEncuesta=data;
+          console.log(data);
+          
+          console.log(this.datosEncuesta);
 
-      //   })
+        })
 
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
-        datos => {
-          
-       console.log(datos);
+        datos => {          
        this.infoUser=datos;
-     console.log(datos);
      datos[0]['usuario'];
-     console.log(datos[0]['usuario']);
-     console.log(datos[0]['Direccion']);
-     console.log(this.infoUser);
+
      this.direccionform=this.infoUser[0].Direccion;
      this.alturaform=this.infoUser[0].Altura;
      this.pesoform=this.infoUser[0].Peso;

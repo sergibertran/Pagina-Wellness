@@ -14,7 +14,7 @@
  
  $sql = "SELECT *
  FROM daw2_jamsweb.encuesta
- WHERE idUsuario=$params->idUsuario");
+ WHERE idUsuario=$params");
 
    while ($registros = mysqli_fetch_array($resultado)) {
      $array[$x]=$registros;
