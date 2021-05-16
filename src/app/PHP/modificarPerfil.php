@@ -16,13 +16,18 @@
 
 
   //REALIZA LA QUERY A LA DB
+
+  if ($params->usuario == "admin"){
+    $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
+    SET correo='$params->correo' WHERE usuario='$params->usuario'");
+  } else{
   $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
   SET nombre='$params->nombre', apellido='$params->apellidos', correo='$params->correo', Peso=$params->peso, Altura=$params->altura, Direccion='$params->direccion'
     WHERE usuario='$params->usuario'");
-
+}
   
     header('Content-Type: application/json');
 
-    echo json_encode($params); // MUESTRA EL JSON GENERADO
+    echo json_encode($params->usuario); // MUESTRA EL JSON GENERADO
 
 ?>

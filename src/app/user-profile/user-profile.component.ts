@@ -118,6 +118,9 @@ export class UserProfileComponent implements OnInit {
   EnviarDatos() {
     this.authService.modificarPerfil(this.myForm.value).subscribe((datos) => {
       this.DatosModal = datos;
+
+      console.log(this.DatosModal);
+      
     });
   }
 }
