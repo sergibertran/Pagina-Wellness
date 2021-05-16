@@ -44,7 +44,7 @@
                                     <br><br>
                                 </div>
                                 <button mat-raised-button routerLink="/user-profile" class="btn btn-primary">{{"salir" | translate}}</button>
-                                <button mat-raised-button type="submit" class="btn btn-primary">{{"modificar" | translate}}</button>
+                                <button mat-raised-button [disabled]="modpwdForm.invalid" type="submit" class="btn btn-primary">{{"modificar" | translate}}</button>
 
                             </div>
                         </form>
