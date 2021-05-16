@@ -36,6 +36,18 @@ $respuesta='existe ya una dieta con ese nombre';
  
   $sql = "INSERT INTO daw2_jamsweb.dieta (TipoDieta, NDieta, Premium, Imagen) VALUES('$params->tipoDieta','$params->nombreDieta','$params->PremiumNoPremium','$params->image') ");
 
+  $resultado = mysqli_query($conexion, 
+  $sql = "SELECT idDieta FROM daw2_jamsweb.dieta WHERE NDieta='$params->nombreDieta'");
+
+  while ($fila = $resultado->fetch_assoc()) {
+		$id=$fila["idDieta"];
+	}
+
+  for ($i = 1; $i <= 7; $i++) {
+  $resultado = mysqli_query($conexion, 
+  $sql = "INSERT INTO daw2_jamsweb.dias (numDiaDieta, idDIeta, Desayuno, Desayuno2, Comida, Merienda, Merienda2, Cena, Comentarios)
+  VALUES($i, $id, NULL, NULL, NULL, NULL, NULL, NULL, NULL)  ");
+  }
   $respuesta='funciona';
  
 }
