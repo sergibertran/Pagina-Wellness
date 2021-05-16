@@ -1,70 +1,77 @@
 <div class="main-content">
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-header card-header-primary">
-          <h4 class="card-title">{{"listadorut" | translate}}</h4>
-          <p class="card-category">{{"todosr" | translate}}</p>
-        </div>
-        <div class="card-body">
-          <div id="typography">
-            <div class="card-title">
-              <div class="row">
-                <div class="col">
-                  <h2>{{"rutinasad" | translate}}</h2>
-                </div>
-                <div class="col-7">
-  
-                </div>
-                <div class="col">
-                  <a routerLink="/AddRutina" routerLinkActive="active" class="btn btn-primary btn-round">{{"añadir" | translate}}</a>
-                </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">{{"listadorut" | translate}}</h4>
+        <p class="card-category">{{"todosr" | translate}}</p>
+      </div>
+      <div class="card-body">
+        <div id="typography">
+          <div class="card-title">
+            <div class="row">
+              <div class="col">
+                <h2>{{"rutinasad" | translate}}</h2>
+              </div>
+              <div class="col-7">
+
+              </div>
+              <div class="col">
+                <a routerLink="/AddRutina" routerLinkActive="active" class="btn btn-primary btn-round">{{"añadir" |
+                  translate}}</a>
               </div>
             </div>
-  
-            <div class="row">
-  
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class=" text-primary">
-                    <th>
-                      {{"idd" | translate}}
-                    </th>
-                    <th>
-                      {{"nombreru" | translate}}
-                    </th>
-                    <th>
-                      {{"imagend" | translate}}
-                  </thead>
-                  <tbody *ngFor="let item of rutinas">
-                    <tr>
-                      <td>
-                        {{item[0]}}
-                      </td>
-                      <td>
-                        {{item[1]}}
-                      </td>
-                      <td>
-                        <button (click)="openDialog(item[2])" class="btn btn-primary btn-round"> <i class="material-icons">
-                          image</i></button>
-                      </td>
-                    
-                      <td>
-                      <button [routerLink]="['/ModificarRutina',item[0]]"  routerLinkActive="active"class="btn btn-primary btn-round"> <i class="material-icons">
-                        edit</i> </button>
+          </div>
 
-                          <button (click)="Borrar(item[0])" class="btn btn-primary btn-round"> <i class="material-icons">
-                            delete</i> </button>
-                      </td>
-                      
-  
-                    </tr>
-  
-                  </tbody>
-                </table>
-  
-              </div>
+          <div class="row">
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    {{"idd" | translate}}
+                  </th>
+                  <th>
+                    {{"nombreru" | translate}}
+                  </th>
+                  <th>
+                    {{"imagend" | translate}}
+                  </th>
+                  <th>
+                    {{"acciones" | translate}}
+                  </th>
+                </thead>
+                <tbody *ngFor="let item of rutinas">
+                  <tr>
+                    <td>
+                      {{item[0]}}
+                    </td>
+                    <td>
+                      {{item[1]}}
+                    </td>
+                    <td>
+                      <button (click)="openDialog(item[2])" class="btn btn-primary btn-round"> <i
+                          class="material-icons">
+                          image</i></button>
+                    </td>
+
+                    <td>
+                      <button [routerLink]="['/ModificarRutina',item[0]]" routerLinkActive="active"
+                        class="btn btn-primary btn-round"> <i class="material-icons">
+                          edit</i> </button>
+
+                      <button (click)="Borrar(item[0])" class="btn btn-primary btn-round"> <i class="material-icons">
+                          delete</i> </button>
+                    </td>
+
+
+                  </tr>
+
+                </tbody>
+              </table>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
