@@ -62,6 +62,7 @@
 
         "listadod":"Listado de Dietas",
         "todasd":"Todas las dietas",
+        "dietas":"Dietas",
         "tipod":"Tipo Dieta",
         "nombred":"Nombre",
         "acciond":"Acciones"
@@ -101,5 +102,19 @@
         "modificar":"Modificar"
 
 
-    }
+    },
+
+
+
+        "listadoda":"Listado de Dietas",
+        "todosr":"Todas los registros",
+        "dietasa":"Dietas",
+        "añadir":"Añadir",
+        "idd":"ID",
+        "tipoda":"Tipo de Dieta",
+        "tipousu":"Tipo de Usuario",
+        "imagend":"Imagen"
+
+
+
 }

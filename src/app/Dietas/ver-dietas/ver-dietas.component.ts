@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-ver-dietas',
@@ -10,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class VerDietasComponent implements OnInit {
 dietas;
-  constructor(private http: HttpClient,private authService: AuthService) { }
+  constructor(private _servicio:IdiomaService,public translate:TranslateService, private http: HttpClient,private authService: AuthService) { }
   test=2;
   ngOnInit(): void {
     this.cargarDieta(this.test)
