@@ -26,9 +26,11 @@ FROM daw2_jamsweb.rutina WHERE Nrutina='$params->nombreRutina'");
    $x++;
  }
 
-if(count($array)>0){
-$respuesta='existe ya una rutina con ese nombre';
-}else{
+// if(count($array)>0){
+// $respuesta='existe ya una rutina con ese nombre';
+// }
+
+// else{
 
 
 
@@ -55,7 +57,7 @@ $sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Imagen) VALUES('$params->nombr
  }
  $respuesta='funciona';
 
-}
+// }
 
     echo json_encode($params); // MUESTRA EL JSON GENERADO
 

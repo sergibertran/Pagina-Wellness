@@ -59,6 +59,14 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadDietasAdminUn.php`, JSON.stringify(user));
   }
 
+  
+  loadRutinaUn(user){
+
+    console.log(user);
+    
+
+    return this.http.post(`${environment.apiUrl}/loadRutinasAdminUn.php`, JSON.stringify(user));
+  }
 
   moddiet(user){
 

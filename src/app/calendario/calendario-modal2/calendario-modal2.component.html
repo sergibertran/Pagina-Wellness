@@ -22,7 +22,7 @@
           </mat-card>
         </div>
 
-        <div *ngIf="item['Desayuno2'] != null" class="col-md-3">
+        <div *ngIf="item['Desayuno2'] != null && item['Desayuno2'] != ''" class="col-md-3">
           <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
@@ -143,7 +143,7 @@
     <div *ngFor="let item of rutinas">
       <div *ngIf="Tipode=='Rutina'">
         <div class="row">
-          <div *ngIf="item['Ejercicio'] != null" class="col-md-3">
+          <div *ngIf="item['Ejercicio'] != null && item['Ejercicio'] != ''" class="col-md-3">
             <mat-card class="example-card">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>

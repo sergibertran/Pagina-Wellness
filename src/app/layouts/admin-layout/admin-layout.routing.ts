@@ -22,6 +22,7 @@ import { EditarPerfilUsuariosAdminComponent } from 'app/editar-perfil-usuarios-a
 import { AddDiasDietaComponent } from 'app/Dietas/add-dias-dieta/add-dias-dieta.component';
 import { ModificarDietaComponent } from 'app/Dietas/modificar-dieta/modificar-dieta.component';
 import { UserModificarPwdComponent } from 'app/user-profile/user-modificar-pwd/user-modificar-pwd.component';
+import { ModificarRutinaComponent } from 'app/Rutinas/modificar-rutina/modificar-rutina.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent ,canActivate: [AuthGuard]},
@@ -41,6 +42,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'EditarPerfilUsuariosAdmin/:id',  component: EditarPerfilUsuariosAdminComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'AddDiaDietas/:id',  component: AddDiasDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarDieta/:id',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
+    { path: 'ModificarRutina/:id',  component: ModificarRutinaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietaUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard]},
     { path: 'AddDiaRutina',  component: AddDiaRutinaComponent ,canActivate: [AuthGuard, AdminGuard]},
