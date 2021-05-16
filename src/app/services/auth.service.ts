@@ -82,6 +82,13 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDietasUsuario.php`, JSON.stringify(user));
   }
 
+
+
+  loadDietasUsuarioPremium(user){
+
+    return this.http.post(`${environment.apiUrl}/loadDietasUsuarioPremium.php`, JSON.stringify(user));
+  }
+
   loadRutinasUsuario(user){
 console.log(user);
 

@@ -36,7 +36,7 @@ export class CalendarioModalComponent implements OnInit {
 
   fechaStart;
   fechaEnd;
-  iduser;
+  tipoUsuario;
   datoId;
   diasMaximo;
   myForm: FormGroup;
@@ -320,26 +320,38 @@ export class CalendarioModalComponent implements OnInit {
     this.resultadoSelect = $event;
 
     if (this.resultadoSelect == "Dieta") {
-      this.iduser = this.authService.getNpremium();
-      console.log(this.iduser);
+      this.tipoUsuario = this.authService.getNpremium();
+      console.log(this.tipoUsuario);
 
-      if (this.iduser == 0) {
+      if (this.tipoUsuario == 0) {
+ 
+        console.log(this.data.idUser);
         this.authService
-          .loadDietasUsuario(this.iduser)
+          .loadDietasUsuario(this.tipoUsuario)
           .pipe(first())
           .subscribe((data) => {
             console.log(data);
 
             this.filterData = data;
           });
+      }else if (this.tipoUsuario == 1){
+        this.authService
+        .loadDietasUsuarioPremium(this.data.idUser)   
+        .pipe(first())
+        .subscribe((data) => {
+          console.log(data);
+
+          this.filterData = data;
+        });
+
       }
     } else if (this.resultadoSelect == "Rutina") {
-      this.iduser = this.authService.getNpremium();
-      console.log(this.iduser);
+      this.tipoUsuario = this.authService.getNpremium();
+      console.log(this.tipoUsuario);
 
-      if (this.iduser == 0) {
+      if (this.tipoUsuario == 0) {
         this.authService
-          .loadRutinasUsuario(this.iduser)
+          .loadRutinasUsuario(this.tipoUsuario)
           .pipe(first())
           .subscribe((data) => {
             console.log(data);
