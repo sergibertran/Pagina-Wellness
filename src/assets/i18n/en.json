@@ -61,6 +61,7 @@
 
         "listadod":"List of Diets",
         "todasd":"All diets",
+        "dietas":"Diet",
         "tipod":"Diet Type",
         "nombred":"Name",
         "acciond":"Actions"
@@ -100,7 +101,21 @@
         "modificar":"Modify"
 
 
-    }
+    },
+
+
+
+        "listadoda":"List of Diets",
+        "todosr":"All records",
+        "dietasa":"Diet",
+        "añadir":"Add",
+        "idd":"ID",
+        "tipoda":"Diet Type",
+        "tipousu":"Type of user",
+        "imagend":"Image"
+
+
+
 
     
 }

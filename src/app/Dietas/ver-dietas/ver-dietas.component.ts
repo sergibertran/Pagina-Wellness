@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-ver-dietas',

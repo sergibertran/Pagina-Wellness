@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -16,7 +18,7 @@ export class DietaUsuarioComponent implements OnInit {
   i=0;
   dietas: any;
   form: any;
-  constructor(private http: HttpClient,private authService: AuthService, private fb: FormBuilder) { }
+  constructor(private _servicio:IdiomaService,public translate:TranslateService, private http: HttpClient,private authService: AuthService, private fb: FormBuilder) { }
   filterData;
   todosDias;
 
