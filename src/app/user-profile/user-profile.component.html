@@ -33,7 +33,7 @@
           </div>
           <div class="card-body" *ngIf="ready==true">
             <form [formGroup]="myForm" (ngSubmit)="EnviarDatos()">
-              <div class="row">
+              <div *ngIf="isAdmin()==false" class="row">
                 <div class="col-md-9">
                   <mat-form-field class="example-full-width">
                     <input matInput placeholder="Correo electronico" type="email" formControlName="correo" value={{this.correo}}>
@@ -149,7 +149,9 @@
              
 
               </div>
+              <div *ngIf="isAdmin()==false">
               <button mat-raised-button [disabled]="myForm.invalid" type="submit" class="btn btn-primary pull-right">{{"modificarpref" | translate}}</button>
+            </div>
               <button mat-raised-button routerLink="/ModificarPwd" class="btn btn-primary pull-right">{{"cambiarcontra" | translate}}</button>
 
               <div *ngIf="isAdmin()==false">

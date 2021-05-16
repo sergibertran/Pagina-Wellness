@@ -114,6 +114,9 @@
         "nombreru":"Nombre de Rutina",
         "tiporu":"Tipo de Dieta",
 
+        "PAGINA":"Ir a la pagina principal",
+        "PAGINA1":"Pagina no encontrada",
+        
         "añadirdiet":"Añadir dieta",
         "relleneform":"Rellene el formulario",
         "creard":"Crear dieta",
