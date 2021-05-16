@@ -85,7 +85,21 @@ export class ModificarDietaComponent implements OnInit {
 
 
   Submit(){
-    console.log(this.myForm);
+    console.log(this.Ranking_modificarArray.controls);
+
+
+    this.authService.guardarDiasDieta(this.Ranking_modificarArray)
+    .pipe(first())
+    .subscribe(
+      (data) => {
+      
+        console.log(data);
+        
+    
+        
+
+    });
+
     
   }
 
@@ -104,12 +118,13 @@ export class ModificarDietaComponent implements OnInit {
     .subscribe(
       (data) => {
         this.infoTodosDias=data;
+ console.log(this.infoTodosDias);
  
         this.Ranking_modificarArray.clear();
        
         for (let index = 0; index < Object.keys(data).length; index++) {
          
-          
+        
             this.Ranking_modificarArray.push(
               new FormGroup({
                 Cena: new FormControl((this.infoTodosDias[index]['Cena']), [
@@ -139,6 +154,14 @@ export class ModificarDietaComponent implements OnInit {
                   Validators.required,
                 ]),
                 Merienda2: new FormControl((this.infoTodosDias[index]['Merienda2']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                idDieta: new FormControl((this.infoTodosDias[index]['idDIeta']), [
+                  Validators.email,
+                  Validators.required,
+                ]),
+                idDia: new FormControl((this.infoTodosDias[index]['numDiaDieta']), [
                   Validators.email,
                   Validators.required,
                 ]),

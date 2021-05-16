@@ -64,12 +64,54 @@ export class CalendarioUserComponent implements OnInit {
   calendarOptions: CalendarOptions;
   ngOnInit() {
  
-  this.idUsuario=this.router.url.split('/')[2];
+
+
+    this.reload();
+  }
+
+  openDialog(arg) {
+    arg.idUser=this.idUsuario;
+    console.log('abrir');
+   
+    const dialogRef  = this.dialog.open(CalendarioModalComponent, {
+      data: arg,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+  
+      console.log( 'se cierra');
+    
+      this.events=[];
+      this.reload();
+
+
+    });
+  }
+
+  openDialogInfo(arg) {
+console.log(arg);
+
+const dialogRef = this.dialog.open(CalendarioModal2Component, {
+        data: arg,
+      });
+      dialogRef.afterClosed().subscribe(result => {
+  
+        console.log( 'se cierra');
+      
+        this.events=[];
+        this.reload();
+  
+  
+      });
+    }
+
+
+
+
+    reload(){
+      this.idUsuario=this.router.url.split('/')[2];
    
     this.RegisterForm = this.fb.group({
       'idUsuario': [ this.idUsuario],
-
-   
     });
 
     var myFormDataa = new FormData();
@@ -146,23 +188,7 @@ export class CalendarioUserComponent implements OnInit {
     this.addEventForm = this.formBuilder.group({
       title: [[Validators.required]],
     });
-  }
-
-  openDialog(arg) {
-    arg.idUser=this.idUsuario;
-    console.log('abrir');
-   
-    this.dialog.open(CalendarioModalComponent, {
-      data: arg,
-    });
-  }
-
-  openDialogInfo(arg) {
-console.log(arg);
-
-      this.dialog.open(CalendarioModal2Component, {
-        data: arg,
-      });
+  
     }
 
   //Show Modal with Forn on dayClick Event

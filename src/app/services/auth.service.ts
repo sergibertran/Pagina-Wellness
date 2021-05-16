@@ -59,6 +59,12 @@ export class AuthService {
 
   }
 
+  guardarDiasDieta(info){
+console.log(info);
+return this.http.post(`${environment.apiUrl}/guardarDiasDieta.php`, JSON.stringify(info.value));
+
+  }
+
   insertRutinas(datos){
     console.log(datos);   
 

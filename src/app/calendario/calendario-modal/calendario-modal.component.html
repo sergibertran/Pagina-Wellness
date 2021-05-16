@@ -43,9 +43,9 @@
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
 
-              {{range.value | json}}
+              {{range.controls.end.value | json}}
 
-              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button *ngIf="range.controls.end.value!=null" type="submit" class="btn btn-primary">Guardar</button>
             </div>
          
            
@@ -71,7 +71,7 @@
 
               {{range.value | json}}
               <br>
-              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button *ngIf="range.controls.end.value!=null" type="submit" class="btn btn-primary">Guardar</button>
             </div>
          
           </div>
