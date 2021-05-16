@@ -7,7 +7,7 @@
             <h4 class="card-title">{{"modificardiet" | translate}}</h4>
             <p class="card-category">{{"relleneform" | translate}}</p>
           </div>
-          <form [formGroup]="myGroup" (ngSubmit)="Submit()" *ngIf="ready==true">
+          <form [formGroup]="ModificarDieta" (ngSubmit)="Submit()" *ngIf="ready==true">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
@@ -25,12 +25,10 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <label>Imagen</label>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" formControlName="Imagen" id="customFile">
-                    <label class="custom-file-label" for="customFile">Escoge una foto</label>
-                  </div>
-
+                  <mat-form-field class="example-full-width">
+                    <input matInput formControlName="Imagen" value={{this.imagen}} placeholder="Imagen"
+                      type="text">
+                  </mat-form-field>
                 </div>
               </div>
               <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar dieta</button>
