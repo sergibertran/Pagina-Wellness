@@ -17,7 +17,7 @@ import { ConfirmedValidator } from './confirmed.validator';
   styleUrls: ['./login-register.component.css']
 })
 export class LoginRegisterComponent implements OnInit {
-
+ 
   gratuito='gratuito';
   cancelo='cancelo';
   asesorarme='asesorarme';

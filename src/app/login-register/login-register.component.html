@@ -18,6 +18,8 @@
 
                     <mat-icon matSuffix>perm_identity</mat-icon>
                 </mat-form-field>
+
+                
                 <mat-form-field>
                     <input matInput placeholder="Contraseña" type="password" required formControlName="password" name="password" ngModel>
                     <mat-error *ngIf="Login.get('password').hasError('required')">

@@ -118,7 +118,7 @@
 
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}}>
+                      <input matInput placeholder="peso" type="number" formControlName="peso" value={{this.peso}}>
                       <mat-error *ngIf="myForm.get('peso').hasError('required')">
                         El peso es requerido
                        </mat-error>  
