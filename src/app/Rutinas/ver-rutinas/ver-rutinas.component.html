@@ -33,9 +33,6 @@
                       {{"nombreru" | translate}}
                     </th>
                     <th>
-                      {{"tiporu" | translate}}
-                    </th>
-                    <th>
                       {{"imagend" | translate}}
                   </thead>
                   <tbody *ngFor="let item of rutinas">
@@ -47,10 +44,8 @@
                         {{item[1]}}
                       </td>
                       <td>
-                        {{item[2]}}
-                      </td>
-                      <td>
-                        {{item[3]}}
+                        <button (click)="openDialog(item[2])" class="btn btn-primary btn-round"> <i class="material-icons">
+                          image</i></button>
                       </td>
                     
                       <td>
