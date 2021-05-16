@@ -4,6 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,10 +18,11 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
+    constructor( private _servicio:IdiomaService,public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
 
         this.translate.addLangs(['es','en']);
-        this.translate.use(this.translate.getBrowserLang())
+        this.translate.use(this._servicio.getIdioma())
+
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -41,9 +43,11 @@ export class NavbarComponent implements OnInit {
     
  Espanol(){
     this.translate.use('es')
+    this._servicio.setIdioma('es')
   }
   English(){
     this.translate.use('en')
+    this._servicio.setIdioma('en')
   }
 
     isAdmin(){
