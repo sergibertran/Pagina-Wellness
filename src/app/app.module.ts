@@ -34,6 +34,7 @@ import { Error404Component } from './error404/error404.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { VerImagenComponent } from './ver-imagen/ver-imagen.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
@@ -88,6 +89,7 @@ FullCalendarModule.registerPlugins([
     ModalhomeComponent,
     LoginRegisterComponent,
     Error404Component,
+    VerImagenComponent,
    
 
   

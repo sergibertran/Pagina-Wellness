@@ -47,9 +47,9 @@ export class AddDietaComponent implements OnInit {
     
   }
   Submit(){
- console.log(this.anadirDietaForm.value);
+ console.log(this.addDieta.value);
  
- this.authService.insertDietas(this.anadirDietaForm.value)
+ this.authService.insertDietas(this.addDieta.value)
  .pipe(first())
  .subscribe(
    (data) => {

@@ -6,6 +6,8 @@ import { first } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { VerImagenComponent } from 'app/ver-imagen/ver-imagen.component';
 @Component({
   selector: 'app-ver-dietas',
   templateUrl: './ver-dietas.component.html',
@@ -17,7 +19,8 @@ dietas;
     private authService: AuthService,
     private router: Router,
     private _servicio:IdiomaService,
-    public translate:TranslateService
+    public translate:TranslateService,
+    public dialog: MatDialog
     ) { }
   test=2;
   ngOnInit(): void {
@@ -82,4 +85,18 @@ dietas;
     console.log(datos);
     
   }
+
+  openDialog(arg) {
+
+    console.log(arg);
+    
+    this.dialog.open(VerImagenComponent, {
+      data: arg,
+
+    });
+    
+    
+  }
+  
+
 }
