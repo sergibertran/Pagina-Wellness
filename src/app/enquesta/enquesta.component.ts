@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,CheckboxRequiredValidator } from '@angular/forms';
+import { Router } from '@angular/router';
 import { enquesta } from 'app/models/enquesta';
 import { AuthService } from 'app/services/auth.service';
 
@@ -45,7 +46,8 @@ export class EnquestaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   
@@ -142,6 +144,8 @@ console.log(this.enquestaModel);
 
 
 this.authService.GuardarEncuesta(this.enquestaModel).subscribe((datos) => {
+
+  this.router.navigate(['/user-profile']);
 
 })
 
