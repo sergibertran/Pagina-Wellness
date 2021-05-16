@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
@@ -10,7 +10,7 @@ import { first } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
-
+import { ConfirmedValidator } from './confirmed.validator';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
@@ -24,27 +24,49 @@ export class LoginRegisterComponent implements OnInit {
   wellness='wellness';
   LoginForm: FormGroup;
   data;
+  Login:FormGroup
+  Register:FormGroup
   alumno = new usuario();
   RegisterForm: FormGroup;
 
   constructor( private _servicio:IdiomaService,public translate:TranslateService, public dialog: MatDialog, private dialogRef: MatDialogRef<LoginRegisterComponent>,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
     
 
+    this.Login = new FormGroup({
+      username: new FormControl("", [
+        Validators.minLength(2),
+        Validators.maxLength(15),
+        Validators.required,
+      ]),
+      password: new FormControl("", [
+        Validators.minLength(2),
+        Validators.maxLength(15),
+        Validators.required,
+      ])
+    });
+
+    this.Register = this.fb.group({
+      username: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      password: ['', [Validators.minLength(2), Validators.maxLength(15), Validators.required]],
+      repassword: [null, Validators.required],
+      email: ['', [Validators.email, Validators.required]]
+    },
+    {
+      validator: ConfirmedValidator('password', 'repassword')
+    }
+    );
   
-    this.LoginForm = this.fb.group({
-      'username': [''],
-      'password': ['']
-    });
 
-    this.RegisterForm = this.fb.group({
-      'username': [''],
-      'email': [''],
-      'password': [''],
-      'repassword': [''],
-   
-    });
+
+
+
+
+
+  
   }
-
+  get f(){
+    return this.Register.controls;
+  }
   ngOnInit(): void {
    
     
@@ -84,7 +106,7 @@ export class LoginRegisterComponent implements OnInit {
     // let alumn = new usuario(this.myForm.controls.usuario.value,
     //                        this.myForm.controls.contrasena.value)
   
-    this.authService.register(this.RegisterForm.value).subscribe (
+    this.authService.register(this.Register.value).subscribe (
       datos => {
         this.dialogRef.close();
      
@@ -93,7 +115,7 @@ export class LoginRegisterComponent implements OnInit {
     }
     login(){
   
-      this.authService.login(this.LoginForm.value)
+      this.authService.login(this.Login.value)
       .pipe(first())
       .subscribe(
         (data) => {

@@ -2,20 +2,37 @@
 <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
     <mat-tab label="Iniciar sesion">
         <mat-card-content>
-            <form [formGroup]="LoginForm" (ngSubmit)="submitLoginForm()">
+            <form [formGroup]="Login" (ngSubmit)="submitLoginForm()">
                 <mat-form-field>
                     <input matInput formControlName="username" placeholder="Usuario" type="text" required>
+
+                    <mat-error *ngIf="Login.get('username').hasError('required')">
+                        Nombre requerido
+                       </mat-error>  
+                       <mat-error *ngIf="Login.get('username').hasError('minlength')">
+                       Nombre muy corto
+                       </mat-error>  
+                       <mat-error *ngIf="Login.get('username').hasError('maxlength')">
+                        Nombre muy largo
+                       </mat-error>  
 
                     <mat-icon matSuffix>perm_identity</mat-icon>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Contraseña" type="password" required formControlName="password"
-                        name="password" ngModel>
+                    <input matInput placeholder="Contraseña" type="password" required formControlName="password" name="password" ngModel>
+                    <mat-error *ngIf="Login.get('password').hasError('required')">
+                        Contraseña requerida
+                       </mat-error>  
+                       <mat-error *ngIf="Login.get('password').hasError('minlength')">
+                     Contraseña muy corta
+                       </mat-error>  
+                       <mat-error *ngIf="Login.get('password').hasError('maxlength')">
+                        Contraseña muy larga
+                       </mat-error>  
 
                     <mat-icon matSuffix>lock</mat-icon>
                 </mat-form-field>
-                <button class="btn btn-primary btn-round">
-                    {{"login-register.entrar" | translate}}
+                <button [disabled]="Login.invalid" class="btn btn-primary btn-round"> {{"login-register.entrar" | translate}}
                 </button>
 
             </form>
@@ -28,19 +45,44 @@
     <!-- FORMULARI REGISTER -->
     <mat-tab label="Registrarse">
         <mat-card-content>
-            <form [formGroup]="RegisterForm" (ngSubmit)="submitRegisterForm()">
+            <form [formGroup]="Register" (ngSubmit)="submitRegisterForm()">
                 <mat-form-field>
                     <input matInput placeholder="Usuario" required name="username" formControlName="username">
                     <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="Register.get('username').hasError('required')">
+                        Nombre requerido
+                       </mat-error>  
+                       <mat-error *ngIf="Register.get('username').hasError('minlength')">
+                       Nombre muy corto
+                       </mat-error>  
+                       <mat-error *ngIf="Register.get('username').hasError('maxlength')">
+                        Nombre muy largo
+                       </mat-error>  
                 </mat-form-field>
                 <mat-form-field>
                     <input matInput placeholder="Correo" required name="email" formControlName="email">
                     <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="Register.get('email').hasError('email')">
+                        El email mo es valido
+                       </mat-error>  
+                       <mat-error *ngIf="Register.get('email').hasError('required')">
+                        Email requerido
+                       </mat-error>  
                 </mat-form-field>
                 <mat-form-field>
                     <input matInput placeholder="Contraseña" type="password" required minlength="6" name="password"
                         formControlName="password">
 
+                        <mat-error *ngIf="Register.get('password').hasError('required')">
+                            Contraseña requerida
+                           </mat-error>  
+                           <mat-error *ngIf="Register.get('password').hasError('minlength')">
+                           Contraseña muy corta
+                           </mat-error>  
+                           <mat-error *ngIf="Register.get('password').hasError('maxlength')">
+                            Contraseña muy larga
+                           </mat-error>  
+                        
                     <mat-icon matSuffix>lock</mat-icon>
 
                 </mat-form-field>
@@ -48,11 +90,20 @@
                     <input matInput placeholder="Confirmar contraseña" type="password" required name="repassword"
                         formControlName="repassword">
 
+                        <mat-error *ngIf="Register.get('repassword').hasError('required')">
+                            Repetir contraseña requerido
+                           </mat-error>  
+                           <mat-error *ngIf="Register.get('repassword').hasError('confirmedValidator')">
+                            No es la misma pass
+                           </mat-error>  
+                        
+                        
+                       
                     <mat-icon matSuffix>lock</mat-icon>
                 </mat-form-field>
-                <button mat-raised-button color="btn-primary" class="login-button">
-                    Registrarse
+                <button [disabled]="Register.invalid" class="btn btn-primary btn-round"> Registrarse
                 </button>
+
             </form>
         </mat-card-content>
     </mat-tab>
