@@ -75,7 +75,8 @@ export class AuthService {
 
     
   borrarRutina(datos){
-
+    console.log(datos);
+    
     return this.http.post(`${environment.apiUrl}/deleteRutina.php`, JSON.stringify(datos));
 
   }
