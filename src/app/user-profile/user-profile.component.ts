@@ -39,38 +39,28 @@ export class UserProfileComponent implements OnInit {
    
     this.myForm = new FormGroup({
       usuario: new FormControl([0]["usuario"], [
-        Validators.minLength(2),
-        Validators.maxLength(15),
-        Validators.required,
+     
       ]),
       nombre: new FormControl([0]["nombre"], [
-        Validators.minLength(2),
-        Validators.maxLength(15),
-        Validators.required,
+    
       ]),
       apellidos: new FormControl([0]["apellido"], [
-        Validators.email,
-        Validators.required,
+      
       ]),
       correo: new FormControl([0]["correo"], [
-        Validators.email,
-        Validators.required,
+    
       ]),
       direccion: new FormControl([0]["Direccion"], [
-        Validators.email,
-        Validators.required,
+   
       ]),
       altura: new FormControl([0]["Altura"], [
-        Validators.email,
-        Validators.required,
+     
       ]),
       peso: new FormControl([0]["Peso"], [
-        Validators.email,
-        Validators.required,
+ 
       ]),
       imagen: new FormControl([0]["Imagen"], [
-        Validators.email,
-        Validators.required,
+ 
       ]),
     });
 
@@ -94,7 +84,8 @@ export class UserProfileComponent implements OnInit {
           Validators.required,
         ]),
         apellidos: new FormControl(datos[0]["apellido"], [
-          Validators.email,
+          Validators.minLength(2),
+          Validators.maxLength(15),
           Validators.required,
         ]),
         correo: new FormControl(datos[0]["correo"], [
@@ -102,20 +93,22 @@ export class UserProfileComponent implements OnInit {
           Validators.required,
         ]),
         direccion: new FormControl(datos[0]["Direccion"], [
-          Validators.email,
+          Validators.minLength(2),
+          Validators.maxLength(15),
           Validators.required,
         ]),
         altura: new FormControl(datos[0]["Altura"], [
-          Validators.email,
+          Validators.max(300),
+          Validators.min(1),
           Validators.required,
         ]),
         peso: new FormControl(datos[0]["Peso"], [
-          Validators.email,
+          Validators.max(300),
+          Validators.min(1),
           Validators.required,
         ]),
         imagen: new FormControl(datos[0]["Imagen"], [
-          Validators.email,
-          Validators.required,
+         
         ]),
       });
    
