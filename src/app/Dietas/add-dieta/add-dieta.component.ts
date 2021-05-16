@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { diasdieta } from 'app/models/diasdieta';
 import { AuthService } from 'app/services/auth.service';
@@ -20,25 +20,24 @@ export class AddDietaComponent implements OnInit {
     private _servicio:IdiomaService,
     public translate:TranslateService,) { }
   anadirDietaForm: FormGroup;
+  addDieta:FormGroup
  Dias:boolean=false
  CDias:boolean=true
  //DiasDieta:diasdieta[]=[new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta(),new diasdieta()]
   ngOnInit(): void {
 
-    if(this._servicio.getIdioma()==undefined){
-      this.translate.use(this.translate.getBrowserLang())
-      this._servicio.setIdioma(this.translate.getBrowserLang())
-  }else{
-      this.translate.use(this._servicio.getIdioma())
-  }
-
-    this.anadirDietaForm = this.fb.group({
-      'nombreDieta': [''],
-      'tipoDieta': [''],
-      'PremiumNoPremium': [''],
-      'image': [''],
    
+
+    this.addDieta = new FormGroup({
+      nombreDieta: new FormControl('', Validators.compose([
+        Validators.maxLength(15),Validators.minLength(3),
+        Validators.required])),
+      tipoDieta: new FormControl('', Validators.compose([
+        Validators.maxLength(15),Validators.minLength(3),
+        Validators.required])),
+      image: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
     });
+  
   }
 
   AddDia(){
