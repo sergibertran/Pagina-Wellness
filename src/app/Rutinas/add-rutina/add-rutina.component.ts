@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 
@@ -13,7 +13,7 @@ export class AddRutinaComponent implements OnInit {
   submitted = false;
   nombreRutina: string;
   tipoRutina: string;
-
+  addRutina:FormGroup
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -22,17 +22,15 @@ export class AddRutinaComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.registerForm = this.formBuilder.group({
-      'nombreRutina': [''],
-      'tipoRutina': [''],
-      'PremiumNoPremium': [''],
-      'image': [''],
-   
+
+    this.addRutina = new FormGroup({
+      nombreRutina: new FormControl('', Validators.compose([
+        Validators.maxLength(15),Validators.minLength(3),
+        Validators.required])),
+      img: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
     });
   }
 
-
-  get f() { return this.registerForm.controls; }
 
   onSubmit() {
     
