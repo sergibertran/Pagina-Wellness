@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { WindowScrollController } from '@fullcalendar/common';
 import { AuthService } from 'app/services/auth.service';
 import { CalendarioService } from 'app/services/calendario.service';
 
@@ -121,10 +122,6 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
           this.carneProcesada = localStorage.getItem('carneProcesada')
           this.alimentoExeso = localStorage.getItem('alimentoExeso')
 
-
-
-
-
         })
 
         
@@ -201,8 +198,13 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
 
   EnviarDatos() {
 
- 
-console.log(this.myForm.value);
+    this.authService.modificarPerfil(this.myForm.value).subscribe((datos) => {
+      this.DatosModal = datos;
+
+     window.location.reload();
+
+      
+    });
 
 
   }
