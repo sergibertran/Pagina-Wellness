@@ -34,6 +34,7 @@ export class ModificarDietaComponent implements OnInit {
   ModificarDieta: FormGroup;
   test = 2;
   id;
+  imagen;
   myForm;
   ready;
   MostrarDiasB: boolean = false;
@@ -45,6 +46,12 @@ export class ModificarDietaComponent implements OnInit {
   Ranking_modificarDietaArray = new FormArray([]);
   Ranking_modificarArray = new FormArray([]);
   ngOnInit(): void {
+
+    this.ModificarDieta = new FormGroup({
+      nombreDieta: new FormControl(),
+      tipoDieta: new FormControl(),
+      imagen: new FormControl()
+   });
 
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
@@ -71,35 +78,31 @@ export class ModificarDietaComponent implements OnInit {
 
         this.nombreDieta= data[0].NDieta;
         this.tipoDieta= data[0].TipoDieta;
+        this.imagen= data[0].Imagen;
+
 console.log(this.nombreDieta);
 
+        console.log(this.datos);
+        
+    
 
-        this.Ranking_modificarDietaArray.clear();
-
-        for (let index = 0; index < Object.keys(data).length; index++) {
-          this.Ranking_modificarDietaArray.push(
-            new FormGroup({
-              nombreDieta: new FormControl(this.datos[index]["NDieta"], [
+   
+            this.ModificarDieta= new FormGroup({
+              nombreDieta: new FormControl(this.datos[0]["NDieta"], [
                 Validators.minLength(2),
                 Validators.maxLength(15),
                 Validators.required,
               ]),
-              tipoDieta: new FormControl(this.datos[index]["TipoDieta"], [
+              tipoDieta: new FormControl(this.datos[0]["TipoDieta"], [
                 Validators.minLength(2),
                 Validators.maxLength(15),
                 Validators.required,
               ]),
-              PremiumNoPremium: new FormControl(this.datos[index]["Premium"], [
-                Validators.email,
-                Validators.required,
-              ]),
-              Imagen: new FormControl(this.datos[index]["Imagen"], [
-                Validators.email,
-                Validators.required,
+              Imagen: new FormControl(this.datos[0]["Imagen"], [
+                Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")
               ]),
             })
-          );
-        }
+        
 
         this.ready = true;
       });
