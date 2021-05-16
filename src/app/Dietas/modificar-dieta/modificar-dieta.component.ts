@@ -71,7 +71,7 @@ export class ModificarDietaComponent implements OnInit {
     console.log(this.id);
     
     this.authService
-      .loadRutinaUn(this.id)
+      .loadDietaUn(this.id)
       .pipe(first())
       .subscribe((data) => {
         this.datos = data;
