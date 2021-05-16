@@ -113,6 +113,10 @@
         "tipousu":"Tipo de Usuario",
         "imagend":"Imagen",
 
+        "listadorut":"Listado de las Rutinas",
+        "rutinasad":"Rutinas",
+        "nombreru":"Nombre de Rutina",
+        "tiporu":"Tipo de Dieta",
 
         "añadirdiet":"Añadir dieta",
         "relleneform":"Rellene el formulario",

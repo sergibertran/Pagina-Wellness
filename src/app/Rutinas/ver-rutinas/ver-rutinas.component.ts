@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
+import { IdiomaService } from 'app/services/idioma.service';
+import { TranslateService } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -14,9 +16,19 @@ export class VerRutinasComponent implements OnInit {
   rutinas;
   constructor(private http: HttpClient,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private _servicio:IdiomaService,
+    public translate:TranslateService) { }
   test=2;
   ngOnInit(): void {
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
+
     this.cargarRutina(this.test)
   }
 
