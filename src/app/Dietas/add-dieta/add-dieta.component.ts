@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { diasdieta } from 'app/models/diasdieta';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
@@ -11,7 +12,9 @@ import { first } from 'rxjs/operators';
 })
 export class AddDietaComponent implements OnInit {
 
-  constructor( private fb: FormBuilder,private authService: AuthService) { }
+  constructor( private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router) { }
   anadirDietaForm: FormGroup;
  Dias:boolean=false
  CDias:boolean=true
@@ -42,6 +45,7 @@ export class AddDietaComponent implements OnInit {
    (data) => {
      console.log(data);
      
+     this.router.navigate(['/VerDieta']);
 
 
    });

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
 import Swal from 'sweetalert2';
@@ -10,7 +11,10 @@ import Swal from 'sweetalert2';
 })
 export class VerDietasComponent implements OnInit {
 dietas;
-  constructor(private http: HttpClient,private authService: AuthService) { }
+  constructor(private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+    ) { }
   test=2;
   ngOnInit(): void {
     this.cargarDieta(this.test)
@@ -27,7 +31,12 @@ dietas;
       });
   }
 
-  Borrar(){
+  Borrar(i){
+
+    console.log(i);
+
+
+    
     Swal.fire({
       title: 'Estas segur@?',
       text: "No podras reviertir los cambios",
@@ -38,13 +47,22 @@ dietas;
       confirmButtonText: 'Si, borralo!'
     }).then((result) => {
       if (result.isConfirmed) {
+        this.authService
+        .borrarDieta(i)
+        .subscribe((datos) => {  
+          console.log(datos);   
+        });
         Swal.fire(
           'Borrada!',
           'La dieta ha sido borrada correctamente.',
           'success'
         )
+        window.location.reload();
+        this.router.navigate(['/VerDieta']);
+
       }
     })
+
    }
 
   EnviarId(datos){

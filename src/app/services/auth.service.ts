@@ -52,6 +52,8 @@ export class AuthService {
   }
 
   insertDietas(datos){
+    console.log(datos);
+    
 
     return this.http.post(`${environment.apiUrl}/insertDietas.php`, JSON.stringify(datos));
 
@@ -82,7 +84,12 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDietasUsuario.php`, JSON.stringify(user));
   }
 
-
+  
+  borrarDieta(user){
+    console.log(user);
+    
+    return this.http.post(`${environment.apiUrl}/deleteDieta.php`, JSON.stringify(user));
+  }
 
   loadDietasUsuarioPremium(user){
 
