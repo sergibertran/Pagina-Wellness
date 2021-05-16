@@ -20,7 +20,7 @@ import { ready } from "jquery";
   styleUrls: ['./modificar-rutina.component.css']
 })
 export class ModificarRutinaComponent implements OnInit {
-  nombreRutina: any;
+  Nrutina: any;
   tipoRutina: any;
   idRutina: any;
   constructor(
@@ -49,8 +49,8 @@ export class ModificarRutinaComponent implements OnInit {
   ngOnInit(): void {
 
     this.ModificarRutina = new FormGroup({
-      nombreDieta: new FormControl(),
-      tipoDieta: new FormControl(),
+      Nrutina: new FormControl(),
+      tipoRutina: new FormControl(),
       imagen: new FormControl()
    });
 
@@ -71,26 +71,24 @@ export class ModificarRutinaComponent implements OnInit {
     console.log(this.id);
     
     this.authService
-      .loadDietaUn(this.id)
+      .loadRutinaUn(this.id)
       .pipe(first())
       .subscribe((data) => {
         this.datos = data;
         
-        this.idRutina= data[0].iRutina;
-        this.nombreRutina= data[0].NRutina;
-        this.tipoRutina= data[0].TipoRutina;
-        this.imagen= data[0].Imagen;
-
 
         console.log(this.datos);
+
+        this.idRutina= data[0].idRutina;
+        this.Nrutina= data[0].Nrutina;
+        this.imagen= data[0].imagen;
+
+
 
         
         
         this.ModificarRutina = new FormGroup({
-          nombreRutina: new FormControl('', Validators.compose([
-            Validators.maxLength(15),Validators.minLength(3),
-            Validators.required])),
-          tipoRutina: new FormControl('', Validators.compose([
+          Nrutina: new FormControl('', Validators.compose([
             Validators.maxLength(15),Validators.minLength(3),
             Validators.required])),
             imagen: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
@@ -119,25 +117,25 @@ export class ModificarRutinaComponent implements OnInit {
   }
 
   ModificarDias(){
-    this.authService
-      .guardarDiasDieta(this.Ranking_modificarArray)
-      .pipe(first())
-      .subscribe((data) => {
-        console.log(data);
-      });
-      this.MostrarDiasB = false
+    // this.authService
+    //   .guardarDiasDieta(this.Ranking_modificarArray)
+    //   .pipe(first())
+    //   .subscribe((data) => {
+    //     console.log(data);
+    //   });
+    //   this.MostrarDiasB = false
   }
 
   MostrarDias() {
     console.log("test");
-    console.log(this.datos[0].idDieta);
+    console.log(this.datos[0].idRutina);
 
     this.form = this.fb.group({
       id: this.datos[0].idDieta,
     });
 
     this.authService
-      .cargarTodosDiasDieta(this.form.value)
+      .cargarTodosDiasRutina(this.form.value)
       .pipe(first())
       .subscribe((data) => {
         this.infoTodosDias = data;
@@ -145,53 +143,53 @@ export class ModificarRutinaComponent implements OnInit {
 
         this.Ranking_modificarArray.clear();
 
-        for (let index = 0; index < Object.keys(data).length; index++) {
-          this.Ranking_modificarArray.push(
-            new FormGroup({
-              Cena: new FormControl(this.infoTodosDias[index]["Cena"], [
-                Validators.minLength(2),
-                Validators.maxLength(15),
-                Validators.required,
-              ]),
-              Comentarios: new FormControl(
-                this.infoTodosDias[index]["Comentarios"],
-                [
-                  Validators.minLength(2),
-                  Validators.maxLength(15),
-                  Validators.required,
-                ]
-              ),
-              Comida: new FormControl(this.infoTodosDias[index]["Comida"], [
-                Validators.email,
-                Validators.required,
-              ]),
-              Desayuno: new FormControl(this.infoTodosDias[index]["Desayuno"], [
-                Validators.email,
-                Validators.required,
-              ]),
-              Desayuno2: new FormControl(
-                this.infoTodosDias[index]["Desayuno2"],
-                [Validators.email, Validators.required]
-              ),
-              Merienda: new FormControl(this.infoTodosDias[index]["Merienda"], [
-                Validators.email,
-                Validators.required,
-              ]),
-              Merienda2: new FormControl(
-                this.infoTodosDias[index]["Merienda2"],
-                [Validators.email, Validators.required]
-              ),
-              idDieta: new FormControl(this.infoTodosDias[index]["idDIeta"], [
-                Validators.email,
-                Validators.required,
-              ]),
-              idDia: new FormControl(this.infoTodosDias[index]["numDiaDieta"], [
-                Validators.email,
-                Validators.required,
-              ]),
-            })
-          );
-        }
+        // for (let index = 0; index < Object.keys(data).length; index++) {
+        //   this.Ranking_modificarArray.push(
+        //     new FormGroup({
+        //       Cena: new FormControl(this.infoTodosDias[index]["Cena"], [
+        //         Validators.minLength(2),
+        //         Validators.maxLength(15),
+        //         Validators.required,
+        //       ]),
+        //       Comentarios: new FormControl(
+        //         this.infoTodosDias[index]["Comentarios"],
+        //         [
+        //           Validators.minLength(2),
+        //           Validators.maxLength(15),
+        //           Validators.required,
+        //         ]
+        //       ),
+        //       Comida: new FormControl(this.infoTodosDias[index]["Comida"], [
+        //         Validators.email,
+        //         Validators.required,
+        //       ]),
+        //       Desayuno: new FormControl(this.infoTodosDias[index]["Desayuno"], [
+        //         Validators.email,
+        //         Validators.required,
+        //       ]),
+        //       Desayuno2: new FormControl(
+        //         this.infoTodosDias[index]["Desayuno2"],
+        //         [Validators.email, Validators.required]
+        //       ),
+        //       Merienda: new FormControl(this.infoTodosDias[index]["Merienda"], [
+        //         Validators.email,
+        //         Validators.required,
+        //       ]),
+        //       Merienda2: new FormControl(
+        //         this.infoTodosDias[index]["Merienda2"],
+        //         [Validators.email, Validators.required]
+        //       ),
+        //       idDieta: new FormControl(this.infoTodosDias[index]["idDIeta"], [
+        //         Validators.email,
+        //         Validators.required,
+        //       ]),
+        //       idDia: new FormControl(this.infoTodosDias[index]["numDiaDieta"], [
+        //         Validators.email,
+        //         Validators.required,
+        //       ]),
+        //     })
+        //   );
+        // }
 
         this.MostrarDiasB = true;
       });
