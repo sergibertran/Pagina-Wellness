@@ -45,20 +45,21 @@ export class AddRutinaComponent implements OnInit {
 
   onSubmit() {
     
+    console.log(this.addRutina.value);
+
     this.submitted = true;
   
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    if (this.addRutina.invalid) {
         return;
     }
   
-    // display form values on success
-    console.log(this.registerForm.value);
+    //display form values on success
+    console.log(this.addRutina.value);
     
-    this.authService.insertRutinas(this.registerForm.value).subscribe(
+    this.authService.insertRutinas(this.addRutina.value).subscribe(
       (data) => {
         console.log(data);
-        
         this.router.navigate(['/VerRutina']);
    
    

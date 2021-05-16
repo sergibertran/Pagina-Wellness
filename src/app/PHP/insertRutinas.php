@@ -34,11 +34,10 @@
 
  $resultado = mysqli_query($conexion, 
  
-  $sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Premium, Imagen)
+  $sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Imagen)
    VALUES(
    '$params->nombreRutina',
-   '$params->PremiumNoPremium',
-   '$params->image') ");  
+   '$params->img') ");  
 
   // $respuesta='funciona';
  
