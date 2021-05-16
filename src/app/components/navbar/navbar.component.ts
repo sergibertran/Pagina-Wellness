@@ -21,13 +21,20 @@ export class NavbarComponent implements OnInit {
     constructor( private _servicio:IdiomaService,public translate:TranslateService, location: Location,  private element: ElementRef, private router: Router,private authService: AuthService) {
 
         this.translate.addLangs(['es','en']);
-        this.translate.use(this._servicio.getIdioma())
+       
 
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
+        if(this._servicio.getIdioma()==undefined){
+            this.translate.use(this.translate.getBrowserLang())
+            this._servicio.setIdioma(this.translate.getBrowserLang())
+        }else{
+            this.translate.use(this._servicio.getIdioma())
+        }
+        this.translate.use(this._servicio.getIdioma())
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];

@@ -18,18 +18,11 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Tipo Rutina" formControlName="tipoRutina"
-                                            class="form-control"
-                                            [ngClass]="{ 'is-invalid': submitted}">
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-4">
                                     <mat-form-field >
                                       <mat-label>Selector</mat-label>
-                                      <mat-select>
-                                        <mat-option value="one">Premium</mat-option>
-                                        <mat-option value="two">No Premium</mat-option>
+                                      <mat-select formControlName="PremiumNoPremium">
+                                        <mat-option value="1">Premium</mat-option>
+                                        <mat-option value="0">No Premium</mat-option>
                                       </mat-select>
                                     </mat-form-field>
                                   </div>

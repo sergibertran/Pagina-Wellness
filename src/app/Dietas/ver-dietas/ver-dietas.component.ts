@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-ver-dietas',
@@ -10,9 +13,22 @@ import Swal from 'sweetalert2';
 })
 export class VerDietasComponent implements OnInit {
 dietas;
-  constructor(private http: HttpClient,private authService: AuthService) { }
+  constructor(private http: HttpClient,
+    private authService: AuthService,
+    private router: Router,
+    private _servicio:IdiomaService,
+    public translate:TranslateService
+    ) { }
   test=2;
   ngOnInit(): void {
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
+
     this.cargarDieta(this.test)
   }
 
@@ -27,7 +43,12 @@ dietas;
       });
   }
 
-  Borrar(){
+  Borrar(i){
+
+    console.log(i);
+
+
+    
     Swal.fire({
       title: 'Estas segur@?',
       text: "No podras reviertir los cambios",
@@ -38,13 +59,22 @@ dietas;
       confirmButtonText: 'Si, borralo!'
     }).then((result) => {
       if (result.isConfirmed) {
+        this.authService
+        .borrarDieta(i)
+        .subscribe((datos) => {  
+          console.log(datos);   
+        });
         Swal.fire(
           'Borrada!',
           'La dieta ha sido borrada correctamente.',
           'success'
         )
+        window.location.reload();
+        this.router.navigate(['/VerDieta']);
+
       }
     })
+
    }
 
   EnviarId(datos){

@@ -2,6 +2,8 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { perfilAlumno } from "app/models/perfilAlumno";
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import { AuthService } from "app/services/auth.service";
 
 @Component({
@@ -13,7 +15,7 @@ export class UserProfileComponent implements OnInit {
   idusuario;
   submitted = false;
   formBuilder: any;
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private _servicio:IdiomaService,public translate:TranslateService,private http: HttpClient, private authService: AuthService) {}
   perfilalumno;
   myForm:FormGroup;
   usuario;
@@ -26,6 +28,13 @@ export class UserProfileComponent implements OnInit {
   altura;
   peso;
   ngOnInit() {
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
    
     this.myForm = new FormGroup({
       usuario: new FormControl([0]["usuario"], [

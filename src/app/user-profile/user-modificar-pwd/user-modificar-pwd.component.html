@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title">Modificar contraseña</h4>
+                        <h4 class="card-title">{{"modificarc" | translate}}</h4>
                     </div>
                     <div class="card-body">
                         <form [formGroup]="modpwdForm" (ngSubmit)="onSubmit()">
@@ -14,7 +14,7 @@
                                         <input matInput placeholder="Contraseña actual" formControlName="pwdActual"
                                             class="form-control" [ngClass]="{ 'is-invalid': submitted}">
                                         <mat-error *ngIf="submitted && f.pwdActual.errors" class="invalid-feedback">
-                                            <mat-error *ngIf="f.pwdActual.errors.required">La contraseña es obligatorio.
+                                            <mat-error *ngIf="f.pwdActual.errors.required">{{"contraoblig" | translate}}
                                             </mat-error>
                                         </mat-error>
                                     </mat-form-field>
@@ -24,7 +24,7 @@
                                         <input matInput placeholder="Contraseña nueva" formControlName="pwdNueva"
                                             class="form-control" [ngClass]="{ 'is-invalid': submitted}">
                                         <mat-error *ngIf="submitted && f.pwdNueva.errors" class="invalid-feedback">
-                                            <mat-error *ngIf="f.pwdNueva.errors.required">La contraseña es obligatorio.
+                                            <mat-error *ngIf="f.pwdNueva.errors.required">{{"contraoblig" | translate}}
                                             </mat-error>
                                         </mat-error>
                                     </mat-form-field>
@@ -36,18 +36,15 @@
                                             [ngClass]="{ 'is-invalid': submitted}">
                                         <mat-error *ngIf="submitted && f.pwdNuevaRepetida.errors"
                                             class="invalid-feedback">
-                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.required">La contraseña es
-                                                obligatorio. </mat-error>
-                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.mustMatch">No coincide con la
-                                                nueva</mat-error>
+                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.required">{{"contraoblig" | translate}}</mat-error>
+                                            <mat-error *ngIf="f.pwdNuevaRepetida.errors.mustMatch">{{"nocoincide" | translate}}</mat-error>
                                         </mat-error>
 
                                     </mat-form-field>
                                     <br><br>
                                 </div>
-                                <button mat-raised-button routerLink="/user-profile" class="btn btn-primary">Salir sin
-                                    guardar</button>
-                                <button mat-raised-button type="submit" class="btn btn-primary">Modificar</button>
+                                <button mat-raised-button routerLink="/user-profile" class="btn btn-primary">{{"salir" | translate}}</button>
+                                <button mat-raised-button type="submit" class="btn btn-primary">{{"modificar" | translate}}</button>
 
                             </div>
                         </form>

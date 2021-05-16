@@ -11,6 +11,8 @@ import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.co
 import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
 import { BLACK_ON_WHITE_CSS_CLASS } from "@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector";
+import { IdiomaService } from "app/services/idioma.service";
+import { TranslateService } from "@ngx-translate/core";
 @Component({
   selector: "app-calendario",
   templateUrl: "./calendario.component.html",
@@ -46,15 +48,26 @@ export class CalendarioComponent implements OnInit {
   }
  
   constructor(
+    private _servicio:IdiomaService,
+    public translate:TranslateService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
     public dialog: MatDialog,
     private fb: FormBuilder
-  ) { }
+  ) { 
+    this.translate.addLangs(['es','en']);
+   
+  }
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
     this.idUsuario=localStorage.getItem('iDUser');
     this.RegisterForm = this.fb.group({
       'idUsuario': [ this.idUsuario],

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-add-rutina',
@@ -13,13 +15,19 @@ export class AddRutinaComponent implements OnInit {
   tipoRutina: string;
 
 
-  constructor(private formBuilder: FormBuilder
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
+   
     this.registerForm = this.formBuilder.group({
-      nombreRutina: ["", Validators.required],
-      tipoRutina: ["", Validators.required],
+      'nombreRutina': [''],
+      'tipoRutina': [''],
+      'PremiumNoPremium': [''],
+      'image': [''],
+   
     });
   }
 
@@ -36,7 +44,16 @@ export class AddRutinaComponent implements OnInit {
     }
   
     // display form values on success
-  
+    console.log(this.registerForm.value);
+    
+    this.authService.insertRutinas(this.registerForm.value).subscribe(
+      (data) => {
+        console.log(data);
+        
+        this.router.navigate(['/VerRutina']);
+   
+   
+      });
       
   }
 }

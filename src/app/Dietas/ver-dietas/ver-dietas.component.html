@@ -2,15 +2,15 @@
     <div class="container-fluid">
       <div class="card">
         <div class="card-header card-header-primary">
-          <h4 class="card-title">Listado de las Dietas</h4>
-          <p class="card-category">Todos los registros</p>
+          <h4 class="card-title">{{"listadoda" | translate}}</h4>
+          <p class="card-category">{{"todosr" | translate}}</p>
         </div>
         <div class="card-body">
           <div id="typography">
             <div class="card-title">
               <div class="row">
                 <div class="col">
-                  <h2>Dietas</h2>
+                  <h2>{{"dietasa" | translate}}</h2>
                 </div>
                 <div class="col-7">
   
@@ -41,7 +41,7 @@
                     <th>
                       Imagen
                   </thead>
-                  <tbody *ngFor="let item of dietas">
+                  <tbody *ngFor="let item of dietas; index as i">
                     <tr>
                       <td>
                         {{item[0]}}
@@ -64,7 +64,7 @@
                         edit</i> </button>
                         <button [routerLink]="['/AddDiaDietas',item[0]]" routerLinkActive="active" class="btn btn-primary btn-round"> <i class="material-icons">
                           add</i> </button>
-                          <button (click)="Borrar()" class="btn btn-primary btn-round"> <i class="material-icons">
+                          <button (click)="Borrar(item[0])" class="btn btn-primary btn-round"> <i class="material-icons">
                             delete</i> </button>
                       </td>
                       

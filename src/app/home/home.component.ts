@@ -58,7 +58,12 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
     
   }
 

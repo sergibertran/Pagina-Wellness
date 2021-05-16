@@ -58,27 +58,27 @@
 
     },
 
-    "DietasUsu":{
-
+   
         "listadod":"Listado de Dietas",
         "todasd":"Todas las dietas",
+        "dietas":"Dietas",
         "tipod":"Tipo Dieta",
         "nombred":"Nombre",
         "acciond":"Acciones"
 
-    },
+    ,
 
-    "Rutinausu":{
+
 
         "listador":"Listado de Rutinas",
         "todasr":"Todos las Rutinas",
         "rutinas":"Rutinas",
         "tipor":"Tipo Rutina",
-        "accionr":"Acciones"
+        "accionr":"Acciones",
 
-    },
 
-    "PerfilUsu":{
+
+
 
         "usuario":"Usuario:",
         "direccion":"Direccion:",
@@ -87,19 +87,38 @@
         "editarperf":"Editar Perfil",
         "modificarpref":"Modificar Perfil",
         "cambiarcontra":"Cambiar contraseña",
-        "encuesta":"Realizar Encuesta"
+        "encuesta":"Realizar Encuesta",
 
 
-    },
 
-    "Contrausu":{
+
+
 
         "modificarc":"Modificar contraseña",
         "contraoblig":"La contraseña es obligatoria.",
         "nocoincide":"Las contraseñas no coinciden",
         "salir":"Salir sin guardar",
-        "modificar":"Modificar"
+        "modificar":"Modificar",
 
 
-    }
+
+
+        "listadoda":"Listado de Dietas",
+        "todosr":"Todas los registros",
+        "dietasa":"Dietas",
+        "añadir":"Añadir",
+        "idd":"ID",
+        "tipoda":"Tipo de Dieta",
+        "tipousu":"Tipo de Usuario",
+        "imagend":"Imagen",
+
+
+        "añadirdiet":"Añadir dieta",
+        "relleneform":"Rellene el formulario",
+        "select":"Selector",
+        "premium":"Premium",
+        "nopremium":"No Premium"
+
+
+
 }

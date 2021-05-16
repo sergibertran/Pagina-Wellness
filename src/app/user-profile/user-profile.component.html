@@ -10,14 +10,14 @@
             </a>
           </div>
           <div class="card-body" *ngIf="ready==true">
-            <h6 class="card-category text-gray">Usuario: </h6>
+            <h6 class="card-category text-gray">{{"usuario" | translate}}</h6>
             <h4 class="card-title">{{this.usuario}}</h4>
             <div *ngIf="isAdmin()==false">
 
               <p class="card-title ">
-                Direccion: {{this.direccion}} <br>
-                Altura:{{this.altura}} <br>
-                Peso: {{this.peso}}
+                {{"direccion" | translate}} {{this.direccion}} <br>
+                {{"altura" | translate}}{{this.altura}} <br>
+                {{"peso" | translate}} {{this.peso}}
               </p>
             </div>
           </div>
@@ -27,7 +27,7 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Editar Perfil</h4>
+            <h4 class="card-title">{{"editarperf" | translate}}</h4>
 
           </div>
           <div class="card-body" *ngIf="ready==true">
@@ -80,13 +80,12 @@
                 </div>
 
               </div>
-              <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar Perfil</button>
-              <button mat-raised-button routerLink="/ModificarPwd" class="btn btn-primary pull-right">Cambiar
-                contraseña</button>
+              <button mat-raised-button type="submit" class="btn btn-primary pull-right">{{"modificarpref" | translate}}</button>
+              <button mat-raised-button routerLink="/ModificarPwd" class="btn btn-primary pull-right">{{"cambiarcontra" | translate}}</button>
 
               <div *ngIf="isAdmin()==false">
                 <button mat-raised-button routerLink="/Enquesta" routerLinkActive="active"
-                  class="btn btn-primary pull-right">Realizar Enquesta</button>
+                  class="btn btn-primary pull-right">{{"encuesta" | translate}}</button>
               </div>
             </form>
           </div>

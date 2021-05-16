@@ -52,10 +52,20 @@ export class AuthService {
   }
 
   insertDietas(datos){
+    console.log(datos);
+    
 
     return this.http.post(`${environment.apiUrl}/insertDietas.php`, JSON.stringify(datos));
 
   }
+
+  insertRutinas(datos){
+    console.log(datos);   
+
+    return this.http.post(`${environment.apiUrl}/insertRutinas.php`, JSON.stringify(datos));
+
+  }
+
 
   guardarComentarios(datos){
 
@@ -66,6 +76,12 @@ export class AuthService {
   eliminarDia(datos){
 
     return this.http.post(`${environment.apiUrl}/eliminarDiaCalendario.php`, JSON.stringify(datos));
+
+  }
+  borrarRutina(datos){
+    console.log(datos);
+    
+    return this.http.post(`${environment.apiUrl}/deleteRutina.php`, JSON.stringify(datos));
 
   }
 
@@ -86,7 +102,12 @@ console.log(user);
     return this.http.post(`${environment.apiUrl}/loadDietasUsuario.php`, JSON.stringify(user));
   }
 
-
+  
+  borrarDieta(user){
+    console.log(user);
+    
+    return this.http.post(`${environment.apiUrl}/deleteDieta.php`, JSON.stringify(user));
+  }
 
   loadDietasUsuarioPremium(user){
 
