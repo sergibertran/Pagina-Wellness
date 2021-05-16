@@ -80,29 +80,21 @@ export class ModificarDietaComponent implements OnInit {
         this.tipoDieta= data[0].TipoDieta;
         this.imagen= data[0].Imagen;
 
-console.log(this.nombreDieta);
 
         console.log(this.datos);
-        
-    
 
-   
-            this.ModificarDieta= new FormGroup({
-              nombreDieta: new FormControl(this.datos[0]["NDieta"], [
-                Validators.minLength(2),
-                Validators.maxLength(15),
-                Validators.required,
-              ]),
-              tipoDieta: new FormControl(this.datos[0]["TipoDieta"], [
-                Validators.minLength(2),
-                Validators.maxLength(15),
-                Validators.required,
-              ]),
-              Imagen: new FormControl(this.datos[0]["Imagen"], [
-                Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?")
-              ]),
-            })
         
+        
+        this.ModificarDieta = new FormGroup({
+          nombreDieta: new FormControl('', Validators.compose([
+            Validators.maxLength(15),Validators.minLength(3),
+            Validators.required])),
+          tipoDieta: new FormControl('', Validators.compose([
+            Validators.maxLength(15),Validators.minLength(3),
+            Validators.required])),
+            imagen: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
+        });      
+        console.log(this.ModificarDieta.value);
 
         this.ready = true;
       });
