@@ -32,6 +32,16 @@
     },
     
     
+    "login-register":{
+
+        "bienvenido":"Welcome",
+        "entrar":"Get in",
+        "usuario":"User",
+        "contra":"Password"
+
+    },
+    
+    
     "Dietas":"Diets",
     "Menu Principal":"Main Menu",
     "Rutinas":"Routines",
@@ -44,6 +54,51 @@
         "Rutinas":"Routines",
         "Usuarios": "Users",
         "Premiums": "VIP"
+
+    },
+
+    "DietasUsu":{
+
+        "listadod":"List of Diets",
+        "todasd":"All diets",
+        "tipod":"Diet Type",
+        "nombred":"Name",
+        "acciond":"Actions"
+
+    },
+
+    "Rutinausu":{
+
+        "listador":"List of Routines",
+        "todasr":"All Routines",
+        "rutinas":"Routines",
+        "tipor":"Routine Type",
+        "accionr":"Actions"
+
+    },
+
+    "PerfilUsu":{
+
+        "usuario":"User:",
+        "direccion":"Direction:",
+        "altura":"Height:",
+        "peso":"Weight:",
+        "editarperf":"Edit profile",
+        "modificarpref":"Modify Profile",
+        "cambiarcontra":"Change Password",
+        "encuesta":"Take Survey"
+
+
+    },
+
+    "Contrausu":{
+
+        "modificarc":"Modify password",
+        "contraoblig":"The password is mandatory.",
+        "nocoincide":"Passwords do not match",
+        "salir":"Exit without saving",
+        "modificar":"Modify"
+
 
     }
 

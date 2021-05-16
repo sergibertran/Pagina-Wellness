@@ -32,7 +32,15 @@
         "infodo": "Puedes encontrarnos en CEEILLEIDA Edificio 2 en Complejo la Caparrella, Lleida, Catalunya 25192. Para reservar hora con nuestros nutricionistas podeis concretar hora a traves de la web. En caso de querer informacion para negocios podeis concretar hora a traves del siguiente correo: informacio.wellness@gmail.com."
 
     },
-    
+
+    "login-register":{
+
+        "bienvenido":"Bienvenido/a",
+        "entrar":"Entrar",
+        "usuario":"Usuario",
+        "contra":"Contraseña"
+
+    },
     
     
     "Dietas":"Dietas",
@@ -47,6 +55,51 @@
         "Rutinas":"Rutinas",
         "Usuarios": "Usuarios",
         "Premiums": "Premiums"
+
+    },
+
+    "DietasUsu":{
+
+        "listadod":"Listado de Dietas",
+        "todasd":"Todas las dietas",
+        "tipod":"Tipo Dieta",
+        "nombred":"Nombre",
+        "acciond":"Acciones"
+
+    },
+
+    "Rutinausu":{
+
+        "listador":"Listado de Rutinas",
+        "todasr":"Todos las Rutinas",
+        "rutinas":"Rutinas",
+        "tipor":"Tipo Rutina",
+        "accionr":"Acciones"
+
+    },
+
+    "PerfilUsu":{
+
+        "usuario":"Usuario:",
+        "direccion":"Direccion:",
+        "altura":"Altura:",
+        "peso":"Peso:",
+        "editarperf":"Editar Perfil",
+        "modificarpref":"Modificar Perfil",
+        "cambiarcontra":"Cambiar contraseña",
+        "encuesta":"Realizar Encuesta"
+
+
+    },
+
+    "Contrausu":{
+
+        "modificarc":"Modificar contraseña",
+        "contraoblig":"La contraseña es obligatoria.",
+        "nocoincide":"Las contraseñas no coinciden",
+        "salir":"Salir sin guardar",
+        "modificar":"Modificar"
+
 
     }
 }

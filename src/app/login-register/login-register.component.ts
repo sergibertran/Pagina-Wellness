@@ -7,6 +7,8 @@ import { ModalhomeComponent } from 'app/modalhome/modalhome.component';
 import { usuario } from 'app/models/usuario';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { IdiomaService } from 'app/services/idioma.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -25,7 +27,7 @@ export class LoginRegisterComponent implements OnInit {
   alumno = new usuario();
   RegisterForm: FormGroup;
 
-  constructor(  public dialog: MatDialog, private dialogRef: MatDialogRef<LoginRegisterComponent>,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
+  constructor( private _servicio:IdiomaService,public translate:TranslateService, public dialog: MatDialog, private dialogRef: MatDialogRef<LoginRegisterComponent>,private fb: FormBuilder,private http: HttpClient,private authService: AuthService,  private router: Router,) { 
     
 
   
