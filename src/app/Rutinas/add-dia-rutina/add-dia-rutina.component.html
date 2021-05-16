@@ -4,8 +4,8 @@
         <div class="col">
           <div class="card">
             <div class="card-header card-header-rosa">
-              <h4 class="card-title">Añadir dias</h4>
-              <p class="card-category">Rellene el formulario</p>
+              <h4 class="card-title">{{"añadirdia" | translate}}</h4>
+              <p class="card-category">{{"relleneform" | translate}}</p>
             </div>
             <div class="card-body">
   
@@ -17,7 +17,7 @@
   
                     <form [formGroup]="lessonForm" (ngSubmit)="Submit()">
   
-                    <strong>Dia  {{i+1}} </strong>
+                    <strong>{{"dia" | translate}}  {{i+1}} </strong>
   
   
          
@@ -73,11 +73,11 @@
               </div>
   
               <div *ngIf="mostrarboton">
-              <button mat-raised-button [disabled]="!form.valid" (click)="Submit()" type="submit" class="btn btn-primary pull-right">Añadir dias a la dieta</button>
+              <button mat-raised-button [disabled]="!form.valid" (click)="Submit()" type="submit" class="btn btn-primary pull-right">{{"añadirdiar" | translate}}</button>
               </div>
   
               <div *ngIf="mostrarboton2">
-              <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">Nuevo dia</button>
+              <button mat-raised-button  (click)="addLesson(i)" class="btn btn-primary pull-right">{{"nuevodia" | translate}}</button>
               </div>
   
               <div class="clearfix"></div>
