@@ -6,6 +6,8 @@ import { first } from 'rxjs/operators';
 import { IdiomaService } from 'app/services/idioma.service';
 import { TranslateService } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
+import { VerImagenComponent } from 'app/ver-imagen/ver-imagen.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-ver-rutinas',
@@ -18,7 +20,9 @@ export class VerRutinasComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private _servicio:IdiomaService,
-    public translate:TranslateService) { }
+    public translate:TranslateService,
+    public dialog: MatDialog
+    ) { }
   test=2;
   ngOnInit(): void {
 
@@ -82,6 +86,18 @@ export class VerRutinasComponent implements OnInit {
   EnviarId(datos){
 
     console.log(datos);
+    
+  }
+
+  openDialog(arg) {
+
+    console.log(arg);
+    
+    this.dialog.open(VerImagenComponent, {
+      data: arg,
+
+    });
+    
     
   }
 }

@@ -12,7 +12,7 @@
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
  
- $sql = "SELECT idRutina, Nrutina, Premium
+ $sql = "SELECT idRutina, Nrutina, imagen
  FROM daw2_jamsweb.rutina;
  ");
  
