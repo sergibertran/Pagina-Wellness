@@ -34,6 +34,12 @@
                                     <mat-error *ngIf="addDieta.get('tipoDieta').hasError('required')">
                                       El tipo de dieta es requerido
                                      </mat-error>  
+                                     <mat-error *ngIf="addDieta.get('nombreDieta').hasError('maxlength')">
+                                      El nombre de tipo dieta es muy largo
+                                    </mat-error>
+                                    <mat-error *ngIf="addDieta.get('nombreDieta').hasError('minlength')">
+                                      El nombre de tipo dieta es muy corto
+                                    </mat-error>    
                                   </mat-form-field>
                                 </div>
                               
