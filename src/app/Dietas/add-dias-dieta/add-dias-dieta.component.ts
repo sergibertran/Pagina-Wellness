@@ -4,6 +4,8 @@ import { Validators } from '@angular/forms';
 import { diasdieta } from './../../models/diasdieta';
 import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
+import { first } from 'rxjs/operators';
 
 
 @Component({
@@ -23,7 +25,7 @@ longitud: number;
   form = this.fb.group({
     lessons:this.fb.array([])
   })
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private authService: AuthService) { }
 
   get lessons(){
     return this.form.controls["lessons"] as FormArray
@@ -136,7 +138,17 @@ longitud: number;
 
 console.log(this.lessons);
 
+this.authService.anadirDiasDieta(this.lessons)
+.pipe(first())
+.subscribe(
+  (data) => {
   
+    console.log(data);
+    
+
+    
+
+});
   
 
  }

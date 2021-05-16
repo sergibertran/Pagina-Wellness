@@ -59,6 +59,18 @@ export class AuthService {
 
   }
 
+
+  anadirDiasDieta(info){
+    console.log(info);
+return this.http.post(`${environment.apiUrl}/anadirDiasDieta.php`, JSON.stringify(info.value));
+  }
+
+  guardarDiasDieta(info){
+console.log(info);
+return this.http.post(`${environment.apiUrl}/guardarDiasDieta.php`, JSON.stringify(info.value));
+
+  }
+
   insertRutinas(datos){
     console.log(datos);   
 

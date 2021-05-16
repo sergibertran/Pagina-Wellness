@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { CalendarioService } from "app/services/calendario.service";
 import { first } from "rxjs/operators";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog,MatDialogRef } from "@angular/material/dialog";
 import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
 import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
@@ -38,7 +38,7 @@ export class CalendarioComponent implements OnInit {
   RegisterForm: FormGroup;
   
 
-
+  @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
 
 
@@ -68,6 +68,38 @@ export class CalendarioComponent implements OnInit {
   }else{
       this.translate.use(this._servicio.getIdioma())
   }
+
+
+   this.reload();
+  }
+
+
+  
+
+  openDialog(arg) {
+    arg.idUser=this.idUsuario;
+console.log('abrir');
+console.log(arg);
+
+    const dialogRef =this.dialog.open(CalendarioModalComponent, {
+      data: arg,
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+  
+      console.log( 'se cierra');
+    
+      this.events=[];
+      this.reload();
+
+
+    });
+  }
+
+
+
+  reload(){
     this.idUsuario=localStorage.getItem('iDUser');
     this.RegisterForm = this.fb.group({
       'idUsuario': [ this.idUsuario],
@@ -77,16 +109,11 @@ export class CalendarioComponent implements OnInit {
 
     var myFormDataa = new FormData();
    
- 
-    
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
     console.log(res);
 if (res!=null){
-
-
-    
 
         for (let index = 0; index < Object.keys(res).length; index++) {
   
@@ -142,24 +169,24 @@ console.log(this);
     this.addEventForm = this.formBuilder.group({
       title: [[Validators.required]],
     });
-  }
 
-  openDialog(arg) {
-    arg.idUser=this.idUsuario;
-console.log('abrir');
-console.log(arg);
 
-    this.dialog.open(CalendarioModalComponent, {
-      data: arg,
-
-    });
   }
 
   openDialogInfo(arg) {
  console.log('aaa');
  
-      this.dialog.open(CalendarioModal2Component, {
+      const dialogRef =this.dialog.open(CalendarioModal2Component, {
         data: arg,
+      });
+      dialogRef.afterClosed().subscribe(result => {
+  
+        console.log( 'se cierra');
+      
+        this.events=[];
+        this.reload();
+  
+  
       });
     }
 
