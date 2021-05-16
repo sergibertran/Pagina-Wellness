@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { CalendarioService } from "app/services/calendario.service";
 import { first } from "rxjs/operators";
-import { MatDialog,MatDialogRef } from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { CalendarioModalComponent } from "./calendario-modal/calendario-modal.component";
 import esLocale from '@fullcalendar/core/locales/es';
 import { CalendarioModal2Component } from "./calendario-modal2/calendario-modal2.component";
@@ -36,7 +36,7 @@ export class CalendarioComponent implements OnInit {
   Profile;
   idUsuario;
   RegisterForm: FormGroup;
-  
+
 
   @ViewChild('calendar') calendarComponent: FullCalendarComponent;
 
@@ -46,51 +46,51 @@ export class CalendarioComponent implements OnInit {
   get f() {
     return this.addEventForm.controls;
   }
- 
+
   constructor(
-    private _servicio:IdiomaService,
-    public translate:TranslateService,
+    private _servicio: IdiomaService,
+    public translate: TranslateService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
     public dialog: MatDialog,
     private fb: FormBuilder
-  ) { 
-    this.translate.addLangs(['es','en']);
-   
+  ) {
+    this.translate.addLangs(['es', 'en']);
+
   }
 
   calendarOptions: CalendarOptions;
   ngOnInit() {
-    if(this._servicio.getIdioma()==undefined){
+    if (this._servicio.getIdioma() == undefined) {
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())
-  }else{
+    } else {
       this.translate.use(this._servicio.getIdioma())
+    }
+
+
+    this.reload();
   }
 
 
-   this.reload();
-  }
 
-
-  
 
   openDialog(arg) {
-    arg.idUser=this.idUsuario;
-console.log('abrir');
-console.log(arg);
+    arg.idUser = this.idUsuario;
+    console.log('abrir');
+    console.log(arg);
 
-    const dialogRef =this.dialog.open(CalendarioModalComponent, {
+    const dialogRef = this.dialog.open(CalendarioModalComponent, {
       data: arg,
 
     });
 
     dialogRef.afterClosed().subscribe(result => {
-  
-      console.log( 'se cierra');
-    
-      this.events=[];
+
+      console.log('se cierra');
+     
+      this.events = [];
       this.reload();
 
 
@@ -99,70 +99,86 @@ console.log(arg);
 
 
 
-  reload(){
-    this.idUsuario=localStorage.getItem('iDUser');
+  reload() {
+    this.idUsuario = localStorage.getItem('iDUser');
     this.RegisterForm = this.fb.group({
-      'idUsuario': [ this.idUsuario],
+      'idUsuario': [this.idUsuario],
 
-   
+
     });
 
     var myFormDataa = new FormData();
-   
+
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
-    console.log(res);
-if (res!=null){
+        console.log(res);
+        if (res != null) {
 
-        for (let index = 0; index < Object.keys(res).length; index++) {
-  
-          if (res[index].comentarios == "Dieta") {
-            this.events.push({
-              title: res[index].comentarios,
-              date: res[index].fecha,
-              color: "#fed9d5",
-              textColor: "black",
-              res: res[index],
-           
-              id: res[index].idDieta,
-              groupId: res[index].idDia,
-            });
-          } else if (res[index].comentarios == "Rutina") {
-            this.events.push({
-              title: res[index].comentarios,
-              date: res[index].fecha,
-              color: "#dae5fd",
-              textColor: "black",
-              res: res[index],
-              id: res[index].idRutina,
-              groupId: res[index].idDia,
-            });
-          } else if (res[index].comentarios == "Comentarios") {
-            this.events.push({
-              title: res[index].comentarios,
-              date: res[index].fecha,
-              color: "#e7f5d0",
-              textColor: "black",
-              res: res[index],
-              id: res[index].idCalendario,
-              groupId: res[index].idDia,
-            });
+          for (let index = 0; index < Object.keys(res).length; index++) {
+
+            if (res[index].comentarios == "Dieta") {
+              this.events.push({
+                title: res[index].comentarios,
+                date: res[index].fecha,
+                color: "#fed9d5",
+                textColor: "black",
+                res: res[index],
+
+                id: res[index].idDieta,
+                groupId: res[index].idDia,
+              });
+            } else if (res[index].comentarios == "Rutina") {
+              this.events.push({
+                title: res[index].comentarios,
+                date: res[index].fecha,
+                color: "#dae5fd",
+                textColor: "black",
+                res: res[index],
+                id: res[index].idRutina,
+                groupId: res[index].idDia,
+              });
+            } else if (res[index].comentarios == "Comentarios") {
+              this.events.push({
+                title: res[index].comentarios,
+                date: res[index].fecha,
+                color: "#e7f5d0",
+                textColor: "black",
+                res: res[index],
+                id: res[index].idCalendario,
+                groupId: res[index].idDia,
+              });
+            }
           }
         }
-      }
 
-console.log(this);
+        console.log(this);
 
-        this.calendarOptions = {
-          locale: esLocale,
-          initialView: "dayGridMonth",
-          dateClick:   this.openDialog.bind(this),
-          eventClick:this.openDialogInfo.bind(this),
-         
-          events: this.events,
+        if (this._servicio.getIdioma() == 'es') {
+          this.calendarOptions = {
 
-        };
+            locale: esLocale,
+            initialView: "dayGridMonth",
+            dateClick: this.openDialog.bind(this),
+            eventClick: this.openDialogInfo.bind(this),
+            events: this.events,
+
+          };
+          this.reload();
+        } else {
+          this.calendarOptions = {
+
+
+            initialView: "dayGridMonth",
+            dateClick: this.openDialog.bind(this),
+            eventClick: this.openDialogInfo.bind(this),
+            events: this.events,
+
+          };
+
+          this.reload();
+        }
+
       });
 
     //Add User form validations
@@ -174,26 +190,26 @@ console.log(this);
   }
 
   openDialogInfo(arg) {
- console.log('aaa');
- 
-      const dialogRef =this.dialog.open(CalendarioModal2Component, {
-        data: arg,
-      });
-      dialogRef.afterClosed().subscribe(result => {
-  
-        console.log( 'se cierra');
-      
-        this.events=[];
-        this.reload();
-  
-  
-      });
-    }
+    console.log('aaa');
+
+    const dialogRef = this.dialog.open(CalendarioModal2Component, {
+      data: arg,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+      console.log('se cierra');
+
+      this.events = [];
+      this.reload();
+
+
+    });
+  }
 
   //Show Modal with Forn on dayClick Event
   handleDateClick(arg) {
-  this.openDialog(arg);
-  
+    this.openDialog(arg);
+
   }
 
 
