@@ -1,2 +1,7 @@
-<img [src]="data" alt="">
+<div *ngIf="imagen">
+    <img [src]="data" alt="">
+</div>
+<div *ngIf="noimagen">
+    No hay imagen disponible
+</div>
 

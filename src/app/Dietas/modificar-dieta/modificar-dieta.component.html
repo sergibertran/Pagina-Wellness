@@ -4,20 +4,22 @@
       <div class="col">
         <div class="card">
           <div class="card-header card-header-rosa">
-            <h4 class="card-title">Modificar dieta</h4>
-            <p class="card-category">Rellene el formulario</p>
+            <h4 class="card-title">{{"modificardiet" | translate}}</h4>
+            <p class="card-category">{{"relleneform" | translate}}</p>
           </div>
-           <form [formGroup]="myGroup" (ngSubmit)="Submit()" *ngIf="ready==true">
+          <form [formGroup]="myGroup" (ngSubmit)="Submit()" *ngIf="ready==true">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="nombreDieta" value={{this.nombreDieta}} placeholder="Nombre dieta" type="text">
+                    <input matInput formControlName="nombreDieta" value={{this.nombreDieta}} placeholder="Nombre dieta"
+                      type="text">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput formControlName="tipoDieta" value={{this.tipoDieta}} placeholder="Tipo Dieta" type="text">
+                    <input matInput formControlName="tipoDieta" value={{this.tipoDieta}} placeholder="Tipo Dieta"
+                      type="text">
                   </mat-form-field>
                 </div>
               </div>
@@ -34,85 +36,85 @@
               <button mat-raised-button type="submit" class="btn btn-primary pull-right">Modificar dieta</button>
               <button mat-raised-button (click)="MostrarDias()" class="btn btn-primary pull-right">Ver dias</button>
             </div>
-          </form>  
-        </div> 
+          </form>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div *ngIf="MostrarDiasB">
+  <div *ngIf="MostrarDiasB">
 
-      <div *ngFor="let item of Ranking_modificarArray.controls;index as i "
-        [formGroup]="Ranking_modificarArray.controls[i]">
+    <div *ngFor="let item of Ranking_modificarArray.controls;index as i "
+      [formGroup]="Ranking_modificarArray.controls[i]">
 
-        <div class="card">
-          <div class="card-body">
-
-
+      <div class="card">
+        <div class="card-body">
 
 
-            Dia {{i+1}}
 
-            <div class="row">
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Desayuno" type="text"></textarea>
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text"></textarea>
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Comida" placeholder="Comida" type="text"></textarea>
-                </mat-form-field>
-              </div>
+
+          Dia {{i+1}}
+
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Desayuno" type="text"></textarea>
+              </mat-form-field>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Merienda" placeholder="Merienda" type="text"></textarea>
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Merienda2" placeholder="Merienda 2" type="text"></textarea>
-                </mat-form-field>
-              </div>
-              <div class="col-md-4">
-                <mat-form-field class="example-full-width">
-                  <textarea matInput formControlName="Cena" placeholder="Cena" type="text"></textarea>
-                </mat-form-field>
-
-              </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
-
-
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Desayuno2" placeholder="Desayuno 2" type="text"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Comida" placeholder="Comida" type="text"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Merienda" placeholder="Merienda" type="text"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Merienda2" placeholder="Merienda 2" type="text"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <textarea matInput formControlName="Cena" placeholder="Cena" type="text"></textarea>
+              </mat-form-field>
 
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <button  (click)="deleteLesson(i)" class="btn btn-primary btn-round"> <i class="material-icons">delete</i> </button> -->
 
 
 
           </div>
+
+
+
+
         </div>
       </div>
     </div>
-
   </div>
+
 </div>

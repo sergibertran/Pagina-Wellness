@@ -98,7 +98,8 @@
         "salir":"Exit without saving",
         "modificar":"Modify",
 
-
+        "modificardiet":"Modify diet",
+        "verdias":"See days",
 
 
 
@@ -114,7 +115,18 @@
 
         "añadirdiet":"Add diet",
         "relleneform":"Fill the form",
-        "creard":"Create diet"
+        "creard":"Create diet",
+
+        "añadirdia":"Add days",
+        "dia":"Day",
+        "añadirdiad":"Add days to the diet",
+        "nuevodia":"New day",
+
+        "listadousu":"List of Users",
+        "todosusus":"All users",
+        "usuarios":"Users",
+        "nombreusu":"Username",
+        "accionusu":"Actions"
 
 
 

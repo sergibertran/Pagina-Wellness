@@ -5,6 +5,8 @@ import { diasdieta } from './../../models/diasdieta';
 import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
+import { IdiomaService } from 'app/services/idioma.service';
+import { TranslateService } from '@ngx-translate/core';
 import { first } from 'rxjs/operators';
 
 
@@ -25,7 +27,7 @@ longitud: number;
   form = this.fb.group({
     lessons:this.fb.array([])
   })
-  constructor(private fb: FormBuilder,private authService: AuthService) { }
+  constructor(private _servicio:IdiomaService,public translate:TranslateService,private fb: FormBuilder,private authService: AuthService) { }
 
   get lessons(){
     return this.form.controls["lessons"] as FormArray
@@ -111,6 +113,13 @@ longitud: number;
   }
   ngOnInit(): void {
 
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
   }
 
   botonadd(){

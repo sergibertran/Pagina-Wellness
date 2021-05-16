@@ -54,11 +54,14 @@
 
                 <div style="padding-right: 200px;" class="col-md-4">
                   <p style="margin-left: 205px;">{{item.NDieta}}</p>
+
                 </div>
 
                 <div class="col-md-3">
-                  <p style="margin-left: 170px;"><button class="btn btn-primary btn-round"
-                      (click)='verDias()'>VER</button> </p>
+                  <button class="btn btn-primary btn-round"
+                      (click)='verDias()'>VER</button> 
+                      <button (click)="openDialog(item.Imagen)" class="btn btn-primary btn-round"> <i class="material-icons">
+                        image</i></button>
                 </div>
 
               </div>

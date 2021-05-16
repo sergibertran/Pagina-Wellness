@@ -8,12 +8,21 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 })
 export class VerImagenComponent implements OnInit {
 
+  imagen:boolean=false
+  noimagen:boolean=false
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
   ngOnInit(): void {
     
-   
+   if(this.data==null){
+
+    this.noimagen=true
+
+   }else{
+     this.imagen=true
+
+   }
     
   }
 

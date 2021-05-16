@@ -3,48 +3,58 @@
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-header card-header-primary">
-                        <h4 class="card-title">Añadir rutina</h4>
-                        <p class="card-category">Complete el formulario para registrarlo</p>
+                    <div class="card-header card-header-rosa">
+                        <h4 class="card-title">{{"añadirdiet" | translate}}</h4>
+                        <p class="card-category">{{"relleneform" | translate}}</p>
                     </div>
                     <div class="card-body">
-                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="addRutina" (ngSubmit)="onSubmit()">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <mat-form-field class="example-full-width">
-                                        <input matInput placeholder="Nombre rutina" formControlName="nombreRutina"
-                                            class="form-control"
-                                            [ngClass]="{ 'is-invalid': submitted}">
-                                    </mat-form-field>
+                          
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="nombreRutina"  placeholder="Nombre dieta" type="text">
+                                     <mat-error *ngIf="addRutina.get('nombreRutina').hasError('required')">
+                                      El nombre de dieta es requerido
+                                      </mat-error>  
+                                      <mat-error *ngIf="addRutina.get('nombreRutina').hasError('maxlength')">
+                                        El nombre de dieta es muy largo
+                                      </mat-error>
+                                      <mat-error *ngIf="addRutina.get('nombreRutina').hasError('minlength')">
+                                        El nombre de dieta es muy corto
+                                      </mat-error>    
+                               
+                                  </mat-form-field>
                                 </div>
-                                <div class="col-md-4">
-                                    <mat-form-field >
-                                      <mat-label>Selector</mat-label>
-                                      <mat-select formControlName="PremiumNoPremium">
-                                        <mat-option value="1">Premium</mat-option>
-                                        <mat-option value="0">No Premium</mat-option>
-                                      </mat-select>
-                                    </mat-form-field>
-                                  </div>
+                            
+                              
                             </div>
 
+                          
+                       
+                        
                             <div class="row">
-                                <div class="col-md-12">
-                                    <label>Imagen</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Escoge una foto</label>
-                                    </div>
-                                </div>
+                              <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput formControlName="img"  placeholder="Link de imagen" type="text">
+                                  <mat-error *ngIf="addRutina.get('img').hasError('pattern')">
+                                    El link no es valido
+                                   </mat-error>
+                                </mat-form-field>
+                              </div>
                             </div>
-
-                            <button mat-raised-button type="submit" button [disabled]="registerForm.invalid" class="btn btn-primary pull-right">Crear Rutina</button>
+                            <button mat-raised-button [disabled]="addRutina.invalid" type="submit" class="btn btn-primary pull-right">{{"creard" | translate}}</button>
+                           
+                          
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-
+       
         </div>
     </div>
-</div>
+  </div>
+  

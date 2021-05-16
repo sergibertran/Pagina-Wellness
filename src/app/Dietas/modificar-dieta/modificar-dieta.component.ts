@@ -10,6 +10,8 @@ import { AuthService } from "./../../services/auth.service";
 import { Component, OnInit } from "@angular/core";
 import { first } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { IdiomaService } from 'app/services/idioma.service';
+import { TranslateService } from '@ngx-translate/core';
 import { ready } from "jquery";
 
 @Component({
@@ -24,7 +26,9 @@ export class ModificarDietaComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private http: HttpClient,
-    private authService: AuthService
+    private authService: AuthService,
+    private _servicio:IdiomaService,
+    public translate:TranslateService
   ) {}
   dietas;
   ModificarDieta: FormGroup;
@@ -41,6 +45,14 @@ export class ModificarDietaComponent implements OnInit {
   Ranking_modificarDietaArray = new FormArray([]);
   Ranking_modificarArray = new FormArray([]);
   ngOnInit(): void {
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
+
     this.id = this.router.url.split("/")[2];
 
     console.log(this.id);
