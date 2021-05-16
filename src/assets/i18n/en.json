@@ -109,8 +109,12 @@
         "idd":"ID",
         "tipoda":"Diet Type",
         "tipousu":"Type of user",
-        "imagend":"Image"
+        "imagend":"Image",
 
+
+        "añadirdiet":"Add diet",
+        "relleneform":"Fill the form",
+        "creard":"Create diet"
 
 
 
