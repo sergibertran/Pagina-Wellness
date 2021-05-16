@@ -45,7 +45,7 @@ export class CalendarioModalComponent implements OnInit {
   TotaldiasArray = [];
   checked = true;
   dia = 1;
-  myGroup:FormGroup
+  myGroup: FormGroup;
   lastChecked = false;
   selectedDay: string = "";
   allProfiles = [
@@ -64,17 +64,15 @@ export class CalendarioModalComponent implements OnInit {
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(this.data.dateStr);
     this.maxDate = new Date(currentYear + 1, 11, 31);
   }
 
   ngOnInit(): void {
-
     this.myGroup = new FormGroup({
-      firstName: new FormControl()
-   });
+      comentarios: new FormControl(),
+    });
 
     console.log(this.data);
     console.log(this.data.idUser);
@@ -86,6 +84,7 @@ export class CalendarioModalComponent implements OnInit {
   }
 
   onSubmit(): void {
+   
     console.log("test");
 
     console.log(this.resultadoSelect);
@@ -168,7 +167,7 @@ export class CalendarioModalComponent implements OnInit {
     } else if (this.resultadoSelect == "Rutina") {
       this.fechaEnd = convertend(this.range.controls.end.value);
       this.fechaStart = this.range.controls.start.value.split("T")[0];
-
+      this.TotaldiasArray = [];
       let newDateStart = new Date(this.fechaStart);
       let newDateEnd = new Date(this.fechaEnd);
 
@@ -234,87 +233,75 @@ export class CalendarioModalComponent implements OnInit {
             });
         });
     } else if (this.resultadoSelect == "Comentarios") {
-
-   
-  
-      
-     
-
       this.fechaStart = this.range.controls.start.value.split("T")[0];
       let newDateStart = new Date(this.fechaStart);
-
-
-
-      if(this.lastChecked==true){
+      this.TotaldiasArray = [];
+      if (this.lastChecked == true && this.range.controls.end.value != null) {
+        console.log("true");
 
         this.fechaEnd = convertend(this.range.controls.end.value);
 
-     
-      let newDateEnd = new Date(this.fechaEnd);
+        let newDateEnd = new Date(this.fechaEnd);
 
-      while (
-        newDateStart.getMonth() != newDateEnd.getMonth() ||
-        newDateStart.getDate() != newDateEnd.getDate() ||
-        newDateStart.getFullYear() != newDateEnd.getFullYear()
-      ) {
+        while (
+          newDateStart.getMonth() != newDateEnd.getMonth() ||
+          newDateStart.getDate() != newDateEnd.getDate() ||
+          newDateStart.getFullYear() != newDateEnd.getFullYear()
+        ) {
+          if (this.dia > this.diasMaximo) {
+            this.dia = 1;
+          }
+
+          this.TotaldiasArray.push({
+            date: newDateStart,
+            comentario: this.myGroup.controls.comentarios.value,
+            idUsuario: this.data.idUser,
+          });
+          newDateStart = new Date(newDateStart);
+          newDateStart.setDate(newDateStart.getDate() + 1);
+          this.dia++;
+        }
         if (this.dia > this.diasMaximo) {
           this.dia = 1;
         }
 
         this.TotaldiasArray.push({
           date: newDateStart,
-          nDia: this.dia,
+          comentario: this.myGroup.controls.comentarios.value,
           idUsuario: this.data.idUser,
-        
         });
         newDateStart = new Date(newDateStart);
         newDateStart.setDate(newDateStart.getDate() + 1);
         this.dia++;
+        console.log(this.TotaldiasArray);
+
+        this.dia = 0;
+
+        this.authService
+          .guardarComentarios(this.TotaldiasArray)
+          .pipe(first())
+          .subscribe((data) => {
+            console.log(data);
+          });
+
+         
+      } else {
+        console.log(this.myGroup.controls.comentarios.value);
+        
+        this.TotaldiasArray.push({
+          date: newDateStart,
+          idUsuario: this.data.idUser,
+          comentario: this.myGroup.controls.comentarios.value,
+        });
+        console.log(this.TotaldiasArray);
+
+        this.authService
+          .guardarComentarios(this.TotaldiasArray)
+          .pipe(first())
+          .subscribe((data) => {
+            console.log(data);
+          });
       }
-      if (this.dia > this.diasMaximo) {
-        this.dia = 1;
-      }
-
-      this.TotaldiasArray.push({
-        date: newDateStart,
-        nDia: this.dia,
-        idUsuario: this.data.idUser,
-   
-      });
-      newDateStart = new Date(newDateStart);
-      newDateStart.setDate(newDateStart.getDate() + 1);
-      this.dia++;
-      console.log(this.TotaldiasArray);
-
-      this.dia = 0;
-
-      // this.authService
-      //   .comprovarRutinasEnDias(this.TotaldiasArray)
-      //   .pipe(first())
-      //   .subscribe((data) => {
-      //     console.log(data);
-      //   });
-
-    }else{
- 
-      
-      
-      this.TotaldiasArray.push({
-        date: newDateStart,
-        nDia: this.dia,
-        idUsuario: this.data.idUser,
-      
-      });
-      console.log(this.TotaldiasArray);
-      
-
-// this.authService
-      //   .comprovarRutinasEnDias(this.TotaldiasArray)
-      //   .pipe(first())
-      //   .subscribe((data) => {
-      //     console.log(data);
-      //   });
-    }
     }
   }
 

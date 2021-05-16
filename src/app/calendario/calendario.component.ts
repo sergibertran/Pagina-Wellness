@@ -104,7 +104,7 @@ if (res!=null){
               color: "#e7f5d0",
               textColor: "black",
               res: res,
-              id: res[index].idDieta,
+              id: res[index].idCalendario,
               groupId: res[index].idDia,
             });
           }
