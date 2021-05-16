@@ -32,7 +32,7 @@
         "infodo": "Puedes encontrarnos en CEEILLEIDA Edificio 2 en Complejo la Caparrella, Lleida, Catalunya 25192. Para reservar hora con nuestros nutricionistas podeis concretar hora a traves de la web. En caso de querer informacion para negocios podeis concretar hora a traves del siguiente correo: informacio.wellness@gmail.com."
 
     },
-
+    "PROXIMAMENTE":"Proximamente",
     "login-register":{
 
         "bienvenido":"Bienvenido/a",
@@ -49,15 +49,11 @@
     "HacersePREMIUM": "Hacerse PREMIUM",
     "VerPerfil": "Ver Perfil",
 
-    "DashBoard":{
 
-        "Dietas":"Dietas",
-        "Rutinas":"Rutinas",
         "Usuarios": "Usuarios",
-        "Premiums": "Premiums"
+        "Premiums": "Premium",
 
-    },
-
+    
    
         "listadod":"Listado de Dietas",
         "todasd":"Todas las dietas",

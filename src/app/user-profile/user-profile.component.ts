@@ -27,6 +27,7 @@ export class UserProfileComponent implements OnInit {
   DatosModal;
   altura;
   peso;
+  imagen;
   ngOnInit() {
 
     if(this._servicio.getIdioma()==undefined){
@@ -64,6 +65,10 @@ export class UserProfileComponent implements OnInit {
         Validators.required,
       ]),
       peso: new FormControl([0]["Peso"], [
+        Validators.email,
+        Validators.required,
+      ]),
+      imagen: new FormControl([0]["Imagen"], [
         Validators.email,
         Validators.required,
       ]),
@@ -108,6 +113,10 @@ export class UserProfileComponent implements OnInit {
           Validators.email,
           Validators.required,
         ]),
+        imagen: new FormControl(datos[0]["Imagen"], [
+          Validators.email,
+          Validators.required,
+        ]),
       });
    
       this.usuario = this.myForm.controls.usuario.value;
@@ -117,6 +126,9 @@ export class UserProfileComponent implements OnInit {
       this.direccion = this.myForm.controls.direccion.value;
       this.altura = this.myForm.controls.altura.value;
       this.peso = this.myForm.controls.peso.value;
+      this.imagen = this.myForm.controls.imagen.value;
+     
+      
     });
     this.ready=true;
   }
