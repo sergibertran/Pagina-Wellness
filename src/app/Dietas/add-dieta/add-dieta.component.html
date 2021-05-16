@@ -4,8 +4,8 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header card-header-rosa">
-                        <h4 class="card-title">Añadir dieta</h4>
-                        <p class="card-category">Rellene el formulario</p>
+                        <h4 class="card-title">{{"añadirdiet" | translate}}</h4>
+                        <p class="card-category">{{"relleneform" | translate}}</p>
                     </div>
                     <div class="card-body">
                         <form [formGroup]="addDieta" (ngSubmit)="Submit()">
@@ -58,7 +58,7 @@
                                 </mat-form-field>
                               </div>
                             </div>
-                            <button mat-raised-button [disabled]="addDieta.invalid" type="submit" class="btn btn-primary pull-right">Crear dieta</button>
+                            <button mat-raised-button [disabled]="addDieta.invalid" type="submit" class="btn btn-primary pull-right">{{"creard" | translate}}</button>
                            
                           
                             <div class="clearfix"></div>
