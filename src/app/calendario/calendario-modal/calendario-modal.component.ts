@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { CalendarioService } from "app/services/calendario.service";
 import { Profile } from "../calendario.component";
@@ -33,7 +33,7 @@ export class CalendarioModalComponent implements OnInit {
   resultadoSelectRutina = "";
   resultadoSelectDieta = "";
   resultadoSelect;
-
+  ComentariosControl: FormControl = new FormControl('', [ Validators.required]);
   fechaStart;
   fechaEnd;
   tipoUsuario;
@@ -70,10 +70,7 @@ export class CalendarioModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.myGroup = new FormGroup({
-      comentarios: new FormControl(),
-    });
-
+  
     console.log(this.data);
     console.log(this.data.idUser);
 
@@ -254,7 +251,7 @@ export class CalendarioModalComponent implements OnInit {
 
           this.TotaldiasArray.push({
             date: newDateStart,
-            comentario: this.myGroup.controls.comentarios.value,
+            comentario: this.ComentariosControl.value,
             idUsuario: this.data.idUser,
           });
           newDateStart = new Date(newDateStart);
@@ -267,7 +264,7 @@ export class CalendarioModalComponent implements OnInit {
 
         this.TotaldiasArray.push({
           date: newDateStart,
-          comentario: this.myGroup.controls.comentarios.value,
+          comentario: this.ComentariosControl.value,
           idUsuario: this.data.idUser,
         });
         newDateStart = new Date(newDateStart);
@@ -286,12 +283,12 @@ export class CalendarioModalComponent implements OnInit {
 
          
       } else {
-        console.log(this.myGroup.controls.comentarios.value);
+        console.log(this.ComentariosControl.value);
         
         this.TotaldiasArray.push({
           date: newDateStart,
           idUsuario: this.data.idUser,
-          comentario: this.myGroup.controls.comentarios.value,
+          comentario: this.ComentariosControl.value,
         });
         console.log(this.TotaldiasArray);
 
