@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 import { first } from 'rxjs/operators';
 import Swal from 'sweetalert2';
@@ -11,7 +12,9 @@ import Swal from 'sweetalert2';
 })
 export class VerRutinasComponent implements OnInit {
   rutinas;
-  constructor(private http: HttpClient,private authService: AuthService) { }
+  constructor(private http: HttpClient,
+    private authService: AuthService,
+    private router: Router) { }
   test=2;
   ngOnInit(): void {
     this.cargarRutina(this.test)
@@ -30,7 +33,11 @@ export class VerRutinasComponent implements OnInit {
       });
   }
 
-  Borrar(){
+  Borrar(i){
+
+
+
+
     Swal.fire({
       title: 'Estas segur@?',
       text: "No podras reviertir los cambios",
@@ -41,11 +48,21 @@ export class VerRutinasComponent implements OnInit {
       confirmButtonText: 'Si, borralo!'
     }).then((result) => {
       if (result.isConfirmed) {
+
+        this.authService
+        .borrarRutina(i)
+        .subscribe((datos) => {  
+          console.log(datos);   
+        });
+
         Swal.fire(
           'Borrada!',
-          'La dieta ha sido borrada correctamente.',
+          'La rutina ha sido borrada correctamente.',
           'success'
         )
+
+        window.location.reload();
+
       }
     })
    }
