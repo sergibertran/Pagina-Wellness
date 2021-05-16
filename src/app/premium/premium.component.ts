@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { premium } from 'app/models/premium';
 import { AuthService } from "app/services/auth.service";
 
@@ -19,13 +20,13 @@ export class PremiumComponent implements OnInit {
   cantidad: string;
   total:number=59.99;
   precio:number=59.99;
-  router: any;
   usuario: any;
 
 
 
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
     ) {}
 
   ngOnInit(): void {
@@ -75,11 +76,10 @@ onSubmit() {
   .guardarpremium(this.registerForm.value)
   .subscribe((datos) => {
 
-    console.log(datos);
-    
-    // this.router.navigate(['/user-profile']);
+    console.log(datos);   
 
   });
+  this.router.navigate(['/user-profile']);
 
 
 

@@ -23,7 +23,7 @@ $dias = $params->cantidad*30;
 
 
   $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
-  SET tUsuario=0, Npremium=0, dias_restantes=NULL, CVV='$params->cvv', Fecha_Tarjeta='$params->expNum', Tarjeta='$params->numTarjeta',  Nombre_Tarjeta='$params->nombre', inicio_premium='$fecha', final_premium='$fechafin'
+  SET Npremium=1, dias_restantes=$dias, CVV='$params->cvv', Fecha_Tarjeta='$params->expNum', Tarjeta='$params->numTarjeta',  Nombre_Tarjeta='$params->nombre', inicio_premium='$fecha', final_premium='$fechafin'
     WHERE idUsuario='$params->usuario'");
   
     header('Content-Type: application/json');
