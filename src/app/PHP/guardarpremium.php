@@ -8,7 +8,7 @@
 
   $params = json_decode($json); // DECODIFICA EL JSON Y LO GUARADA EN LA VARIABLE
 
-
+$dias = $params->cantidad*30;
   require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
   $conexion = conexion(); // CREA LA CONEXION
@@ -16,10 +16,14 @@
 
 
   //REALIZA LA QUERY A LA DB
+  
+  $fecha= date("Y-m-d");
+
+  $fechafin= date("Y-m-d",strtotime($fecha."+ $dias days")); 
 
 
   $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
-  SET tUsuario=0, Npremium=0, dias_restantes=NULL, CVV='$params->cvv', Fecha_Tarjeta='$params->expNum', Tarjeta='$params->numTarjeta',  Nombre_Tarjeta='$params->nombre'
+  SET tUsuario=0, Npremium=0, dias_restantes=NULL, CVV='$params->cvv', Fecha_Tarjeta='$params->expNum', Tarjeta='$params->numTarjeta',  Nombre_Tarjeta='$params->nombre', inicio_premium='$fecha', final_premium='$fechafin'
     WHERE idUsuario='$params->usuario'");
   
     header('Content-Type: application/json');
