@@ -201,7 +201,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
     this.authService.modificarPerfil(this.myForm.value).subscribe((datos) => {
       this.DatosModal = datos;
 
-     window.location.reload();
+    window.location.reload();
 
       
     });

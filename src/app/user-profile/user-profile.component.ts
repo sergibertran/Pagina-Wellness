@@ -120,6 +120,8 @@ export class UserProfileComponent implements OnInit {
       this.DatosModal = datos;
 
       console.log(this.DatosModal);
+
+      window.location.reload();
       
     });
   }
