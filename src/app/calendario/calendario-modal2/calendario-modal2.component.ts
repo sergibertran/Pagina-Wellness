@@ -24,7 +24,7 @@ export class CalendarioModal2Component implements OnInit {
   ngOnInit(): void {
     console.log(this.data);
     console.log(this.data.event.id);
- 
+    console.log(this.data.event._def.extendedProps.res.idCalendario);
     
 this.Tipode=this.data.event.title;
 
@@ -33,7 +33,8 @@ this.Tipode=this.data.event.title;
 
    this.form = this.fb.group({
     'id': [this.data.event.id],
-    'groupId': [this.data.event.groupId]
+    'groupId': [this.data.event.groupId],
+    'calendarioId': [this.data.event._def.extendedProps.res.idCalendario]
   });
     console.log(this.data.event.title);
     if(this.data.event.title=='Dieta'){
@@ -66,7 +67,8 @@ this.Tipode=this.data.event.title;
 
 }else if(this.data.event.title=='Comentarios'){
   this.form = this.fb.group({
-    'id': [this.data.event.id]
+    'id': [this.data.event.id],
+    'calendarioId': [this.data.event._def.extendedProps.res.idCalendario]
   });
 
 console.log(this.form.value);
@@ -84,5 +86,21 @@ console.log(this.form.value);
 
 }
   }
+
+borrar(){
+console.log(this.form.value);
+
+
+ this.authService.eliminarDia(this.form.value).subscribe (
+   datos => {
+  console.log(datos);
+   
+    
+
+ 
+   }
+  )
+
+}
 
 }

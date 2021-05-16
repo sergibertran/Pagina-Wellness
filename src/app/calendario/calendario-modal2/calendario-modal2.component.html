@@ -114,7 +114,7 @@
 
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Dieta</button>
+          <button type="button" (click)='borrar()' class="btn btn-primary" data-dismiss="modal">Eliminar Dieta</button>
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@
           </mat-card-content>
         </mat-card>
       </div>
-
+      <button type="button" class="btn btn-primary" (click)='borrar()' data-dismiss="modal">Eliminar Comentario</button>
     </div>
 
     <!-- RUTINA -->
@@ -232,7 +232,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Eliminar Rutina</button>
+          <button type="button" class="btn btn-primary" (click)='borrar()' data-dismiss="modal">Eliminar Rutina</button>
         </div>
       </div>
     </div>

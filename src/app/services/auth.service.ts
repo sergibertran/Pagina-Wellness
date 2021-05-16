@@ -63,7 +63,11 @@ export class AuthService {
 
   }
 
+  eliminarDia(datos){
 
+    return this.http.post(`${environment.apiUrl}/eliminarDiaCalendario.php`, JSON.stringify(datos));
+
+  }
 
   cargarTodosDiasRutina(user){
 console.log(user);

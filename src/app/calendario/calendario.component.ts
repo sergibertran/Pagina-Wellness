@@ -83,7 +83,8 @@ if (res!=null){
               date: res[index].fecha,
               color: "#fed9d5",
               textColor: "black",
-              res: res,
+              res: res[index],
+           
               id: res[index].idDieta,
               groupId: res[index].idDia,
             });
@@ -93,7 +94,7 @@ if (res!=null){
               date: res[index].fecha,
               color: "#dae5fd",
               textColor: "black",
-              res: res,
+              res: res[index],
               id: res[index].idRutina,
               groupId: res[index].idDia,
             });
@@ -103,7 +104,7 @@ if (res!=null){
               date: res[index].fecha,
               color: "#e7f5d0",
               textColor: "black",
-              res: res,
+              res: res[index],
               id: res[index].idCalendario,
               groupId: res[index].idDia,
             });
@@ -155,12 +156,6 @@ console.log(arg);
   
   }
 
-
-  borrar() {
-    return this.http
-      .post("http://localhost/delete.php/", "")
-      .subscribe((res: Response) => { });
-  }
 
 
   //Hide Modal PopUp and clear the form validations
