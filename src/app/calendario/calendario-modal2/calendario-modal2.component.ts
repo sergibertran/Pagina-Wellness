@@ -11,6 +11,7 @@ import { AuthService } from 'app/services/auth.service';
 })
 export class CalendarioModal2Component implements OnInit {
   form;
+  comentarios: any;
   dietas: any;
   rutinas: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private formBuilder: FormBuilder,
@@ -21,19 +22,20 @@ export class CalendarioModal2Component implements OnInit {
 
   Tipode;
   ngOnInit(): void {
+    console.log(this.data);
     console.log(this.data.event.id);
  
     
 this.Tipode=this.data.event.title;
 
    
-console.log(this.data.event);
+
 
    this.form = this.fb.group({
     'id': [this.data.event.id],
     'groupId': [this.data.event.groupId]
   });
-    console.log(this.form);
+    console.log(this.data.event.title);
     if(this.data.event.title=='Dieta'){
 
 
@@ -61,6 +63,24 @@ console.log(this.data.event);
  
     }
   )
+
+}else if(this.data.event.title=='Comentarios'){
+  this.form = this.fb.group({
+    'id': [this.data.event.id]
+  });
+
+console.log(this.form.value);
+
+  this.authService.cargarDatosComentario(this.form.value).subscribe (
+    datos => {
+    console.log(datos);
+    this.comentarios = datos[0].comentario;
+    
+
+ 
+    }
+  )
+
 
 }
   }
