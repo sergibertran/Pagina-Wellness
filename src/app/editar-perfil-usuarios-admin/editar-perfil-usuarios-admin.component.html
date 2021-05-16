@@ -14,9 +14,9 @@
             <h4 class="card-title">{{this.usuario}}</h4>
 
             <p class="card-title ">
-              Direccion: {{this.direccion}} <br>
-              Altura:{{this.altura}} <br>
-              Peso: {{this.peso}}
+              Direccion: {{this.direccionform}} <br>
+              Altura:{{this.alturaform}} <br>
+              Peso: {{this.pesoform}}
             </p>
           </div>
 
@@ -54,27 +54,27 @@
                 </div>
               </div>
 
-              <div class="row">
+               <div class="row">
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
                     <input matInput placeholder="Direccion" type="text" formControlName="direccion"
-                      value={{this.Direccion}}>
+                      value={{this.direccion}} [(ngModel)]="this.direccionform">
                   </mat-form-field>
                 </div>
 
 
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.Altura}}>
+                    <input matInput placeholder="altura" type="text" formControlName="altura" value={{this.altura}} [(ngModel)]="this.alturaform">
                   </mat-form-field>
                 </div>
 
 
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.Peso}}>
+                    <input matInput placeholder="peso" type="text" formControlName="peso" value={{this.peso}} [(ngModel)]="this.pesoform">
                   </mat-form-field>
-                </div>
+                </div> 
 
 
               </div>
@@ -90,7 +90,7 @@
 
 
       <!-- DATOS ENCUESTA -->
-      <div class="col-md-12">
+      <!-- <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Respuestas de la Encuesta</h4>
@@ -235,7 +235,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

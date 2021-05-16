@@ -27,6 +27,10 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   altura;
   peso;
   datosEncuesta: any;
+  pepe: any;
+  direccionform: any;
+  alturaform: any;
+  pesoform: any;
   constructor( private formBuilder: FormBuilder,
     private http: HttpClient,
     private calendarioService: CalendarioService,
@@ -45,13 +49,15 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   
       var myFormDataa = new FormData();
      
-      this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
-        (data) => {
-          this.datosEncuesta=data;
-          console.log(this.datosEncuesta);
-
-        })
+      console.log(this.idUsuario);
       
+      // this.authService.cargarEncuestaUser(this.idUsuario).subscribe(
+      //   (data) => {
+      //     this.datosEncuesta=data;
+      //     console.log(this.datosEncuesta);
+
+      //   })
+
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
         datos => {
           
@@ -60,7 +66,16 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
      console.log(datos);
      datos[0]['usuario'];
      console.log(datos[0]['usuario']);
-     
+     console.log(datos[0]['Direccion']);
+     console.log(this.infoUser);
+     this.direccionform=this.infoUser[0].Direccion;
+     this.alturaform=this.infoUser[0].Altura;
+     this.pesoform=this.infoUser[0].Peso;
+
+     localStorage.setItem('direccion', this.infoUser[0]['Direccion']);
+     localStorage.setItem('peso', this.infoUser[0]['Peso']);
+     localStorage.setItem('altura', this.infoUser[0]['Altura']);
+
      this.myForm = new FormGroup(
       {
         usuario: new FormControl((datos[0]['usuario']), [

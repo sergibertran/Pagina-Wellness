@@ -115,7 +115,7 @@ console.log(user);
 
   cargarEncuestaUser(iduser) {
     console.log(iduser);
-    
+
     return this.http.post(`${environment.apiUrl}/AdminCargarEncuestaUser.php`, JSON.stringify(iduser));
   }
  
