@@ -15,10 +15,20 @@ export class VerDietasComponent implements OnInit {
 dietas;
   constructor(private http: HttpClient,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private _servicio:IdiomaService,
+    public translate:TranslateService
     ) { }
   test=2;
   ngOnInit(): void {
+
+    if(this._servicio.getIdioma()==undefined){
+      this.translate.use(this.translate.getBrowserLang())
+      this._servicio.setIdioma(this.translate.getBrowserLang())
+  }else{
+      this.translate.use(this._servicio.getIdioma())
+  }
+
     this.cargarDieta(this.test)
   }
 

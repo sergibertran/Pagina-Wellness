@@ -68,17 +68,16 @@
 
     ,
 
-    "Rutinausu":{
+
 
         "listador":"List of Routines",
         "todasr":"All Routines",
         "rutinas":"Routines",
         "tipor":"Routine Type",
-        "accionr":"Actions"
+        "accionr":"Actions",
 
-    },
 
-    "PerfilUsu":{
+
 
         "usuario":"User:",
         "direccion":"Direction:",
@@ -87,21 +86,19 @@
         "editarperf":"Edit profile",
         "modificarpref":"Modify Profile",
         "cambiarcontra":"Change Password",
-        "encuesta":"Take Survey"
+        "encuesta":"Take Survey",
 
 
-    },
 
-    "Contrausu":{
+
 
         "modificarc":"Modify password",
         "contraoblig":"The password is mandatory.",
         "nocoincide":"Passwords do not match",
         "salir":"Exit without saving",
-        "modificar":"Modify"
+        "modificar":"Modify",
 
 
-    },
 
 
 
