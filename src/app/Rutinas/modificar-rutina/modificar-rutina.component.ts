@@ -15,14 +15,14 @@ import { TranslateService } from '@ngx-translate/core';
 import { ready } from "jquery";
 
 @Component({
-  selector: "app-modificar-dieta",
-  templateUrl: "./modificar-dieta.component.html",
-  styleUrls: ["./modificar-dieta.component.css"],
+  selector: 'app-modificar-rutina',
+  templateUrl: './modificar-rutina.component.html',
+  styleUrls: ['./modificar-rutina.component.css']
 })
-export class ModificarDietaComponent implements OnInit {
-  nombreDieta: any;
-  tipoDieta: any;
-  idDieta: any;
+export class ModificarRutinaComponent implements OnInit {
+  nombreRutina: any;
+  tipoRutina: any;
+  idRutina: any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -31,8 +31,8 @@ export class ModificarDietaComponent implements OnInit {
     private _servicio:IdiomaService,
     public translate:TranslateService
   ) {}
-  dietas;
-  ModificarDieta: FormGroup;
+  Rutinas;
+  ModificarRutina: FormGroup;
   test = 2;
   id;
   imagen;
@@ -44,11 +44,11 @@ export class ModificarDietaComponent implements OnInit {
   ArrayDatos = [];
   DatosForm;
   infoTodosDias;
-  Ranking_modificarDietaArray = new FormArray([]);
+  Ranking_modificarRutinaArray = new FormArray([]);
   Ranking_modificarArray = new FormArray([]);
   ngOnInit(): void {
 
-    this.ModificarDieta = new FormGroup({
+    this.ModificarRutina = new FormGroup({
       nombreDieta: new FormControl(),
       tipoDieta: new FormControl(),
       imagen: new FormControl()
@@ -64,21 +64,21 @@ export class ModificarDietaComponent implements OnInit {
     this.id = this.router.url.split("/")[2];
 
     console.log(this.id);
-    this.cargarDieta();
+    this.cargarRutina();
   }
 
-  cargarDieta() {
+  cargarRutina() {
     console.log(this.id);
     
     this.authService
-      .loadRutinaUn(this.id)
+      .loadDietaUn(this.id)
       .pipe(first())
       .subscribe((data) => {
         this.datos = data;
         
-        this.idDieta= data[0].idDieta;
-        this.nombreDieta= data[0].NDieta;
-        this.tipoDieta= data[0].TipoDieta;
+        this.idRutina= data[0].iRutina;
+        this.nombreRutina= data[0].NRutina;
+        this.tipoRutina= data[0].TipoRutina;
         this.imagen= data[0].Imagen;
 
 
@@ -86,11 +86,11 @@ export class ModificarDietaComponent implements OnInit {
 
         
         
-        this.ModificarDieta = new FormGroup({
-          nombreDieta: new FormControl('', Validators.compose([
+        this.ModificarRutina = new FormGroup({
+          nombreRutina: new FormControl('', Validators.compose([
             Validators.maxLength(15),Validators.minLength(3),
             Validators.required])),
-          tipoDieta: new FormControl('', Validators.compose([
+          tipoRutina: new FormControl('', Validators.compose([
             Validators.maxLength(15),Validators.minLength(3),
             Validators.required])),
             imagen: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
@@ -103,14 +103,14 @@ export class ModificarDietaComponent implements OnInit {
   Submit() {
 
 
-    this.ModificarDieta.value.idDieta= this.idDieta;
-    console.log(this.ModificarDieta.value);
+    this.ModificarRutina.value.idRutina= this.idRutina;
+    console.log(this.ModificarRutina.value);
     
     this.authService
-    .moddiet(this.ModificarDieta.value)
+    .moddiet(this.ModificarRutina.value)
     .pipe(first())
     .subscribe((data) => {
-      this.router.navigate(['/VerDieta']);
+      this.router.navigate(['/VerRutina']);
 
     });
 

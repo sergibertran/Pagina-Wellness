@@ -47,6 +47,7 @@ import { PremiumComponent } from 'app/premium/premium.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { ModificarRutinaComponent } from 'app/Rutinas/modificar-rutina/modificar-rutina.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -113,6 +114,7 @@ FullCalendarModule.registerPlugins([
     RutinaUsuarioComponent,
     PremiumComponent,
     AddDiaRutinaComponent,
+    ModificarRutinaComponent
    
   ],
   providers: [  
