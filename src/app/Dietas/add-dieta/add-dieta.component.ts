@@ -35,7 +35,7 @@ export class AddDietaComponent implements OnInit {
       tipoDieta: new FormControl('', Validators.compose([
         Validators.maxLength(15),Validators.minLength(3),
         Validators.required])),
-      image: new FormControl('',Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?"))
+      image: new FormControl('',)
     });
   
   }
