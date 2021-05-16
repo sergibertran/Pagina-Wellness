@@ -59,13 +59,26 @@ export class AuthService {
 
   }
 
+  insertRutinas(datos){
+    console.log(datos);   
+
+    return this.http.post(`${environment.apiUrl}/insertRutinas.php`, JSON.stringify(datos));
+
+  }
+
+
   guardarComentarios(datos){
 
     return this.http.post(`${environment.apiUrl}/guardarComentarios.php`, JSON.stringify(datos));
 
   }
 
+    
+  borrarRutina(datos){
 
+    return this.http.post(`${environment.apiUrl}/deleteRutina.php`, JSON.stringify(datos));
+
+  }
 
   cargarTodosDiasRutina(user){
 console.log(user);

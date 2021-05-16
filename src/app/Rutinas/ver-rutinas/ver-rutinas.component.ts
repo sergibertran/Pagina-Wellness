@@ -30,7 +30,11 @@ export class VerRutinasComponent implements OnInit {
       });
   }
 
-  Borrar(){
+  Borrar(i){
+
+
+
+
     Swal.fire({
       title: 'Estas segur@?',
       text: "No podras reviertir los cambios",
@@ -41,9 +45,16 @@ export class VerRutinasComponent implements OnInit {
       confirmButtonText: 'Si, borralo!'
     }).then((result) => {
       if (result.isConfirmed) {
+
+        this.authService
+        .borrarRutina(i)
+        .subscribe((datos) => {  
+          console.log(datos);   
+        });
+
         Swal.fire(
           'Borrada!',
-          'La dieta ha sido borrada correctamente.',
+          'La rutina ha sido borrada correctamente.',
           'success'
         )
       }

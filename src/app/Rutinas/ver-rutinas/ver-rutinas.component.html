@@ -58,7 +58,7 @@
                         edit</i> </button>
                         <button [routerLink]="['/AddDiaRutina',item[0]]"  routerLinkActive="active" class="btn btn-primary btn-round"> <i class="material-icons">
                           add</i> </button>
-                          <button (click)="Borrar()" class="btn btn-primary btn-round"> <i class="material-icons">
+                          <button (click)="Borrar(item[0])" class="btn btn-primary btn-round"> <i class="material-icons">
                             delete</i> </button>
                       </td>
                       
