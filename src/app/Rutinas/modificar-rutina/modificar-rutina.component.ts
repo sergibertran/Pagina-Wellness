@@ -147,36 +147,45 @@ export class ModificarRutinaComponent implements OnInit {
           this.Ranking_modificarArray.push(
             new FormGroup({
               Ejercicio: new FormControl(this.infoTodosDias[index]["Ejercicio"], [
-       
+                Validators.minLength(2),
+                Validators.maxLength(15),
+                Validators.required,
               ]),
               Ejercicio2: new FormControl(
                 this.infoTodosDias[index]["Ejercicio2"],
-                
-             
+                [
+                  Validators.minLength(2),
+                  Validators.maxLength(15),
+                  Validators.required,
+                ]
               ),
               Ejercicio3: new FormControl(this.infoTodosDias[index]["Ejercicio3"], [
-         
+                Validators.email,
+                Validators.required,
               ]),
               Ejercicio4: new FormControl(
                 this.infoTodosDias[index]["Ejercicio4"],
-             
+                [Validators.email, Validators.required]
               ),
               Ejercicio5: new FormControl(this.infoTodosDias[index]["Ejercicio5"], [
-            
+                Validators.email,
+                Validators.required,
               ]),
               Ejercicio6: new FormControl(
                 this.infoTodosDias[index]["Ejercicio6"],
-              
+                [Validators.email, Validators.required]
               ), 
               Comentarios: new FormControl(
                 this.infoTodosDias[index]["Comentarios"],
-          
+                [Validators.email, Validators.required]
               ), 
               idRutina: new FormControl(this.infoTodosDias[index]["idRutina"], [
-              
+                Validators.email,
+                Validators.required,
               ]),
               idDia: new FormControl(this.infoTodosDias[index]["numDiaRutina"], [
-             
+                Validators.email,
+                Validators.required,
               ]),
             })
           );
