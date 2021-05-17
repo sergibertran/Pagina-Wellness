@@ -15,18 +15,20 @@ Pagina de calendario de control dietetico y fisico hecha con Angular, PHP y MySQ
 
 ## Instalación
 
-Instale previamente el  [Node.js](https://nodejs.org/) v10+.
+ + Instale previamente el  [Node.js](https://nodejs.org/) v10+.
 
-Instale las dependencias y e inicie el servidor.
+ + Abre la Base de Datos correspodientes.
 
-```sh
-cd npm nodevars
-```
-```sh
-cd npm install
-```
-```sh
-cd ng serve
-```
+ + Los PHP estan en la siguiente ruta. 
+    > Ruta: `\Pagina-Wellness\src\app\PHP`
 
+ + Instale las dependencias y e inicie el servidor.
+
+    ```sh
+    npm install
+    ```
+
+    ```sh
+    ng serve
+    ```
 Salu2.
