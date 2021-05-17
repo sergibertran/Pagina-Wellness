@@ -44,7 +44,7 @@ export class VerRutinasComponent implements OnInit {
       (data) => {
         this.rutinas=data;
        
-        console.log(this.rutinas);
+
         
      
       });
@@ -69,7 +69,7 @@ export class VerRutinasComponent implements OnInit {
         this.authService
         .borrarRutina(i)
         .subscribe((datos) => {  
-          console.log(datos);   
+     
           this.cargarRutina(this.test);
         });
 
@@ -87,13 +87,13 @@ export class VerRutinasComponent implements OnInit {
 
   EnviarId(datos){
 
-    console.log(datos);
+
     
   }
 
   openDialog(arg) {
 
-    console.log(arg);
+
     
     this.dialog.open(VerImagenComponent, {
       data: arg,

@@ -21,7 +21,7 @@ export class AdminLayoutComponent implements OnInit {
   constructor( public translate:TranslateService,public location: Location, private router: Router) {
     this.translate.addLangs(['es','en']);
     this.translate.use(this.translate.getBrowserLang())
-    console.log(this.translate.getBrowserLang());
+ 
     
   }
 

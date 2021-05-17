@@ -140,7 +140,7 @@ onSubmit() {
 
 
   // display form values on success
-console.log(this.enquestaModel);
+
 
 
 this.authService.GuardarEncuesta(this.enquestaModel).subscribe((datos) => {

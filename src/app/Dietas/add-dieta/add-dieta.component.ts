@@ -47,13 +47,13 @@ export class AddDietaComponent implements OnInit {
     
   }
   Submit(){
- console.log(this.addDieta.value);
+
  
  this.authService.insertDietas(this.addDieta.value)
  .pipe(first())
  .subscribe(
    (data) => {
-     console.log(data);
+   
      
      this.router.navigate(['/VerDieta']);
 

@@ -55,7 +55,7 @@ export class AuthService {
 
   loadDietaUn(user){
 
-    console.log(user);
+
     
 
     return this.http.post(`${environment.apiUrl}/loadDietasAdminUn.php`, JSON.stringify(user));
@@ -64,7 +64,7 @@ export class AuthService {
   
   loadRutinaUn(user){
 
-    console.log(user);
+
     
 
     return this.http.post(`${environment.apiUrl}/loadRutinasAdminUn.php`, JSON.stringify(user));
@@ -72,7 +72,7 @@ export class AuthService {
 
   moddiet(user){
 
-    console.log(user);
+
     
 
     return this.http.post(`${environment.apiUrl}/modDiet.php`, JSON.stringify(user));
@@ -81,14 +81,14 @@ export class AuthService {
 
   modrut(user){
 
-    console.log(user);
+  
     
 
     return this.http.post(`${environment.apiUrl}/modRut.php`, JSON.stringify(user));
   }
 
   insertDietas(datos){
-    console.log(datos);
+  
     
 
     return this.http.post(`${environment.apiUrl}/insertDietas.php`, JSON.stringify(datos));
@@ -97,24 +97,24 @@ export class AuthService {
 
 
   anadirDiasDieta(info){
-    console.log(info);
+
 return this.http.post(`${environment.apiUrl}/anadirDiasDieta.php`, JSON.stringify(info.value));
   }
 
   guardarDiasDieta(info){
-console.log(info);
+
 return this.http.post(`${environment.apiUrl}/guardarDiasDieta.php`, JSON.stringify(info.value));
 
   }
 
   guardarDiasRutina(info){
-    console.log(info);
+  
     return this.http.post(`${environment.apiUrl}/guardarDiasRutina.php`, JSON.stringify(info.value));
     
       }
 
   insertRutinas(datos){
-    console.log(datos);   
+     
 
     return this.http.post(`${environment.apiUrl}/insertRutinas.php`, JSON.stringify(datos));
 
@@ -133,20 +133,20 @@ return this.http.post(`${environment.apiUrl}/guardarDiasDieta.php`, JSON.stringi
 
   }
   borrarRutina(datos){
-    console.log(datos);
+
     
     return this.http.post(`${environment.apiUrl}/deleteRutina.php`, JSON.stringify(datos));
 
   }
 
   cargarTodosDiasRutina(user){
-console.log(user);
+
 
     return this.http.post(`${environment.apiUrl}/cargarTodosDiasRutina.php`, JSON.stringify(user));
   }
 
   loadDieta(user) {
-console.log(user);
+
 
     return this.http.post(`${environment.apiUrl}/loadDietasAdmin.php`, JSON.stringify(user));
   }
@@ -158,7 +158,7 @@ console.log(user);
 
   
   borrarDieta(user){
-    console.log(user);
+
     
     return this.http.post(`${environment.apiUrl}/deleteDieta.php`, JSON.stringify(user));
   }
@@ -169,7 +169,7 @@ console.log(user);
   }
 
   loadRutinasUsuario(user){
-console.log(user);
+
 
     return this.http.post(`${environment.apiUrl}/loadRutinasUsuario.php`, JSON.stringify(user));
   }
@@ -193,35 +193,34 @@ console.log(user);
   }
 
   cargarEncuestaUser(iduser) {
-    console.log(iduser);
+
 
     return this.http.post(`${environment.apiUrl}/AdminCargarEncuestaUser.php`, JSON.stringify(iduser));
   }
  
   cargarDatosDieta(iduser) {
   
-    console.log(iduser);
+ 
     
     return this.http.post(`${environment.apiUrl}/loadDiasDietasAdmin.php`, JSON.stringify(iduser));
   }
 
   comprovarDietasEnDias(iduser) {
   
-    console.log(iduser);
     
     return this.http.post(`${environment.apiUrl}/comprovarDietasEnDias.php`, JSON.stringify(iduser));
   }
 
   comprovarRutinasEnDias(iduser) {
   
-    console.log(iduser);
+  
     
     return this.http.post(`${environment.apiUrl}/comprovarRutinasEnDias.php`, JSON.stringify(iduser));
   }
 
   cargarDatosRutina(iduser) {
   
-    console.log(iduser);
+
     
     return this.http.post(`${environment.apiUrl}/loadDiasRutinasAdmin.php`, JSON.stringify(iduser));
   }
@@ -229,7 +228,7 @@ console.log(user);
 
   cargarDatosComentario(datos){
 
-    console.log(datos);
+ 
     
     return this.http.post(`${environment.apiUrl}/loadComentario.php`, JSON.stringify(datos));
 
@@ -238,7 +237,7 @@ console.log(user);
 
   obtenerDias(datos){
 
-    console.log(datos);
+
     
     return this.http.post(`${environment.apiUrl}/anadirDietaCalendario.php`, JSON.stringify(datos));
 
@@ -246,7 +245,7 @@ console.log(user);
 
   modificarPerfil(datos){
 
-    console.log(datos);
+
     
     return this.http.post(`${environment.apiUrl}/modificarPerfil.php`, JSON.stringify(datos));
 
@@ -255,7 +254,7 @@ console.log(user);
 
   guardarpremium(datos){
 
-    console.log(datos);
+
     
     return this.http.post(`${environment.apiUrl}/guardarpremium.php`, JSON.stringify(datos));
 
@@ -263,14 +262,14 @@ console.log(user);
 
   obtenerDiasRutina(datos){
 
-    console.log(datos);
+
     
     return this.http.post(`${environment.apiUrl}/anadirRutinaCalendario.php`, JSON.stringify(datos));
 
   }
 
   modificarPwd(iduser){
-    console.log(iduser);
+   
     
     return this.http.post(`${environment.apiUrl}/modificarPwd.php`, JSON.stringify(iduser));
   }

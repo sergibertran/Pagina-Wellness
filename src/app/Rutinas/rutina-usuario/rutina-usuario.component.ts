@@ -35,23 +35,17 @@ export class RutinaUsuarioComponent implements OnInit {
       this.translate.use(this._servicio.getIdioma())
   }
     this.iduser=this.authService.getNpremium();
-    console.log(this.authService.getNpremium());
-    if(this.iduser==0){
-      console.log('test');
 
-      // this.authService.cargarDatosRutina(this.form.value).subscribe (
-      //   datos => {
-      //   console.log(datos);
-      //   this.rutinas = datos;    
-      //   }
-      // )
-      
+    if(this.iduser==0){
+  
+
+   
 
     this.authService.loadRutinasUsuario(this.iduser)
     .pipe(first())
     .subscribe(
       (data) => {
-        console.log(data);
+       
          this.filterData=data;
     });
   }
@@ -64,7 +58,7 @@ export class RutinaUsuarioComponent implements OnInit {
     this.form = this.fb.group({
       'id': this.filterData[i]['idRutina'],
     });
-console.log(this.form);
+
 
 
     this.authService.cargarTodosDiasRutina(this.form.value)
@@ -72,7 +66,7 @@ console.log(this.form);
     .subscribe(
       (data) => {
         this.todosDias=data;
-        console.log(data);
+    
          
 
 
@@ -94,7 +88,7 @@ console.log(this.form);
   }
   openDialog(arg) {
 
-    console.log(arg);
+
     
     this.dialog.open(VerImagenComponent, {
       data: arg,

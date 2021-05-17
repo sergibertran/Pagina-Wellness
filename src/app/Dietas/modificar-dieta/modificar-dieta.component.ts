@@ -64,12 +64,11 @@ export class ModificarDietaComponent implements OnInit {
 
     this.id = this.router.url.split("/")[2];
 
-    console.log(this.id);
     this.cargarDieta();
   }
 
   cargarDieta() {
-    console.log(this.id);
+  
     
     this.authService
       .loadDietaUn(this.id)
@@ -83,7 +82,7 @@ export class ModificarDietaComponent implements OnInit {
         this.imagen= data[0].Imagen;
 
 
-        console.log(this.datos);
+     
 
         
         
@@ -105,7 +104,7 @@ export class ModificarDietaComponent implements OnInit {
 
 
     this.ModificarDieta.value.idDieta= this.idDieta;
-    console.log(this.ModificarDieta.value);
+ 
     
     this.authService
     .moddiet(this.ModificarDieta.value)
@@ -120,20 +119,19 @@ export class ModificarDietaComponent implements OnInit {
   }
 
   ModificarDias(){
-    console.log(this.Ranking_modificarArray);
+
     
     this.authService
       .guardarDiasDieta(this.Ranking_modificarArray)
       .pipe(first())
       .subscribe((data) => {
-        console.log(data);
+     
       });
       this.MostrarDiasB = false
   }
 
   MostrarDias() {
-    console.log("test");
-    console.log(this.datos[0].idDieta);
+ 
 
     this.form = this.fb.group({
       id: this.datos[0].idDieta,
@@ -144,7 +142,7 @@ export class ModificarDietaComponent implements OnInit {
       .pipe(first())
       .subscribe((data) => {
         this.infoTodosDias = data;
-        console.log(this.infoTodosDias);
+     
 
         this.Ranking_modificarArray.clear();
 

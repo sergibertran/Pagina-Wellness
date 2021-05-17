@@ -77,7 +77,7 @@ English(){
   this._servicio.setIdioma('en')
 }
   openDialogInfo(info) {
-    console.log(info);
+
     
       this.dialog.open(ModalhomeComponent,{
         data: info,
@@ -86,7 +86,7 @@ English(){
 
     
     openDialogLogin() {
-      console.log();
+
       
         this.dialog.open(LoginRegisterComponent,{
 

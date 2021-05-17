@@ -28,7 +28,7 @@ export class VerImagenComponent implements OnInit {
 
   verdata(){
     
-    console.log(this.data);
+   
   }
  
 

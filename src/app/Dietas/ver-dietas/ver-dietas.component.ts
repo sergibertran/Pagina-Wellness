@@ -41,7 +41,7 @@ dietas;
     .subscribe(
       (data) => {
         this.dietas=data;
-       console.log(this.dietas);
+ 
        
      
       });
@@ -49,7 +49,7 @@ dietas;
 
   Borrar(i){
 
-    console.log(i);
+
 
 
     
@@ -66,7 +66,7 @@ dietas;
         this.authService
         .borrarDieta(i)
         .subscribe((datos) => {  
-          console.log(datos);  
+       
           this.cargarDieta(this.test); 
         });
         Swal.fire(
@@ -83,13 +83,12 @@ dietas;
 
   EnviarId(datos){
 
-    console.log(datos);
     
   }
 
   openDialog(arg) {
 
-    console.log(arg);
+
     
     this.dialog.open(VerImagenComponent, {
       data: arg,

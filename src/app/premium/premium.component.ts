@@ -45,7 +45,7 @@ export class PremiumComponent implements OnInit {
 
 CambiarprecioTotal(){
   this.total=this.registerForm.value.cantidad*this.precio
-  console.log();
+
   
 }
 
@@ -76,7 +76,7 @@ onSubmit() {
   .guardarpremium(this.registerForm.value)
   .subscribe((datos) => {
 
-    console.log(datos);   
+    
 
   });
   this.router.navigate(['/user-profile']);

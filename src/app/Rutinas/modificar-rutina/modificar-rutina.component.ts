@@ -64,12 +64,12 @@ export class ModificarRutinaComponent implements OnInit {
 
     this.id = this.router.url.split("/")[2];
 
-    console.log(this.id);
+  
     this.cargarRutina();
   }
 
   cargarRutina() {
-    console.log(this.id);
+   
     
     this.authService
       .loadRutinaUn(this.id)
@@ -78,7 +78,7 @@ export class ModificarRutinaComponent implements OnInit {
         this.datos = data;
         
 
-        console.log(this.datos);
+      
 
         this.idRutina= data[0].idRutina;
         this.Nrutina= data[0].Nrutina;
@@ -103,7 +103,7 @@ export class ModificarRutinaComponent implements OnInit {
 
 
     this.ModificarRutina.value.idRutina= this.idRutina;
-    console.log(this.ModificarRutina.value);
+  
     
     this.authService
     .modrut(this.ModificarRutina.value)
@@ -122,14 +122,13 @@ export class ModificarRutinaComponent implements OnInit {
       .guardarDiasRutina(this.Ranking_modificarArray)
     .pipe(first())
      .subscribe((data) => {
-       console.log(data);
+     
      });
     this.MostrarDiasB = false
   }
 
   MostrarDias() {
-    console.log("test");
-    console.log(this.datos[0].idRutina);
+    
 
     this.form = this.fb.group({
       id: this.datos[0].idRutina,
@@ -140,7 +139,7 @@ export class ModificarRutinaComponent implements OnInit {
       .pipe(first())
       .subscribe((data) => {
         this.infoTodosDias = data;
-        console.log(this.infoTodosDias);
+      
 
         this.Ranking_modificarArray.clear();
 

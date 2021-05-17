@@ -46,7 +46,7 @@ export class AddRutinaComponent implements OnInit {
 
   onSubmit() {
     
-    console.log(this.addRutina.value);
+ 
 
     this.submitted = true;
   
@@ -56,11 +56,11 @@ export class AddRutinaComponent implements OnInit {
     }
   
     //display form values on success
-    console.log(this.addRutina.value);
+  
     
     this.authService.insertRutinas(this.addRutina.value).subscribe(
       (data) => {
-        console.log(data);
+       
         this.router.navigate(['/VerRutina']);
    
    

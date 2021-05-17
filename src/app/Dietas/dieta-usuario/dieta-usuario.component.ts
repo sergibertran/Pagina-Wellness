@@ -34,21 +34,16 @@ export class DietaUsuarioComponent implements OnInit {
   }
 
     this.iduser=this.authService.getNpremium();
-    console.log(this.iduser);
+ 
 
-    // this.authService.cargarDatosDieta(this.form.value).subscribe (
-    //   datos => {
-    //   console.log(datos);
-    //   this.dietas = datos;  
-    //   }
-    // )
+    
 
     if(this.iduser==0){
       this.authService.loadDietasUsuario(this.iduser)
       .pipe(first())
       .subscribe(
         (data) => {
-          console.log(data);
+         
            this.filterData=data;
 
 
@@ -60,14 +55,14 @@ export class DietaUsuarioComponent implements OnInit {
   }
 
   verDias(i){
-   console.log(i);
+  
    
 
 
     this.form = this.fb.group({
       'id': this.filterData[i]['idDieta'],
     });
-console.log(this.form);
+
 
 
     this.authService.cargarTodosDiasDieta(this.form.value)
@@ -75,7 +70,7 @@ console.log(this.form);
     .subscribe(
       (data) => {
         this.todosDias=data;
-        console.log(data);
+      
          
 
 
@@ -102,7 +97,7 @@ console.log(this.form);
   }
   openDialog(arg) {
 
-    console.log(arg);
+
     
     this.dialog.open(VerImagenComponent, {
       data: arg,

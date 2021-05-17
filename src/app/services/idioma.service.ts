@@ -10,7 +10,7 @@ export class IdiomaService {
 
   
 public getIdioma() {
-  console.log(this.idioma+" ESTE ES EL IDIOMA QUE PILLO");
+
   return this.idioma;
   
   
