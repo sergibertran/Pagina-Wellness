@@ -151,46 +151,48 @@ export class ModificarDietaComponent implements OnInit {
           this.Ranking_modificarArray.push(
             new FormGroup({
               Cena: new FormControl(this.infoTodosDias[index]["Cena"], [
-            
+                Validators.minLength(2),
+                Validators.maxLength(15),
                 Validators.required,
               ]),
               Comentarios: new FormControl(
                 this.infoTodosDias[index]["Comentarios"],
                 [
-              
+                  Validators.minLength(2),
+                  Validators.maxLength(15),
                   Validators.required,
                 ]
               ),
               Comida: new FormControl(this.infoTodosDias[index]["Comida"], [
-            
+                Validators.email,
                 Validators.required,
               ]),
               Desayuno: new FormControl(this.infoTodosDias[index]["Desayuno"], [
-                
+                Validators.email,
                 Validators.required,
               ]),
               Desayuno2: new FormControl(
                 this.infoTodosDias[index]["Desayuno2"],
-                [Validators.required]
+                [Validators.email, Validators.required]
               ),
               Merienda: new FormControl(this.infoTodosDias[index]["Merienda"], [
-               
+                Validators.email,
                 Validators.required,
               ]),
               Merienda2: new FormControl(
                 this.infoTodosDias[index]["Merienda2"],
-                [Validators.required]
+                [Validators.email, Validators.required]
               ),
               idDieta: new FormControl(this.infoTodosDias[index]["idDIeta"], [
-              
+                Validators.email,
                 Validators.required,
               ]),
               idDia: new FormControl(this.infoTodosDias[index]["numDiaDieta"], [
-          
+                Validators.email,
                 Validators.required,
               ]),
               comentarios: new FormControl(this.infoTodosDias[index]["Comentarios"], [
-                
+                Validators.email,
                 Validators.required,
               ]),
             })

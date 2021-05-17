@@ -59,7 +59,7 @@ export class EnquestaComponent implements OnInit {
       Nombre: ['', Validators.required],
       Apellidos: ['', Validators.required],
       Sexo: [CheckboxRequiredValidator],
-      Email: ['', Validators.required,Validators.email],
+      Email: ['', Validators.required],
       Edad: ['', Validators.required],
       Antecedentes: ['', Validators.required],
       FamBio: ['', Validators.required],
