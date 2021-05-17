@@ -8,6 +8,7 @@
     require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
   $idUser;
   $coment;
+  $resp;
     $conexion = conexion(); // CREA LA CONEXION
     
 
@@ -24,10 +25,10 @@
  $sql = "INSERT INTO daw2_jamsweb.calendario
  (idDieta, idRutina, idUsuario, comentarios, fecha, idDia, comentario)
  VALUES(NULL, NULL,$idUser,'Comentarios','$texto', NULL,'$coment') ");
- 
+ $resp="works";
 }
 
-    echo json_encode($coment); // MUESTRA EL JSON GENERADO
+    echo json_encode($resp); // MUESTRA EL JSON GENERADO
 
 ?>
 

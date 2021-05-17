@@ -173,6 +173,7 @@ export class CalendarioModalComponent implements OnInit {
             .subscribe((data) => {
               console.log(data);
               this.dialogRef.close('Pizza!');
+             
             });
         });
     } else if (this.resultadoSelect == "Rutina") {
