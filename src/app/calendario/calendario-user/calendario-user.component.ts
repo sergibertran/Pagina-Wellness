@@ -209,11 +209,7 @@ export class CalendarioUserComponent implements OnInit {
         }
 
 
-  borrar() {
-    return this.http
-      .post("http://localhost/delete.php/", "")
-      .subscribe((res: Response) => { });
-  }
+
 
 
   //Hide Modal PopUp and clear the form validations

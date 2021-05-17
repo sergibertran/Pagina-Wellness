@@ -25,13 +25,13 @@ export class CalendarioModalComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   posicion1;
-  datoFechas: FormGroup;
+
   filterData;
   addEventForm: FormGroup;
   selectControl: FormControl = new FormControl();
   selectControlDieta: FormControl = new FormControl();
   selectControlRutina: FormControl = new FormControl();
-  selectControlComentarios: FormControl = new FormControl();
+ 
   resultadoSelectRutina = "";
   resultadoSelectDieta = "";
   resultadoSelect;
@@ -42,14 +42,14 @@ export class CalendarioModalComponent implements OnInit {
   imagen;
   datoId;
   diasMaximo;
-  myForm: FormGroup;
+
   fecha: Date;
   diasArray;
   TotaldiasArray = [];
   checked = true;
   dia = 1;
   posicion;
-  myGroup: FormGroup;
+
   lastChecked = false;
   selectedDay: string = "";
   allProfiles = [
