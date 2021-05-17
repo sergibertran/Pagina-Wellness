@@ -133,7 +133,11 @@
         "nombreusu":"Username",
         "accionusu":"Actions",
 
-        "NombreD": "Diet Name"
+        "NombreD": "Diet Name",
+
+        "añadirrutina":"Add routine",
+        "completeform":"Complete the form to register it",
+        "crearr":"Create routine"
 
 
     
