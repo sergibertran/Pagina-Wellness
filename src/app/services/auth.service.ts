@@ -45,6 +45,8 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/loadUsers.php`, JSON.stringify(user));
   }
 
+
+
   cargarTodosDiasDieta(user){
 
 
@@ -76,6 +78,15 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/modDiet.php`, JSON.stringify(user));
   }
 
+
+  modrut(user){
+
+    console.log(user);
+    
+
+    return this.http.post(`${environment.apiUrl}/modRut.php`, JSON.stringify(user));
+  }
+
   insertDietas(datos){
     console.log(datos);
     
@@ -95,6 +106,12 @@ console.log(info);
 return this.http.post(`${environment.apiUrl}/guardarDiasDieta.php`, JSON.stringify(info.value));
 
   }
+
+  guardarDiasRutina(info){
+    console.log(info);
+    return this.http.post(`${environment.apiUrl}/guardarDiasRutina.php`, JSON.stringify(info.value));
+    
+      }
 
   insertRutinas(datos){
     console.log(datos);   

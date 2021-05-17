@@ -22,7 +22,7 @@
     SET correo='$params->correo' WHERE usuario='$params->usuario'");
   } else{
   $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.usuarios
-  SET nombre='$params->nombre', apellido='$params->apellidos', correo='$params->correo', Imagen='$params->imagen', Peso=$params->peso, Altura=$params->altura, Direccion='$params->direccion'
+  SET nombre='$params->nombre', apellido='$params->apellidos', correo='$params->correo', Imagen='$params->imagen', Peso=$params->peso, Altura=$params->altura, Direccion='$params->direccion',tUsuario='$params->tUsuario'
     WHERE usuario='$params->usuario'");
 }
   

@@ -119,6 +119,8 @@ export class ModificarDietaComponent implements OnInit {
   }
 
   ModificarDias(){
+    console.log(this.Ranking_modificarArray);
+    
     this.authService
       .guardarDiasDieta(this.Ranking_modificarArray)
       .pipe(first())
@@ -186,6 +188,10 @@ export class ModificarDietaComponent implements OnInit {
                 Validators.required,
               ]),
               idDia: new FormControl(this.infoTodosDias[index]["numDiaDieta"], [
+                Validators.email,
+                Validators.required,
+              ]),
+              comentarios: new FormControl(this.infoTodosDias[index]["Comentarios"], [
                 Validators.email,
                 Validators.required,
               ]),

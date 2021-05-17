@@ -13,7 +13,7 @@
  $resultado = mysqli_query($conexion, 
  
  $sql = "SELECT idDieta, TipoDieta, NDieta, Premium, Imagen
- FROM daw2_jamsweb.dieta where Premium=0
+ FROM daw2_jamsweb.dieta
  ");
  
 

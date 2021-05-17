@@ -104,8 +104,9 @@ export class CalendarioUserComponent implements OnInit {
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
-      console.log(res);
       
+      console.log('se vuelven a cargar los registros nuevos');
+      console.log(res);
 
       if (res!=null){
 
@@ -179,6 +180,7 @@ export class CalendarioUserComponent implements OnInit {
           dialogRef.afterClosed().subscribe(result => {
       
             console.log( 'se cierra');
+        
           
             this.events=[];
             this.reload();
@@ -197,10 +199,11 @@ export class CalendarioUserComponent implements OnInit {
           dialogRef.afterClosed().subscribe(result => {
         
             console.log( 'se cierra');
+          console.log(this.events);
           
             this.events=[];
             this.reload();
-      
+            console.log(this.events);
       
           });
         }

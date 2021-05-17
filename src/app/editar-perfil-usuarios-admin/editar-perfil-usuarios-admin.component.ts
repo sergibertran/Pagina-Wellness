@@ -52,6 +52,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   bebidasAlcoholicas: string;
   carneProcesada: string;
   alimentoExeso: string;
+  lastChecked;
   
   constructor( private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -127,7 +128,9 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
         
 
       this.authService.loadOwnProfileo(this.idUsuario).subscribe (
-        datos => {          
+        datos => {        
+          console.log(datos);
+         
        this.infoUser=datos;
      datos[0]['usuario'];
 
@@ -175,8 +178,13 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
           Validators.email,
           Validators.required,
         ]),
+        tUsuario: new FormControl((datos[0]['tUsuario']), [
+          Validators.email,
+          Validators.required,
+        ]),
+        
       }
-
+      
     );
   
     
@@ -196,12 +204,16 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
    
   }
 
+  onChange(index) {
+    this.lastChecked = index.checked;
+  }
+
   EnviarDatos() {
 
     this.authService.modificarPerfil(this.myForm.value).subscribe((datos) => {
       this.DatosModal = datos;
 
-    window.location.reload();
+    
 
       
     });

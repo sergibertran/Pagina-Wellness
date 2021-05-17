@@ -113,6 +113,7 @@ export class CalendarioComponent implements OnInit {
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
+        console.log('se vuelven a cargar los registros nuevos');
         console.log(res);
         if (res != null) {
 

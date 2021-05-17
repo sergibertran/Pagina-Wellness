@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { CalendarioService } from "app/services/calendario.service";
 import { Profile } from "../calendario.component";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
@@ -37,6 +37,7 @@ export class CalendarioModalComponent implements OnInit {
   fechaStart;
   fechaEnd;
   tipoUsuario;
+  imagen;
   datoId;
   diasMaximo;
   myForm: FormGroup;
@@ -45,6 +46,7 @@ export class CalendarioModalComponent implements OnInit {
   TotaldiasArray = [];
   checked = true;
   dia = 1;
+  posicion;
   myGroup: FormGroup;
   lastChecked = false;
   selectedDay: string = "";
@@ -59,6 +61,7 @@ export class CalendarioModalComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private fb: FormBuilder,
+    public dialogRef: MatDialogRef<CalendarioModalComponent>,
 
     private calendarioService: CalendarioService,
     public dialog: MatDialog,
@@ -102,10 +105,19 @@ export class CalendarioModalComponent implements OnInit {
 
       console.log(newDateStart);
       console.log(newDateEnd);
-
-      console.log(this.filterData[0]["idDieta"]);
+      console.log(this.filterData);
+      if(this.selectControlDieta.value==null){
+        this.posicion=0;
+     
+      }else{
+        this.posicion=this.selectControlDieta.value;
+      }
+      console.log(this.posicion);
+      console.log(this.filterData);
+      
+      console.log(this.filterData[this.posicion]["idDieta"]);
       this.datoId = this.fb.group({
-        id: this.filterData[0]["idDieta"],
+        id: this.filterData[this.posicion]["idDieta"],
       });
 
       this.dia = 1;
@@ -131,7 +143,7 @@ export class CalendarioModalComponent implements OnInit {
               date: newDateStart,
               nDia: this.dia,
               idUsuario: this.data.idUser,
-              idDieta: this.filterData[0]["idDieta"],
+              idDieta: this.filterData[this.posicion]["idDieta"],
             });
             newDateStart = new Date(newDateStart);
             newDateStart.setDate(newDateStart.getDate() + 1);
@@ -145,7 +157,7 @@ export class CalendarioModalComponent implements OnInit {
             date: newDateStart,
             nDia: this.dia,
             idUsuario: this.data.idUser,
-            idDieta: this.filterData[0]["idDieta"],
+            idDieta: this.filterData[this.posicion]["idDieta"],
           });
           newDateStart = new Date(newDateStart);
           newDateStart.setDate(newDateStart.getDate() + 1);
@@ -159,6 +171,7 @@ export class CalendarioModalComponent implements OnInit {
             .pipe(first())
             .subscribe((data) => {
               console.log(data);
+              this.dialogRef.close('Pizza!');
             });
         });
     } else if (this.resultadoSelect == "Rutina") {
@@ -170,10 +183,19 @@ export class CalendarioModalComponent implements OnInit {
 
       console.log(newDateStart);
       console.log(newDateEnd);
-
-      console.log(this.filterData[0]["idRutina"]);
+      console.log(this.selectControlRutina.value);
+      if(this.selectControlRutina.value==null){
+        this.posicion=0;
+     
+      }else{
+        this.posicion=this.selectControlRutina.value;
+      }
+      console.log(this.posicion);
+      console.log(this.filterData);
+      
+      console.log(this.filterData[this.posicion]["idRutina"]);
       this.datoId = this.fb.group({
-        id: this.filterData[0]["idRutina"],
+        id: this.filterData[this.posicion]["idRutina"],
       });
 
       this.dia = 1;
@@ -181,6 +203,8 @@ export class CalendarioModalComponent implements OnInit {
         .obtenerDiasRutina(this.datoId.value)
         .pipe(first())
         .subscribe((data) => {
+          console.log(data);
+          
           this.diasMaximo = Object.keys(data).length;
           console.log(this.diasMaximo);
 
@@ -199,7 +223,7 @@ export class CalendarioModalComponent implements OnInit {
               date: newDateStart,
               nDia: this.dia,
               idUsuario: this.data.idUser,
-              idrutina: this.filterData[0]["idRutina"],
+              idrutina: this.filterData[this.posicion]["idRutina"],
             });
             newDateStart = new Date(newDateStart);
             newDateStart.setDate(newDateStart.getDate() + 1);
@@ -213,7 +237,7 @@ export class CalendarioModalComponent implements OnInit {
             date: newDateStart,
             nDia: this.dia,
             idUsuario: this.data.idUser,
-            idrutina: this.filterData[0]["idRutina"],
+            idrutina: this.filterData[this.posicion]["idRutina"],
           });
           newDateStart = new Date(newDateStart);
           newDateStart.setDate(newDateStart.getDate() + 1);
@@ -227,6 +251,7 @@ export class CalendarioModalComponent implements OnInit {
             .pipe(first())
             .subscribe((data) => {
               console.log(data);
+              this.dialogRef.close('Pizza!');
             });
         });
     } else if (this.resultadoSelect == "Comentarios") {
@@ -297,9 +322,12 @@ export class CalendarioModalComponent implements OnInit {
           .pipe(first())
           .subscribe((data) => {
             console.log(data);
+            this.dialogRef.close('Pizza!');
           });
       }
     }
+
+   
   }
 
   onChange(index) {
@@ -308,9 +336,38 @@ export class CalendarioModalComponent implements OnInit {
 
   mySelectHandlerDieta($event) {
     this.resultadoSelectDieta = $event;
+
+    for (let index = 0; index < this.filterData.length; index++) {
+      console.log(this.resultadoSelectDieta);
+      console.log(this.filterData[index].NDieta);
+     if (this.resultadoSelectDieta==this.filterData[index].NDieta){
+       console.log('joins');
+       
+        this.imagen=this.filterData[index].Imagen;
+        console.log('true'+this.filterData[index].Imagen);
+        
+     }
+      
+    }
+
   }
   mySelectHandlerRutina($event) {
+
     this.resultadoSelectRutina = $event;
+
+
+    for (let index = 0; index < this.filterData.length; index++) {
+      console.log(this.resultadoSelectRutina);
+      console.log(this.filterData[index].Nrutina);
+     if (this.resultadoSelectRutina==this.filterData[index].Nrutina){
+        this.imagen=this.filterData[index].imagen;
+        console.log('true'+this.filterData[index].imagen);
+        
+     }
+      
+    }
+    
+    
   }
 
   mySelectHandler($event) {
@@ -320,7 +377,7 @@ export class CalendarioModalComponent implements OnInit {
       this.tipoUsuario = this.authService.getNpremium();
       console.log(this.tipoUsuario);
 
-      if (this.tipoUsuario == 0) {
+     
  
         console.log(this.data.idUser);
         this.authService
@@ -331,22 +388,12 @@ export class CalendarioModalComponent implements OnInit {
 
             this.filterData = data;
           });
-      }else if (this.tipoUsuario == 1){
-        this.authService
-        .loadDietasUsuarioPremium(this.data.idUser)   
-        .pipe(first())
-        .subscribe((data) => {
-          console.log(data);
-
-          this.filterData = data;
-        });
-
-      }
+      
     } else if (this.resultadoSelect == "Rutina") {
       this.tipoUsuario = this.authService.getNpremium();
       console.log(this.tipoUsuario);
 
-      if (this.tipoUsuario == 0) {
+     
         this.authService
           .loadRutinasUsuario(this.tipoUsuario)
           .pipe(first())
@@ -354,7 +401,7 @@ export class CalendarioModalComponent implements OnInit {
             console.log(data);
             this.filterData = data;
           });
-      }
+      
     } else if (this.resultadoSelect == "Comentarios") {
     }
   }

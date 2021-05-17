@@ -12,21 +12,23 @@
 
 <body id="page-top">
     <!-- Header-->
- 
+   
       
               
     <header class="masthead">
         <ul style="float:left  " class="navbar-nav">
                
+ <button class='buttonTraductor'type="button" class="btn btn-primary" data-toggle="dropdown">
+        <i class="material-icons">language</i>
+    </button>
+
             <ul class="navbar-nav">
                
                 <br><br>
               <li class="nav-item">
                   <a class="nav-link" >
                       <div class="dropleft  mt-1 pt-1">
-                          <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                              <i class="material-icons">language</i>
-                          </button>
+                          
                           <div class="dropdown-menu">
                              
                             <a class="dropdown-item" (click)="Espanol()"><img style="width: 25%; " src="../../assets/img/españa2.png" alt=""></a>
@@ -67,7 +69,9 @@
                 </div>
                 <div class="col-md-4" style="margin-left: 130px;">
                     <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger">{{"Premiums" | translate}}</a>
-                    <h2 class="my-3">{{"PROXIMAMENTE" | translate}}</h2>
+                    <br>
+                    <span style="color: red;"><b>proximamente</b></span>
+                    <h2 class="my-3">{{"PREMIUM" | translate}}</h2>
                     <p class="text-muted">{{"home.infop" | translate}}</p>
                 </div>
             </div>

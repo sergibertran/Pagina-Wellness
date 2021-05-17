@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +17,7 @@ export class CalendarioModal2Component implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private formBuilder: FormBuilder,
   private http: HttpClient,
   private fb: FormBuilder,
-  private authService: AuthService) {   }
+  private authService: AuthService,public dialogRef: MatDialogRef<CalendarioModal2Component>) {   }
 
 
   Tipode;
@@ -91,7 +91,8 @@ console.log(this.form.value);
 borrar(){
 console.log(this.form.value);
 
-
+console.log(this);
+this.dialogRef.close();
  this.authService.eliminarDia(this.form.value).subscribe (
    datos => {
   console.log(datos);

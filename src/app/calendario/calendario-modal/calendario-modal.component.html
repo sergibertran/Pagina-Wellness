@@ -28,12 +28,18 @@
               (ngModelChange)="mySelectHandlerDieta($event)">
               Dieta
               <option [ngValue]="null" disabled>Escojer</option>
-              <option *ngFor="let item of filterData">{{item.NDieta}}</option>
-
+              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >   {{i}} {{item.NDieta}}</option>
+            
             </select>
 
 
             <div style="margin-top: 15px;" *ngIf="resultadoSelectDieta != ''">
+
+              <div class="text-center">
+                <img class='img-fluid' [src]="imagen" alt="">
+              </div>
+         
+
               <label>¿Que dia quieres terminar?</label>
 
               <mat-form-field color="accent" [formGroup]="range" appearance="fill">
@@ -57,10 +63,15 @@
               (ngModelChange)="mySelectHandlerRutina($event)">
               Rutina
               <option [ngValue]="null" disabled>Escojer</option>
-              <option *ngFor="let item of filterData">{{item.Nrutina}}</option>
-
+              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >   {{i}} {{item.Nrutina}}</option>
+            
             </select>
+           {{selectControlRutina.value}}
             <div style="margin-top: 15px;" *ngIf="resultadoSelectRutina != ''">
+            <div class="text-center">
+              <img class='img-fluid' [src]="imagen" alt="">
+            </div>
+
               <label>¿Que dia quieres terminar?</label>
               <mat-form-field color="accent" [formGroup]="range" appearance="fill">
                 <mat-label>Choose a date</mat-label>

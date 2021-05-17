@@ -105,7 +105,7 @@ export class ModificarRutinaComponent implements OnInit {
     console.log(this.ModificarRutina.value);
     
     this.authService
-    .moddiet(this.ModificarRutina.value)
+    .modrut(this.ModificarRutina.value)
     .pipe(first())
     .subscribe((data) => {
       this.router.navigate(['/VerRutina']);
@@ -117,13 +117,13 @@ export class ModificarRutinaComponent implements OnInit {
   }
 
   ModificarDias(){
-    // this.authService
-    //   .guardarDiasDieta(this.Ranking_modificarArray)
-    //   .pipe(first())
-    //   .subscribe((data) => {
-    //     console.log(data);
-    //   });
-    //   this.MostrarDiasB = false
+   this.authService
+      .guardarDiasRutina(this.Ranking_modificarArray)
+    .pipe(first())
+     .subscribe((data) => {
+       console.log(data);
+     });
+    this.MostrarDiasB = false
   }
 
   MostrarDias() {
@@ -131,7 +131,7 @@ export class ModificarRutinaComponent implements OnInit {
     console.log(this.datos[0].idRutina);
 
     this.form = this.fb.group({
-      id: this.datos[0].idDieta,
+      id: this.datos[0].idRutina,
     });
 
     this.authService
@@ -143,53 +143,57 @@ export class ModificarRutinaComponent implements OnInit {
 
         this.Ranking_modificarArray.clear();
 
-        // for (let index = 0; index < Object.keys(data).length; index++) {
-        //   this.Ranking_modificarArray.push(
-        //     new FormGroup({
-        //       Cena: new FormControl(this.infoTodosDias[index]["Cena"], [
-        //         Validators.minLength(2),
-        //         Validators.maxLength(15),
-        //         Validators.required,
-        //       ]),
-        //       Comentarios: new FormControl(
-        //         this.infoTodosDias[index]["Comentarios"],
-        //         [
-        //           Validators.minLength(2),
-        //           Validators.maxLength(15),
-        //           Validators.required,
-        //         ]
-        //       ),
-        //       Comida: new FormControl(this.infoTodosDias[index]["Comida"], [
-        //         Validators.email,
-        //         Validators.required,
-        //       ]),
-        //       Desayuno: new FormControl(this.infoTodosDias[index]["Desayuno"], [
-        //         Validators.email,
-        //         Validators.required,
-        //       ]),
-        //       Desayuno2: new FormControl(
-        //         this.infoTodosDias[index]["Desayuno2"],
-        //         [Validators.email, Validators.required]
-        //       ),
-        //       Merienda: new FormControl(this.infoTodosDias[index]["Merienda"], [
-        //         Validators.email,
-        //         Validators.required,
-        //       ]),
-        //       Merienda2: new FormControl(
-        //         this.infoTodosDias[index]["Merienda2"],
-        //         [Validators.email, Validators.required]
-        //       ),
-        //       idDieta: new FormControl(this.infoTodosDias[index]["idDIeta"], [
-        //         Validators.email,
-        //         Validators.required,
-        //       ]),
-        //       idDia: new FormControl(this.infoTodosDias[index]["numDiaDieta"], [
-        //         Validators.email,
-        //         Validators.required,
-        //       ]),
-        //     })
-        //   );
-        // }
+        for (let index = 0; index < Object.keys(data).length; index++) {
+          this.Ranking_modificarArray.push(
+            new FormGroup({
+              Ejercicio: new FormControl(this.infoTodosDias[index]["Ejercicio"], [
+                Validators.minLength(2),
+                Validators.maxLength(15),
+                Validators.required,
+              ]),
+              Ejercicio1: new FormControl(
+                this.infoTodosDias[index]["Ejercicio1"],
+                [
+                  Validators.minLength(2),
+                  Validators.maxLength(15),
+                  Validators.required,
+                ]
+              ),
+              Ejercicio2: new FormControl(this.infoTodosDias[index]["Ejercicio2"], [
+                Validators.email,
+                Validators.required,
+              ]),
+              Ejercicio3: new FormControl(this.infoTodosDias[index]["Ejercicio3"], [
+                Validators.email,
+                Validators.required,
+              ]),
+              Ejercicio4: new FormControl(
+                this.infoTodosDias[index]["Ejercicio4"],
+                [Validators.email, Validators.required]
+              ),
+              Ejercicio5: new FormControl(this.infoTodosDias[index]["Ejercicio5"], [
+                Validators.email,
+                Validators.required,
+              ]),
+              Ejercicio6: new FormControl(
+                this.infoTodosDias[index]["Ejercicio6"],
+                [Validators.email, Validators.required]
+              ), 
+              Comentarios: new FormControl(
+                this.infoTodosDias[index]["Comentarios"],
+                [Validators.email, Validators.required]
+              ), 
+              idRutina: new FormControl(this.infoTodosDias[index]["idRutina"], [
+                Validators.email,
+                Validators.required,
+              ]),
+              idDia: new FormControl(this.infoTodosDias[index]["numDiaRutina"], [
+                Validators.email,
+                Validators.required,
+              ]),
+            })
+          );
+        }
 
         this.MostrarDiasB = true;
       });

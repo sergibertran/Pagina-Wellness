@@ -21,7 +21,8 @@ import Swal from "sweetalert2";
 export class UserModificarPwdComponent implements OnInit {
   modpwdForm: FormGroup;
   hide = true;
-
+  hide2 = true;
+  hide3 = true;
   submitted = false;
   pwdActual: string;
   pwdNueva: string;

@@ -15,22 +15,22 @@
 
   for ($i = 0; $i <= count($params)-1; $i++) {
 
-  $comentarios=$params[$i]->comentarios;
-  $Cena=$params[$i]->Cena;
- $Merienda2=$params[$i]->Merienda2;
-  $Merienda=$params[$i]->Merienda;
+  $Comentarios=$params[$i]->Comentarios;
+  $Ejercicio=$params[$i]->Ejercicio;
+ $Ejercicio3=$params[$i]->Ejercicio3;
+  $Ejercicio2=$params[$i]->Ejercicio2;
 $idDia=$params[$i]->idDia;
-$idDieta=$params[$i]->idDieta;
-$Desayuno=$params[$i]->Desayuno;
-$Desayuno2=$params[$i]->Desayuno2;
-$Comida=$params[$i]->Comida;
+$idRutina=$params[$i]->idRutina;
+$Ejercicio4=$params[$i]->Ejercicio4;
+$Ejercicio5=$params[$i]->Ejercicio5;
+$Ejercicio6=$params[$i]->Ejercicio6;
 
   //REALIZA LA QUERY A LA DB
 
 
-  $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.dias
-  SET Desayuno='$Desayuno', Desayuno2='$Desayuno2', Comida='$Comida', Merienda='$Merienda', Merienda2='$Merienda2', Cena='$Cena', Comentarios='$comentarios'
-  WHERE idDIeta=$idDieta and numDiaDieta=$idDia");
+  $resultado = mysqli_query($conexion, "UPDATE daw2_jamsweb.dias_rutinas
+  SET Ejercicio='$Ejercicio', Ejercicio2='$Ejercicio2', Ejercicio3='$Ejercicio3', Ejercicio4='$Ejercicio4', Ejercicio5='$Ejercicio5', Ejercicio6='$Ejercicio6', Comentarios='$Comentarios'
+  WHERE idRutina=$idRutina and numDiaRutina=$idDia");
 
 
   }
