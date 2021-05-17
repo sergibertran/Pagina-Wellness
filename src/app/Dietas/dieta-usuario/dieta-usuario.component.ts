@@ -59,12 +59,13 @@ export class DietaUsuarioComponent implements OnInit {
     
   }
 
-  verDias(){
+  verDias(i){
+   console.log(i);
    
 
 
     this.form = this.fb.group({
-      'id': this.filterData[0]['idDieta'],
+      'id': this.filterData[i]['idDieta'],
     });
 console.log(this.form);
 

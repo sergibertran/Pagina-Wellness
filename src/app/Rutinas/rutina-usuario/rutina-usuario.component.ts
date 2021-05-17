@@ -54,12 +54,12 @@ export class RutinaUsuarioComponent implements OnInit {
   }
   }
 
-  verDias(){
+  verDias(i){
     this.mostrarDias=true;
 
 
     this.form = this.fb.group({
-      'id': this.filterData[0]['idRutina'],
+      'id': this.filterData[i]['idRutina'],
     });
 console.log(this.form);
 
