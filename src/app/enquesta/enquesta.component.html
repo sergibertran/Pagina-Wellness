@@ -50,7 +50,7 @@
             <div>
                 <mat-form-field>
                     <mat-label>Edad</mat-label>
-                    <input matInput formControlName="Edad" class="form-control"
+                    <input type="number" matInput formControlName="Edad" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.Edad.errors }">
                     <mat-error *ngIf="submitted && f.Edad.errors" class="invalid-feedback">
                         <div *ngIf="f.Edad.errors.required">La Edad es obligatorio</div>
@@ -94,7 +94,7 @@
             <div>
                 <mat-form-field>
                     <mat-label>Peso</mat-label>
-                    <input matInput formControlName="Peso" placeholder="en kg" class="form-control"
+                    <input type="number" matInput formControlName="Peso" placeholder="en kg" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.Peso.errors }">
                     <mat-error *ngIf="submitted && f.Peso.errors" class="invalid-feedback">
                         <div *ngIf="f.Peso.errors.required">El Peso es obligatorio</div>
@@ -104,7 +104,7 @@
             <div>
                 <mat-form-field>
                     <mat-label>Altura</mat-label>
-                    <input matInput formControlName="Altura" placeholder="en cm" class="form-control"
+                    <input type="number" matInput formControlName="Altura" placeholder="en cm" class="form-control"
                         [ngClass]="{ 'is-invalid': submitted && f.Altura.errors }">
                     <mat-error *ngIf="submitted && f.Altura.errors" class="invalid-feedback">
                         <div *ngIf="f.Altura.errors.required">La Altura es obligatorio</div>
