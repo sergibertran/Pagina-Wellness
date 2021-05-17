@@ -68,9 +68,10 @@ export class CalendarioComponent implements OnInit {
     } else {
       this.translate.use(this._servicio.getIdioma())
     }
+   
+  this.reload();
 
 
-    this.reload();
   }
 
 
@@ -164,7 +165,7 @@ export class CalendarioComponent implements OnInit {
             events: this.events,
 
           };
-          this.reload();
+         
         } else {
           this.calendarOptions = {
 
@@ -176,7 +177,7 @@ export class CalendarioComponent implements OnInit {
 
           };
 
-          this.reload();
+         
         }
 
       });
@@ -189,8 +190,44 @@ export class CalendarioComponent implements OnInit {
 
   }
 
+
+
+  reloadIdioma(){
+
+
+    if (this._servicio.getIdioma() == 'es') {
+      this.calendarOptions = {
+
+        locale: esLocale,
+        initialView: "dayGridMonth",
+        dateClick: this.openDialog.bind(this),
+        eventClick: this.openDialogInfo.bind(this),
+        events: this.events,
+
+      };
+      
+    } else {
+      this.calendarOptions = {
+
+
+        initialView: "dayGridMonth",
+        dateClick: this.openDialog.bind(this),
+        eventClick: this.openDialogInfo.bind(this),
+        events: this.events,
+
+      };
+
+     
+    }
+    this.reload();
+
+
+  }
+
   openDialogInfo(arg) {
     console.log('aaa');
+  
+    
 
     const dialogRef = this.dialog.open(CalendarioModal2Component, {
       data: arg,
