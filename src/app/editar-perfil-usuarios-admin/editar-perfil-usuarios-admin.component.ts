@@ -53,6 +53,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
   carneProcesada: string;
   alimentoExeso: string;
   lastChecked;
+  image: string
   
   constructor( private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -137,6 +138,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
      this.direccionform=this.infoUser[0].Direccion;
      this.alturaform=this.infoUser[0].Altura;
      this.pesoform=this.infoUser[0].Peso;
+     this.image=this.infoUser[0].imagen
 
      localStorage.setItem('direccion', this.infoUser[0]['Direccion']);
      localStorage.setItem('peso', this.infoUser[0]['Peso']);
@@ -151,35 +153,39 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
         usuario: new FormControl((datos[0]['usuario']), [
           Validators.minLength(2),
           Validators.maxLength(15),
-          Validators.required,
+        
         ]),
         nombre: new FormControl((datos[0]['nombre']), [
           Validators.minLength(2),
           Validators.maxLength(15),
-          Validators.required,
+       
         ]),
         apellidos: new FormControl((datos[0]['apellido']), [
-          Validators.email,
-          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(15),
+        
         ]),
         correo: new FormControl((datos[0]['correo']), [
           Validators.email,
           Validators.required,
         ]),
         direccion: new FormControl((datos[0]['direccion']), [
-          Validators.email,
-          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(40),
+        
         ]),
         altura: new FormControl((datos[0]['altura']), [
-          Validators.email,
-          Validators.required,
+          Validators.min(1),
+          Validators.max(300),
+         
         ]),
         peso: new FormControl((datos[0]['peso']), [
-          Validators.email,
-          Validators.required,
+          Validators.min(1),
+          Validators.max(300),
+        
         ]),
         tUsuario: new FormControl((datos[0]['tUsuario']), [
-          Validators.email,
+  
           Validators.required,
         ]),
         
