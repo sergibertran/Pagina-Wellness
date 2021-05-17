@@ -47,7 +47,8 @@
           </div>
             
 
-              <div class="row" *ngFor="let item of filterData  | filter:term">
+              <div class="row" *ngFor="let item of filterData  | filter:term; let i = index ">
+            
                 <div class="col-md-2">
                   <p style="margin-left: 120px;">{{item.TipoDieta}} </p>
                 </div>
@@ -59,7 +60,7 @@
 
                 <div class="col-md-3">
                   <button class="btn btn-primary btn-round"
-                      (click)='verDias()'>VER</button> 
+                      (click)='verDias(i)'>VER</button> 
                       <button (click)="openDialog(item.Imagen)" class="btn btn-primary btn-round"> <i class="material-icons">
                         image</i></button>
                 </div>
