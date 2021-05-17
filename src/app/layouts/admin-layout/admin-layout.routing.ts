@@ -1,4 +1,4 @@
-import { AddDiaRutinaComponent } from './../../Rutinas/add-dia-rutina/add-dia-rutina.component';
+
 import { DietaUsuarioComponent } from './../../Dietas/dieta-usuario/dieta-usuario.component';
 
 import { UsuariosComponent } from './../../usuarios/usuarios.component';
@@ -19,7 +19,7 @@ import { AdminGuard } from 'app/_helpers/admin.guard';
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
 import { CalendarioUserComponent } from 'app/calendario/calendario-user/calendario-user.component';
 import { EditarPerfilUsuariosAdminComponent } from 'app/editar-perfil-usuarios-admin/editar-perfil-usuarios-admin.component';
-import { AddDiasDietaComponent } from 'app/Dietas/add-dias-dieta/add-dias-dieta.component';
+
 import { ModificarDietaComponent } from 'app/Dietas/modificar-dieta/modificar-dieta.component';
 import { UserModificarPwdComponent } from 'app/user-profile/user-modificar-pwd/user-modificar-pwd.component';
 import { ModificarRutinaComponent } from 'app/Rutinas/modificar-rutina/modificar-rutina.component';
@@ -39,12 +39,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Usuario',  component: UsuariosComponent ,canActivate: [AuthGuard]},
     { path: 'CalendarioUser/:id',  component: CalendarioUserComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'EditarPerfilUsuariosAdmin/:id',  component: EditarPerfilUsuariosAdminComponent ,canActivate: [AuthGuard, AdminGuard]},
-    { path: 'AddDiaDietas/:id',  component: AddDiasDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
+
     { path: 'ModificarDieta/:id',  component: ModificarDietaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarRutina/:id',  component: ModificarRutinaComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'DietaUsuario',  component: DietaUsuarioComponent ,canActivate: [AuthGuard, AdminGuard]},
     { path: 'ModificarPwd',  component: UserModificarPwdComponent ,canActivate: [AuthGuard]},
-    { path: 'AddDiaRutina',  component: AddDiaRutinaComponent ,canActivate: [AuthGuard, AdminGuard]},
 
     
     
