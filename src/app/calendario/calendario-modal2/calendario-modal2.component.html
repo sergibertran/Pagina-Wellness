@@ -97,7 +97,7 @@
           </mat-card>
         </div>
 
-        <div *ngIf="item['Comentarios'] != null" class="col-md-3">
+        <div *ngIf="item['Comentarios'] != null  && item['Comentarios'] != ''" class="col-md-3">
           <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
@@ -224,6 +224,20 @@
                 <p>
                   {{item['Ejercicio6']}}
                 </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div *ngIf="(item['Ejercicio'] == null || item['Ejercicio'] == '' )&& (item['Ejercicio2'] == null || item['Ejercicio2'] == '') && (item['Ejercicio3'] == null || item['Ejercicio3'] == '') && (item['Ejercicio4'] == null || item['Ejercicio4'] == '') && (item['Ejercicio5'] == null || item['Ejercicio5'] == '')
+          &&( item['Ejercicio6'] == null || item['Ejercicio6'] == '' )
+          " class="col-md-3">
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Descanso</mat-card-title>
+              </mat-card-header>
+
+              <mat-card-content>
+
               </mat-card-content>
             </mat-card>
           </div>
