@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Inject } from "@angular/core";
 import { AuthService } from "app/services/auth.service";
 import { first } from "rxjs/operators";
+import Swal from "sweetalert2";
 @Component({
   selector: "app-calendario-modal",
   templateUrl: "./calendario-modal.component.html",
@@ -173,6 +174,22 @@ export class CalendarioModalComponent implements OnInit {
             .subscribe((data) => {
               console.log(data);
               this.dialogRef.close('Pizza!');
+
+              if (data!='works') {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'No se permite mas de una dieta en el mismo dia!',
+                 
+                })
+              }else if (data=='works') {
+                Swal.fire(
+                  'Buen trabajo!',
+                  'Rutina insertada correctamente!',
+                  'success'
+                )
+                
+              }
              
             });
         });
@@ -254,6 +271,24 @@ export class CalendarioModalComponent implements OnInit {
             .subscribe((data) => {
               console.log(data);
               this.dialogRef.close('Pizza!');
+
+              
+              if (data!='works') {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'No se permite mas de una rutina en el mismo dia!',
+                 
+                })
+              }else if (data=='works') {
+                Swal.fire(
+                  'Buen trabajo!',
+                  'Rutina insertada correctamente!',
+                  'success'
+                )
+                
+              }
+             
             });
         });
     } else if (this.resultadoSelect == "Comentarios") {
@@ -325,6 +360,15 @@ export class CalendarioModalComponent implements OnInit {
           .subscribe((data) => {
             console.log(data);
             this.dialogRef.close('Pizza!');
+
+             if (data=='works') {
+              Swal.fire(
+                'Buen trabajo!',
+                'Comentario insertado correctamente!',
+                'success'
+              )
+              
+            }
           });
       }
     }
