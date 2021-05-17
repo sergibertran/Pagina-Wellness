@@ -69,41 +69,12 @@ export class CalendarioUserComponent implements OnInit {
     this.reload();
   }
 
-  openDialog(arg) {
-    arg.idUser=this.idUsuario;
-    console.log('abrir');
-   
-    const dialogRef  = this.dialog.open(CalendarioModalComponent, {
-      data: arg,
-    });
-    dialogRef.afterClosed().subscribe(result => {
-  
-      console.log( 'se cierra');
+ 
+
+ 
+
+
     
-      this.events=[];
-      this.reload();
-
-
-    });
-  }
-
-  openDialogInfo(arg) {
-console.log(arg);
-
-const dialogRef = this.dialog.open(CalendarioModal2Component, {
-        data: arg,
-      });
-      dialogRef.afterClosed().subscribe(result => {
-  
-        console.log( 'se cierra');
-      
-        this.events=[];
-        this.reload();
-  
-  
-      });
-    }
-
 
 
 
@@ -121,6 +92,7 @@ const dialogRef = this.dialog.open(CalendarioModal2Component, {
     this.authService.loadOwnProfileo(this.idUsuario).subscribe (
       datos => {
         this.ready=true;
+     console.log(datos);
      
      this.infoUser=datos;
      
@@ -145,7 +117,7 @@ const dialogRef = this.dialog.open(CalendarioModal2Component, {
               date: res[index].fecha,
               color: "#fed9d5",
               textColor: "black",
-              res: res,
+              res: res[index],
               id: res[index].idDieta,
               groupId: res[index].idDia,
             });
@@ -155,7 +127,7 @@ const dialogRef = this.dialog.open(CalendarioModal2Component, {
               date: res[index].fecha,
               color: "#dae5fd",
               textColor: "black",
-              res: res,
+              res: res[index],
               id: res[index].idRutina,
               groupId: res[index].idDia,
             });
@@ -165,7 +137,7 @@ const dialogRef = this.dialog.open(CalendarioModal2Component, {
               date: res[index].fecha,
               color: "#e7f5d0",
               textColor: "black",
-              res: res,
+              res: res[index],
               id: res[index].idCalendario,
               groupId: res[index].idDia,
             });
@@ -196,6 +168,42 @@ const dialogRef = this.dialog.open(CalendarioModal2Component, {
   this.openDialog(arg);
   
   }
+
+  openDialogInfo(arg) {
+    arg.idUser=this.idUsuario;
+    console.log(arg);
+    
+    const dialogRef = this.dialog.open(CalendarioModal2Component, {
+            data: arg,
+          });
+          dialogRef.afterClosed().subscribe(result => {
+      
+            console.log( 'se cierra');
+          
+            this.events=[];
+            this.reload();
+      
+      
+          });
+        }
+
+        openDialog(arg) {
+          arg.idUser=this.idUsuario;
+          console.log('abrir');
+         
+          const dialogRef  = this.dialog.open(CalendarioModalComponent, {
+            data: arg,
+          });
+          dialogRef.afterClosed().subscribe(result => {
+        
+            console.log( 'se cierra');
+          
+            this.events=[];
+            this.reload();
+      
+      
+          });
+        }
 
 
   borrar() {

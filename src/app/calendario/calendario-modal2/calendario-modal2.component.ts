@@ -29,6 +29,7 @@ export class CalendarioModal2Component implements OnInit {
 this.Tipode=this.data.event.title;
 
    
+console.log(this.data.event._def.extendedProps.res);
 
 
    this.form = this.fb.group({
