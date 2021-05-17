@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(){
+    console.log('testweno');
+    
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())
