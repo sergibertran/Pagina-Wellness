@@ -23,6 +23,7 @@ export class CalendarioModalComponent implements OnInit {
   rutina = false;
   minDate: Date;
   maxDate: Date;
+  posicion1;
   datoFechas: FormGroup;
   filterData;
   addEventForm: FormGroup;
@@ -327,7 +328,7 @@ export class CalendarioModalComponent implements OnInit {
       }
     }
 
-   
+    this.imagen=null;
   }
 
   onChange(index) {
@@ -335,48 +336,50 @@ export class CalendarioModalComponent implements OnInit {
   }
 
   mySelectHandlerDieta($event) {
-    this.resultadoSelectDieta = $event;
+    console.log($event);
 
-    for (let index = 0; index < this.filterData.length; index++) {
-      console.log(this.resultadoSelectDieta);
-      console.log(this.filterData[index].NDieta);
-     if (this.resultadoSelectDieta==this.filterData[index].NDieta){
-       console.log('joins');
-       
-        this.imagen=this.filterData[index].Imagen;
-        console.log('true'+this.filterData[index].Imagen);
-        
-     }
-      
+   
+    if($event==null){
+      this.posicion1=0;
+      this.resultadoSelectDieta='0';
+    }else{
+      this.posicion1=$event;
+      this.resultadoSelectDieta=$event+'';
     }
+  console.log(this.filterData[this.posicion1].Imagen);
+  
+        this.imagen=this.filterData[this.posicion1].Imagen;
+    
 
   }
   mySelectHandlerRutina($event) {
+console.log($event);
 
-    this.resultadoSelectRutina = $event;
-
-
-    for (let index = 0; index < this.filterData.length; index++) {
-      console.log(this.resultadoSelectRutina);
-      console.log(this.filterData[index].Nrutina);
-     if (this.resultadoSelectRutina==this.filterData[index].Nrutina){
-        this.imagen=this.filterData[index].imagen;
-        console.log('true'+this.filterData[index].imagen);
-        
-     }
-      
+   
+    if($event==null){
+      this.posicion1=0;
+      this.resultadoSelectRutina='0';
+    }else{
+      this.posicion1=$event;
+      this.resultadoSelectRutina=$event+'';
     }
+
+console.log(this.filterData);
+
+  
+        this.imagen=this.filterData[this.posicion1].imagen;
+   
     
     
   }
 
   mySelectHandler($event) {
     this.resultadoSelect = $event;
-
+    this.imagen=null;
     if (this.resultadoSelect == "Dieta") {
       this.tipoUsuario = this.authService.getNpremium();
       console.log(this.tipoUsuario);
-
+    
      
  
         console.log(this.data.idUser);
@@ -385,7 +388,7 @@ export class CalendarioModalComponent implements OnInit {
           .pipe(first())
           .subscribe((data) => {
             console.log(data);
-
+          
             this.filterData = data;
           });
       
@@ -393,11 +396,12 @@ export class CalendarioModalComponent implements OnInit {
       this.tipoUsuario = this.authService.getNpremium();
       console.log(this.tipoUsuario);
 
-     
+      
         this.authService
           .loadRutinasUsuario(this.tipoUsuario)
           .pipe(first())
           .subscribe((data) => {
+           
             console.log(data);
             this.filterData = data;
           });

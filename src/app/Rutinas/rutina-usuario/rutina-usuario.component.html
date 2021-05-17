@@ -45,14 +45,14 @@
             </table>
           </div>
 
-              <div class="row" *ngFor="let item of filterData  | filter:term">
+              <div class="row" *ngFor="let item of filterData  | filter:term let i = index ">
                 <div class="col-md-2">
                   <p style="margin-left: 120px;">{{item.Nrutina}}</p>
                </div>
 
                 <div class="col-md-1">
                   <p style="margin-left: 150px;"> <button class="btn btn-primary btn-round"
-                      (click)='verDias()'>VER</button></p>
+                      (click)='verDias(i)'>VER</button></p>
                </div>
 
               </div>

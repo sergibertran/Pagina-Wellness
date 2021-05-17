@@ -25,17 +25,17 @@
           <div *ngIf="resultadoSelect == 'Dieta'">
             <label>¿Que dieta quieres hacer?</label>
             <select class="custom-select" [formControl]="selectControlDieta"
-              (ngModelChange)="mySelectHandlerDieta($event)">
+              (ngModelChange)="mySelectHandlerDieta(selectControlDieta.value)">
               Dieta
               <option [ngValue]="null" disabled>Escojer</option>
-              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >   {{i}} {{item.NDieta}}</option>
+              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >{{item.NDieta}}</option>
             
             </select>
 
 
             <div style="margin-top: 15px;" *ngIf="resultadoSelectDieta != ''">
 
-              <div class="text-center">
+              <div class="text-center" *ngIf="imagen!=null">
                 <img class='img-fluid' [src]="imagen" alt="">
               </div>
          
@@ -60,13 +60,13 @@
           <div *ngIf="resultadoSelect == 'Rutina'">
             <label>¿Que Rutina quieres hacer?</label>
             <select class="custom-select" [formControl]="selectControlRutina"
-              (ngModelChange)="mySelectHandlerRutina($event)">
+              (ngModelChange)="mySelectHandlerRutina(selectControlRutina.value)">
               Rutina
               <option [ngValue]="null" disabled>Escojer</option>
-              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >   {{i}} {{item.Nrutina}}</option>
+              <option *ngFor="let item of filterData; let i = index" value="{{i}}" >{{item.Nrutina}}</option>
             
             </select>
-           {{selectControlRutina.value}}
+           
             <div style="margin-top: 15px;" *ngIf="resultadoSelectRutina != ''">
             <div class="text-center">
               <img class='img-fluid' [src]="imagen" alt="">
