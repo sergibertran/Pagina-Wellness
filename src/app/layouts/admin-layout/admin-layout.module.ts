@@ -43,7 +43,7 @@ import { AddDiasDietaComponent } from 'app/Dietas/add-dias-dieta/add-dias-dieta.
 import { DietaUsuarioComponent } from 'app/Dietas/dieta-usuario/dieta-usuario.component';
 import { UserModificarPwdComponent } from 'app/user-profile/user-modificar-pwd/user-modificar-pwd.component';
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
-import { PremiumComponent } from 'app/premium/premium.component';
+
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -112,7 +112,6 @@ FullCalendarModule.registerPlugins([
     DietaUsuarioComponent,
     UserModificarPwdComponent,
     RutinaUsuarioComponent,
-    PremiumComponent,
     AddDiaRutinaComponent,
     ModificarRutinaComponent
    
