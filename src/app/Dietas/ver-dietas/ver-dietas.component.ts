@@ -32,7 +32,7 @@ dietas;
       this.translate.use(this._servicio.getIdioma())
   }
 
-    this.cargarDieta(this.test)
+    this.cargarDieta(this.test);
   }
 
   cargarDieta(test){
@@ -66,15 +66,15 @@ dietas;
         this.authService
         .borrarDieta(i)
         .subscribe((datos) => {  
-          console.log(datos);   
+          console.log(datos);  
+          this.cargarDieta(this.test); 
         });
         Swal.fire(
           'Borrada!',
           'La dieta ha sido borrada correctamente.',
           'success'
         )
-        window.location.reload();
-        this.router.navigate(['/VerDieta']);
+   
 
       }
     })

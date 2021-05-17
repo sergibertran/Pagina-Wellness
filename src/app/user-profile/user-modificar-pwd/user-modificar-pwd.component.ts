@@ -75,6 +75,7 @@ export class UserModificarPwdComponent implements OnInit {
     this.authService
       .modificarPwd(this.modpwdForm.value)
       .subscribe((datos) => {
+console.log(); ///
 
         this.router.navigate(['/user-profile']);
 

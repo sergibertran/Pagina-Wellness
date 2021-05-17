@@ -69,6 +69,7 @@ export class VerRutinasComponent implements OnInit {
         .borrarRutina(i)
         .subscribe((datos) => {  
           console.log(datos);   
+          this.cargarRutina(this.test);
         });
 
         Swal.fire(
@@ -77,7 +78,7 @@ export class VerRutinasComponent implements OnInit {
           'success'
         )
 
-        window.location.reload();
+      
 
       }
     })
