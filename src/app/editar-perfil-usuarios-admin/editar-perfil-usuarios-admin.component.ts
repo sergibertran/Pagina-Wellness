@@ -138,7 +138,7 @@ export class EditarPerfilUsuariosAdminComponent implements OnInit {
      this.direccionform=this.infoUser[0].Direccion;
      this.alturaform=this.infoUser[0].Altura;
      this.pesoform=this.infoUser[0].Peso;
-     this.image=this.infoUser[0].imagen
+     this.image=this.infoUser[0].Imagen,
 
      localStorage.setItem('direccion', this.infoUser[0]['Direccion']);
      localStorage.setItem('peso', this.infoUser[0]['Peso']);
