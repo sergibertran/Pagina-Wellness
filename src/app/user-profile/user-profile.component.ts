@@ -63,6 +63,41 @@ export class UserProfileComponent implements OnInit {
  
       ]),
     });
+ 
+
+    this.load();
+  }
+  isAdmin() {
+    return this.authService.isAdmin();
+  }
+
+  load(){
+    this.myForm = new FormGroup({
+      usuario: new FormControl([0]["usuario"], [
+     
+      ]),
+      nombre: new FormControl([0]["nombre"], [
+    
+      ]),
+      apellidos: new FormControl([0]["apellido"], [
+      
+      ]),
+      correo: new FormControl([0]["correo"], [
+    
+      ]),
+      direccion: new FormControl([0]["Direccion"], [
+   
+      ]),
+      altura: new FormControl([0]["Altura"], [
+     
+      ]),
+      peso: new FormControl([0]["Peso"], [
+ 
+      ]),
+      imagen: new FormControl([0]["Imagen"], [
+ 
+      ]),
+    });
 
     this.idusuario = this.authService.getidUser();
     this.authService.loadOwnProfileo(this.idusuario).subscribe((datos) => {
@@ -124,9 +159,7 @@ export class UserProfileComponent implements OnInit {
       
     });
     this.ready=true;
-  }
-  isAdmin() {
-    return this.authService.isAdmin();
+
   }
 
   EnviarDatos() {
@@ -135,7 +168,7 @@ export class UserProfileComponent implements OnInit {
 
       console.log(this.DatosModal);
 
-      window.location.reload();
+     this.load();
       
     });
   }
