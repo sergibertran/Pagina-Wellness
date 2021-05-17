@@ -151,18 +151,14 @@ export class ModificarRutinaComponent implements OnInit {
                 Validators.maxLength(15),
                 Validators.required,
               ]),
-              Ejercicio1: new FormControl(
-                this.infoTodosDias[index]["Ejercicio1"],
+              Ejercicio2: new FormControl(
+                this.infoTodosDias[index]["Ejercicio2"],
                 [
                   Validators.minLength(2),
                   Validators.maxLength(15),
                   Validators.required,
                 ]
               ),
-              Ejercicio2: new FormControl(this.infoTodosDias[index]["Ejercicio2"], [
-                Validators.email,
-                Validators.required,
-              ]),
               Ejercicio3: new FormControl(this.infoTodosDias[index]["Ejercicio3"], [
                 Validators.email,
                 Validators.required,
