@@ -12,7 +12,7 @@ export class CalendarioService {
   load(text) {
    
     
-    return this.http.post('https://wellnessdaw2.herokuapp.com/load.php/', JSON.stringify(text))
+    return this.http.post('http://localhost/load.php/', JSON.stringify(text))
       .pipe(map(any => {
    
         
