@@ -49,6 +49,8 @@ export class NavbarComponent implements OnInit {
     }
     
  Espanol(){
+     console.log(this);
+     
     this.translate.use('es')
     this._servicio.setIdioma('es')
   }

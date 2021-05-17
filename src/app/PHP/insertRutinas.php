@@ -51,8 +51,8 @@ $sql = "INSERT INTO daw2_jamsweb.rutina (Nrutina, Imagen) VALUES('$params->nombr
  for ($i = 1; $i <= 7; $i++) {
  $resultado = mysqli_query($conexion, 
  $sql = "INSERT INTO daw2_jamsweb.dias_rutinas
- (numDiaRutina, idRutina, Titulo, Descanso, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6, Comentarios)
- VALUES($i, $id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
+ (numDiaRutina, idRutina, Titulo, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6, Comentarios)
+ VALUES($i, $id, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
  }
  $respuesta='funciona';
