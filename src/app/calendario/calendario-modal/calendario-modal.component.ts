@@ -216,7 +216,6 @@ export class CalendarioModalComponent implements OnInit {
       this.datoId = this.fb.group({
         id: this.filterData[this.posicion]["idRutina"],
       });
-console.log(this.datoId.value);
 
       this.dia = 1;
       this.authService
