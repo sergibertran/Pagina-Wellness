@@ -27,21 +27,17 @@
 
             <table class="table table-striped table-hover">
 
-              <div class="card-header card-header-primary">
-                <thead>
+              <div class="row card-header card-header-primary">
 
-                  <div class="col-md-4" style="margin-left: 80px;">
-
+                  <div class="col-md-4">
+                    {{"tipod" | translate}}
                   </div>
-               
-                    <th >{{"tipod" | translate}}</th>
-
-                    <th style="padding-left: 330px;">{{"nombred" | translate}}</th>
-
-                    <th style="padding-left: 330px;">{{"acciond" | translate}}</th>
-
-
-                </thead>
+               <div class="col-md-4">
+                {{"nombred" | translate}}
+               </div>
+               <div class="col-md-4">
+                {{"acciond" | translate}}
+               </div>
               </div>
             </table>
           </div>
@@ -49,13 +45,12 @@
 
               <div class="row" *ngFor="let item of filterData  | filter:term; let i = index ">
             
-                <div class="col-md-2">
-                  <p style="margin-left: 120px;">{{item.TipoDieta}} </p>
+                <div class="col-md-3">
+                  <p >{{item.TipoDieta}} </p>
                 </div>
 
-                <div style="padding-right: 200px;" class="col-md-4">
-                  <p style="margin-left: 205px;">{{item.NDieta}}</p>
-
+                <div  class="col-md-4">
+                  <p >{{item.NDieta}}</p>
                 </div>
 
                 <div class="col-md-3">
