@@ -12,7 +12,7 @@
  // REALIZA LA QUERY A LA DB
  $resultado = mysqli_query($conexion, 
  
- $sql = " SELECT idDiaRutina, numDiaRutina, idRutina, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6, Comentarios
+ $sql = "SELECT idDiaRutina, numDiaRutina, idRutina, Ejercicio, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, Ejercicio6
  FROM daw2_jamsweb.dias_rutinas  where idRutina=$params->id");
  
 

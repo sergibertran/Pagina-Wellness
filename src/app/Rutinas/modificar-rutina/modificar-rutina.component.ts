@@ -139,6 +139,8 @@ export class ModificarRutinaComponent implements OnInit {
       .pipe(first())
       .subscribe((data) => {
         this.infoTodosDias = data;
+
+        
         console.log(this.infoTodosDias);
 
         this.Ranking_modificarArray.clear();
