@@ -32,7 +32,7 @@
  }
  
 if(count($array)>0){
-  $result='error hay dietas entre medio';
+  $result='error';
 
 }else{
 
@@ -63,7 +63,7 @@ $result='works';
 
 
 
-    echo json_encode($params); // MUESTRA EL JSON GENERADO
+    echo json_encode($result); // MUESTRA EL JSON GENERADO
 
 ?>
 
