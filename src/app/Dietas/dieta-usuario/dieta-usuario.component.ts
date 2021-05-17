@@ -25,7 +25,7 @@ export class DietaUsuarioComponent implements OnInit {
   todosDias;
 
   ngOnInit(): void {
-
+// Cambiamos el idioma al del navegador cuando se recarga la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

@@ -14,6 +14,7 @@ export class Error404Component implements OnInit {
   constructor( private _servicio:IdiomaService,public translate:TranslateService,private router: Router,private authService: AuthService) { }
 
   ngOnInit(): void {
+    //Cambiamos el idioma al del navegador si recarga la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

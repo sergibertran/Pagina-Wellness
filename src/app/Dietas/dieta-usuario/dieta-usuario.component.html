@@ -23,6 +23,7 @@
             </div>
           </div>
 
+          <!-- Mostramos la tabla de dietas y las acciones que puede hacer el usuario -->
           <div class="row">
 
             <table class="table table-striped table-hover">
@@ -70,6 +71,7 @@
   </div>
 </div>
 
+<!-- Mostramos el contenido de una dieta al hacerle click -->
 <div style="padding-left: 30px;" *ngIf="mostrarDias==true" class="row">
   <div *ngIf="todosDias!=null">
     <div *ngFor="let item of todosDias; index as i">

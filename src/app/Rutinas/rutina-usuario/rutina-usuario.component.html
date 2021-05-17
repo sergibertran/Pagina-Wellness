@@ -1,3 +1,4 @@
+<!-- mostramos las rutinas que el usuario tiene disponible -->
 <div>
   <div class="container-fluid">
     <div class="card">
@@ -65,6 +66,7 @@
   </div>
 </div>
 
+<!-- mostramos los ejercicios de cada rutina, en el caso de que un dia este vacio no se mostrara  -->
 <div style="padding-left: 30px;" *ngIf="mostrarDias==true" class="col-md-10">
   <div *ngIf="todosDias!=null">
     <div *ngFor="let item of todosDias; index as i">

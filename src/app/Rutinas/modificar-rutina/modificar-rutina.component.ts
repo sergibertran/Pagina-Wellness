@@ -54,6 +54,7 @@ export class ModificarRutinaComponent implements OnInit {
       imagen: new FormControl()
    });
 
+   //Cambiamos el idioma al del navegador cuando recarga la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

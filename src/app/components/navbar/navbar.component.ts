@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit(){
+        //Cambia el idioma al del buscador al recargar la pagina
         if(this._servicio.getIdioma()==undefined){
             this.translate.use(this.translate.getBrowserLang())
             this._servicio.setIdioma(this.translate.getBrowserLang())

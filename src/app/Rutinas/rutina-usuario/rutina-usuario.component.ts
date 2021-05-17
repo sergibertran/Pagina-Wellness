@@ -27,6 +27,7 @@ export class RutinaUsuarioComponent implements OnInit {
   rutinas: any;
   ngOnInit(): void {
 
+    //Cambiamos el idioma al del navegador en el caso de que recarge la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

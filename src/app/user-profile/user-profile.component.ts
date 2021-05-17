@@ -30,6 +30,7 @@ export class UserProfileComponent implements OnInit {
   imagen;
   ngOnInit() {
 
+    //Cambiamos el idioma al del navegador cuando se recarga
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(){
+    // Cambiamos el idioma a español si se recarga la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())

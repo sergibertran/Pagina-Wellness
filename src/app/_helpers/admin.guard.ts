@@ -17,7 +17,7 @@ canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     console.log(currentUser);
     
 
-
+    // Comprobamos si el usuario es admin o no
     if (localStorage.getItem('role') == '1') {
         // logged in so return true
         console.log('eres admin');

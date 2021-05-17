@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    //Cambiamos el idioma al del navegador si recarga la pagina
     if(this._servicio.getIdioma()==undefined){
       this.translate.use(this.translate.getBrowserLang())
       this._servicio.setIdioma(this.translate.getBrowserLang())
