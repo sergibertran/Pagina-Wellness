@@ -1,3 +1,5 @@
+import { MatDialog } from '@angular/material/dialog';
+import { VerImagenComponent } from './../../ver-imagen/ver-imagen.component';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -20,7 +22,7 @@ export class RutinaUsuarioComponent implements OnInit {
   mostrarDias=false;
   i=0;
 
-  constructor(private _servicio:IdiomaService,public translate:TranslateService, private http: HttpClient,private authService: AuthService,private fb: FormBuilder) { }
+  constructor(public dialog: MatDialog,private _servicio:IdiomaService,public translate:TranslateService, private http: HttpClient,private authService: AuthService,private fb: FormBuilder) { }
   filterData;
   rutinas: any;
   ngOnInit(): void {
@@ -89,6 +91,16 @@ console.log(this.form);
     this.i=0;
     
   }
+  openDialog(arg) {
 
+    console.log(arg);
+    
+    this.dialog.open(VerImagenComponent, {
+      data: arg,
+
+    });
+    
+    
+  }
 
 }

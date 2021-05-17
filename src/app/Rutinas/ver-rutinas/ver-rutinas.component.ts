@@ -101,4 +101,6 @@ export class VerRutinasComponent implements OnInit {
     
     
   }
+
+  
 }
