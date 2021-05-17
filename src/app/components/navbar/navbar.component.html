@@ -40,9 +40,7 @@
                             <div class="dropdown-menu">
                                
                               <a class="dropdown-item" routerLink="/user-profile">{{"VerPerfil" | translate}}</a>
-                                <div *ngIf="isAdmin()==false">
-                              <a class="dropdown-item" routerLink="/Premium">{{"HacersePREMIUM" | translate}}</a>
-                            </div>
+                                
                               <a class="dropdown-item" (click)='logout()'>{{"Desconectarse" | translate}}</a>
                  
                             </div>

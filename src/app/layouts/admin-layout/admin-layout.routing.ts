@@ -15,7 +15,7 @@ import { CalendarioComponent } from 'app/calendario/calendario.component';
 import { EnquestaComponent } from 'app/enquesta/enquesta.component';
 import { AuthGuard } from 'app/_helpers/auth.guard';
 import { AdminGuard } from 'app/_helpers/admin.guard';
-import { PremiumComponent } from 'app/premium/premium.component';
+
 import { RutinaUsuarioComponent } from 'app/Rutinas/rutina-usuario/rutina-usuario.component';
 import { CalendarioUserComponent } from 'app/calendario/calendario-user/calendario-user.component';
 import { EditarPerfilUsuariosAdminComponent } from 'app/editar-perfil-usuarios-admin/editar-perfil-usuarios-admin.component';
@@ -29,7 +29,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent ,canActivate: [AuthGuard]},
     { path: 'Calendario',  component: CalendarioComponent ,canActivate: [AuthGuard]},
     { path: 'Enquesta',  component: EnquestaComponent ,canActivate: [AuthGuard]},
-    { path: 'Premium',  component: PremiumComponent ,canActivate: [AuthGuard]},
     { path: 'AddDieta',  component: AddDietaComponent ,canActivate: [AuthGuard]},
     { path: 'AddRutina',  component: AddRutinaComponent ,canActivate: [AuthGuard]},
     { path: 'VerRutina',  component: VerRutinasComponent ,canActivate: [AuthGuard]},
