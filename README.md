@@ -13,21 +13,22 @@ Pagina de calendario de control dietetico y fisico hecha con Angular, PHP y MySQ
 ## Página principal
 ![Drag Racing](https://i.imgur.com/AgNe3ES.png)
 
-## Installation
+## Instalación
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+ + Instale previamente el  [Node.js](https://nodejs.org/) v10+.
 
-Install the dependencies and devDependencies and start the server.
+ + Abre la Base de Datos correspodientes.
 
-```sh
-cd dillinger
-npm i
-node app
-```
+ + Los PHP estan en la siguiente ruta. 
+    > Ruta: `\Pagina-Wellness\src\app\PHP`
 
-For production environments...
+ + Instale las dependencias y e inicie el servidor.
 
-```sh
-npm install --production
-NODE_ENV=production node app
-```
+    ```sh
+    npm install
+    ```
+
+    ```sh
+    ng serve
+    ```
+Salu2.
