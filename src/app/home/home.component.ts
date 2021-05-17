@@ -39,19 +39,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/Calendario']);
   }
 
-    this.LoginForm = this.fb.group({
-      'username': [''],
-      'password': ['']
-    });
-
-    this.RegisterForm = this.fb.group({
-      'username': [''],
-      'email': [''],
-      'password': [''],
-      'repassword': [''],
-   
-    });
-
+  
 
  
 
