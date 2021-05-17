@@ -74,7 +74,7 @@ export class LoginRegisterComponent implements OnInit {
 
 
   openDialogInfo(info) {
-    console.log(info);
+ 
     
       this.dialog.open(ModalhomeComponent,{
         data: info,
@@ -119,7 +119,7 @@ export class LoginRegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (data) => {
-          console.log(data);
+      
           this.dialogRef.close();
           this.authService.login(data);
           try {
@@ -131,7 +131,7 @@ export class LoginRegisterComponent implements OnInit {
               localStorage.setItem('iDUser', data['idUsuario']);
               localStorage.setItem('role', data['tUsuario']);
               localStorage.setItem('Premium', data['Npremium']);
-            console.log(data['usuario']);
+     
             
             if (data['usuario']=="admin"){
               this.router.navigate(['/dashboard']);

@@ -92,7 +92,7 @@ export class CalendarioUserComponent implements OnInit {
     this.authService.loadOwnProfileo(this.idUsuario).subscribe (
       datos => {
         this.ready=true;
-     console.log(datos);
+  
      
      this.infoUser=datos;
      
@@ -105,8 +105,7 @@ export class CalendarioUserComponent implements OnInit {
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
       
-      console.log('se vuelven a cargar los registros nuevos');
-      console.log(res);
+      
 
       if (res!=null){
 
@@ -172,14 +171,14 @@ export class CalendarioUserComponent implements OnInit {
 
   openDialogInfo(arg) {
     arg.idUser=this.idUsuario;
-    console.log(arg);
+
     
     const dialogRef = this.dialog.open(CalendarioModal2Component, {
             data: arg,
           });
           dialogRef.afterClosed().subscribe(result => {
       
-            console.log( 'se cierra');
+    
         
           
             this.events=[];
@@ -191,19 +190,18 @@ export class CalendarioUserComponent implements OnInit {
 
         openDialog(arg) {
           arg.idUser=this.idUsuario;
-          console.log('abrir');
+    
          
           const dialogRef  = this.dialog.open(CalendarioModalComponent, {
             data: arg,
           });
           dialogRef.afterClosed().subscribe(result => {
-        
-            console.log( 'se cierra');
-          console.log(this.events);
+       
+    
           
             this.events=[];
             this.reload();
-            console.log(this.events);
+         
       
           });
         }

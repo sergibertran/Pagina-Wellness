@@ -79,8 +79,7 @@ export class CalendarioComponent implements OnInit {
 
   openDialog(arg) {
     arg.idUser = this.idUsuario;
-    console.log('abrir');
-    console.log(arg);
+  
 
     const dialogRef = this.dialog.open(CalendarioModalComponent, {
       data: arg,
@@ -89,7 +88,7 @@ export class CalendarioComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
 
-      console.log('se cierra');
+ 
      
       this.events = [];
       this.reload();
@@ -113,8 +112,7 @@ export class CalendarioComponent implements OnInit {
     this.http
       .post("http://localhost/load.php/", this.RegisterForm.value)
       .subscribe((res: any) => {
-        console.log('se vuelven a cargar los registros nuevos');
-        console.log(res);
+   
         if (res != null) {
 
           for (let index = 0; index < Object.keys(res).length; index++) {
@@ -154,7 +152,7 @@ export class CalendarioComponent implements OnInit {
           }
         }
 
-        console.log(this);
+    
 
         if (this._servicio.getIdioma() == 'es') {
           this.calendarOptions = {
@@ -226,7 +224,7 @@ export class CalendarioComponent implements OnInit {
   }
 
   openDialogInfo(arg) {
-    console.log('aaa');
+
   
     
 
@@ -235,7 +233,7 @@ export class CalendarioComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
 
-      console.log('se cierra');
+  
 
       this.events = [];
       this.reload();

@@ -22,14 +22,12 @@ export class CalendarioModal2Component implements OnInit {
 
   Tipode;
   ngOnInit(): void {
-    console.log(this.data);
-    console.log(this.data.event.id);
-    console.log(this.data.event._def.extendedProps.res.idCalendario);
+
     
 this.Tipode=this.data.event.title;
 
    
-console.log(this.data.event._def.extendedProps.res);
+
 
 
    this.form = this.fb.group({
@@ -37,14 +35,14 @@ console.log(this.data.event._def.extendedProps.res);
     'groupId': [this.data.event.groupId],
     'calendarioId': [this.data.event._def.extendedProps.res.idCalendario]
   });
-    console.log(this.data.event.title);
+
     if(this.data.event.title=='Dieta'){
 
 
 
    this.authService.cargarDatosDieta(this.form.value).subscribe (
     datos => {
-    console.log(datos);
+   
     this.dietas = datos;
     
 
@@ -58,7 +56,7 @@ console.log(this.data.event._def.extendedProps.res);
 
   this.authService.cargarDatosRutina(this.form.value).subscribe (
     datos => {
-    console.log(datos);
+   
     this.rutinas = datos;
     
 
@@ -72,11 +70,11 @@ console.log(this.data.event._def.extendedProps.res);
     'calendarioId': [this.data.event._def.extendedProps.res.idCalendario]
   });
 
-console.log(this.form.value);
+
 
   this.authService.cargarDatosComentario(this.form.value).subscribe (
     datos => {
-    console.log(datos);
+
     this.comentarios = datos[0].comentario;
     
 
@@ -89,13 +87,13 @@ console.log(this.form.value);
   }
 
 borrar(){
-console.log(this.form.value);
 
-console.log(this);
+
+
 this.dialogRef.close();
  this.authService.eliminarDia(this.form.value).subscribe (
    datos => {
-  console.log(datos);
+
    
     
 
