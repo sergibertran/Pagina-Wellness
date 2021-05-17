@@ -83,7 +83,7 @@
           <h3 class="card-title">Dia {{i+1}}</h3>
           <br>
           <div>
-            <div *ngIf="item['Desayuno'] != null" class="col-md-12">
+            <div *ngIf="item['Desayuno'] != null && item['Desayuno']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Desayuno</mat-card-title>
@@ -95,7 +95,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Desayuno2'] != null" class="col-md-12">
+            <div *ngIf="item['Desayuno2'] != null && item['Desayuno2']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Desayuno 2</mat-card-title>
@@ -108,7 +108,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Comida'] != null" class="col-md-12">
+            <div *ngIf="item['Comida'] != null && item['Comida']!=''" class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Comida</mat-card-title>
@@ -121,7 +121,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Merienda'] != null" class="col-md-12">
+            <div *ngIf="item['Merienda'] != null && item['Merienda']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Merienda</mat-card-title>
@@ -134,7 +134,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Merienda2'] != null" class="col-md-12">
+            <div *ngIf="item['Merienda2'] != null && item['Merienda2']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Merienda 2</mat-card-title>
@@ -147,7 +147,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Cena'] != null" class="col-md-12">
+            <div *ngIf="item['Cena'] != null && item['Cena']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Cena</mat-card-title>
@@ -160,7 +160,7 @@
               </mat-card-content>
             </div>
 
-            <div *ngIf="item['Comentarios'] != null" class="col-md-12">
+            <div *ngIf="item['Comentarios'] != null && item['Comentarios']!=''"  class="col-md-12">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Comentarios</mat-card-title>

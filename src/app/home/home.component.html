@@ -16,34 +16,25 @@
       
               
     <header class="masthead">
-        <ul style="float:left  " class="navbar-nav">
+        <ul style="float:left">
                
- <button class='buttonTraductor'type="button" class="btn btn-primary" data-toggle="dropdown">
-        <i class="material-icons">language</i>
-    </button>
+            
+                  
+            
 
             <ul class="navbar-nav">
                
                 <br><br>
-              <li class="nav-item">
-                  <a class="nav-link" >
-                      <div class="dropleft  mt-1 pt-1">
-                          
-                          <div class="dropdown-menu">
-                             
-                            <a class="dropdown-item" (click)="Espanol()"><img style="width: 25%; " src="../../assets/img/españa2.png" alt=""></a>
-                             
-                            <a class="dropdown-item" (click)="English()"><img style="width: 25%;" src="../../assets/img/english2.png" alt=""></a>
-                       
-                          
-               
-                          </div>
-                        </div>
-                        
-                     
-    
-                  </a>
-              </li>
+           
+
+              <li><mat-form-field class="primary">
+                <mat-label>  <i class="material-icons">language</i></mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1"> <a class="dropdown-item" (click)="English()"><img style="width: 25%;" src="../../assets/img/english2.png" alt=""></a></mat-option>
+                
+                  <mat-option value="3"> <a class="dropdown-item" (click)="Espanol()"><img style="width: 25%; " src="../../assets/img/españa2.png" alt=""></a></mat-option>
+                </mat-select>
+              </mat-form-field></li>
           </ul>
           </ul>
         
