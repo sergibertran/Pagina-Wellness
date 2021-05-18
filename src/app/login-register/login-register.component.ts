@@ -108,7 +108,25 @@ export class LoginRegisterComponent implements OnInit {
   
     this.authService.register(this.Register.value).subscribe (
       datos => {
-        this.dialogRef.close();
+console.log(datos);
+
+        if (datos=='usuario repetido'){
+          Swal.fire({
+            icon: 'error',
+            title: 'Ya hay un usuario con este nombre',
+            text: 'Datos introducidos incorrectos, revisa tus datos',
+          })
+
+        }else{
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario creado correctamente',
+            text: 'Datos introducidos correctos',
+          })
+          
+          this.dialogRef.close();
+        }
+        
      
       }
     )
@@ -139,6 +157,12 @@ export class LoginRegisterComponent implements OnInit {
               this.router.navigate(['/Calendario']);
   
             } 
+            }else{
+              Swal.fire({
+                icon: 'error',
+                title: 'Login incorrecto',
+                text: 'Datos introducidos incorrectos, revisa tus datos',
+              }) 
             }
           }
            catch (error) {

@@ -10,18 +10,18 @@
 
 
   require("db.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
-
+  $response;
   $conexion = conexion(); // CREA LA CONEXION
 
   $passwordc = password_hash($params->password, PASSWORD_DEFAULT);
 
-  $resultadoNoRepetir = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='user");
+  $resultadoNoRepetir = mysqli_query($conexion, "SELECT * FROM daw2_jamsweb.usuarios WHERE usuario='$params->username'");
 
 
   if($resultadoNoRepetir->num_rows >= 1) {
 
 
-
+$response='usuario repetido';
   }else{
 
   // REALIZA LA QUERY A LA DB
@@ -29,26 +29,13 @@
   (usuario, contrasena, correo)
   VALUES('$params->username','$passwordc','$params->email')");
   //  VALUES('$params->$username','$params->$email','$params->$password')");
+
+  $response='usuario creado';
 }
-    class Result {}
-
-    // GENERA LOS DATOS DE RESPUESTA
-    $response = new Result();
-
-    if($resultado) {
-        $response->resultado = 'OK';
-        $response->mensaje = 'REGISTER EXITOSO';
-
-      }else {
-        $response->resultado = 'FAIL';
-        $response->mensaje = 'REGISTER FALLIDO';
-        if($resultadoNoRepetir->num_rows >= 1) {
-          $response->mensaje = 'REGISTER FALLIDO USUARIO YA CREADO';
-      }
-    }
+ 
 
     header('Content-Type: application/json');
 
-    echo json_encode($passwordc); // MUESTRA EL JSON GENERADO
+    echo json_encode($response); // MUESTRA EL JSON GENERADO
 
 ?>
