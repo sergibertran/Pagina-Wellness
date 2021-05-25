@@ -62,8 +62,8 @@
 
                 <div class="col-md-8">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="altura" type="number" formControlName="altura" value="{{ this.altura }}"
-                      [(ngModel)]="this.alturaform" />
+                    <input matInput placeholder="altura" type="number" formControlName="altura"
+                      value="{{ this.altura }}" [(ngModel)]="this.alturaform" />
                   </mat-form-field>
                 </div>
 
@@ -74,16 +74,15 @@
                   </mat-form-field>
                 </div>
 
-            
 
-         
-                <select class="custom-select" formControlName="tUsuario" >
-                  Dar usuario
-                  <option disabled>Escojer</option>
-                  <option value="0">Normal</option>
-                  <option value="1">Admin</option>
-                </select>
 
+                <div class="col-md-8">
+                  <select class="custom-select" formControlName="tUsuario">
+                    <option disabled>Escoger tipo de usuario:</option>
+                    <option value="0">Normal</option>
+                    <option value="1">Admin</option>
+                  </select>
+                </div>
 
               </div>
               <button mat-raised-button type="submit" class="btn btn-primary pull-right">
@@ -111,142 +110,142 @@
               <div class="col-md-9">
                 <br />
                 <h4>DATOS GENERALES</h4>
-           
-                  <label>Correo: </label>{{ this.correo }}
-              
+
+                <label>Correo: </label>{{ this.correo }}
+
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-            
-                  <label>Nombre: </label>{{ this.nombre }}
-              
+
+                <label>Nombre: </label>{{ this.nombre }}
+
               </div>
               <div class="col-md-6">
-               
-                  <label>Apellidos: </label>{{ this.apellidos }}
-             
+
+                <label>Apellidos: </label>{{ this.apellidos }}
+
               </div>
             </div>
             <div class="row">
               <div class="col-md-8">
-              
-                  <label>Direccion: </label>{{ this.direccionform }}
-           
+
+                <label>Direccion: </label>{{ this.direccionform }}
+
               </div>
               <div class="col-md-8">
-                
-                  <label>Sexo: </label>{{ this.sexo }}
-           
+
+                <label>Sexo: </label>{{ this.sexo }}
+
               </div>
               <h4 class="col-md-12">DATOS ANTROPOMÉTRICOS</h4>
               <div class="col-md-8">
-               
-                  <label>Altura: </label>{{ this.alturaform }}
-               
+
+                <label>Altura: </label>{{ this.alturaform }}
+
               </div>
               <div class="col-md-6">
-               
-                  <label>Peso: </label>{{ this.pesoform }}
-             
+
+                <label>Peso: </label>{{ this.pesoform }}
+
               </div>
 
               <div class="col-md-6">
-              
-                  <label>Cintura: </label>{{ this.cintura }}
-             
+
+                <label>Cintura: </label>{{ this.cintura }}
+
               </div>
 
               <div class="col-md-6">
-                
-                  <label>Cadera: </label>{{ this.cadera }}
-               
+
+                <label>Cadera: </label>{{ this.cadera }}
+
               </div>
               <h4 class="col-md-12">ENCUESTA DIETÉTICA</h4>
               <div class="col-md-6">
-             
-                  <label>¿Posee alguna intolerancia o alergia alimentaria? </label>{{ this.intolerancia }}
-               
+
+                <label>¿Posee alguna intolerancia o alergia alimentaria? </label>{{ this.intolerancia }}
+
               </div>
               <div class="col-md-6">
-           
-                  <label>Si es que sí…¿Cuál? </label>{{ this.intoleranciaEx }}
-              
+
+                <label>Si es que sí…¿Cuál? </label>{{ this.intoleranciaEx }}
+
               </div>
               <div class="col-md-6">
-           
-                  <label>¿Estás siguiendo alguna dieta? </label>{{ this.dieta }}
-               
+
+                <label>¿Estás siguiendo alguna dieta? </label>{{ this.dieta }}
+
               </div>
               <div class="col-md-6">
-             
-                  <label>Si es que sí…¿Cuál? </label>{{ this.dietaEx }}
-            
+
+                <label>Si es que sí…¿Cuál? </label>{{ this.dietaEx }}
+
               </div>
               <div class="col-md-6">
-          
-                  <label>Consumo de lácteos: </label>{{ this.lacteos }}
-              
+
+                <label>Consumo de lácteos: </label>{{ this.lacteos }}
+
               </div>
               <div class="col-md-6">
-           
-                  <label>Consumo de huevos: </label>{{ this.huevos }}
-             
+
+                <label>Consumo de huevos: </label>{{ this.huevos }}
+
               </div>
               <div class="col-md-6">
-              
-                  <label>Consumo de fruta: </label>{{ this.fruta }}
-              
+
+                <label>Consumo de fruta: </label>{{ this.fruta }}
+
               </div>
               <div class="col-md-6">
-               
-                  <label>Consumo de legumbres: </label>{{ this.legumbres }}
-              
+
+                <label>Consumo de legumbres: </label>{{ this.legumbres }}
+
               </div>
               <div class="col-md-6">
-             
-                  <label>Consumo de carne: </label>{{ this.carne }}
-          
+
+                <label>Consumo de carne: </label>{{ this.carne }}
+
               </div>
               <div class="col-md-6">
-             
-                  <label>Consumo de carne procesada o embutido: </label>{{ this.carneProcesada }}
-          
+
+                <label>Consumo de carne procesada o embutido: </label>{{ this.carneProcesada }}
+
               </div>
               <div class="col-md-6">
-          
-                  <label>Consumo de pescado: </label>{{ this.pescado }}
-        
+
+                <label>Consumo de pescado: </label>{{ this.pescado }}
+
               </div>
               <div class="col-md-6">
-           
-                  <label>Consumo de bollería o galletas: </label>{{ this.bolleria }}
-            
+
+                <label>Consumo de bollería o galletas: </label>{{ this.bolleria }}
+
               </div>
               <div class="col-md-6">
-               
-                  <label>Consumo de alimentos procesados: </label>{{ this.alimentosProcesados }}
-               
+
+                <label>Consumo de alimentos procesados: </label>{{ this.alimentosProcesados }}
+
               </div>
               <div class="col-md-6">
-              x
-                  <label>Consumo de comida ràpida: </label>{{ this.comidaRapida }}
-            
+                x
+                <label>Consumo de comida ràpida: </label>{{ this.comidaRapida }}
+
               </div>
               <div class="col-md-6">
-             
-                  <label>Bebidas azucaradas: </label>{{ this.bebidasAzucarada }}
-               
+
+                <label>Bebidas azucaradas: </label>{{ this.bebidasAzucarada }}
+
               </div>
               <div class="col-md-6">
-         
-                  <label>Bebidas alcohólica: </label>{{ this.bebidasAlcoholicas }}
-            
+
+                <label>Bebidas alcohólica: </label>{{ this.bebidasAlcoholicas }}
+
               </div>
               <div class="col-md-6">
-           
-                  <label>¿Crees que consumes algún alimento en exceso? </label>{{ this.alimentoExeso }}
-            
+
+                <label>¿Crees que consumes algún alimento en exceso? </label>{{ this.alimentoExeso }}
+
               </div>
             </div>
           </div>
