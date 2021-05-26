@@ -32,8 +32,10 @@
 
                                     <mat-form-field >
                                         <mat-label>Introduce tu nueva contraseña</mat-label>
-                                        <input formControlName="pwdNueva" matInput [type]="hide ? 'password' : 'text'">
-                                      
+                                        <input formControlName="pwdNueva" matInput [type]="hide2 ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                                            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                          </button>
                                         <mat-error *ngIf="submitted && f.pwdNueva.errors" class="invalid-feedback">
                                             
                                             <mat-error *ngIf="f.pwdNueva.errors.required">{{"contraoblig" | translate}}
@@ -50,8 +52,10 @@
 
                                     <mat-form-field >
                                         <mat-label>Repite la contraseña</mat-label>
-                                        <input formControlName="pwdNuevaRepetida" matInput [type]="hide ? 'password' : 'text'">
-                                   
+                                        <input formControlName="pwdNuevaRepetida" matInput [type]="hide3 ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide3 = !hide3" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide3">
+                                            <mat-icon>{{hide3 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                          </button>
                                         <mat-error *ngIf="submitted && f.pwdNuevaRepetida.errors"
                                         class="invalid-feedback">
                                         <mat-error *ngIf="f.pwdNuevaRepetida.errors.required">{{"contraoblig" | translate}}</mat-error>

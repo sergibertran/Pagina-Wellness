@@ -327,7 +327,16 @@ export class CalendarioModalComponent implements OnInit {
           .guardarComentarios(this.TotaldiasArray)
           .pipe(first())
           .subscribe((data) => {
-         
+            this.dialogRef.close('Pizza!');
+
+            if (data=='works') {
+             Swal.fire(
+               'Buen trabajo!',
+               'Comentarios insertados correctamente!',
+               'success'
+             )
+             
+           }
           });
 
          
@@ -354,13 +363,13 @@ export class CalendarioModalComponent implements OnInit {
                 'Comentario insertado correctamente!',
                 'success'
               )
-              
+              this.imagen=null;
             }
           });
       }
     }
 
-    this.imagen=null;
+ 
   }
 
   onChange(index) {

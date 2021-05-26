@@ -9,8 +9,8 @@ import {
 import { Router } from "@angular/router";
 import { perfilAlumno } from "app/models/perfilAlumno";
 import { AuthService } from "app/services/auth.service";
-import { TranslateService } from '@ngx-translate/core';
-import { IdiomaService } from 'app/services/idioma.service';
+import { TranslateService } from "@ngx-translate/core";
+import { IdiomaService } from "app/services/idioma.service";
 import Swal from "sweetalert2";
 
 @Component({
@@ -34,29 +34,29 @@ export class UserModificarPwdComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private router: Router,
-    private _servicio:IdiomaService,
-    public translate:TranslateService,
+    private _servicio: IdiomaService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {
-
     //Cambiamos el idioma al del navegador cuando se recarga la pagina
-    if(this._servicio.getIdioma()==undefined){
-      this.translate.use(this.translate.getBrowserLang())
-      this._servicio.setIdioma(this.translate.getBrowserLang())
-  }else{
-      this.translate.use(this._servicio.getIdioma())
-  }
-
-    this.modpwdForm = this.formBuilder.group({
-      idUser: [this.authService.getidUser()],
-      pwdActual: ["", Validators.required],
-      pwdNueva: ["", Validators.required],
-      pwdNuevaRepetida: ["", Validators.required],
-    },
-    {
-      validator: MustMatch('pwdNueva', 'pwdNuevaRepetida'),
+    if (this._servicio.getIdioma() == undefined) {
+      this.translate.use(this.translate.getBrowserLang());
+      this._servicio.setIdioma(this.translate.getBrowserLang());
+    } else {
+      this.translate.use(this._servicio.getIdioma());
     }
+
+    this.modpwdForm = this.formBuilder.group(
+      {
+        idUser: [this.authService.getidUser()],
+        pwdActual: ["", Validators.required],
+        pwdNueva: ["", Validators.required],
+        pwdNuevaRepetida: ["", Validators.required],
+      },
+      {
+        validator: MustMatch("pwdNueva", "pwdNuevaRepetida"),
+      }
     );
   }
 
@@ -73,14 +73,23 @@ export class UserModificarPwdComponent implements OnInit {
     }
 
     // display form values on success
-    this.authService
-      .modificarPwd(this.modpwdForm.value)
-      .subscribe((datos) => {
+    this.authService.modificarPwd(this.modpwdForm.value).subscribe((datos) => {
+      if (datos == "erueka") {
+        Swal.fire(
+          "Buen trabajo!",
+          "Contraseña Cambiada correctamente",
+          "success"
+        );
+      } else if (datos == "la contraseña actual no coincide") {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "La contraseña actual no coincide!",
+        });
+      }
 
-
-        this.router.navigate(['/user-profile']);
-
-      });
+      this.router.navigate(["/user-profile"]);
+    });
   }
 }
 
